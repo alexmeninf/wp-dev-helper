@@ -139,37 +139,88 @@ class Developers
       add_action('wp_head', function() {
         # Theme Color
         echo '<meta name="theme-color" content="'.get_field('wpdevhelperWPHead-theme_color', 'option').'">'."\n";
-        echo '<meta name="apple-mobile-web-app-status-bar-style" content="'.get_field('wpdevhelperWPHead-theme_color', 'option').'">'."\n";
+        echo '<meta name="msapplication-TileColor" content="'.get_field('wpdevhelperWPHead-theme_color', 'option').'">';
         echo '<meta name="msapplication-navbutton-color" content="'.get_field('wpdevhelperWPHead-theme_color', 'option').'">'."\n\n";
       }, 0);
     }
   }
 
-  /*----------  WP HEAD -> FAVICON / APPLE TOUCH ICON  ----------*/
-  public function developersWPHeadFavicon(){
-    if( trim(get_field('wpdevhelperWPHead-favicon', 'option')) != '' ||
-        trim(get_field('wpdevhelperWPHead-apple_touch_icon-iphone', 'option')) != '' ||
-        trim(get_field('wpdevhelperWPHead-apple_touch_icon-ipad', 'option')) != '' ){
+  public function developersWPHeadPWA() {
+    if( get_field('wpdevhelperWPHead-pwa', 'option') == 'yes' ) {
       add_action('wp_head', function(){
-        # Favicon
-        if( trim(get_field('wpdevhelperWPHead-favicon', 'option')) != '' ){
-          $favicon = wp_get_attachment_image_src(get_field('wpdevhelperWPHead-favicon', 'option'), 'thumbnail', false);
-          echo "\n\n".'<link rel="shortcut icon" href="'.$favicon[0].'">'."\n";
-        }
-        # Apple Touch Icon iPhone
-        if( trim(get_field('wpdevhelperWPHead-apple_touch_icon-iphone', 'option')) != '' ){
-          echo '<link rel="apple-touch-icon image_src" sizes="180x180" href="'.get_field('wpdevhelperWPHead-apple_touch_icon-iphone', 'option').'">'."\n";
-        }
-        # Apple Touch Icon iPad
-        if( trim(get_field('wpdevhelperWPHead-apple_touch_icon-ipad', 'option')) != '' ){
-          echo '<link rel="apple-touch-icon" sizes="152x152" href="'.get_field('wpdevhelperWPHead-apple_touch_icon-ipad', 'option').'">'."\n";
-        }
+        echo '<link rel="manifest" href="">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="application-name" content="'.get_bloginfo('name').'">
+        <meta name="apple-mobile-web-app-title" content="'.get_bloginfo('name').'">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="msapplication-starturl" content="'.get_bloginfo('url').'">';
       }, 1);
     }
   }
 
+  /*----------  WP HEAD -> FAVICON / APPLE TOUCH ICON  ----------*/
+  public function developersWPHeadFavicon(){
+    add_action('wp_head', function(){
+      # Favicon
+      if( trim(get_field('head-icon-favicon', 'option')) != '' ){
+        $favicon = wp_get_attachment_image_src(get_field('head-icon-favicon', 'option'), 'thumbnail', false);
+        echo "\n\n".'<link rel="shortcut icon" type="image/png" href="'.$favicon[0].'">'."\n";
+      }
+      # Apple Touch Icon iPhone
+      if( trim(get_field('head-icon-apple-touch-icon-57x57', 'option')) != '' ){
+        echo '<link rel="apple-touch-icon" sizes="57x57" href="'.get_field('head-icon-apple-touch-icon-57x57', 'option').'">'."\n";
+      }
+      
+      if( trim(get_field('head-icon-apple-touch-icon-60x60', 'option')) != '' ){
+        echo '<link rel="apple-touch-icon" sizes="60x60" href="'.get_field('head-icon-apple-touch-icon-60x60', 'option').'">'."\n";
+      }
 
-  /*----------  TEMṔLATE SETTINGS -> UNDER CONSTRUCTION  ----------*/
+      if( trim(get_field('head-icon-apple-touch-icon-72x72', 'option')) != '' ){
+        echo '<link rel="apple-touch-icon" sizes="72x72" href="'.get_field('head-icon-apple-touch-icon-72x72', 'option').'">'."\n";
+      }
+
+      if( trim(get_field('head-icon-apple-touch-icon-76x76', 'option')) != '' ){
+        echo '<link rel="apple-touch-icon" sizes="76x76" href="'.get_field('head-icon-apple-touch-icon-76x76', 'option').'">'."\n";
+      }
+
+      if( trim(get_field('head-icon-apple-touch-icon-114x114', 'option')) != '' ){
+        echo '<link rel="apple-touch-icon" sizes="114x114" href="'.get_field('head-icon-apple-touch-icon-114x114', 'option').'">'."\n";
+      }
+
+      if( trim(get_field('head-icon-apple-touch-icon-120x120', 'option')) != '' ){
+        echo '<link rel="apple-touch-icon" sizes="120x120" href="'.get_field('head-icon-apple-touch-icon-120x120', 'option').'">'."\n";
+      }
+
+      if( trim(get_field('head-icon-apple-touch-icon-144x144', 'option')) != '' ){
+        echo '<meta name="msapplication-TileImage" content="'.get_field('head-icon-apple-touch-icon-144x144', 'option').'">
+        <link rel="apple-touch-icon" sizes="144x144" href="'.get_field('head-icon-apple-touch-icon-144x144', 'option').'">'."\n";
+      }
+
+      if( trim(get_field('head-icon-apple-touch-icon-152x152', 'option')) != '' ){
+        echo '<link rel="apple-touch-icon" sizes="152x152" href="'.get_field('head-icon-apple-touch-icon-152x152', 'option').'">'."\n";
+      }
+      
+      if( trim(get_field('head-icon-apple-touch-icon-180x180', 'option')) != '' ){
+        echo '<link rel="apple-touch-icon" sizes="180x180" href="'.get_field('head-icon-apple-touch-icon-180x180', 'option').'">'."\n";
+      }
+      
+      if( trim(get_field('head-icon-192x192', 'option')) != '' ){
+        echo '<link rel="icon" type="image/png" sizes="192x192" href="'.get_field('head-icon-192x192', 'option').'">'."\n";
+      }
+
+      if( trim(get_field('head-icon-96x96', 'option')) != '' ){
+        echo '<link rel="icon" type="image/png" sizes="96x96" href="'.get_field('head-icon-96x96', 'option').'">'."\n";
+      }
+      
+      if( trim(get_field('head-icon-16x16', 'option')) != '' ){
+        echo '<link rel="icon" type="image/png" sizes="16x16" href="'.get_field('head-icon-16x16', 'option').'">'."\n";
+      }
+    }, 2);
+  }
+
+
+  /*----------  TEMPLATE SETTINGS -> UNDER CONSTRUCTION  ----------*/
   public function developersTemplateSettingsUnderConstruction(){
     if( get_field('wpdevhelperTemplateSettings-under_construction', 'option') == 'yes' ) {
       require_once(PLUGINPATH.'under-construction-page/under-construction.php');

@@ -2,10 +2,10 @@
 /*
 Plugin Name: WP Dev Helper
 Description: An awesome plugin that help WordPress developers to develop their themes faster than ever.
-Version: 1.4.1
+Version: 1.5.0
 License: GPL
-Author: Alexandre Menin, Matt Developer
-Author URI: https://comet.com.br/
+Author: Alexandre Menin
+Author URI: https://github.com/alexmeninf
 Text Domain: wpdevhelper
 */
 require_once( ABSPATH . "wp-includes/pluggable.php" );
@@ -14,8 +14,8 @@ require_once( ABSPATH . "wp-includes/pluggable.php" );
 /*============================
 =            INFO            =
 ============================*/
-define('WPDEVHELPER_VERSION', '1.4.1');
-define('WPDEVHELPER_REPOSITORY', 'https://github.com/mattdeveloper/wp-dev-helper');
+define('WPDEVHELPER_VERSION', '1.5.0');
+define('WPDEVHELPER_REPOSITORY', 'https://github.com/alexmeninf/wp-dev-helper');
 define('WPDEVHELPER__MINIMUM_WP_VERSION', '5.0');
 
 
@@ -216,6 +216,7 @@ $wpdh->developersDashboardAddBox();
 $wpdh->developersTaxonomiesHierarchical();
 $wpdh->developersLoginScreenEnable();
 $wpdh->developersWPHeadMetaDescription();
+$wpdh->developersWPHeadPWA();
 $wpdh->developersWPHeadMetaThemeColor();
 $wpdh->developersWPHeadFavicon();
 $wpdh->developersTemplateSettingsUnderConstruction();
