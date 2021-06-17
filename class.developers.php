@@ -182,7 +182,7 @@ class Developers
       } elseif (function_exists('get_field')) {
         
         if (trim(get_field('head-opengraph-image', 'option')) != '') {
-          $src = get_field('head-opengraph-image', 'option');
+          $src = wp_get_attachment_image_src(get_field('head-opengraph-image', 'option'), 'full', false)[0];
 
         } elseif (trim(get_field('head-icon-192x192', 'option')) != '') {
           $src = get_field('head-icon-192x192', 'option');
