@@ -2,7 +2,7 @@
 /*
 Plugin Name: WP Dev Helper
 Description: An awesome plugin that help WordPress developers to develop their themes faster than ever.
-Version: 1.5.1
+Version: 1.6.1
 License: GPL
 Author: Alexandre Menin
 Author URI: https://github.com/alexmeninf
@@ -40,7 +40,9 @@ function hide_developers()
 /*==============================================
 =            THEME/PLUGIN PATH/ROOT            =
 ==============================================*/
-define('THEMEROOT', get_template_directory_uri());
+if ( ! defined('THEMEROOT') )
+  define('THEMEROOT', get_template_directory_uri());
+
 define('PLUGINROOT', plugins_url('', __FILE__));
 define('PLUGINPATH', plugin_dir_path(__FILE__));
 
@@ -269,12 +271,6 @@ if (count($postTypes) >= 1) {
       if (get_field('wpdevhelper-posttype-capabilities', $postType->ID) == 'base') {
         $postTypeArgs['capability_type'] = get_field('wpdevhelper-posttype-base_capability_type', $postType->ID);
       }
-      # Rest API
-      if (get_field('wpdevhelper-posttype-rest_api', $postType->ID) == true) {
-        $postTypeArgs['show_in_rest'] = true;
-        $postTypeArgs['rest_base'] = get_field('wpdevhelper-posttype-rest_base', $postType->ID);
-        $postTypeArgs['rest_controller_class'] = get_field('wpdevhelper-posttype-rest_controller_class', $postType->ID);
-      }
       # Register post type
       register_post_type(
         get_field('wpdevhelper-posttype-post_type_key', $postType->ID),
@@ -323,20 +319,12 @@ if (count($postTypes) >= 1) {
           'can_export' => get_field('wpdevhelper-posttype-enable_export', $postType->ID) === 'true' ? true : false,
           'exclude_from_search' => get_field('wpdevhelper-posttype-exclude_from_search', $postType->ID) === 'true' ? true : false,
           'publicly_queryable' => get_field('wpdevhelper-posttype-publicly_queryable', $postType->ID) === 'true' ? true : false,
+          'show_in_rest' => true,
           $postTypeArgs
         ]
       );
     });
   }
-}
-
-
-/*==================================================
-=            ENQUEUE STYLES AND SCRIPTS            =
-==================================================*/
-if (!function_exists('new_js') && !function_exists('new_css')) {
-  include_once PLUGINPATH . 'wp-enqueue-styles.php';
-  include_once PLUGINPATH . 'wp-enqueue-scripts.php';
 }
 
 /*----------  Custom style  ----------*/
@@ -351,11 +339,4 @@ add_filter('admin_enqueue_scripts', 'admin_footer_scripts', 10);
 function admin_footer_scripts()
 {
   wp_enqueue_script('my_custom_script', PLUGINROOT . '/assets/js/scripts.js');
-}
-
-/*----------  Footer description  ----------*/
-add_filter('admin_footer_text', 'admin_footer_text');
-function admin_footer_text()
-{
-  echo '<span id="footer-thankyou">Desenvolvido por <a href="https://www.comet.com.br/" target="_blank">Comet</a></span>.';
 }

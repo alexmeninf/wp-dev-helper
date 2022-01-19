@@ -4,7 +4,7 @@
   Description: An awesome plugin that help WordPress developers to develop their themes faster than ever.
   Version: 1.0.0
   Author: Alexandre Menin
-  Author URI: https://comet.com.br/
+  Author URI: https://github.com/alexmeninf
   Text Domain: under-construction-page
 */
 // this is an include only WP file
@@ -638,7 +638,7 @@ class UCP {
     // todo: translate strings
     if (false && empty($notices['dismiss_rate']) &&
         (time() - $meta['first_install']) > (DAY_IN_SECONDS * 1.0)) {
-      $rate_url = 'https://comet.com.br/contato';
+      $rate_url = '';
       $dismiss_url = add_query_arg(array('action' => 'ucp_dismiss_notice', 'notice' => 'rate', 'redirect' => urlencode($_SERVER['REQUEST_URI'])), admin_url('admin.php'));
 
       echo '<div id="ucp_rate_notice" class="notice-info notice"><p>Hi' . $name . '!<br>We saw you\'ve been using the <b class="ucp-logo" style="font-weight: bold;">UnderConstructionPage</b> plugin for a few days (that\'s awesome!) and wanted to ask for your help to <b>make the plugin better</b>.<br>We just need a minute of your time to rate the plugin. It helps us out a lot!';
@@ -825,7 +825,7 @@ class UCP {
 
   // add links to plugin's description in plugins table
   static function plugin_meta_links($links, $file) {
-    $support_link = '<a target="_blank" href="https://comet.com.br" title="' . __('Get help', 'under-construction-page') . '">' . __('Support', 'under-construction-page') . '</a>';
+    $support_link = '<a target="_blank" href="https://github.com/alexmeninf" title="' . __('Get help', 'under-construction-page') . '">' . __('Support', 'under-construction-page') . '</a>';
 
 
     if ($file == plugin_basename(__FILE__)) {
@@ -842,7 +842,7 @@ class UCP {
       return $text;
     }
 
-    $text = '<i>' . __('Under Construction Page', 'under-construction-page') . ' v' . self::$version . ' by <a href="https://www.comet.com.br/" title="' . __('Visit our site', 'under-construction-page') . '" target="_blank">' . __('Comet', 'under-construction-page') . '</a>.</i> '. $text;
+    $text = '<i>' . __('Under Construction Page', 'under-construction-page') . ' v' . self::$version . ' by <a href="https://github.com/alexmeninf" title="' . __('Visit our site', 'under-construction-page') . '" target="_blank">' . __('Developer', 'under-construction-page') . '</a>.</i> '. $text;
 
     return $text;
   } // admin_footer_text
@@ -1105,7 +1105,7 @@ class UCP {
 
   // helper function to generate tagged buy links
   static function generate_web_link($placement = '', $page = '/', $params = array(), $anchor = '') {
-    $base_url = 'https://comet.com.br';
+    $base_url = 'https://github.com/alexmeninf';
 
     if ('/' != $page) {
       $page = '/' . trim($page, '/') . '/';

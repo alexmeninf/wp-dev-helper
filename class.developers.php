@@ -97,7 +97,7 @@ class Developers
       // Logo Title
       if (trim(get_field('wpdevhelperLoginScreen-logo_title', 'option')) != '') {
         $loginTitle = get_field('wpdevhelperLoginScreen-logo_title', 'option');
-        add_filter('login_headertitle', function () use ($loginTitle) {
+        add_filter('login_headertext', function () use ($loginTitle) {
           return $loginTitle;
         });
       }
@@ -157,7 +157,7 @@ class Developers
   {
     if (get_field('wpdevhelperWPHead-pwa', 'option') == 'yes') {
       add_action('wp_head', function () {
-        echo '<link rel="manifest" href="">
+        echo '
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="application-name" content="' . get_bloginfo('name') . '">

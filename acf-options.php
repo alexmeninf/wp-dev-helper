@@ -1,6 +1,5 @@
 <?php
-# acf-export-2017-02-09
-if( function_exists('acf_add_local_field_group') ):
+if ( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array (
   'key' => 'group_5889dc5461535',
@@ -713,6 +712,7 @@ acf_add_local_field_group(array (
         'post-formats' => __('Post Formats', 'wpdevhelper'),
       ),
       'default_value' => array (
+        'title', 'editor', 'thumbnail'
       ),
       'allow_custom' => 0,
       'save_custom' => 0,
@@ -1394,103 +1394,6 @@ acf_add_local_field_group(array (
         'id' => '',
       ),
     ),
-    array (
-      'placement' => 'left',
-      'endpoint' => 0,
-      'key' => 'field_588a3e820bf48',
-      'label' => __('Rest API', 'wpdevhelper'),
-      'name' => '',
-      'type' => 'tab',
-      'instructions' => '',
-      'required' => 0,
-      'conditional_logic' => 0,
-      'wrapper' => array (
-        'width' => '',
-        'class' => '',
-        'id' => '',
-      ),
-    ),
-    array (
-      'multiple' => 0,
-      'allow_null' => 0,
-      'choices' => array (
-        'true' => __('Yes', 'wpdevhelper'),
-        'false' => __('No', 'wpdevhelper'),
-      ),
-      'default_value' => array (
-        0 => 'false',
-      ),
-      'ui' => 0,
-      'ajax' => 0,
-      'placeholder' => '',
-      'return_format' => 'value',
-      'key' => 'field_588a3e11954ed',
-      'label' => __('Rest API', 'wpdevhelper'),
-      'name' => 'wpdevhelper-posttype-rest_api',
-      'type' => 'select',
-      'instructions' => __("Whether to add the post type route in the REST API wp/v2 namespace.", 'wpdevhelper'),
-      'required' => 1,
-      'conditional_logic' => 0,
-      'wrapper' => array (
-        'width' => '',
-        'class' => '',
-        'id' => '',
-      ),
-    ),
-    array (
-      'default_value' => '',
-      'maxlength' => '',
-      'placeholder' => '',
-      'prepend' => '',
-      'append' => '',
-      'key' => 'field_588a3eccb635a',
-      'label' => __('Rest Base', 'wpdevhelper'),
-      'name' => 'wpdevhelper-posttype-rest_base',
-      'type' => 'text',
-      'instructions' => __('To change the base url of REST API route. Default is the post type key.', 'wpdevhelper'),
-      'required' => 1,
-      'conditional_logic' => array (
-        array (
-          array (
-            'field' => 'field_588a3e11954ed',
-            'operator' => '==',
-            'value' => 'true',
-          ),
-        ),
-      ),
-      'wrapper' => array (
-        'width' => '',
-        'class' => '',
-        'id' => '',
-      ),
-    ),
-    array (
-      'default_value' => '',
-      'maxlength' => '',
-      'placeholder' => '',
-      'prepend' => '',
-      'append' => '',
-      'key' => 'field_588a3ee4b635b',
-      'label' => __('Rest Controller Class', 'wpdevhelper'),
-      'name' => 'wpdevhelper-posttype-rest_controller_class',
-      'type' => 'text',
-      'instructions' => __("REST API Controller class name. Default is WP_REST_Posts_Controller.", 'wpdevhelper'),
-      'required' => 1,
-      'conditional_logic' => array (
-        array (
-          array (
-            'field' => 'field_588a3e11954ed',
-            'operator' => '==',
-            'value' => 'true',
-          ),
-        ),
-      ),
-      'wrapper' => array (
-        'width' => '',
-        'class' => '',
-        'id' => '',
-      ),
-    ),
   ),
   'location' => array (
     array (
@@ -1890,7 +1793,7 @@ WordPress can hold and display many different types of content. A single item of
         'class' => '',
         'id' => '',
       ),
-      'default_value' => '#f1f1f1',
+      'default_value' => '#141414',
     ),
     array (
       'key' => 'field_589cbe027b8e2',
@@ -2419,7 +2322,7 @@ WordPress can hold and display many different types of content. A single item of
         'yes' => __('Yes', 'wpdevhelper'),
         'no' => __('No', 'wpdevhelper'),
       ),
-      'default_value' => 'no',
+      'default_value' => 'yes',
       'other_choice' => 0,
       'save_other_choice' => 0,
       'allow_null' => 0,
@@ -2464,6 +2367,7 @@ WordPress can hold and display many different types of content. A single item of
         'emoji_scripts' => 'emoji_scripts',
       ),
       'default_value' => array (
+        'emoji_scripts'
       ),
       'allow_custom' => 0,
       'save_custom' => 0,
@@ -2539,4 +2443,3 @@ WordPress can hold and display many different types of content. A single item of
 ));
 
 endif;
-?>
