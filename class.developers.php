@@ -153,21 +153,6 @@ class Developers
     }
   }
 
-  public function developersWPHeadPWA()
-  {
-    if (get_field('wpdevhelperWPHead-pwa', 'option') == 'yes') {
-      add_action('wp_head', function () {
-        echo '
-        <meta name="mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="application-name" content="' . get_bloginfo('name') . '">
-        <meta name="apple-mobile-web-app-title" content="' . get_bloginfo('name') . '">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-        <meta name="msapplication-starturl" content="' . get_bloginfo('url') . '">';
-      }, 1);
-    }
-  }
-
   /*----------  WP HEAD -> FAVICON / APPLE TOUCH ICON  ----------*/
   public function developersWPHeadFavicon()
   {

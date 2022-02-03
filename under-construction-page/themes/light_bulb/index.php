@@ -1,8 +1,8 @@
 <?php
 /*
- * Dev Helper - Under Construction
+ * UnderConstructionPage
  * Light Bulb theme
- * (c) WP Dev Helper, 2019
+ * (c) WebFactory Ltd, 2015 - 2021
  */
 
 

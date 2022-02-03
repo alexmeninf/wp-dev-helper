@@ -1,7 +1,7 @@
 /*
- * Dev Helper - Under Construction
+ * UnderConstructionPage
  * jQuery plugins
- * (c) WP Dev Helper, 2019
+ * (c) WebFactory Ltd, 2015 - 2022
  */
 
 /**

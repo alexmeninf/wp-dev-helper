@@ -1,40 +1,28 @@
 <?php
 /*
-Plugin Name: WP Dev Helper
-Description: An awesome plugin that help WordPress developers to develop their themes faster than ever.
-Version: 1.6.1
-License: GPL
-Author: Alexandre Menin
-Author URI: https://github.com/alexmeninf
-Text Domain: wpdevhelper
+ * Plugin Name: WP Dev Helper
+ * Plugin URI: https://github.com/alexmeninf/wp-dev-helper
+ * Description: An awesome plugin that help WordPress developers to develop their themes faster than ever.
+ * Version: 1.7.0
+ * License: GPL
+ * Author: Alexandre Menin
+ * Author URI: https://github.com/alexmeninf
+ * Text Domain: wpdevhelper
 */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 require_once(ABSPATH . "wp-includes/pluggable.php");
 
 
 /*============================
 =            INFO            =
 ============================*/
-define('WPDEVHELPER_VERSION', '1.5.1');
+define('WPDEVHELPER_VERSION', '1.7.0');
 define('WPDEVHELPER_REPOSITORY', 'https://github.com/alexmeninf/wp-dev-helper');
-define('WPDEVHELPER__MINIMUM_WP_VERSION', '5.0');
-
-
-/*============================================
-=            HIDE DEVELOPERS MENU            =
-============================================*/
-/* $wpdh_user_level = wp_get_current_user();
-if( $wpdh_user_level->user_level < 10 ){ // Show Developer link on menu only for users with level 10
-  hide_developers();
-} */
-
-function wpdh_remove_developer_options()
-{
-  remove_menu_page('wp-dev-helper');
-}
-function hide_developers()
-{ // Cal this function to remove developer from admin side menu
-  add_action('admin_menu', 'wpdh_remove_developer_options', 999);
-}
+define('WPDEVHELPER__MINIMUM_WP_VERSION', '5.5');
 
 
 /*==============================================
@@ -53,42 +41,20 @@ define('PLUGINPATH', plugin_dir_path(__FILE__));
 load_theme_textdomain('wpdevhelper', PLUGINPATH . 'languages');
 
 
-/*==================================
-=            WP UPDATES            =
-==================================*/
-require_once('wp-updates-plugin.php');
-new WPUpdatesPluginUpdater_1608('http://wp-updates.com/api/2/plugin', plugin_basename(__FILE__));
-
-
 /*=======================================
 =            INCLUDE ACF PRO            =
 =======================================*/
 include_once ABSPATH . 'wp-admin/includes/plugin.php';
+
 if (!is_plugin_active('advanced-custom-fields-pro/acf.php')) {
+  
   define('ACF_LITE', false);
   require_once PLUGINPATH . 'advanced-custom-fields-pro/acf.php';
-  include PLUGINPATH . 'acf-code/acf-code.php';
+  include PLUGINPATH . 'acf-code-field/acf-code-field.php';
 }
 
 include PLUGINPATH . 'acf-options.php';
 
-
-/*================================
-=            TIMTHUMB            =
-================================*/
-function thumb($thumbArgs = '')
-{
-  $thumb = '';
-  $cntArgs = 1;
-  foreach ($thumbArgs as $key => $value) {
-    if ($cntArgs > 1) {
-      $thumb .= '&';
-    }
-    $thumb .= $key . '=' . $value;
-    $cntArgs++;
-  }
-  return PLUGINROOT . '/thumb/?' . $thumb;
-}
 
 /*====================================================
 =            REGISTER POST TYPE GENERATOR            =
@@ -209,7 +175,6 @@ add_action('init', 'dashboard_widget_post_type', 0);
 /*==============================================================
 =            HTML, CSS, JS MINIFIER; DUPLICATE POST            =
 ==============================================================*/
-include_once PLUGINPATH . 'php-html-css-js-minifier.php'; # minify_css(); minify_html(); minify_js();
 include_once PLUGINPATH . 'duplicate-post.php';
 
 
@@ -217,36 +182,22 @@ include_once PLUGINPATH . 'duplicate-post.php';
 =            INIT/CONFIG WP DEV HELPER            =
 =================================================*/
 include_once PLUGINPATH . 'class.developers.php';
-include_once PLUGINPATH . 'class.wpdevhelper.php';
 
 $wpdh = new Developers();
-$wpdh = new WPDevHelper();
 $wpdh->pageDevelopers();
 $wpdh->developersDashboardRemoveWidgets();
 $wpdh->developersDashboardAddBox();
 $wpdh->developersTaxonomiesHierarchical();
 $wpdh->developersLoginScreenEnable();
 $wpdh->developersWPHeadMetaDescription();
-$wpdh->developersWPHeadPWA();
 $wpdh->developersWPHeadMetaThemeColor();
 $wpdh->developersWPHeadFavicon();
 $wpdh->developersTemplateSettingsUnderConstruction();
 $wpdh->developersOthersDuplicate();
 $wpdh->developersAdvancedWPHead();
-$wpdh->developersAdvancedCustomCSS($wpdhCssCode = minify_css(get_field('wpdevhelperAdvanced-custom_css', 'option')));
-$wpdh->developersAdvancedCustomJSHead($wpdhJsHeadCode = minify_js(get_field('wpdevhelperAdvanced-custom_js_head', 'option')));
-$wpdh->developersAdvancedCustomJSFooter($wpdhJsFooterCode = minify_js(get_field('wpdevhelperAdvanced-custom_js_footer', 'option')));
-
-/*=======================================================
-=            MAINTENANCE MODE -> COMING SOON            =
-=======================================================*/
-add_action('get_header', 'maintenace_mode');
-function maintenace_mode()
-{
-  /* if( !current_user_can( 'edit_themes' ) || !is_user_logged_in() ) {
-    wp_die( __('Maintenance.', 'wpdevhelper') );
-  } */
-}
+$wpdh->developersAdvancedCustomCSS($wpdhCssCode = get_field('wpdevhelperAdvanced-custom_css', 'option'));
+$wpdh->developersAdvancedCustomJSHead($wpdhJsHeadCode = get_field('wpdevhelperAdvanced-custom_js_head', 'option'));
+$wpdh->developersAdvancedCustomJSFooter($wpdhJsFooterCode = get_field('wpdevhelperAdvanced-custom_js_footer', 'option'));
 
 
 /*====================================================

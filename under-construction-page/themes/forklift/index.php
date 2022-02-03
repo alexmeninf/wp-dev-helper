@@ -1,8 +1,8 @@
 <?php
 /*
- * Dev Helper - Under Construction
+ * UnderConstructionPage
  * Forklift theme
- * (c) WP Dev Helper, 2019
+ * (c) WebFactory Ltd, 2015 - 2021
  */
 
 

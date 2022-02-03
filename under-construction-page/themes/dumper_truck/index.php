@@ -1,8 +1,8 @@
 <?php
 /*
- * Dev Helper - Under Construction
+ * UnderConstructionPage
  * Dumper Truck theme
- * (c) WP Dev Helper, 2019
+ * (c) WebFactory Ltd, 2015 - 2021
  */
 
 
