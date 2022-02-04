@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WP Dev Helper 1.7\n"
-"POT-Creation-Date: 2022-02-04 09:27-0300\n"
-"PO-Revision-Date: 2022-02-04 09:31-0300\n"
+"POT-Creation-Date: 2022-02-04 09:53-0300\n"
+"PO-Revision-Date: 2022-02-04 09:53-0300\n"
 "Last-Translator: \n"
 "Language-Team: Alexandre Menin <menin.alex11@gmail.com>\n"
 "Language: pt_BR\n"
@@ -15,6 +15,7 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_;_e\n"
 "X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: under-construction-page\n"
 "X-Poedit-SearchPathExcluded-0: advanced-custom-fields-pro\n"
 "X-Poedit-SearchPathExcluded-1: acf-code\n"
 "X-Poedit-SearchPathExcluded-2: assets\n"
@@ -1075,7 +1076,7 @@ msgstr "CSS Personalizado"
 
 #: acf-options.php:2353
 msgid "Add your css to the head. The &#60;style&#62 tags will be ignored."
-msgstr "Adicione seu css à cabeça. As tags &#60;estilo&#62 serão ignoradas."
+msgstr "Adicione seu css no Head. As tags &#60;style&#62 serão ignoradas."
 
 #: acf-options.php:2366
 msgid "Custom JS Head"
@@ -1113,7 +1114,7 @@ msgstr "Duplicar este item"
 msgid "Duplicate"
 msgstr "Duplicar"
 
-#: under-construction-page/under-construction.php:1226
+#: under-construction-page/under-construction.php:1223
 msgid ""
 "By enabling construction mode users will not be able to access the site's "
 "content. They will only see the under construction page. To configure "
@@ -1125,7 +1126,7 @@ msgstr ""
 "defina <a class=\"change_tab\" data-tab=\"3\" href=\"#whitelisted-roles"
 "\">funções de usuário na lista de permissões</a>."
 
-#: under-construction-page/under-construction.php:1554
+#: under-construction-page/under-construction.php:1551
 msgid ""
 "Selected user roles will <b>not</b> be affected by the under construction "
 "mode and will always see the \"normal\" site. Default: administrator."
@@ -1133,7 +1134,7 @@ msgstr ""
 "As funções de usuário selecionadas <b>não</b> serão afetadas pelo modo em "
 "construção e sempre verão o site \"normal\". Padrão: administrador."
 
-#: under-construction-page/under-construction.php:1562
+#: under-construction-page/under-construction.php:1559
 msgid ""
 "Selected users (when logged in) will <b>not</b> be affected by the under "
 "construction mode and will always see the \"normal\" site."
@@ -1141,7 +1142,7 @@ msgstr ""
 "Os usuários selecionados (quando logados) <b>não</b> serão afetados pelo "
 "modo em construção e sempre verão o site \"normal\"."
 
-#: under-construction-page/under-construction.php:1585
+#: under-construction-page/under-construction.php:1582
 msgid "Main"
 msgstr "Principal"
 
@@ -1321,3 +1322,4 @@ msgstr "Criar novo widget do painel"
 #~ "Display page under construction? Note: When activating, in settings -> "
 #~ "Reading, make sure a static page is marked as a \"Under Construction\""
 #~ msgstr "Exibir página em construção?"
+

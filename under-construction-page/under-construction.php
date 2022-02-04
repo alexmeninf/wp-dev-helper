@@ -132,7 +132,7 @@ class UCP
     // display error message if WP version is too low
     static function notice_min_wp_version()
     {
-        echo '<div class="error"><p>' . sprintf(esc_attr__('UnderConstruction plugin <b>requires WordPress version 4.0</b> or higher to function properly. You are using WordPress version %s. Please <a href="%s">update it</a>.', 'under-construction-page'), get_bloginfo('version'), admin_url('update-core.php')) . '</p></div>';
+        echo '<div class="error"><p>' . sprintf(esc_attr__('UnderConstruction plugin <b>requires WordPress version 4.0</b> or higher to function properly. You are using WordPress version %s. Please <a href="%s">update it</a>.', 'wpdevhelper'), get_bloginfo('version'), admin_url('update-core.php')) . '</p></div>';
     } // notice_min_wp_version_error
 
 
@@ -316,19 +316,16 @@ class UCP
         $countdown = 0;
 
         $js_localize = array(
-            'undocumented_error' => esc_attr__('An undocumented error has occured. Please refresh the page and try again.', 'under-construction-page'),
-            'plugin_name' => esc_attr__('UnderConstructionPage', 'under-construction-page'),
+            'undocumented_error' => esc_attr__('An undocumented error has occured. Please refresh the page and try again.', 'wpdevhelper'),
+            'plugin_name' => esc_attr__('UnderConstructionPage', 'wpdevhelper'),
             'settings_url' => admin_url('options-general.php?page=ucp'),
-            'whitelisted_users_placeholder' => esc_attr__('Select whitelisted user(s)', 'under-construction-page'),
+            'whitelisted_users_placeholder' => esc_attr__('Select whitelisted user(s)', 'wpdevhelper'),
             'open_survey' => $open_survey,
-            'promo_countdown' => $countdown,
-            'wpfssl_install_url' => add_query_arg(array('action' => 'install_wpfssl', '_wpnonce' => wp_create_nonce('install_wpfssl'), 'rnd' => rand()), admin_url('admin.php')),
-            'is_activated' => true,
-            'dialog_upsell_title' => '<img alt="' . esc_attr__('UnderConstructionPage PRO', 'under-construction-page') . '" title="' . esc_attr__('UnderConstructionPage PRO', 'under-construction-page') . '" src="' . UCP_PLUGIN_URL . 'images/ucp_pro_logo_white.png' . '">',       
+            'is_activated' => true,           
             'nonce_dismiss_survey' => wp_create_nonce('ucp_dismiss_survey'),
             'nonce_submit_survey' => wp_create_nonce('ucp_submit_survey'),
             'nonce_submit_support_message' => wp_create_nonce('ucp_submit_support_message'),
-            'deactivate_confirmation' => esc_attr__('Are you sure you want to deactivate UnderConstruction plugin?' . "\n" . 'If you are removing it because of a problem please contact our support. They will be more than happy to help.', 'under-construction-page')
+            'deactivate_confirmation' => esc_attr__('Are you sure you want to deactivate UnderConstruction plugin?' . "\n" . 'If you are removing it because of a problem please contact our support. They will be more than happy to help.', 'wpdevhelper')
         );
 
         if (self::is_plugin_page()) {
@@ -600,10 +597,10 @@ class UCP
         if ($options['login_button'] == '1') {
             if (is_user_logged_in()) {
                 $out .= '<div id="login-button" class="loggedin">';
-                $out .= '<a title="' . esc_attr__('Open WordPress admin', 'under-construction-page') . '" href="' . get_site_url() . '/wp-admin/"><i class="fa fa-wordpress fa-2x" aria-hidden="true"></i></a>';
+                $out .= '<a title="' . esc_attr__('Open WordPress admin', 'wpdevhelper') . '" href="' . get_site_url() . '/wp-admin/"><i class="fa fa-wordpress fa-2x" aria-hidden="true"></i></a>';
             } else {
                 $out .= '<div id="login-button" class="loggedout">';
-                $out .= '<a title="' . esc_attr__('Log in to WordPress admin', 'under-construction-page') . '" href="' . get_site_url() . '/wp-login.php"><i class="fa fa-wordpress fa-2x" aria-hidden="true"></i></a>';
+                $out .= '<a title="' . esc_attr__('Log in to WordPress admin', 'wpdevhelper') . '" href="' . get_site_url() . '/wp-login.php"><i class="fa fa-wordpress fa-2x" aria-hidden="true"></i></a>';
             }
             $out .= '</div>';
         }
@@ -626,7 +623,7 @@ class UCP
         $vars['theme-url'] = trailingslashit(UCP_PLUGIN_URL . 'themes/' . $template_id);
         $vars['theme-url-common'] = trailingslashit(UCP_PLUGIN_URL . 'themes');
         $vars['title'] = self::parse_vars($options['title']);
-        $vars['generator'] = esc_attr__('Free UnderConstructionPage plugin for WordPress', 'under-construction-page');
+        $vars['generator'] = esc_attr__('Free UnderConstructionPage plugin for WordPress', 'wpdevhelper');
         $vars['heading1'] = self::parse_vars($options['heading1']);
         $vars['content'] = nl2br(self::parse_vars($options['content']));
         $vars['description'] = self::parse_vars($options['description']);
@@ -714,7 +711,7 @@ class UCP
             !self::is_construction_mode_enabled(false)
         )
             // keeping everything inline due to minimal CSS
-            echo '<div style="background-color: #333; line-height: 140%; font-size: 14px; position: fixed; display: block; top: 50px; z-index: 99999; color: #fefefe; padding: 20px 35px 20px 20px; width: 500px; border: thin solid #fefefe; left: -1px;"><a style="color: #ea1919; font-weight: 900; text-decoration: none; position: absolute; top: 7px; right: 10px;" href="' . esc_url($dismiss_url) . '" alt="Dismiss notice" onclick="window.location.href = \'' . esc_url($dismiss_url) . '\'; return false;" title="Dismiss notice">X</a><b>' . esc_attr__('<b>Under Construction Mode is enabled</b> but you are whitelisted so you see the normal site.', 'under-construction-page') . '<br><a href="' . esc_url(get_home_url()) . '/?ucp_preview" style="text-decoration: underline; color: #fefefe;">' . esc_attr__('Preview UnderConstructionPage', 'under-construction-page') . '</a><br><a href="' . esc_url(admin_url('options-general.php?page=ucp')) . '" style="text-decoration: underline; color: #fefefe;">' . esc_attr__('Configure UnderConstructionPage', 'under-construction-page') . '</a></div>';
+            echo '<div style="background-color: #333; line-height: 140%; font-size: 14px; position: fixed; display: block; top: 50px; z-index: 99999; color: #fefefe; padding: 20px 35px 20px 20px; width: 500px; border: thin solid #fefefe; left: -1px;"><a style="color: #ea1919; font-weight: 900; text-decoration: none; position: absolute; top: 7px; right: 10px;" href="' . esc_url($dismiss_url) . '" alt="Dismiss notice" onclick="window.location.href = \'' . esc_url($dismiss_url) . '\'; return false;" title="Dismiss notice">X</a><b>' . esc_attr__('<b>Under Construction Mode is enabled</b> but you are whitelisted so you see the normal site.', 'wpdevhelper') . '<br><a href="' . esc_url(get_home_url()) . '/?ucp_preview" style="text-decoration: underline; color: #fefefe;">' . esc_attr__('Preview UnderConstructionPage', 'wpdevhelper') . '</a><br><a href="' . esc_url(admin_url('options-general.php?page=ucp')) . '" style="text-decoration: underline; color: #fefefe;">' . esc_attr__('Configure UnderConstructionPage', 'wpdevhelper') . '</a></div>';
     } // whitelisted_notification
 
 
@@ -851,18 +848,18 @@ class UCP
         }
 
         if (self::is_construction_mode_enabled(true)) {
-            $main_label = '<img style="height: 17px; margin-bottom: -4px; padding-right: 3px;" src="' . UCP_PLUGIN_URL . 'images/ucp_icon.png" alt="' . esc_attr__('Under construction mode is enabled', 'under-construction-page') . '" title="' . esc_attr__('Under construction mode is enabled', 'under-construction-page') . '"> <span class="ab-label">' . esc_attr__('UnderConstruction', 'under-construction-page') . ' <i class="ucp-status-dot ucp-status-dot-enabled">&#9679;</i></span>';
+            $main_label = '<img style="height: 17px; margin-bottom: -4px; padding-right: 3px;" src="' . UCP_PLUGIN_URL . 'images/ucp_icon.png" alt="' . esc_attr__('Under construction mode is enabled', 'wpdevhelper') . '" title="' . esc_attr__('Under construction mode is enabled', 'wpdevhelper') . '"> <span class="ab-label">' . esc_attr__('UnderConstruction', 'wpdevhelper') . ' <i class="ucp-status-dot ucp-status-dot-enabled">&#9679;</i></span>';
             $class = 'ucp-enabled';
             $action_url = add_query_arg(array('action' => 'ucp_change_status', 'new_status' => 'disabled', 'redirect' => urlencode($_SERVER['REQUEST_URI'])), admin_url('admin.php'));
             $action_url = wp_nonce_url($action_url, 'ucp_change_status');
-            $action = esc_attr__('Under Construction Mode', 'under-construction-page');
+            $action = esc_attr__('Under Construction Mode', 'wpdevhelper');
             $action .= '<a href="' . $action_url . '" id="ucp-status-wrapper" class="on"><span id="ucp-status-off" class="ucp-status-btn">OFF</span><span id="ucp-status-on" class="ucp-status-btn">ON</span></a>';
         } else {
-            $main_label = '<img style="height: 17px; margin-bottom: -4px; padding-right: 3px;" src="' . UCP_PLUGIN_URL . 'images/ucp_icon.png" alt="' . esc_attr__('Under construction mode is disabled', 'under-construction-page') . '" title="' . esc_attr__('Under construction mode is disabled', 'under-construction-page') . '"> <span class="ab-label">' . esc_attr__('UnderConstruction', 'under-construction-page') . ' <i class="ucp-status-dot ucp-status-dot-disabled">&#9679;</i></span>';
+            $main_label = '<img style="height: 17px; margin-bottom: -4px; padding-right: 3px;" src="' . UCP_PLUGIN_URL . 'images/ucp_icon.png" alt="' . esc_attr__('Under construction mode is disabled', 'wpdevhelper') . '" title="' . esc_attr__('Under construction mode is disabled', 'wpdevhelper') . '"> <span class="ab-label">' . esc_attr__('UnderConstruction', 'wpdevhelper') . ' <i class="ucp-status-dot ucp-status-dot-disabled">&#9679;</i></span>';
             $class = 'ucp-disabled';
             $action_url = add_query_arg(array('action' => 'ucp_change_status', 'new_status' => 'enabled', 'redirect' => urlencode($_SERVER['REQUEST_URI'])), admin_url('admin.php'));
             $action_url = wp_nonce_url($action_url, 'ucp_change_status');
-            $action = esc_attr__('Under Construction Mode', 'under-construction-page');
+            $action = esc_attr__('Under Construction Mode', 'wpdevhelper');
             $action .= '<a href="' . $action_url . '" id="ucp-status-wrapper" class="off"><span id="ucp-status-off" class="ucp-status-btn">OFF</span><span id="ucp-status-on" class="ucp-status-btn">ON</span></a>';
         }
 
@@ -881,14 +878,14 @@ class UCP
         ));
         $wp_admin_bar->add_node(array(
             'id'     => 'ucp-preview',
-            'title'  => esc_attr__('Preview', 'under-construction-page'),
+            'title'  => esc_attr__('Preview', 'wpdevhelper'),
             'meta'   => array('target' => 'blank'),
             'href'   => get_home_url() . '/?ucp_preview',
             'parent' => 'under-construction-page'
         ));
         $wp_admin_bar->add_node(array(
             'id'     => 'ucp-settings',
-            'title'  => esc_attr__('Settings', 'under-construction-page'),
+            'title'  => esc_attr__('Settings', 'wpdevhelper'),
             'href'   => admin_url('options-general.php?page=ucp'),
             'parent' => 'under-construction-page'
         ));
@@ -899,7 +896,7 @@ class UCP
     static function login_message($message)
     {
         if (self::is_construction_mode_enabled(true)) {
-            $message .= '<div class="message">' . esc_attr__('Under Construction Mode is <b>enabled</b>.', 'under-construction-page') . '</div>';
+            $message .= '<div class="message">' . esc_attr__('Under Construction Mode is <b>enabled</b>.', 'wpdevhelper') . '</div>';
         }
 
         return $message;
@@ -913,7 +910,7 @@ class UCP
             return $text;
         }
 
-        $text = '<i>' . esc_attr__('UnderConstructionPage', 'under-construction-page') . ' v' . self::$version . '. Esta é uma versão por WP Dev Helper</i>';
+        $text = '<i>' . esc_attr__('UnderConstructionPage', 'wpdevhelper') . ' v' . self::$version . '. Esta é uma versão por WP Dev Helper</i>';
 
         return $text;
     } // admin_footer_text
@@ -948,7 +945,7 @@ class UCP
     // create the admin menu item
     static function admin_menu()
     {
-        add_options_page(esc_attr__('UnderConstruction', 'under-construction-page'), esc_attr__('UnderConstruction', 'under-construction-page'), 'manage_options', 'ucp', array(__CLASS__, 'main_page'));
+        add_options_page(esc_attr__('UnderConstruction', 'wpdevhelper'), esc_attr__('UnderConstruction', 'wpdevhelper'), 'manage_options', 'ucp', array(__CLASS__, 'main_page'));
     } // admin_menu
 
 
@@ -970,8 +967,8 @@ class UCP
             'custom_css' => '',
             'title' => '[site-title] is under construction',
             'description' => '[site-tagline]',
-            'heading1' => esc_attr__('Sorry, we\'re doing some work on the site', 'under-construction-page'),
-            'content' => esc_attr__('Thank you for being patient. We are doing some work on the site and will be back shortly.', 'under-construction-page'),
+            'heading1' => esc_attr__('Sorry, we\'re doing some work on the site', 'wpdevhelper'),
+            'content' => esc_attr__('Thank you for being patient. We are doing some work on the site and will be back shortly.', 'wpdevhelper'),
             'social_facebook' => '',
             'social_twitter' => '',
             'social_linkedin' => '',
@@ -1059,7 +1056,7 @@ class UCP
             $options['ga_tracking_id'] = '';
         }
         if (!empty($options['ga_tracking_id']) && preg_match('/^UA-\d{3,}-\d{1,3}$/', $options['ga_tracking_id']) === 0) {
-            add_settings_error('ucp', 'ga_tracking_id', esc_attr__('Please enter a valid Google Analytics Tracking ID or disable tracking.', 'under-construction-page'));
+            add_settings_error('ucp', 'ga_tracking_id', esc_attr__('Please enter a valid Google Analytics Tracking ID or disable tracking.', 'wpdevhelper'));
         }
         unset($options['ga_tracking_toggle']);
 
@@ -1215,7 +1212,7 @@ class UCP
         echo '<table class="form-table">';
 
         echo '<tr valign="top">
-    <th scope="row"><label for="status">' . esc_attr__('Under Construction Mode', 'under-construction-page') . '</label></th>
+    <th scope="row"><label for="status">' . esc_attr__('Under Construction Mode', 'wpdevhelper') . '</label></th>
     <td>';
 
         echo '<div class="toggle-wrapper" id="main-status">
@@ -1223,39 +1220,39 @@ class UCP
       <label for="status" class="toggle"><span class="toggle_handler"></span></label>
     </div>';
 
-        echo '<p class="description">' . __('By enabling construction mode users will not be able to access the site\'s content. They will only see the under construction page. To configure exceptions set <a class="change_tab" data-tab="3" href="#whitelisted-roles">whitelisted user roles</a>.', 'under-construction-page') . '</p>';
+        echo '<p class="description">' . __('By enabling construction mode users will not be able to access the site\'s content. They will only see the under construction page. To configure exceptions set <a class="change_tab" data-tab="3" href="#whitelisted-roles">whitelisted user roles</a>.', 'wpdevhelper') . '</p>';
         echo '</td></tr>';
 
         echo '<tr valign="top">
-    <th scope="row"><label for="end_date_toggle">' . esc_attr__('Automatic End Date &amp; Time', 'under-construction-page') . '</label></th>
+    <th scope="row"><label for="end_date_toggle">' . esc_attr__('Automatic End Date &amp; Time', 'wpdevhelper') . '</label></th>
     <td>';
         echo '<div class="toggle-wrapper">
       <input type="checkbox" id="end_date_toggle" ' . esc_attr(self::checked(1, (empty($options['end_date']) || $options['end_date'] == '0000-00-00 00:00') ? 0 : 1)) . ' type="checkbox" value="1" name="' . esc_attr(UCP_OPTIONS_KEY) . '[end_date_toggle]">
       <label for="end_date_toggle" class="toggle"><span class="toggle_handler"></span></label>
     </div>';
-        echo '<div id="end_date_wrapper"><input id="end_date" type="text" class="datepicker" name="' . esc_attr(UCP_OPTIONS_KEY) . '[end_date]" value="' . esc_attr($options['end_date']) . '" placeholder="yyyy-mm-dd hh:mm"><span title="' . esc_attr__('Open date & time picker', 'under-construction-page') . '" alt="' . esc_attr__('Open date & time picker', 'under-construction-page') . '" class="show-datepicker dashicons dashicons-calendar-alt"></span>';
+        echo '<div id="end_date_wrapper"><input id="end_date" type="text" class="datepicker" name="' . esc_attr(UCP_OPTIONS_KEY) . '[end_date]" value="' . esc_attr($options['end_date']) . '" placeholder="yyyy-mm-dd hh:mm"><span title="' . esc_attr__('Open date & time picker', 'wpdevhelper') . '" alt="' . esc_attr__('Open date & time picker', 'wpdevhelper') . '" class="show-datepicker dashicons dashicons-calendar-alt"></span>';
         echo '<p class="description">' . esc_attr__('If enabled, construction mode will automatically stop showing on the selected date.
-    This option will not "auto-enable" construction mode. Status has to be set to "On".', 'under-construction-page') . '</p></div>';
+    This option will not "auto-enable" construction mode. Status has to be set to "On".', 'wpdevhelper') . '</p></div>';
         echo '</td></tr>';
 
         echo '<tr valign="top">
-    <th scope="row"><label for="ga_tracking_id_toggle">' . esc_attr__('Google Analytics Tracking', 'under-construction-page') . '</label></th>
+    <th scope="row"><label for="ga_tracking_id_toggle">' . esc_attr__('Google Analytics Tracking', 'wpdevhelper') . '</label></th>
     <td>';
         echo '<div class="toggle-wrapper">
       <input type="checkbox" id="ga_tracking_id_toggle" ' . esc_attr(self::checked(1, empty($options['ga_tracking_id']) ? 0 : 1)) . ' type="checkbox" value="1" name="' . esc_attr(UCP_OPTIONS_KEY) . '[ga_tracking_toggle]">
       <label for="ga_tracking_id_toggle" class="toggle"><span class="toggle_handler"></span></label>
     </div>';
         echo '<div id="ga_tracking_id_wrapper"><input id="ga_tracking_id" type="text" class="code" name="' . esc_attr(UCP_OPTIONS_KEY) . '[ga_tracking_id]" value="' . esc_attr($options['ga_tracking_id']) . '" placeholder="UA-xxxxxx-xx">';
-        echo '<p class="description">' . esc_attr__('Enter the unique tracking ID found in your GA tracking profile settings to track visits to pages.', 'under-construction-page') . '</p></div>';
+        echo '<p class="description">' . esc_attr__('Enter the unique tracking ID found in your GA tracking profile settings to track visits to pages.', 'wpdevhelper') . '</p></div>';
         echo '</td></tr>';
 
         $reset_url = add_query_arg(array('action' => 'ucp_reset_settings', 'redirect' => urlencode($_SERVER['REQUEST_URI'])), admin_url('admin.php'));
         $reset_url = wp_nonce_url($reset_url, 'ucp_reset_settings');
         echo '<tr valign="top">
-    <th scope="row"><label for="">' . esc_attr__('Reset Settings', 'under-construction-page') . '</label></th>
+    <th scope="row"><label for="">' . esc_attr__('Reset Settings', 'wpdevhelper') . '</label></th>
     <td>';
-        echo '<a href="' . esc_url($reset_url) . '" class="button button-secondary reset-settings">' . esc_attr__('Reset all settings to default values', 'under-construction-page') . '</a>';
-        echo '<p class="description">' . esc_attr__('By resetting all settings to their default values any customizations you have done will be lost. There is no undo.', 'under-construction-page') . '</p>';
+        echo '<a href="' . esc_url($reset_url) . '" class="button button-secondary reset-settings">' . esc_attr__('Reset all settings to default values', 'wpdevhelper') . '</a>';
+        echo '<p class="description">' . esc_attr__('By resetting all settings to their default values any customizations you have done will be lost. There is no undo.', 'wpdevhelper') . '</p>';
         echo '</td></tr>';
 
         echo '</table>';
@@ -1276,7 +1273,7 @@ class UCP
         echo '<table class="form-table">';
 
         echo '<tr valign="top">
-    <th scope="row"><label for="title">' . esc_attr__('Title', 'under-construction-page') . '</label></th>
+    <th scope="row"><label for="title">' . esc_attr__('Title', 'wpdevhelper') . '</label></th>
     <td><input type="text" id="title" class="regular-text" name="' . esc_attr(UCP_OPTIONS_KEY) . '[title]" value="' . esc_attr($options['title']) . '" />';
         echo '<p class="description">Page title. Default: ' . esc_attr($default_options['title']) . '</p>';
         echo '<p><b>Available shortcodes:</b> (only active in UC themes, not on the rest of the site)</p>
@@ -1290,26 +1287,26 @@ class UCP
         echo '</td></tr>';
 
         echo '<tr valign="top">
-    <th scope="row"><label for="description">' . esc_attr__('Description', 'under-construction-page') . '</label></th>
+    <th scope="row"><label for="description">' . esc_attr__('Description', 'wpdevhelper') . '</label></th>
     <td><input id="description" type="text" class="large-text" name="' . esc_attr(UCP_OPTIONS_KEY) . '[description]" value="' . esc_attr($options['description']) . '" />';
         echo '<p class="description">Description meta tag (see above for available <a href="#title">shortcodes</a>). Default: ' . esc_attr($default_options['description']) . '</p>';
         echo '</td></tr>';
 
         echo '<tr valign="top">
-    <th scope="row"><label for="heading1">' . esc_attr__('Headline', 'under-construction-page') . '</label></th>
+    <th scope="row"><label for="heading1">' . esc_attr__('Headline', 'wpdevhelper') . '</label></th>
     <td><input id="heading1" type="text" class="large-text" name="' . esc_attr(UCP_OPTIONS_KEY) . '[heading1]" value="' . esc_attr($options['heading1']) . '" />';
         echo '<p class="description">Main heading/title (see above for available <a href="#title">shortcodes</a>). Default: ' . esc_attr($default_options['heading1']) . '</p>';
         echo '</td></tr>';
 
         echo '<tr valign="top" id="content_wrap">
-    <th scope="row"><label for="content">' . esc_attr__('Content', 'under-construction-page') . '</label></th>
+    <th scope="row"><label for="content">' . esc_attr__('Content', 'wpdevhelper') . '</label></th>
     <td>';
         wp_editor($options['content'], 'content', array('tabfocus_elements' => 'insert-media-button,save-post', 'editor_height' => 250, 'resize' => 1, 'textarea_name' => esc_attr(UCP_OPTIONS_KEY) . '[content]', 'drag_drop_upload' => 1));
         echo '<p class="description">All HTML elements are allowed. Shortcodes are not parsed except <a href="#title">UC theme ones</a>. Default: ' . esc_attr($default_options['content']) . '</p>';
         echo '</td></tr>';
 
         echo '<tr valign="top">
-    <th scope="row"><label for="linkback">' . esc_attr__('Show Copyright', 'under-construction-page') . '</label></th>
+    <th scope="row"><label for="linkback">' . esc_attr__('Show Copyright', 'wpdevhelper') . '</label></th>
     <td>';
         echo '<div class="toggle-wrapper">
       <input type="checkbox" id="linkback" ' . esc_attr(self::checked(1, $options['linkback'])) . ' type="checkbox" value="1" name="' . esc_attr(UCP_OPTIONS_KEY) . '[linkback]">
@@ -1320,7 +1317,7 @@ class UCP
 
 
         echo '<tr valign="top" id="login_button_wrap">
-    <th scope="row"><label for="login_button">' . esc_attr__('Login Button', 'under-construction-page') . '</label></th>
+    <th scope="row"><label for="login_button">' . esc_attr__('Login Button', 'wpdevhelper') . '</label></th>
     <td>';
         echo '<div class="toggle-wrapper">
       <input type="checkbox" id="login_button" ' . esc_attr(self::checked(1, $options['login_button'])) . ' type="checkbox" value="1" name="' . esc_attr(UCP_OPTIONS_KEY) . '[login_button]">
@@ -1332,100 +1329,100 @@ class UCP
 
         self::footer_buttons();
 
-        echo '<h2 class="title">' . esc_attr__('Social &amp; Contact Icons', 'under-construction-page') . '</h2>';
+        echo '<h2 class="title">' . esc_attr__('Social &amp; Contact Icons', 'wpdevhelper') . '</h2>';
 
         echo '<table class="form-table" id="ucp-social-icons">';
         echo '<tr valign="top">
-    <th scope="row"><label for="social_facebook">' . esc_attr__('Facebook Page', 'under-construction-page') . '</label></th>
-    <td><input id="social_facebook" type="url" class="regular-text code" name="' . esc_attr(UCP_OPTIONS_KEY) . '[social_facebook]" value="' . esc_attr($options['social_facebook']) . '" placeholder="' . esc_attr__('Facebook business or personal page URL', 'under-construction-page') . '">';
-        echo '<p class="description">' . esc_attr__('Complete URL, with https prefix, to Facebook page.', 'under-construction-page') . '</p>';
+    <th scope="row"><label for="social_facebook">' . esc_attr__('Facebook Page', 'wpdevhelper') . '</label></th>
+    <td><input id="social_facebook" type="url" class="regular-text code" name="' . esc_attr(UCP_OPTIONS_KEY) . '[social_facebook]" value="' . esc_attr($options['social_facebook']) . '" placeholder="' . esc_attr__('Facebook business or personal page URL', 'wpdevhelper') . '">';
+        echo '<p class="description">' . esc_attr__('Complete URL, with https prefix, to Facebook page.', 'wpdevhelper') . '</p>';
         echo '</td></tr>';
 
         echo '<tr valign="top">
-    <th scope="row"><label for="social_twitter">' . esc_attr__('Twitter Profile', 'under-construction-page') . '</label></th>
-    <td><input id="social_twitter" type="url" class="regular-text code" name="' . esc_attr(UCP_OPTIONS_KEY) . '[social_twitter]" value="' . esc_attr($options['social_twitter']) . '" placeholder="' . esc_attr__('Twitter profile URL', 'under-construction-page') . '">';
-        echo '<p class="description">' . esc_attr__('Complete URL, with https prefix, to Twitter profile page.', 'under-construction-page') . '</p>';
+    <th scope="row"><label for="social_twitter">' . esc_attr__('Twitter Profile', 'wpdevhelper') . '</label></th>
+    <td><input id="social_twitter" type="url" class="regular-text code" name="' . esc_attr(UCP_OPTIONS_KEY) . '[social_twitter]" value="' . esc_attr($options['social_twitter']) . '" placeholder="' . esc_attr__('Twitter profile URL', 'wpdevhelper') . '">';
+        echo '<p class="description">' . esc_attr__('Complete URL, with https prefix, to Twitter profile page.', 'wpdevhelper') . '</p>';
         echo '</td></tr>';
 
         echo '<tr valign="top">
-    <th scope="row"><label for="social_linkedin">' . esc_attr__('LinkedIn Profile', 'under-construction-page') . '</label></th>
-    <td><input id="social_linkedin" type="url" class="regular-text code" name="' . esc_attr(UCP_OPTIONS_KEY) . '[social_linkedin]" value="' . esc_attr($options['social_linkedin']) . '" placeholder="' . esc_attr__('LinkedIn profile page URL', 'under-construction-page') . '">';
-        echo '<p class="description">' . esc_attr__('Complete URL, with https prefix, to LinkedIn profile page.', 'under-construction-page') . '</p>';
+    <th scope="row"><label for="social_linkedin">' . esc_attr__('LinkedIn Profile', 'wpdevhelper') . '</label></th>
+    <td><input id="social_linkedin" type="url" class="regular-text code" name="' . esc_attr(UCP_OPTIONS_KEY) . '[social_linkedin]" value="' . esc_attr($options['social_linkedin']) . '" placeholder="' . esc_attr__('LinkedIn profile page URL', 'wpdevhelper') . '">';
+        echo '<p class="description">' . esc_attr__('Complete URL, with https prefix, to LinkedIn profile page.', 'wpdevhelper') . '</p>';
         echo '</td></tr>';
 
         echo '<tr valign="top">
-    <th scope="row"><label for="social_youtube">' . esc_attr__('YouTube Profile Page or Video', 'under-construction-page') . '</label></th>
-    <td><input id="social_youtube" type="url" class="regular-text code" name="' . esc_attr(UCP_OPTIONS_KEY) . '[social_youtube]" value="' . esc_attr($options['social_youtube']) . '" placeholder="' . esc_attr__('YouTube page or video URL', 'under-construction-page') . '">';
-        echo '<p class="description">' . esc_attr__('Complete URL, with https prefix, to YouTube page or video.', 'under-construction-page') . '</p>';
+    <th scope="row"><label for="social_youtube">' . esc_attr__('YouTube Profile Page or Video', 'wpdevhelper') . '</label></th>
+    <td><input id="social_youtube" type="url" class="regular-text code" name="' . esc_attr(UCP_OPTIONS_KEY) . '[social_youtube]" value="' . esc_attr($options['social_youtube']) . '" placeholder="' . esc_attr__('YouTube page or video URL', 'wpdevhelper') . '">';
+        echo '<p class="description">' . esc_attr__('Complete URL, with https prefix, to YouTube page or video.', 'wpdevhelper') . '</p>';
         echo '</td></tr>';
 
         echo '<tr valign="top" class="hidden">
-    <th scope="row"><label for="social_vimeo">' . esc_attr__('Vimeo Profile Page or Video', 'under-construction-page') . '</label></th>
-    <td><input id="social_vimeo" type="url" class="regular-text code" name="' . esc_attr(UCP_OPTIONS_KEY) . '[social_vimeo]" value="' . esc_attr($options['social_vimeo']) . '" placeholder="' . esc_attr__('Vimeo page or video URL', 'under-construction-page') . '">';
-        echo '<p class="description">' . esc_attr__('Complete URL, with https prefix, to Vimeo page or video.', 'under-construction-page') . '</p>';
+    <th scope="row"><label for="social_vimeo">' . esc_attr__('Vimeo Profile Page or Video', 'wpdevhelper') . '</label></th>
+    <td><input id="social_vimeo" type="url" class="regular-text code" name="' . esc_attr(UCP_OPTIONS_KEY) . '[social_vimeo]" value="' . esc_attr($options['social_vimeo']) . '" placeholder="' . esc_attr__('Vimeo page or video URL', 'wpdevhelper') . '">';
+        echo '<p class="description">' . esc_attr__('Complete URL, with https prefix, to Vimeo page or video.', 'wpdevhelper') . '</p>';
         echo '</td></tr>';
 
         echo '<tr valign="top" class="hidden">
-    <th scope="row"><label for="social_pinterest">' . esc_attr__('Pinterest Profile', 'under-construction-page') . '</label></th>
-    <td><input id="social_pinterest" type="url" class="regular-text code" name="' . esc_attr(UCP_OPTIONS_KEY) . '[social_pinterest]" value="' . esc_attr($options['social_pinterest']) . '" placeholder="' . esc_attr__('Pinterest profile URL', 'under-construction-page') . '">';
-        echo '<p class="description">' . esc_attr__('Complete URL, with https prefix, to Pinterest profile.', 'under-construction-page') . '</p>';
+    <th scope="row"><label for="social_pinterest">' . esc_attr__('Pinterest Profile', 'wpdevhelper') . '</label></th>
+    <td><input id="social_pinterest" type="url" class="regular-text code" name="' . esc_attr(UCP_OPTIONS_KEY) . '[social_pinterest]" value="' . esc_attr($options['social_pinterest']) . '" placeholder="' . esc_attr__('Pinterest profile URL', 'wpdevhelper') . '">';
+        echo '<p class="description">' . esc_attr__('Complete URL, with https prefix, to Pinterest profile.', 'wpdevhelper') . '</p>';
         echo '</td></tr>';
 
         echo '<tr valign="top" class="hidden">
-    <th scope="row"><label for="social_dribbble">' . esc_attr__('Dribbble Profile', 'under-construction-page') . '</label></th>
-    <td><input id="social_dribbble" type="url" class="regular-text code" name="' . esc_attr(UCP_OPTIONS_KEY) . '[social_dribbble]" value="' . esc_attr($options['social_dribbble']) . '" placeholder="' . esc_attr__('Dribbble profile URL', 'under-construction-page') . '">';
-        echo '<p class="description">' . esc_attr__('Complete URL, with https prefix, to Dribbble profile.', 'under-construction-page') . '</p>';
+    <th scope="row"><label for="social_dribbble">' . esc_attr__('Dribbble Profile', 'wpdevhelper') . '</label></th>
+    <td><input id="social_dribbble" type="url" class="regular-text code" name="' . esc_attr(UCP_OPTIONS_KEY) . '[social_dribbble]" value="' . esc_attr($options['social_dribbble']) . '" placeholder="' . esc_attr__('Dribbble profile URL', 'wpdevhelper') . '">';
+        echo '<p class="description">' . esc_attr__('Complete URL, with https prefix, to Dribbble profile.', 'wpdevhelper') . '</p>';
         echo '</td></tr>';
 
         echo '<tr valign="top" class="hidden">
-    <th scope="row"><label for="social_behance">' . esc_attr__('Behance Profile', 'under-construction-page') . '</label></th>
-    <td><input id="social_behance" type="url" class="regular-text code" name="' . esc_attr(UCP_OPTIONS_KEY) . '[social_behance]" value="' . esc_attr($options['social_behance']) . '" placeholder="' . esc_attr__('Behance profile URL', 'under-construction-page') . '">';
-        echo '<p class="description">' . esc_attr__('Complete URL, with https prefix, to Behance profile.', 'under-construction-page') . '</p>';
+    <th scope="row"><label for="social_behance">' . esc_attr__('Behance Profile', 'wpdevhelper') . '</label></th>
+    <td><input id="social_behance" type="url" class="regular-text code" name="' . esc_attr(UCP_OPTIONS_KEY) . '[social_behance]" value="' . esc_attr($options['social_behance']) . '" placeholder="' . esc_attr__('Behance profile URL', 'wpdevhelper') . '">';
+        echo '<p class="description">' . esc_attr__('Complete URL, with https prefix, to Behance profile.', 'wpdevhelper') . '</p>';
         echo '</td></tr>';
 
         echo '<tr valign="top" class="hidden">
-    <th scope="row"><label for="social_instagram">' . esc_attr__('Instagram Profile', 'under-construction-page') . '</label></th>
-    <td><input id="social_instagram" type="url" class="regular-text code" name="' . esc_attr(UCP_OPTIONS_KEY) . '[social_instagram]" value="' . esc_attr($options['social_instagram']) . '" placeholder="' . esc_attr__('Instagram profile URL', 'under-construction-page') . '">';
-        echo '<p class="description">' . esc_attr__('Complete URL, with https prefix, to Instagram profile.', 'under-construction-page') . '</p>';
+    <th scope="row"><label for="social_instagram">' . esc_attr__('Instagram Profile', 'wpdevhelper') . '</label></th>
+    <td><input id="social_instagram" type="url" class="regular-text code" name="' . esc_attr(UCP_OPTIONS_KEY) . '[social_instagram]" value="' . esc_attr($options['social_instagram']) . '" placeholder="' . esc_attr__('Instagram profile URL', 'wpdevhelper') . '">';
+        echo '<p class="description">' . esc_attr__('Complete URL, with https prefix, to Instagram profile.', 'wpdevhelper') . '</p>';
         echo '</td></tr>';
 
         echo '<tr valign="top" class="hidden">
-    <th scope="row"><label for="social_vk">' . esc_attr__('VK Profile', 'under-construction-page') . '</label></th>
-    <td><input id="social_vk" type="url" class="regular-text code" name="' . esc_attr(UCP_OPTIONS_KEY) . '[social_vk]" value="' . esc_attr($options['social_vk']) . '" placeholder="' . esc_attr__('VK profile URL', 'under-construction-page') . '">';
-        echo '<p class="description">' . esc_attr__('Complete URL, with https prefix, to VK profile.', 'under-construction-page') . '</p>';
+    <th scope="row"><label for="social_vk">' . esc_attr__('VK Profile', 'wpdevhelper') . '</label></th>
+    <td><input id="social_vk" type="url" class="regular-text code" name="' . esc_attr(UCP_OPTIONS_KEY) . '[social_vk]" value="' . esc_attr($options['social_vk']) . '" placeholder="' . esc_attr__('VK profile URL', 'wpdevhelper') . '">';
+        echo '<p class="description">' . esc_attr__('Complete URL, with https prefix, to VK profile.', 'wpdevhelper') . '</p>';
         echo '</td></tr>';
 
         echo '<tr valign="top" class="hidden">
-    <th scope="row"><label for="social_telegram">' . esc_attr__('Telegram Group, Channel or Account', 'under-construction-page') . '</label></th>
-    <td><input id="social_telegram" type="text" class="regular-text code" name="' . esc_attr(UCP_OPTIONS_KEY) . '[social_telegram]" value="' . esc_attr($options['social_telegram']) . '" placeholder="' . esc_attr__('Telegram group, channel or account URL', 'under-construction-page') . '">';
-        echo '<p class="description">' . esc_attr__('Complete URL, with https prefix to Telegram group, channel or account.', 'under-construction-page') . '</p>';
+    <th scope="row"><label for="social_telegram">' . esc_attr__('Telegram Group, Channel or Account', 'wpdevhelper') . '</label></th>
+    <td><input id="social_telegram" type="text" class="regular-text code" name="' . esc_attr(UCP_OPTIONS_KEY) . '[social_telegram]" value="' . esc_attr($options['social_telegram']) . '" placeholder="' . esc_attr__('Telegram group, channel or account URL', 'wpdevhelper') . '">';
+        echo '<p class="description">' . esc_attr__('Complete URL, with https prefix to Telegram group, channel or account.', 'wpdevhelper') . '</p>';
         echo '</td></tr>';
 
         echo '<tr valign="top" class="hidden">
-    <th scope="row"><label for="social_skype">' . esc_attr__('Skype Username', 'under-construction-page') . '</label></th>
-    <td><input id="social_skype" type="text" class="regular-text code" name="' . esc_attr(UCP_OPTIONS_KEY) . '[social_skype]" value="' . esc_attr($options['social_skype']) . '" placeholder="' . esc_attr__('Skype username or account name', 'under-construction-page') . '">';
-        echo '<p class="description">' . esc_attr__('Skype username or account name.', 'under-construction-page') . '</p>';
+    <th scope="row"><label for="social_skype">' . esc_attr__('Skype Username', 'wpdevhelper') . '</label></th>
+    <td><input id="social_skype" type="text" class="regular-text code" name="' . esc_attr(UCP_OPTIONS_KEY) . '[social_skype]" value="' . esc_attr($options['social_skype']) . '" placeholder="' . esc_attr__('Skype username or account name', 'wpdevhelper') . '">';
+        echo '<p class="description">' . esc_attr__('Skype username or account name.', 'wpdevhelper') . '</p>';
         echo '</td></tr>';
 
         echo '<tr valign="top" class="hidden">
-    <th scope="row"><label for="social_whatsapp">' . esc_attr__('WhatsApp Phone Number', 'under-construction-page') . '</label></th>
-    <td><input id="social_whatsapp" type="text" class="regular-text code" name="' . esc_attr(UCP_OPTIONS_KEY) . '[social_whatsapp]" value="' . esc_attr($options['social_whatsapp']) . '" placeholder="' . esc_attr__('123-456-789', 'under-construction-page') . '">';
-        echo '<p class="description">' . esc_attr__('WhatsApp phone number in international format without + or 00 prefix.', 'under-construction-page') . '</p>';
+    <th scope="row"><label for="social_whatsapp">' . esc_attr__('WhatsApp Phone Number', 'wpdevhelper') . '</label></th>
+    <td><input id="social_whatsapp" type="text" class="regular-text code" name="' . esc_attr(UCP_OPTIONS_KEY) . '[social_whatsapp]" value="' . esc_attr($options['social_whatsapp']) . '" placeholder="' . esc_attr__('123-456-789', 'wpdevhelper') . '">';
+        echo '<p class="description">' . esc_attr__('WhatsApp phone number in international format without + or 55 prefix.', 'wpdevhelper') . '</p>';
         echo '</td></tr>';
 
         echo '<tr valign="top" class="hidden">
-    <th scope="row"><label for="social_email">' . esc_attr__('Email Address', 'under-construction-page') . '</label></th>
-    <td><input id="social_email" type="email" class="regular-text code" name="' . esc_attr(UCP_OPTIONS_KEY) . '[social_email]" value="' . esc_attr($options['social_email']) . '" placeholder="' . esc_attr__('name@domain.com', 'under-construction-page') . '">';
-        echo '<p class="description">' . esc_attr__('Email will be encoded on the page to protect it from email address harvesters.', 'under-construction-page') . '</p>';
+    <th scope="row"><label for="social_email">' . esc_attr__('Email Address', 'wpdevhelper') . '</label></th>
+    <td><input id="social_email" type="email" class="regular-text code" name="' . esc_attr(UCP_OPTIONS_KEY) . '[social_email]" value="' . esc_attr($options['social_email']) . '" placeholder="' . esc_attr__('name@domain.com', 'wpdevhelper') . '">';
+        echo '<p class="description">' . esc_attr__('Email will be encoded on the page to protect it from email address harvesters.', 'wpdevhelper') . '</p>';
         echo '</td></tr>';
 
         echo '<tr valign="top" class="hidden">
-    <th scope="row"><label for="social_phone">' . esc_attr__('Phone Number', 'under-construction-page') . '</label></th>
-    <td><input id="social_phone" type="tel" class="regular-text" name="' . esc_attr(UCP_OPTIONS_KEY) . '[social_phone]" value="' . esc_attr($options['social_phone']) . '" placeholder="' . esc_attr__('+1-123-456-789', 'under-construction-page') . '">';
-        echo '<p class="description">' . esc_attr__('Phone number in full international format.', 'under-construction-page') . '</p>';
+    <th scope="row"><label for="social_phone">' . esc_attr__('Phone Number', 'wpdevhelper') . '</label></th>
+    <td><input id="social_phone" type="tel" class="regular-text" name="' . esc_attr(UCP_OPTIONS_KEY) . '[social_phone]" value="' . esc_attr($options['social_phone']) . '" placeholder="' . esc_attr__('+1-123-456-789', 'wpdevhelper') . '">';
+        echo '<p class="description">' . esc_attr__('Phone number in full international format.', 'wpdevhelper') . '</p>';
         echo '</td></tr>';
 
-        echo '<tr><th colspan="2"><a id="show-social-icons" href="#" class="js-action">' . esc_attr__('Show more Social &amp; Contact Icons', 'under-construction-page') . '</a></th></tr>';
+        echo '<tr><th colspan="2"><a id="show-social-icons" href="#" class="js-action">' . esc_attr__('Show more Social &amp; Contact Icons', 'wpdevhelper') . '</a></th></tr>';
 
         echo '</table>';
 
@@ -1438,41 +1435,41 @@ class UCP
     static function get_themes()
     {
         $themes = array(
-            'mad_designer' => esc_attr__('Mad Designer', 'under-construction-page'),
-            'plain_text' => esc_attr__('Plain Text', 'under-construction-page'),
-            'under_construction' => esc_attr__('Under Construction', 'under-construction-page'),
-            'dark' => esc_attr__('Things Went Dark', 'under-construction-page'),
-            'forklift' => esc_attr__('Forklift at Work', 'under-construction-page'),
-            'under_construction_text' => esc_attr__('Under Construction Text', 'under-construction-page'),
-            'cyber_chick' => esc_attr__('Cyber Chick', 'under-construction-page'),
-            'rocket' => esc_attr__('Rocket Launch', 'under-construction-page'),
-            'loader' => esc_attr__('Loader at Work', 'under-construction-page'),
-            'cyber_chick_dark' => esc_attr__('Cyber Chick Dark', 'under-construction-page'),
-            'safe' => esc_attr__('Safe', 'under-construction-page'),
-            'people' => esc_attr__('People at Work', 'under-construction-page'),
-            'windmill' => esc_attr__('Windmill', 'under-construction-page'),
-            'sad_site' => esc_attr__('Sad Site', 'under-construction-page'),
-            '_pro-soothing-nature' => esc_attr__('Soothing Nature', 'under-construction-page'),
-            'lighthouse' => esc_attr__('Lighthouse', 'under-construction-page'),
-            'hot_air_baloon' => esc_attr__('Hot Air Balloon', 'under-construction-page'),
-            'people_2' => esc_attr__('People at Work #2', 'under-construction-page'),
-            'rocket_2' => esc_attr__('Rocket Launch #2', 'under-construction-page'),
-            'light_bulb' => esc_attr__('Light Bulb', 'under-construction-page'),
-            'ambulance' => esc_attr__('Ambulance', 'under-construction-page'),
-            'laptop' => esc_attr__('Laptop', 'under-construction-page'),
-            'puzzles' => esc_attr__('Puzzles', 'under-construction-page'),
-            'iot' => esc_attr__('Internet of Things', 'under-construction-page'),
-            'setup' => esc_attr__('Setup', 'under-construction-page'),
-            'stop' => esc_attr__('Stop', 'under-construction-page'),
-            'clock' => esc_attr__('Clock', 'under-construction-page'),
-            'bulldozer' => esc_attr__('Bulldozer at Work', 'under-construction-page'),
-            'christmas' => esc_attr__('Christmas Greetings', 'under-construction-page'),
-            'hard_worker' => esc_attr__('Hard Worker', 'under-construction-page'),
-            'closed' => esc_attr__('Temporarily Closed', 'under-construction-page'),
-            'dumper_truck' => esc_attr__('Dumper Truck', 'under-construction-page'),
-            '000webhost' => esc_attr__('000webhost', 'under-construction-page'),
-            'work_desk' => esc_attr__('Work Desk', 'under-construction-page'),
-            'research' => esc_attr__('Research', 'under-construction-page'),
+            'mad_designer' => esc_attr__('Mad Designer', 'wpdevhelper'),
+            'plain_text' => esc_attr__('Plain Text', 'wpdevhelper'),
+            'under_construction' => esc_attr__('Under Construction', 'wpdevhelper'),
+            'dark' => esc_attr__('Things Went Dark', 'wpdevhelper'),
+            'forklift' => esc_attr__('Forklift at Work', 'wpdevhelper'),
+            'under_construction_text' => esc_attr__('Under Construction Text', 'wpdevhelper'),
+            'cyber_chick' => esc_attr__('Cyber Chick', 'wpdevhelper'),
+            'rocket' => esc_attr__('Rocket Launch', 'wpdevhelper'),
+            'loader' => esc_attr__('Loader at Work', 'wpdevhelper'),
+            'cyber_chick_dark' => esc_attr__('Cyber Chick Dark', 'wpdevhelper'),
+            'safe' => esc_attr__('Safe', 'wpdevhelper'),
+            'people' => esc_attr__('People at Work', 'wpdevhelper'),
+            'windmill' => esc_attr__('Windmill', 'wpdevhelper'),
+            'sad_site' => esc_attr__('Sad Site', 'wpdevhelper'),
+            '_pro-soothing-nature' => esc_attr__('Soothing Nature', 'wpdevhelper'),
+            'lighthouse' => esc_attr__('Lighthouse', 'wpdevhelper'),
+            'hot_air_baloon' => esc_attr__('Hot Air Balloon', 'wpdevhelper'),
+            'people_2' => esc_attr__('People at Work #2', 'wpdevhelper'),
+            'rocket_2' => esc_attr__('Rocket Launch #2', 'wpdevhelper'),
+            'light_bulb' => esc_attr__('Light Bulb', 'wpdevhelper'),
+            'ambulance' => esc_attr__('Ambulance', 'wpdevhelper'),
+            'laptop' => esc_attr__('Laptop', 'wpdevhelper'),
+            'puzzles' => esc_attr__('Puzzles', 'wpdevhelper'),
+            'iot' => esc_attr__('Internet of Things', 'wpdevhelper'),
+            'setup' => esc_attr__('Setup', 'wpdevhelper'),
+            'stop' => esc_attr__('Stop', 'wpdevhelper'),
+            'clock' => esc_attr__('Clock', 'wpdevhelper'),
+            'bulldozer' => esc_attr__('Bulldozer at Work', 'wpdevhelper'),
+            'christmas' => esc_attr__('Christmas Greetings', 'wpdevhelper'),
+            'hard_worker' => esc_attr__('Hard Worker', 'wpdevhelper'),
+            'closed' => esc_attr__('Temporarily Closed', 'wpdevhelper'),
+            'dumper_truck' => esc_attr__('Dumper Truck', 'wpdevhelper'),
+            '000webhost' => esc_attr__('000webhost', 'wpdevhelper'),
+            'work_desk' => esc_attr__('Work Desk', 'wpdevhelper'),
+            'research' => esc_attr__('Research', 'wpdevhelper'),
         );
 
         $themes = apply_filters('ucp_themes', $themes);
@@ -1490,7 +1487,7 @@ class UCP
 
         echo '<table class="form-table">';
         echo '<tr valign="top">
-    <td colspan="2"><b style="margin-bottom: 10px; display: inline-block;">' . esc_attr__('Themes', 'under-construction-page') . '</b><br>';
+    <td colspan="2"><b style="margin-bottom: 10px; display: inline-block;">' . esc_attr__('Themes', 'wpdevhelper') . '</b><br>';
         echo '<input type="hidden" id="theme_id" name="' . esc_attr(UCP_OPTIONS_KEY) . '[theme]" value="' . esc_attr($options['theme']) . '">';
 
         foreach ($themes as $theme_id => $theme_name) {
@@ -1511,7 +1508,7 @@ class UCP
         echo '</td></tr>';
 
         echo '<tr valign="top">
-    <th scope="row"><label for="custom_css">' . esc_attr__('Custom CSS', 'under-construction-page') . '</label></th>
+    <th scope="row"><label for="custom_css">' . esc_attr__('Custom CSS', 'wpdevhelper') . '</label></th>
     <td>';
         echo '<textarea data-autoresize="1" rows="3" id="custom_css" class="code large-text" name="' . esc_attr(UCP_OPTIONS_KEY) . '[custom_css]" placeholder=".selector { property-name: property-value; }">' . esc_textarea($options['custom_css']) . '</textarea>';
         echo '<p class="description">&lt;style&gt; tags will be added automatically. Do not include them in your code.<br>
@@ -1546,20 +1543,20 @@ class UCP
         echo '<table class="form-table">';
 
         echo '<tr valign="top" id="whitelisted-roles">
-    <th scope="row">' . esc_attr__('Whitelisted User Roles', 'under-construction-page') . '</th>
+    <th scope="row">' . esc_attr__('Whitelisted User Roles', 'wpdevhelper') . '</th>
     <td>';
         foreach ($roles as $tmp_role) {
             echo  '<input name="' . esc_attr(UCP_OPTIONS_KEY) . '[whitelisted_roles][]" id="roles-' . esc_attr($tmp_role['val']) . '" ' . esc_attr(self::checked($tmp_role['val'], $options['whitelisted_roles'], false)) . ' value="' . esc_attr($tmp_role['val']) . '" type="checkbox" /> <label for="roles-' . esc_attr($tmp_role['val']) . '">' . esc_attr($tmp_role['label']) . '</label><br />';
         }
-        echo '<p class="description">' . __('Selected user roles will <b>not</b> be affected by the under construction mode and will always see the "normal" site. Default: administrator.', 'under-construction-page') . '</p>';
+        echo '<p class="description">' . __('Selected user roles will <b>not</b> be affected by the under construction mode and will always see the "normal" site. Default: administrator.', 'wpdevhelper') . '</p>';
         echo '</td></tr>';
 
         echo '<tr valign="top">
-    <th scope="row"><label for="whitelisted_users">' . esc_attr__('Whitelisted Users', 'under-construction-page') . '</label></th>
+    <th scope="row"><label for="whitelisted_users">' . esc_attr__('Whitelisted Users', 'wpdevhelper') . '</label></th>
     <td><select id="whitelisted_users" class="select2" style="width: 50%; max-width: 300px;" name="' . esc_attr(UCP_OPTIONS_KEY) . '[whitelisted_users][]" multiple>';
         self::create_select_options($users, $options['whitelisted_users'], true);
 
-        echo '</select><p class="description">' . __('Selected users (when logged in) will <b>not</b> be affected by the under construction mode and will always see the "normal" site.', 'under-construction-page') . '</p>';
+        echo '</select><p class="description">' . __('Selected users (when logged in) will <b>not</b> be affected by the under construction mode and will always see the "normal" site.', 'wpdevhelper') . '</p>';
         echo '</td></tr>';
 
         echo '</table>';
@@ -1582,10 +1579,10 @@ class UCP
         settings_fields(UCP_OPTIONS_KEY);
 
         $tabs = array();
-        $tabs[] = array('id' => 'ucp_main', 'icon' => 'dashicons-admin-settings', 'class' => '', 'label' => __('Main', 'under-construction-page'), 'callback' => array(__CLASS__, 'tab_main'));
-        $tabs[] = array('id' => 'ucp_design', 'icon' => 'dashicons-admin-customizer', 'class' => '', 'label' => esc_attr__('Design', 'under-construction-page'), 'callback' => array(__CLASS__, 'tab_design'));
-        $tabs[] = array('id' => 'ucp_content', 'icon' => 'dashicons-format-aside', 'class' => '', 'label' => esc_attr__('Content', 'under-construction-page'), 'callback' => array(__CLASS__, 'tab_content'));
-        $tabs[] = array('id' => 'ucp_access', 'icon' => 'dashicons-shield', 'class' => '', 'label' => esc_attr__('Access', 'under-construction-page'), 'callback' => array(__CLASS__, 'tab_access'));
+        $tabs[] = array('id' => 'ucp_main', 'icon' => 'dashicons-admin-settings', 'class' => '', 'label' => __('Main', 'wpdevhelper'), 'callback' => array(__CLASS__, 'tab_main'));
+        $tabs[] = array('id' => 'ucp_design', 'icon' => 'dashicons-admin-customizer', 'class' => '', 'label' => esc_attr__('Design', 'wpdevhelper'), 'callback' => array(__CLASS__, 'tab_design'));
+        $tabs[] = array('id' => 'ucp_content', 'icon' => 'dashicons-format-aside', 'class' => '', 'label' => esc_attr__('Content', 'wpdevhelper'), 'callback' => array(__CLASS__, 'tab_content'));
+        $tabs[] = array('id' => 'ucp_access', 'icon' => 'dashicons-shield', 'class' => '', 'label' => esc_attr__('Access', 'wpdevhelper'), 'callback' => array(__CLASS__, 'tab_access'));
 
         $tabs = apply_filters('ucp_tabs', $tabs);
 
@@ -1617,8 +1614,8 @@ class UCP
     static function footer_buttons()
     {
         echo '<p class="submit">';
-        self::wp_kses_wf(get_submit_button(esc_attr__('Save Changes', 'under-construction-page'), 'primary large', 'submit', false));
-        echo ' &nbsp; &nbsp; <a id="ucp_preview" href="' . esc_url(get_home_url()) . '/?ucp_preview" class="button button-large button-secondary" target="_blank">' . esc_attr__('Preview', 'under-construction-page') . '</a>';
+        self::wp_kses_wf(get_submit_button(esc_attr__('Save Changes', 'wpdevhelper'), 'primary large', 'submit', false));
+        echo ' &nbsp; &nbsp; <a id="ucp_preview" href="' . esc_url(get_home_url()) . '/?ucp_preview" class="button button-large button-secondary" target="_blank">' . esc_attr__('Preview', 'wpdevhelper') . '</a>';
         echo '</p>';
     } // footer_buttons
 
