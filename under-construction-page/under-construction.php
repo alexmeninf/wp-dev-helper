@@ -1312,7 +1312,7 @@ class UCP
       <input type="checkbox" id="linkback" ' . esc_attr(self::checked(1, $options['linkback'])) . ' type="checkbox" value="1" name="' . esc_attr(UCP_OPTIONS_KEY) . '[linkback]">
       <label for="linkback" class="toggle"><span class="toggle_handler"></span></label>
     </div>';
-        echo '<p class="description">Show copyright in page footer.</p>';
+        echo '<p class="description">'.__('Show copyright in page footer.', 'wpdevhelper').'</p>';
         echo '</td></tr>';
 
 
@@ -1323,7 +1323,7 @@ class UCP
       <input type="checkbox" id="login_button" ' . esc_attr(self::checked(1, $options['login_button'])) . ' type="checkbox" value="1" name="' . esc_attr(UCP_OPTIONS_KEY) . '[login_button]">
       <label for="login_button" class="toggle"><span class="toggle_handler"></span></label>
     </div>';
-        echo '<p class="description">Show a discrete link to the login form, or WP admin if you\'re logged in, in the lower right corner of the page.</p>';
+        echo '<p class="description">'.__('Show a discrete link to the login form, or WP admin if you\'re logged in, in the lower right corner of the page.', 'wpdevhelper').'</p>';
         echo '</td></tr>';
         echo '</table>';
 
@@ -1418,7 +1418,7 @@ class UCP
 
         echo '<tr valign="top" class="hidden">
     <th scope="row"><label for="social_phone">' . esc_attr__('Phone Number', 'wpdevhelper') . '</label></th>
-    <td><input id="social_phone" type="tel" class="regular-text" name="' . esc_attr(UCP_OPTIONS_KEY) . '[social_phone]" value="' . esc_attr($options['social_phone']) . '" placeholder="' . esc_attr__('+1-123-456-789', 'wpdevhelper') . '">';
+    <td><input id="social_phone" type="tel" class="regular-text" name="' . esc_attr(UCP_OPTIONS_KEY) . '[social_phone]" value="' . esc_attr($options['social_phone']) . '" placeholder="' . esc_attr__('+55999999999', 'wpdevhelper') . '">';
         echo '<p class="description">' . esc_attr__('Phone number in full international format.', 'wpdevhelper') . '</p>';
         echo '</td></tr>';
 
@@ -1499,9 +1499,9 @@ class UCP
             echo '<div class="ucp-thumb' . esc_attr($class) . '" data-theme-id="' . esc_attr($theme_id) . '"><img src="' . esc_attr($img_path . $theme_id) . '.png" alt="' . esc_attr($theme_name) . '" title="' . esc_attr($theme_name) . '"><span>' . esc_attr($theme_name) . '</span>';
             echo '<div class="buttons">';
             if ($theme_id !== $options['theme']) {
-                echo '<a href="#" class="button button-primary activate-theme">Activate</a> ';
+                echo '<a href="#" class="button button-primary activate-theme">'.__('Activate', 'wpdevhelper').'</a> ';
             }
-            echo '<a href="' . esc_url(get_home_url()) . '/?ucp_preview&theme=' . esc_attr($theme_id) . '" class="button-secondary" target="_blank">Preview</a></div>';
+            echo '<a href="' . esc_url(get_home_url()) . '/?ucp_preview&theme=' . esc_attr($theme_id) . '" class="button-secondary" target="_blank">'.__('Preview', 'wpdevhelper').'</a></div>';
             echo '</div>';        
         } // foreach
 
