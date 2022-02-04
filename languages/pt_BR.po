@@ -1,10 +1,10 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WP Dev Helper 0.1\n"
-"POT-Creation-Date: 2022-02-03 15:48-0300\n"
-"PO-Revision-Date: 2022-02-03 15:49-0300\n"
+"Project-Id-Version: WP Dev Helper 1.7\n"
+"POT-Creation-Date: 2022-02-04 09:27-0300\n"
+"PO-Revision-Date: 2022-02-04 09:31-0300\n"
 "Last-Translator: \n"
-"Language-Team: Matt Developer <talk@mattdeveloper.com>\n"
+"Language-Team: Alexandre Menin <menin.alex11@gmail.com>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,24 +17,25 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: advanced-custom-fields-pro\n"
 "X-Poedit-SearchPathExcluded-1: acf-code\n"
+"X-Poedit-SearchPathExcluded-2: assets\n"
 
 #: acf-code-field/acf-code-field-v4.php:31
 msgid "ACF Code Field"
-msgstr ""
+msgstr "ACF - Campo de código"
 
 #: acf-code-field/acf-code-field-v4.php:32
 msgid "Code Tools"
-msgstr ""
+msgstr "Ferramentas de código"
 
 #: acf-code-field/acf-code-field-v4.php:77
 #: acf-code-field/acf-code-field-v5.php:96
 msgid "Default Value"
-msgstr ""
+msgstr "Valor padrão"
 
 #: acf-code-field/acf-code-field-v4.php:79
 #: acf-code-field/acf-code-field-v5.php:97
 msgid "Appears when creating a new post"
-msgstr ""
+msgstr "Aparece ao criar uma nova postagem"
 
 #: acf-code-field/acf-code-field-v4.php:93
 #: acf-code-field/acf-code-field-v5.php:105
@@ -44,17 +45,17 @@ msgstr ""
 #: acf-code-field/acf-code-field-v4.php:95
 #: acf-code-field/acf-code-field-v5.php:106
 msgid "Appears within the input"
-msgstr ""
+msgstr "Aparece dentro da entrada"
 
 #: acf-code-field/acf-code-field-v4.php:109
 #: acf-code-field/acf-code-field-v5.php:112
 msgid "Editor mode"
-msgstr "Editar modo"
+msgstr "Modo de edição"
 
 #: acf-code-field/acf-code-field-v4.php:118
 #: acf-code-field/acf-code-field-v5.php:117
 msgid "HTML Mixed"
-msgstr ""
+msgstr "HTML Misto"
 
 #: acf-code-field/acf-code-field-v4.php:119
 #: acf-code-field/acf-code-field-v5.php:118
@@ -77,30 +78,28 @@ msgid "PHP"
 msgstr ""
 
 #: acf-code-field/acf-code-field-v4.php:132
-#, fuzzy
-#| msgid "Theme Color"
 msgid "Theme"
-msgstr "Cor do tema"
+msgstr "Tema"
 
 #: acf-code-field/acf-code-field-v5.php:40
 msgid "Code area field"
-msgstr ""
+msgstr "Campo de área de código"
 
 #: acf-code-field/acf-code-field-v5.php:61
 msgid "Error! Please enter a higher value"
-msgstr ""
+msgstr "Erro! Insira um valor maior"
 
 #: acf-code-field/acf-code-field-v5.php:128
-#, fuzzy
-#| msgid "Edit Item"
 msgid "Editor theme"
-msgstr "Editar Item"
+msgstr "Editar tema"
 
 #: acf-code-field/acf-code-field-v5.php:129
 msgid ""
 "Themes can be previewed on the <a href=\"https://codemirror.net/demo/theme."
 "html#default\" target=\"_blank\">codemirror website</a>"
 msgstr ""
+"Os temas podem ser visualizados no <a href=\"https://codemirror.net/demo/"
+"theme.html#default\" target=\"_blank\">site do codemirror</a>"
 
 #: acf-code-field/acf-code-field.php:48
 #, php-format
@@ -108,6 +107,8 @@ msgid ""
 "Uh-oh. ACF not installed. Please install the <a href=\"%s\" class=\"thickbox"
 "\">Advanced Custom Fields plugin.</a>"
 msgstr ""
+"Uh-oh. ACF não instalado. Instale o <a href=\"%s\" class=\"thickbox\">plug-"
+"in Advanced Custom Fields.</a>"
 
 #: acf-options.php:7
 msgid "Custom Post Type"
@@ -119,7 +120,7 @@ msgstr "Geral"
 
 #: acf-options.php:32 acf-options.php:35
 msgid "Text Domain"
-msgstr "Text Domain"
+msgstr "Domínio de texto"
 
 #: acf-options.php:35
 msgid "Translation file"
@@ -130,7 +131,7 @@ msgid "Optional"
 msgstr "Opcional"
 
 #: acf-options.php:48 acf-options.php:101 acf-options.php:220
-#: wp-dev-helper.php:87
+#: wp-dev-helper.php:68
 msgid "Post Type"
 msgstr "Post Type"
 
@@ -158,8 +159,8 @@ msgstr "Nome (Singular)"
 msgid "Post type singular name. e.g. Product, Event or Movie."
 msgstr "Post type com nome no singular. Por exemplo: Produto, Evento ou Filme."
 
-#: acf-options.php:120 acf-options.php:201 wp-dev-helper.php:86
-#: wp-dev-helper.php:113
+#: acf-options.php:120 acf-options.php:201 wp-dev-helper.php:67
+#: wp-dev-helper.php:94
 msgid "Post Types"
 msgstr "Post Types"
 
@@ -212,7 +213,7 @@ msgstr "Nome do Menu"
 msgid "Admin Bar Name"
 msgstr "Nome da barra do Administrador"
 
-#: acf-options.php:239 wp-dev-helper.php:88 wp-dev-helper.php:146
+#: acf-options.php:239 wp-dev-helper.php:69 wp-dev-helper.php:127
 msgid "Item Archives"
 msgstr "Arquivos de itens"
 
@@ -220,7 +221,7 @@ msgstr "Arquivos de itens"
 msgid "Archives"
 msgstr "Arquivos"
 
-#: acf-options.php:258 wp-dev-helper.php:89 wp-dev-helper.php:147
+#: acf-options.php:258 wp-dev-helper.php:70 wp-dev-helper.php:128
 msgid "Item Attributes"
 msgstr "Atributos do Item"
 
@@ -228,7 +229,7 @@ msgstr "Atributos do Item"
 msgid "Attributes"
 msgstr "Atributos"
 
-#: acf-options.php:277 wp-dev-helper.php:90 wp-dev-helper.php:148
+#: acf-options.php:277 wp-dev-helper.php:71 wp-dev-helper.php:129
 msgid "Parent Item:"
 msgstr "Item Pai:"
 
@@ -237,52 +238,52 @@ msgid "Parent Item"
 msgstr "Item Pai"
 
 #: acf-options.php:296 acf-options.php:297 acf-options.php:301
-#: wp-dev-helper.php:91 wp-dev-helper.php:149
+#: wp-dev-helper.php:72 wp-dev-helper.php:130
 msgid "All Items"
 msgstr "Todos os Itens"
 
 #: acf-options.php:316 acf-options.php:317 acf-options.php:321
-#: wp-dev-helper.php:92 wp-dev-helper.php:150
+#: wp-dev-helper.php:73 wp-dev-helper.php:131
 msgid "Add New Item"
 msgstr "Adicionar Novo Post Type"
 
 #: acf-options.php:336 acf-options.php:337 acf-options.php:341
-#: wp-dev-helper.php:93 wp-dev-helper.php:151
+#: wp-dev-helper.php:74 wp-dev-helper.php:132
 msgid "Add New"
 msgstr "Adicionar Novo"
 
 #: acf-options.php:356 acf-options.php:357 acf-options.php:361
-#: wp-dev-helper.php:94 wp-dev-helper.php:152
+#: wp-dev-helper.php:75 wp-dev-helper.php:133
 msgid "New Item"
 msgstr "Novo Item"
 
 #: acf-options.php:376 acf-options.php:377 acf-options.php:381
-#: wp-dev-helper.php:95 wp-dev-helper.php:153
+#: wp-dev-helper.php:76 wp-dev-helper.php:134
 msgid "Edit Item"
 msgstr "Editar Item"
 
 #: acf-options.php:396 acf-options.php:397 acf-options.php:401
-#: wp-dev-helper.php:96 wp-dev-helper.php:154
+#: wp-dev-helper.php:77 wp-dev-helper.php:135
 msgid "Update Item"
 msgstr "Atualizar Item"
 
 #: acf-options.php:416 acf-options.php:417 acf-options.php:421
-#: wp-dev-helper.php:97 wp-dev-helper.php:155
+#: wp-dev-helper.php:78 wp-dev-helper.php:136
 msgid "View Item"
 msgstr "Ver Item"
 
 #: acf-options.php:436 acf-options.php:437 acf-options.php:441
-#: wp-dev-helper.php:98 wp-dev-helper.php:156
+#: wp-dev-helper.php:79 wp-dev-helper.php:137
 msgid "View Items"
 msgstr "Ver Itens"
 
 #: acf-options.php:456 acf-options.php:457 acf-options.php:461
-#: wp-dev-helper.php:99 wp-dev-helper.php:157
+#: wp-dev-helper.php:80 wp-dev-helper.php:138
 msgid "Search Item"
 msgstr "Pesquisar Item"
 
-#: acf-options.php:476 acf-options.php:477 wp-dev-helper.php:100
-#: wp-dev-helper.php:158
+#: acf-options.php:476 acf-options.php:477 wp-dev-helper.php:81
+#: wp-dev-helper.php:139
 msgid "Not found"
 msgstr "Nada encontrado"
 
@@ -290,8 +291,8 @@ msgstr "Nada encontrado"
 msgid "Not Found"
 msgstr "Nada Encontrado"
 
-#: acf-options.php:496 acf-options.php:497 wp-dev-helper.php:101
-#: wp-dev-helper.php:159
+#: acf-options.php:496 acf-options.php:497 wp-dev-helper.php:82
+#: wp-dev-helper.php:140
 msgid "Not found in Trash"
 msgstr "Nada encontrado na Lixeira"
 
@@ -300,47 +301,47 @@ msgid "Not Found in Trash"
 msgstr "Nada Encontrado na Lixeira"
 
 #: acf-options.php:516 acf-options.php:520 acf-options.php:707
-#: wp-dev-helper.php:102 wp-dev-helper.php:160
+#: wp-dev-helper.php:83 wp-dev-helper.php:141
 msgid "Featured Image"
 msgstr "Imagem Destaque"
 
-#: acf-options.php:535 acf-options.php:539 wp-dev-helper.php:103
-#: wp-dev-helper.php:161
+#: acf-options.php:535 acf-options.php:539 wp-dev-helper.php:84
+#: wp-dev-helper.php:142
 msgid "Set featured image"
 msgstr "Definir imagem em destaque"
 
-#: acf-options.php:554 acf-options.php:558 wp-dev-helper.php:104
-#: wp-dev-helper.php:162
+#: acf-options.php:554 acf-options.php:558 wp-dev-helper.php:85
+#: wp-dev-helper.php:143
 msgid "Remove featured image"
 msgstr "Remover imagem em destaque"
 
-#: acf-options.php:573 acf-options.php:577 wp-dev-helper.php:105
-#: wp-dev-helper.php:163
+#: acf-options.php:573 acf-options.php:577 wp-dev-helper.php:86
+#: wp-dev-helper.php:144
 msgid "Use as featured image"
 msgstr "Usar como imagem em destaque"
 
-#: acf-options.php:592 acf-options.php:596 wp-dev-helper.php:106
-#: wp-dev-helper.php:164
+#: acf-options.php:592 acf-options.php:596 wp-dev-helper.php:87
+#: wp-dev-helper.php:145
 msgid "Insert into item"
 msgstr "Inserir no item"
 
-#: acf-options.php:611 acf-options.php:615 wp-dev-helper.php:107
-#: wp-dev-helper.php:165
+#: acf-options.php:611 acf-options.php:615 wp-dev-helper.php:88
+#: wp-dev-helper.php:146
 msgid "Uploaded to this item"
 msgstr "Enviado para este item"
 
-#: acf-options.php:630 acf-options.php:634 wp-dev-helper.php:108
-#: wp-dev-helper.php:166
+#: acf-options.php:630 acf-options.php:634 wp-dev-helper.php:89
+#: wp-dev-helper.php:147
 msgid "Items list"
 msgstr "Lista de Itens"
 
-#: acf-options.php:649 acf-options.php:653 wp-dev-helper.php:109
-#: wp-dev-helper.php:167
+#: acf-options.php:649 acf-options.php:653 wp-dev-helper.php:90
+#: wp-dev-helper.php:148
 msgid "Items list navigation"
 msgstr "Navegação da lista de itens"
 
-#: acf-options.php:668 acf-options.php:672 wp-dev-helper.php:110
-#: wp-dev-helper.php:168
+#: acf-options.php:668 acf-options.php:672 wp-dev-helper.php:91
+#: wp-dev-helper.php:149
 msgid "Filter items list"
 msgstr "Filtar itens da lista"
 
@@ -865,45 +866,35 @@ msgstr ""
 "<b> Nota: </b> Máximo de 150 caracteres."
 
 #: acf-options.php:1872
-msgid "OG image"
-msgstr ""
+msgid "Open Graph image"
+msgstr "Open Graph imagem"
 
 #: acf-options.php:1875
-#, fuzzy
-#| msgid ""
-#| "Send an image with 152px width per 152px height. Send an image with the "
-#| "extension PNG."
 msgid ""
-"Send an image with 1200px wide per 627px height. <br>Mantenha uma imagem "
-"padrão nos links, e exiba em uma postagem de mídia social."
+"Send an image with 1200px wide per 630px height. <br> Keep a default image "
+"in the links, and display a social media post."
 msgstr ""
-"Envie uma imagem com 152px de largura por 152px de altura. Envie uma imagem "
-"com a extensão PNG."
+"Envie uma imagem com 1200px de largura por 630px de altura. <br> Mantenha "
+"uma imagem padrão nos links e exiba uma postagem de mídia social."
 
 #: acf-options.php:1896
 msgid "Favicon"
 msgstr "Favicon"
 
 #: acf-options.php:1899
-#, fuzzy
-#| msgid "Send an image with 100px wide per 100px height."
 msgid "Send an image with 32px wide per 32px height."
-msgstr "Envie uma imagem de 100px de largura por 100px de altura."
+msgstr "Envie uma imagem com 32px de largura por 32px de altura."
 
 #: acf-options.php:1920
 msgid "Apple-touch-icon 57x57 pixels"
 msgstr ""
 
 #: acf-options.php:1923
-#, fuzzy
-#| msgid ""
-#| "Send an image with 152px width per 152px height. Send an image with the "
-#| "extension PNG."
 msgid ""
 "Send an image with 57px width per 57px height. Send an image with the "
 "extension PNG."
 msgstr ""
-"Envie uma imagem com 152px de largura por 152px de altura. Envie uma imagem "
+"Envie uma imagem com 57px de largura por 57px de altura. Envie uma imagem "
 "com a extensão PNG."
 
 #: acf-options.php:1944
@@ -911,15 +902,11 @@ msgid "Apple-touch-icon 60x60 pixels"
 msgstr ""
 
 #: acf-options.php:1947
-#, fuzzy
-#| msgid ""
-#| "Send an image with 180px width per 180px height. Send an image with the "
-#| "extension PNG."
 msgid ""
 "Send an image with 60px width per 60px height. Send an image with the "
 "extension PNG."
 msgstr ""
-"Envie uma imagem com 180px de largura por 180px de altura. Envie uma imagem "
+"Envie uma imagem com 60px de largura por 60px de altura. Envie uma imagem "
 "com a extensão PNG."
 
 #: acf-options.php:1968
@@ -927,15 +914,11 @@ msgid "Apple-touch-icon 72x72 pixels"
 msgstr ""
 
 #: acf-options.php:1971
-#, fuzzy
-#| msgid ""
-#| "Send an image with 152px width per 152px height. Send an image with the "
-#| "extension PNG."
 msgid ""
 "Send an image with 72px width per 72px height. Send an image with the "
 "extension PNG."
 msgstr ""
-"Envie uma imagem com 152px de largura por 152px de altura. Envie uma imagem "
+"Envie uma imagem com 72px de largura por 72px de altura. Envie uma imagem "
 "com a extensão PNG."
 
 #: acf-options.php:1992
@@ -943,15 +926,11 @@ msgid "Apple-touch-icon 76x76 pixels"
 msgstr ""
 
 #: acf-options.php:1995
-#, fuzzy
-#| msgid ""
-#| "Send an image with 180px width per 180px height. Send an image with the "
-#| "extension PNG."
 msgid ""
 "Send an image with 76px width per 76px height. Send an image with the "
 "extension PNG."
 msgstr ""
-"Envie uma imagem com 180px de largura por 180px de altura. Envie uma imagem "
+"Envie uma imagem com 76px de largura por 76px de altura. Envie uma imagem "
 "com a extensão PNG."
 
 #: acf-options.php:2016
@@ -959,15 +938,11 @@ msgid "Apple-touch-icon 114x114 pixels"
 msgstr ""
 
 #: acf-options.php:2019
-#, fuzzy
-#| msgid ""
-#| "Send an image with 180px width per 180px height. Send an image with the "
-#| "extension PNG."
 msgid ""
 "Send an image with 114px width per 114px height. Send an image with the "
 "extension PNG."
 msgstr ""
-"Envie uma imagem com 180px de largura por 180px de altura. Envie uma imagem "
+"Envie uma imagem com 114px de largura por 114px de altura. Envie uma imagem "
 "com a extensão PNG."
 
 #: acf-options.php:2040
@@ -975,15 +950,11 @@ msgid "Apple-touch-icon 120x120 pixels"
 msgstr ""
 
 #: acf-options.php:2043
-#, fuzzy
-#| msgid ""
-#| "Send an image with 180px width per 180px height. Send an image with the "
-#| "extension PNG."
 msgid ""
 "Send an image with 120px width per 120px height. Send an image with the "
 "extension PNG."
 msgstr ""
-"Envie uma imagem com 180px de largura por 180px de altura. Envie uma imagem "
+"Envie uma imagem com 120px de largura por 120px de altura. Envie uma imagem "
 "com a extensão PNG."
 
 #: acf-options.php:2064
@@ -991,15 +962,11 @@ msgid "Apple-touch-icon 144x144 pixels"
 msgstr ""
 
 #: acf-options.php:2067
-#, fuzzy
-#| msgid ""
-#| "Send an image with 180px width per 180px height. Send an image with the "
-#| "extension PNG."
 msgid ""
 "Send an image with 144px width per 144px height. Send an image with the "
 "extension PNG."
 msgstr ""
-"Envie uma imagem com 180px de largura por 180px de altura. Envie uma imagem "
+"Envie uma imagem com 144px de largura por 144px de altura. Envie uma imagem "
 "com a extensão PNG."
 
 #: acf-options.php:2088
@@ -1031,15 +998,11 @@ msgid "Head icon 192x192 pixels"
 msgstr ""
 
 #: acf-options.php:2139
-#, fuzzy
-#| msgid ""
-#| "Send an image with 152px width per 152px height. Send an image with the "
-#| "extension PNG."
 msgid ""
 "Send an image with 192px width per 192px height. Send an image with the "
 "extension PNG."
 msgstr ""
-"Envie uma imagem com 152px de largura por 152px de altura. Envie uma imagem "
+"Envie uma imagem com 192px de largura por 192px de altura. Envie uma imagem "
 "com a extensão PNG."
 
 #: acf-options.php:2160
@@ -1047,15 +1010,11 @@ msgid "Head icon 96x96 pixels"
 msgstr ""
 
 #: acf-options.php:2163
-#, fuzzy
-#| msgid ""
-#| "Send an image with 180px width per 180px height. Send an image with the "
-#| "extension PNG."
 msgid ""
 "Send an image with 96px width per 96px height. Send an image with the "
 "extension PNG."
 msgstr ""
-"Envie uma imagem com 180px de largura por 180px de altura. Envie uma imagem "
+"Envie uma imagem com 96px de largura por 96px de altura. Envie uma imagem "
 "com a extensão PNG."
 
 #: acf-options.php:2184
@@ -1063,15 +1022,11 @@ msgid "Head icon 16x16 pixels"
 msgstr ""
 
 #: acf-options.php:2187
-#, fuzzy
-#| msgid ""
-#| "Send an image with 180px width per 180px height. Send an image with the "
-#| "extension PNG."
 msgid ""
 "Send an image with 16px width per 16px height. Send an image with the "
 "extension PNG."
 msgstr ""
-"Envie uma imagem com 180px de largura por 180px de altura. Envie uma imagem "
+"Envie uma imagem com 16px de largura por 16px de altura. Envie uma imagem "
 "com a extensão PNG."
 
 #: acf-options.php:2200
@@ -1118,13 +1073,29 @@ msgstr "Remova as tags criadas pela função <b>wp_head()</b>."
 msgid "Custom CSS"
 msgstr "CSS Personalizado"
 
-#: acf-options.php:2365
+#: acf-options.php:2353
+msgid "Add your css to the head. The &#60;style&#62 tags will be ignored."
+msgstr "Adicione seu css à cabeça. As tags &#60;estilo&#62 serão ignoradas."
+
+#: acf-options.php:2366
 msgid "Custom JS Head"
 msgstr "JS Personalizado no Head"
 
-#: acf-options.php:2382
+#: acf-options.php:2371
+msgid ""
+"Add your javascript to the Head. The &#60;script&#62 tags will be ignored."
+msgstr ""
+"Adicione seu javascript ao Head. As tags &#60;script&#62 serão ignoradas."
+
+#: acf-options.php:2384
 msgid "Custom JS Footer"
 msgstr "JS Personalizado no Footer"
+
+#: acf-options.php:2389
+msgid ""
+"Add your javascript to the Footer The &#60;script&#62 tags will be ignored."
+msgstr ""
+"Adicione seu javascript ao Footer. As tags &#60;script&#62 serão ignoradas."
 
 #: class.developers.php:17
 msgid "Developers"
@@ -1142,62 +1113,60 @@ msgstr "Duplicar este item"
 msgid "Duplicate"
 msgstr "Duplicar"
 
-#: under-construction-page/under-construction.php:919
-msgid "Go <b>PRO</b>"
-msgstr ""
-
-#: under-construction-page/under-construction.php:932
-msgid "Get the <b>PRO</b> version"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1261
+#: under-construction-page/under-construction.php:1226
 msgid ""
 "By enabling construction mode users will not be able to access the site's "
 "content. They will only see the under construction page. To configure "
 "exceptions set <a class=\"change_tab\" data-tab=\"3\" href=\"#whitelisted-"
 "roles\">whitelisted user roles</a>."
 msgstr ""
+"Ao habilitar o modo construção, os usuários não poderão acessar o conteúdo "
+"do site. Eles verão apenas a página em construção. Para configurar exceções, "
+"defina <a class=\"change_tab\" data-tab=\"3\" href=\"#whitelisted-roles"
+"\">funções de usuário na lista de permissões</a>."
 
-#: under-construction-page/under-construction.php:1589
+#: under-construction-page/under-construction.php:1554
 msgid ""
 "Selected user roles will <b>not</b> be affected by the under construction "
 "mode and will always see the \"normal\" site. Default: administrator."
 msgstr ""
+"As funções de usuário selecionadas <b>não</b> serão afetadas pelo modo em "
+"construção e sempre verão o site \"normal\". Padrão: administrador."
 
-#: under-construction-page/under-construction.php:1597
+#: under-construction-page/under-construction.php:1562
 msgid ""
 "Selected users (when logged in) will <b>not</b> be affected by the under "
 "construction mode and will always see the \"normal\" site."
 msgstr ""
+"Os usuários selecionados (quando logados) <b>não</b> serão afetados pelo "
+"modo em construção e sempre verão o site \"normal\"."
 
-#: under-construction-page/under-construction.php:1620
+#: under-construction-page/under-construction.php:1585
 msgid "Main"
-msgstr ""
+msgstr "Principal"
 
-#: wp-dev-helper.php:114
+#: wp-dev-helper.php:95
 msgid "Create New Post Type"
 msgstr "Criar Novo Post Type"
 
-#: wp-dev-helper.php:144 wp-dev-helper.php:145 wp-dev-helper.php:171
+#: wp-dev-helper.php:125 wp-dev-helper.php:126 wp-dev-helper.php:152
 msgid "Dashboard Widgets"
 msgstr "Painel Widgets"
 
-#: wp-dev-helper.php:172
+#: wp-dev-helper.php:153
 msgid "Create New Dashboard Widget"
 msgstr "Criar novo widget do painel"
 
-#: wp-updates-plugin.php:91
-msgid ""
-"An Unexpected HTTP Error occurred during the API request.</p> <p><a href=\"?"
-"\" onclick=\"document.location.reload(); return false;\">Try again</a>"
-msgstr ""
-"Ocorreu um erro HTTP inesperado durante a solicitação da API. </p> <p> <a "
-"href=\"?\" onclick=\"document.location.reload (); return false;\"> Tente "
-"novamente </a>"
+#~ msgid ""
+#~ "An Unexpected HTTP Error occurred during the API request.</p> <p><a href="
+#~ "\"?\" onclick=\"document.location.reload(); return false;\">Try again</a>"
+#~ msgstr ""
+#~ "Ocorreu um erro HTTP inesperado durante a solicitação da API. </p> <p> <a "
+#~ "href=\"?\" onclick=\"document.location.reload (); return false;\"> Tente "
+#~ "novamente </a>"
 
-#: wp-updates-plugin.php:95
-msgid "An unknown error occurred"
-msgstr "Ocorreu um erro desconhecido"
+#~ msgid "An unknown error occurred"
+#~ msgstr "Ocorreu um erro desconhecido"
 
 #~ msgid "Rest API"
 #~ msgstr "Rest API"

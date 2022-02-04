@@ -1869,10 +1869,10 @@ function my_acf_add_local_field_groups() {
         'max_size' => '',
         'mime_types' => '',
         'key' => 'field_4594n368095bfc',
-        'label' => __('OG image', 'wpdevhelper'),
+        'label' => __('Open Graph image', 'wpdevhelper'),
         'name' => 'head-opengraph-image',
         'type' => 'image',
-        'instructions' => __('Send an image with 1200px wide per 627px height. <br>Mantenha uma imagem padrão nos links, e exiba em uma postagem de mídia social.', 'wpdevhelper'),
+        'instructions' => __('Send an image with 1200px wide per 630px height. <br> Keep a default image in the links, and display a social media post.', 'wpdevhelper'),
         'required' => 0,
         'conditional_logic' => 0,
         'wrapper' => array(
@@ -2350,7 +2350,7 @@ function my_acf_add_local_field_groups() {
         'type' => 'acf_code_field',
         'mode' => 'css',
         'placeholder' => '',
-        'instructions' => '',
+        'instructions' => __('Add your css to the head. The &#60;style&#62 tags will be ignored.', 'wpdevhelper'),
         'required' => 0,
         'conditional_logic' => 0,
         'wrapper' => array(
@@ -2368,7 +2368,7 @@ function my_acf_add_local_field_groups() {
         'type' => 'acf_code_field',
         'mode' => 'javascript',
         'placeholder' => '',
-        'instructions' => '',
+        'instructions' => __('Add your javascript to the Head. The &#60;script&#62 tags will be ignored.', 'wpdevhelper'),
         'required' => 0,
         'conditional_logic' => 0,
         'wrapper' => array(
@@ -2386,7 +2386,7 @@ function my_acf_add_local_field_groups() {
         'type' => 'acf_code_field',
         'mode' => 'javascript',
         'placeholder' => '',
-        'instructions' => '',
+        'instructions' => __('Add your javascript to the Footer The &#60;script&#62 tags will be ignored.', 'wpdevhelper'),
         'required' => 0,
         'conditional_logic' => 0,
         'wrapper' => array(

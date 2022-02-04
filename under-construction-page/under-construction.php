@@ -76,13 +76,7 @@ class UCP
 
             // settings registration
             add_action('admin_init', array(__CLASS__, 'register_settings'));
-
-            // aditional links in plugin description
-            add_filter(
-                'plugin_action_links_' . plugin_basename(__FILE__),
-                array(__CLASS__, 'plugin_action_links')
-            );
-            add_filter('plugin_row_meta', array(__CLASS__, 'plugin_meta_links'), 10, 2);
+        
             add_filter('admin_footer_text', array(__CLASS__, 'admin_footer_text'));
             add_filter('admin_footer', array(__CLASS__, 'admin_footer'));
 
@@ -911,36 +905,7 @@ class UCP
         return $message;
     } // login_notice
 
-
-    // add settings link to plugins page
-    static function plugin_action_links($links)
-    {
-        $settings_link = '<a href="' . admin_url('options-general.php?page=ucp') . '" title="' . esc_attr__('UnderConstruction Settings', 'under-construction-page') . '">' . esc_attr__('Settings', 'under-construction-page') . '</a>';
-        $pro_link = '<a target="_blank" href="' . self::generate_web_link('plugins-table-left') . '" title="' . esc_attr__('Get PRO', 'under-construction-page') . '">' . __('Go <b>PRO</b>', 'under-construction-page') . '</a>';
-
-        array_unshift($links, $pro_link);
-        array_unshift($links, $settings_link);
-
-        return $links;
-    } // plugin_action_links
-
-
-    // add links to plugin's description in plugins table
-    static function plugin_meta_links($links, $file)
-    {
-        $support_link = '<a target="_blank" href="https://wordpress.org/support/plugin/under-construction-page" title="' . esc_attr__('Get help', 'under-construction-page') . '">' . esc_attr__('Support', 'under-construction-page') . '</a>';
-        $pro_link = '<a target="_blank" href="' . self::generate_web_link('plugins-table-right') . '" title="' . esc_attr__('Get PRO', 'under-construction-page') . '">' . __('Get the <b>PRO</b> version', 'under-construction-page') . '</a>';
-
-
-        if ($file == plugin_basename(__FILE__)) {
-            $links[] = $support_link;
-            $links[] = $pro_link;
-        }
-
-        return $links;
-    } // plugin_meta_links
-
-
+    
     // additional powered by text in admin footer; only on UCP page
     static function admin_footer_text($text)
     {
