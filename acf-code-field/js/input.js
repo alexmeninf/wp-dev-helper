@@ -27,13 +27,13 @@
     }
 
     if ( typeof acf.add_action !== 'undefined' ) {
-        acf.add_action('ready_field/type=acf_code_field', initialize_code_field);
-        acf.add_action('append_field/type=acf_code_field', initialize_code_field);
+        acf.add_action('ready_field/type=code', initialize_code_field);
+        acf.add_action('append_field/type=code', initialize_code_field);
     } else {
         $( document ).on( 'acf/setup_fields', function( e, postbox ) {
 
             // find all relevant fields
-            $( postbox ).find( '.field[data-field_type="acf_code_field"]' ).each( function() {
+            $( postbox ).find( '.field[data-field_type="code"]' ).each( function() {
 
                 // initialize
                 initialize_code_field( $( this ) );
