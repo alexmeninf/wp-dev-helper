@@ -3,7 +3,7 @@
  * Plugin Name: WP Dev Helper
  * Plugin URI: https://github.com/alexmeninf/wp-dev-helper
  * Description: An awesome plugin that help WordPress developers to develop their themes faster than ever.
- * Version: 1.7.0
+ * Version: 1.7.1
  * License: GPL
  * Author: Alexandre Menin
  * Author URI: https://github.com/alexmeninf
@@ -20,9 +20,9 @@ require_once(ABSPATH . "wp-includes/pluggable.php");
 /*============================
 =            INFO            =
 ============================*/
-define('WPDEVHELPER_VERSION', '1.7.0');
+define('WPDEVHELPER_VERSION', '1.7.1');
 define('WPDEVHELPER_REPOSITORY', 'https://github.com/alexmeninf/wp-dev-helper');
-define('WPDEVHELPER__MINIMUM_WP_VERSION', '5.5');
+define('WPDEVHELPER__MINIMUM_WP_VERSION', '5.8');
 
 
 /*==============================================
@@ -192,7 +192,9 @@ $wpdh->developersLoginScreenEnable();
 $wpdh->developersWPHeadMetaDescription();
 $wpdh->developersWPHeadMetaThemeColor();
 $wpdh->developersWPHeadFavicon();
+$wpdh->developersWPHeadOpenGraph();
 $wpdh->developersTemplateSettingsUnderConstruction();
+$wpdh->developersTemplateSettingsFormGenerator();
 $wpdh->developersOthersDuplicate();
 $wpdh->developersAdvancedWPHead();
 $wpdh->developersAdvancedCustomCSS($wpdhCssCode = get_field('wpdevhelperAdvanced-custom_css', 'option'));

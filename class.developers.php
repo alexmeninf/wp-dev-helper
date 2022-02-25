@@ -156,97 +156,165 @@ class Developers
   /*----------  WP HEAD -> FAVICON / APPLE TOUCH ICON  ----------*/
   public function developersWPHeadFavicon()
   {
-    add_action('wp_head', function () {
-
-      # Og Graph
-      $src = '';
-
-      if (has_post_thumbnail(get_the_ID())) {
-        $src = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), "full")[0];
-
-      } elseif (function_exists('get_field')) {
-        
-        if (trim(get_field('head-opengraph-image', 'option')) != '') {
-          $src = wp_get_attachment_image_src(get_field('head-opengraph-image', 'option'), 'full', false)[0];
-
-        } elseif (trim(get_field('head-icon-192x192', 'option')) != '') {
-          $src = get_field('head-icon-192x192', 'option');
+    // Verifica se o tema não possui um favicon definido
+    if ( empty( get_site_icon_url() ) ) {
+      add_action('wp_head', function () {
+        # Favicon
+        if (trim(get_field('head-icon-favicon', 'option')) != '') {
+          $favicon = wp_get_attachment_image_src(get_field('head-icon-favicon', 'option'), 'thumbnail', false);
+          echo "\n\n" . '<link rel="shortcut icon" type="image/png" href="' . $favicon[0] . '">' . "\n";
         }
-      }
-
-      $title_og = is_front_page() ? '' : wp_title('', false) . ' | ';
-      $og_type = is_single() ? 'article' : 'website';
-
-      echo '<meta property="og:image" content="' . $src . '"/>';
-      echo '<meta property="og:title" content="'. $title_og . get_bloginfo('name') .'"/>';
-      echo '<meta property="og:url" content="'. get_permalink() .'" />';
-      echo '<meta property="og:type" content="'. $og_type .'" />';
-      echo '<meta property="og:locale" content="'. get_bloginfo( 'language' ) .'">';
-      echo '<meta property="og:site_name" content="'. get_bloginfo( 'name' ) .'">';
-
-      # Favicon
-      if (trim(get_field('head-icon-favicon', 'option')) != '') {
-        $favicon = wp_get_attachment_image_src(get_field('head-icon-favicon', 'option'), 'thumbnail', false);
-        echo "\n\n" . '<link rel="shortcut icon" type="image/png" href="' . $favicon[0] . '">' . "\n";
-      }
-      # Apple Touch Icon iPhone
-      if (trim(get_field('head-icon-apple-touch-icon-57x57', 'option')) != '') {
-        echo '<link rel="apple-touch-icon" sizes="57x57" href="' . get_field('head-icon-apple-touch-icon-57x57', 'option') . '">' . "\n";
-      }
-
-      if (trim(get_field('head-icon-apple-touch-icon-60x60', 'option')) != '') {
-        echo '<link rel="apple-touch-icon" sizes="60x60" href="' . get_field('head-icon-apple-touch-icon-60x60', 'option') . '">' . "\n";
-      }
-
-      if (trim(get_field('head-icon-apple-touch-icon-72x72', 'option')) != '') {
-        echo '<link rel="apple-touch-icon" sizes="72x72" href="' . get_field('head-icon-apple-touch-icon-72x72', 'option') . '">' . "\n";
-      }
-
-      if (trim(get_field('head-icon-apple-touch-icon-76x76', 'option')) != '') {
-        echo '<link rel="apple-touch-icon" sizes="76x76" href="' . get_field('head-icon-apple-touch-icon-76x76', 'option') . '">' . "\n";
-      }
-
-      if (trim(get_field('head-icon-apple-touch-icon-114x114', 'option')) != '') {
-        echo '<link rel="apple-touch-icon" sizes="114x114" href="' . get_field('head-icon-apple-touch-icon-114x114', 'option') . '">' . "\n";
-      }
-
-      if (trim(get_field('head-icon-apple-touch-icon-120x120', 'option')) != '') {
-        echo '<link rel="apple-touch-icon" sizes="120x120" href="' . get_field('head-icon-apple-touch-icon-120x120', 'option') . '">' . "\n";
-      }
-
-      if (trim(get_field('head-icon-apple-touch-icon-144x144', 'option')) != '') {
-        echo '<meta name="msapplication-TileImage" content="' . get_field('head-icon-apple-touch-icon-144x144', 'option') . '">
-        <link rel="apple-touch-icon" sizes="144x144" href="' . get_field('head-icon-apple-touch-icon-144x144', 'option') . '">' . "\n";
-      }
-
-      if (trim(get_field('head-icon-apple-touch-icon-152x152', 'option')) != '') {
-        echo '<link rel="apple-touch-icon" sizes="152x152" href="' . get_field('head-icon-apple-touch-icon-152x152', 'option') . '">' . "\n";
-      }
-
-      if (trim(get_field('head-icon-apple-touch-icon-180x180', 'option')) != '') {
-        echo '<link rel="apple-touch-icon" sizes="180x180" href="' . get_field('head-icon-apple-touch-icon-180x180', 'option') . '">' . "\n";
-      }
-
-      if (trim(get_field('head-icon-192x192', 'option')) != '') {
-        echo '<link rel="icon" type="image/png" sizes="192x192" href="' . get_field('head-icon-192x192', 'option') . '">' . "\n";
-      }
-
-      if (trim(get_field('head-icon-96x96', 'option')) != '') {
-        echo '<link rel="icon" type="image/png" sizes="96x96" href="' . get_field('head-icon-96x96', 'option') . '">' . "\n";
-      }
-
-      if (trim(get_field('head-icon-16x16', 'option')) != '') {
-        echo '<link rel="icon" type="image/png" sizes="16x16" href="' . get_field('head-icon-16x16', 'option') . '">' . "\n";
-      }
-    }, 2);
+        # Apple Touch Icon iPhone
+        if (trim(get_field('head-icon-apple-touch-icon-57x57', 'option')) != '') {
+          echo '<link rel="apple-touch-icon" sizes="57x57" href="' . get_field('head-icon-apple-touch-icon-57x57', 'option') . '">' . "\n";
+        }
+  
+        if (trim(get_field('head-icon-apple-touch-icon-60x60', 'option')) != '') {
+          echo '<link rel="apple-touch-icon" sizes="60x60" href="' . get_field('head-icon-apple-touch-icon-60x60', 'option') . '">' . "\n";
+        }
+  
+        if (trim(get_field('head-icon-apple-touch-icon-72x72', 'option')) != '') {
+          echo '<link rel="apple-touch-icon" sizes="72x72" href="' . get_field('head-icon-apple-touch-icon-72x72', 'option') . '">' . "\n";
+        }
+  
+        if (trim(get_field('head-icon-apple-touch-icon-76x76', 'option')) != '') {
+          echo '<link rel="apple-touch-icon" sizes="76x76" href="' . get_field('head-icon-apple-touch-icon-76x76', 'option') . '">' . "\n";
+        }
+  
+        if (trim(get_field('head-icon-apple-touch-icon-114x114', 'option')) != '') {
+          echo '<link rel="apple-touch-icon" sizes="114x114" href="' . get_field('head-icon-apple-touch-icon-114x114', 'option') . '">' . "\n";
+        }
+  
+        if (trim(get_field('head-icon-apple-touch-icon-120x120', 'option')) != '') {
+          echo '<link rel="apple-touch-icon" sizes="120x120" href="' . get_field('head-icon-apple-touch-icon-120x120', 'option') . '">' . "\n";
+        }
+  
+        if (trim(get_field('head-icon-apple-touch-icon-144x144', 'option')) != '') {
+          echo '<link rel="apple-touch-icon" sizes="144x144" href="' . get_field('head-icon-apple-touch-icon-144x144', 'option') . '">' . "\n";
+        }
+  
+        if (trim(get_field('head-icon-apple-touch-icon-152x152', 'option')) != '') {
+          echo '<meta name="msapplication-TileImage" content="' . get_field('head-icon-apple-touch-icon-152x152', 'option') . '">
+          <link rel="apple-touch-icon" sizes="152x152" href="' . get_field('head-icon-apple-touch-icon-152x152', 'option') . '">' . "\n";
+        }
+  
+        if (trim(get_field('head-icon-apple-touch-icon-180x180', 'option')) != '') {
+          echo '<link rel="apple-touch-icon" sizes="180x180" href="' . get_field('head-icon-apple-touch-icon-180x180', 'option') . '">' . "\n";
+        }
+  
+        if (trim(get_field('head-icon-192x192', 'option')) != '') {
+          echo '<link rel="icon" type="image/png" sizes="192x192" href="' . get_field('head-icon-192x192', 'option') . '">' . "\n";
+        }
+  
+        if (trim(get_field('head-icon-96x96', 'option')) != '') {
+          echo '<link rel="icon" type="image/png" sizes="96x96" href="' . get_field('head-icon-96x96', 'option') . '">' . "\n";
+        }
+  
+        if (trim(get_field('head-icon-16x16', 'option')) != '') {
+          echo '<link rel="icon" type="image/png" sizes="16x16" href="' . get_field('head-icon-16x16', 'option') . '">' . "\n";
+        }
+      }, 2);
+    }
   }
 
+  /*----------  WP HEAD -> Open Graph  ----------*/
+  public function developersWPHeadOpenGraph() {
+    
+    // Verifica se alguns plugins populares de SEO não estão ativos, para exibir o Open Graph padrão.
+    $has_seo_plugin = false;
+    if (is_plugin_active( 'wordpress-seo/wp-seo.php' )) {
+      $has_seo_plugin = true;
+    }
+
+    if (is_plugin_active('all-in-one-seo-pack/all_in_one_seo_pack.php')) {
+      $has_seo_plugin = true;
+    }
+
+    if ( ! $has_seo_plugin ) {
+      add_action('wp_head', function () {
+        # Og Graph
+        $tags = [];
+  
+        if (is_singular()) {
+          $tags['og:description'] = trim(get_the_excerpt());
+        }
+
+        if ( is_front_page() ) {
+          $tags['og:title'] = get_bloginfo('name');
+        }
+  
+        if (is_tax()) {
+          $tags['og:url'] = get_term_link(get_queried_object(), get_queried_object()->taxonomy);
+        }
+  
+        if (has_post_thumbnail()) {
+          $tags['og:image'] = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), "full")[0];   
+  
+        } elseif ( ! empty(get_site_icon_url()) ) {
+          $tags['og:image'] = get_site_icon_url();
+          
+        } elseif (function_exists('get_field')) { 
+
+          if (trim(get_field('head-opengraph-image', 'option')) != '') {
+            $tags['og:image'] = esc_url(wp_get_attachment_image_src(get_field('head-opengraph-image', 'option'), 'full', false)[0]);
+  
+          } elseif (trim(get_field('head-icon-192x192', 'option')) != '') {
+            $tags['og:image'] = esc_url(get_field('head-icon-192x192', 'option'));
+          }
+        }
+        
+        if (is_single()) {
+          $tag['og:type'] = 'article';
+        }
+        
+        // Valores padrão
+        $tags = wp_parse_args(
+          $tags, 
+          [
+            'og:description' => get_bloginfo('description'), 
+            'og:image'       => '',
+            'og:locale'      => get_bloginfo( 'language' ),
+            'og:site_name'   => get_bloginfo( 'name' ),
+            'og:title'       => trim(wp_title('', false)), 
+            'og:type'        => 'website', 
+            'og:url'         => get_permalink(), 
+          ]
+        );
+        $tags = array_filter($tags);
+        $tags = apply_filters('opengraph_tags', $tags);
+  
+        foreach ($tags as $property => $content) {
+          printf('<meta property="%s" content="%s">', esc_attr($property), esc_attr($content));
+        }
+      }, 1);
+    }
+  }
 
   /*----------  TEMPLATE SETTINGS -> UNDER CONSTRUCTION  ----------*/
   public function developersTemplateSettingsUnderConstruction()
   {
     if (get_field('wpdevhelperTemplateSettings-under_construction', 'option') == 'yes') {
       require_once(PLUGINPATH . 'under-construction-page/under-construction.php');
+    }
+  }
+
+  /*----------  TEMPLATE SETTINGS -> FORM GENERATOR ----------*/
+  public function developersTemplateSettingsFormGenerator()
+  {
+    $theme_name = wp_get_theme()->get( 'Name' );
+    $v          = wp_get_theme()->get( 'Version' );
+
+    if (get_field('wpdevhelperTemplateSettings-form_generator', 'option') == 'yes') {
+
+      if ($theme_name == 'WP Starter Theme' && $v <= '3.5.3' || $theme_name == 'WP Starter Theme Child' && $v <= '1.2') {
+        add_action( 'admin_notices', function () {
+          echo '<div class="notice notice-error  is-dismissible">';
+          echo '<p>'.__('Your current theme needs to be updated to display the <b>Form Generator</b> module.', 'wpdevhelper').' WP Dev Helper v'.WPDEVHELPER_VERSION.'</p>';
+          echo '</div>';
+        } );
+      } else {
+        require_once(PLUGINPATH . 'form-generator/form.php');
+      }
     }
   }
 

@@ -27,5 +27,11 @@ From your WordPress dashboard
 
 == Changelog ==
 
-= 1.7.0 =
+= 1.7.1 = 25/02/2022
+*Fix - Corrigido erros de exibição de Open Graph padrão com plugins de SEO wp-seo ou all_in_one_seo_pack ativos*
+*Fix: Corrigido altura para a imagem do open graph padrão*
+*Refactor: Melhorias na exibição de favicons*
+*Feat: Adicionado e movido o gerador de formulário que era do wp-starter-theme para o plugin
+
+= 1.7.0 = 03/02/2022
 *Release - 03 February 2022*
