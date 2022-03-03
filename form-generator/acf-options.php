@@ -349,7 +349,7 @@ if (function_exists('acf_add_local_field_group')) :
 				'key' => 'field_613913e1db74a',
 				'label' => 'AJAX data',
 				'name' => 'ajax_data',
-				'type' => 'acf_code_field',
+				'type' => 'code',
 				'instructions' => 'Parametros de envio para a API.',
 				'required' => 1,
 				'conditional_logic' => 0,

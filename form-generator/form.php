@@ -99,7 +99,7 @@ function theme_form_shortcode($atts, $content = null, $tag)
     while ($query->have_posts()) :
       $query->the_post();
 
-      get_template_part('inc/form/template-form');
+      require PLUGINPATH . '/form-generator/template-form.php';
 
     endwhile;
 
@@ -110,7 +110,7 @@ function theme_form_shortcode($atts, $content = null, $tag)
   wp_reset_query();
 }
 
-add_shortcode('mf_template', 'theme_form_shortcode');
+add_shortcode('form_template', 'theme_form_shortcode');
 
 
 /**
