@@ -301,18 +301,22 @@ class Developers
   /*----------  TEMPLATE SETTINGS -> FORM GENERATOR ----------*/
   public function developersTemplateSettingsFormGenerator()
   {
-    $theme_name      = wp_get_theme()->get( 'Name' );
-    $v               = wp_get_theme()->get( 'Version' );
-    $minimum_version = $theme_name == 'WP Starter Theme' ? '3.5.4' : '1.2';
+    $theme_name = wp_get_theme()->get( 'Name' );
+    $v          = wp_get_theme()->get( 'Version' );
 
     if (get_field('wpdevhelperTemplateSettings-form_generator', 'option') == 'yes') {
 
-      if ($theme_name == 'WP Starter Theme' && $v < $minimum_version || $theme_name == 'WP Starter Theme Child' && $v < $minimum_version) {
+      if ($theme_name == 'WP Starter Theme' && $v < '3.5.4' || $theme_name == 'WP Starter Theme Child' && $v < '1.2') {
+
         add_action( 'admin_notices', function () {
+          $minimum_version = wp_get_theme()->get( 'Name' ) == 'WP Starter Theme' ? '3.5.4' : '1.2';
           echo '<div class="notice notice-warning is-dismissible">';
-          echo '<p>'.__('Your current theme needs to be updated to display the <b>Form Generator</b> module. Minimum requested version v'.$minimum_version.'', 'wpdevhelper').' WP Dev Helper v'.WPDEVHELPER_VERSION.'</p>';
-          echo '</div>';
+          echo '<h3>WP Dev Helper v'.WPDEVHELPER_VERSION.'</h3>';
+          echo '<p>';
+          printf(__('Your current theme needs to be updated to display the <b>Form Generator</b> module. Minimum requested %s version is %s', 'wpdevhelper'), wp_get_theme()->get( 'Name' ), $minimum_version);
+          echo '</p></div>';
         } );
+
       } else {
         require_once(PLUGINPATH . 'form-generator/form.php');
       }
