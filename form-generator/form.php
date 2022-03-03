@@ -70,7 +70,7 @@ function custom_generator_form_column($column, $post_id)
 {
   switch ($column) {
     case 'shortcode':
-      echo '<input type="text" onfocus="this.select();" readonly="readonly" value="[mf_template id=' . esc_attr($post_id) . ']" class="code">';
+      echo '<input type="text" onfocus="this.select();" readonly="readonly" value="[form_template id=' . esc_attr($post_id) . ']" class="code">';
       break;
   }
 }
