@@ -301,15 +301,16 @@ class Developers
   /*----------  TEMPLATE SETTINGS -> FORM GENERATOR ----------*/
   public function developersTemplateSettingsFormGenerator()
   {
-    $theme_name = wp_get_theme()->get( 'Name' );
-    $v          = wp_get_theme()->get( 'Version' );
+    $theme_name      = wp_get_theme()->get( 'Name' );
+    $v               = wp_get_theme()->get( 'Version' );
+    $minimum_version = $theme_name == 'WP Starter Theme' ? '3.5.4' : '1.2';
 
     if (get_field('wpdevhelperTemplateSettings-form_generator', 'option') == 'yes') {
 
-      if ($theme_name == 'WP Starter Theme' && $v <= '3.5.3' || $theme_name == 'WP Starter Theme Child' && $v <= '1.2') {
+      if ($theme_name == 'WP Starter Theme' && $v < $minimum_version || $theme_name == 'WP Starter Theme Child' && $v < $minimum_version) {
         add_action( 'admin_notices', function () {
-          echo '<div class="notice notice-error  is-dismissible">';
-          echo '<p>'.__('Your current theme needs to be updated to display the <b>Form Generator</b> module.', 'wpdevhelper').' WP Dev Helper v'.WPDEVHELPER_VERSION.'</p>';
+          echo '<div class="notice notice-warning is-dismissible">';
+          echo '<p>'.__('Your current theme needs to be updated to display the <b>Form Generator</b> module. Minimum requested version v'.$minimum_version.'', 'wpdevhelper').' WP Dev Helper v'.WPDEVHELPER_VERSION.'</p>';
           echo '</div>';
         } );
       } else {

@@ -27,6 +27,10 @@ From your WordPress dashboard
 
 == Changelog ==
 
+= 1.7.2 = 03/03/2022
+*Fix - Corrigido erro na chamada de arquivos do form generator
+*Fix - Texto de mensagens de atenção
+
 = 1.7.1 = 25/02/2022
 *Fix - Corrigido erros de exibição de Open Graph padrão com plugins de SEO wp-seo ou all_in_one_seo_pack ativos*
 *Fix: Corrigido altura para a imagem do open graph padrão*
