@@ -45,7 +45,7 @@ if ( empty($values['name']) ) {
       $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
       $mail->Username   = 'apikey';                               //SMTP username
       $mail->Password   = 'secret';                               //SMTP password
-      $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+      $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
       $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
       $mail->Mailer     = "smtp";
       $mail->CharSet    = 'UTF-8';
