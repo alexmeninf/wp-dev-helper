@@ -17,7 +17,9 @@ require("src/TBodyHTML.php");
  * Tratar os valores recebidos por serialize() do javascript
  */
 $values = array();
-parse_str($_POST['formData'], $values);
+
+if ($_POST['formData']) 
+  parse_str($_POST['formData'], $values);
 
 /**
  * Verificar campos
