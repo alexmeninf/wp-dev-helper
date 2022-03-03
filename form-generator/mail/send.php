@@ -18,7 +18,7 @@ require("src/TBodyHTML.php");
  */
 $values = array();
 
-if ($_POST['formData']) 
+if (isset($_POST['formData'])) 
   parse_str($_POST['formData'], $values);
 
 /**

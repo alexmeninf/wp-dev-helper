@@ -10,7 +10,7 @@ global $post;
 /**
  * API para envio de e-mail.
  */
-$api = get_field('api_url') != '' ? get_field('api_url') : PLUGINROOT . '/inc/form/mail/send.php';
+$api = get_field('api_url') != '' ? get_field('api_url') : PLUGINROOT . '/form-generator/mail/send.php';
 
 /**
  * Gerar formulário
