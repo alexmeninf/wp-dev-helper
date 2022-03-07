@@ -13,21 +13,22 @@ require("src/SMTP.php");
 require("src/Exception.php");
 require("src/TBodyHTML.php");
 
+require('../../includes/UploadFile.php');
+
 /**
  * Tratar os valores recebidos por serialize() do javascript
+ * 
+ * Caso estiver recebendo algum arquivo, comente esta parte abaixo e use diretamente o $_POST
  */
-$values = array();
+$data = array();
 
-if (isset($_POST['formData'])) 
-  parse_str($_POST['formData'], $values);
+if ($_POST['formData']) 
+  parse_str($_POST['formData'], $data);
 
 /**
  * Verificar campos
  */
-if ( empty($values['name']) ) {
-  echo 'O campo nome é obrigatório.';
-
-} elseif ( empty($values['email']) ) {
+if ( empty($data['email']) ) {
   echo 'O campo e-mail é obrigatório.';
 
 } else {
@@ -37,6 +38,12 @@ if ( empty($values['name']) ) {
   // Instância para o template do corpo do e-mail.
   $template = new TBodyHTML;
 
+  // Faz o upload dos arquivos recebidos
+  if (! empty($_FILES['files']) ) {
+    $up = new UploadFileToMedia();
+    $url_file = $up->upload($_FILES['files']);
+  }
+
   try {
       //Server settings
       $mail->SMTPDebug = SMTP::DEBUG_OFF;                         //Enable verbose debug output
@@ -45,7 +52,7 @@ if ( empty($values['name']) ) {
       $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
       $mail->Username   = 'apikey';                               //SMTP username
       $mail->Password   = 'secret';                               //SMTP password
-      $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
+      $mail->SMTPSecure = 'tls';                                  //Enable implicit TLS encryption
       $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
       $mail->Mailer     = "smtp";
       $mail->CharSet    = 'UTF-8';
@@ -68,18 +75,18 @@ if ( empty($values['name']) ) {
       $mail->Subject = 'Here is the subject';
       $mail->Body          = $template->getContent(
         array(
-          'name' => $values['name'],
-          'email' => $values['email'],
-          'phone' => $values['phone']
+          'name' => $data['name'],
+          'email' => $data['email'],
+          'phone' => $data['phone'],
         )
       );
-      $mail->AltBody = 'Nome:' . $values['name'] . ' | ' . 'E-mail:' . $values['email']. ' | ' . 'Telefone:' . $values['phone']; // 'This is the body in plain text for non-HTML mail clients'
+      $mail->AltBody = 'Nome:' . $data['name'] . ' | E-mail:' . $data['email']. ' | Telefone:' . $data['phone']; // 'This is the body in plain text for non-HTML mail clients'
       $mail->send();
 
       $info = json_encode(
         array(
           'success' => 1, 
-          'message' => "Mensagem enviada com sucesso!"
+          'message' => "Mensagem enviada com sucesso!",
         )
       );
       print_r($info);
