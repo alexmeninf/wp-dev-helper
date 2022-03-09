@@ -27,6 +27,9 @@ From your WordPress dashboard
 
 == Changelog ==
 
+= 1.7.4 = 09/03/2022
+* Feat: Adicionado suporte para preenchimento automatico dos formulários customizados via url com o nome de cada campo.
+
 = 1.7.3 = 04/03/2022
 * Feat: Adicionado suporte para upload de arquivos em formulários customizados
 * Refactor: Ajuste no layout e código do formulário
