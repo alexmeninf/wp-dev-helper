@@ -39,14 +39,14 @@ if (!class_exists('acf_code_field')) :
 			*  label (string) Multiple words, can include spaces, visible when selecting a field type
 			*/
 
-			$this->label = __('Área de Código', 'acf-code-field');
+			$this->label = __('Code Area', 'wpdevhelper');
 
 
 			/*
 			*  category (string) basic | content | choice | relational | jquery | layout | CUSTOM GROUP NAME
 			*/
 
-			$this->category = 'Ferramentas de código';
+			$this->category = __("Code tools", 'wpdevhelper');;
 
 
 			/*

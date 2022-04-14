@@ -28,8 +28,8 @@ class acf_code_field_v4 extends acf_field
 	{
 		// vars
 		$this->name     = 'code';
-		$this->label    = __('Área de Código');
-		$this->category = __("Ferramentas de código", 'acf'); // Basic, Content, Choice, etc
+		$this->label    = __('Code Area', 'wpdevhelper');
+		$this->category = __("Code tools", 'wpdevhelper'); // Basic, Content, Choice, etc
 		$this->defaults = array(
 			'default_value' => '',
 			'formatting'    => 'br',

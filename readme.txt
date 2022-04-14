@@ -27,12 +27,9 @@ From your WordPress dashboard
 
 == Changelog ==
 
-= 1.7.4 = 09/03/2022
-* Feat: Adicionado suporte para preenchimento automatico dos formulários customizados via url com o nome de cada campo.
-
-= 1.7.3 = 04/03/2022
-* Feat: Adicionado suporte para upload de arquivos em formulários customizados
-* Refactor: Ajuste no layout e código do formulário
+= 1.7.3 = 13/04/2022
+*Feat: Atualizado Advanced Custom Fields Pro para versão 5.12
+*Refactor: Removido Under Construction plugin
 
 = 1.7.2 = 03/03/2022
 *Fix - Corrigido erro na chamada de arquivos do form generator
