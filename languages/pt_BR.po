@@ -1,17 +1,17 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WP Dev Helper 1.7\n"
-"POT-Creation-Date: 2022-04-13 23:34-0300\n"
-"PO-Revision-Date: 2022-04-13 23:34-0300\n"
+"POT-Creation-Date: 2022-02-04 10:27-0300\n"
+"PO-Revision-Date: 2022-02-04 10:30-0300\n"
 "Last-Translator: \n"
 "Language-Team: Alexandre Menin <menin.alex11@gmail.com>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.0\n"
 "X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_;_e;esc_attr__\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -21,62 +21,60 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-2: assets\n"
 
 #: acf-code-field/acf-code-field-v4.php:31
-#: acf-code-field/acf-code-field-v5.php:42
-msgid "Code Area"
-msgstr "Área de código"
+msgid "ACF Code Field"
+msgstr "ACF - Campo de código"
 
 #: acf-code-field/acf-code-field-v4.php:32
-#: acf-code-field/acf-code-field-v5.php:49
-msgid "Code tools"
+msgid "Code Tools"
 msgstr "Ferramentas de código"
 
 #: acf-code-field/acf-code-field-v4.php:77
-#: acf-code-field/acf-code-field-v5.php:100
+#: acf-code-field/acf-code-field-v5.php:96
 msgid "Default Value"
 msgstr "Valor padrão"
 
 #: acf-code-field/acf-code-field-v4.php:79
-#: acf-code-field/acf-code-field-v5.php:101
+#: acf-code-field/acf-code-field-v5.php:97
 msgid "Appears when creating a new post"
 msgstr "Aparece ao criar uma nova postagem"
 
 #: acf-code-field/acf-code-field-v4.php:93
-#: acf-code-field/acf-code-field-v5.php:109
+#: acf-code-field/acf-code-field-v5.php:105
 msgid "Placeholder Text"
-msgstr "Texto Placeholder"
+msgstr ""
 
 #: acf-code-field/acf-code-field-v4.php:95
-#: acf-code-field/acf-code-field-v5.php:110
+#: acf-code-field/acf-code-field-v5.php:106
 msgid "Appears within the input"
 msgstr "Aparece dentro da entrada"
 
 #: acf-code-field/acf-code-field-v4.php:109
-#: acf-code-field/acf-code-field-v5.php:116
+#: acf-code-field/acf-code-field-v5.php:112
 msgid "Editor mode"
 msgstr "Modo de edição"
 
 #: acf-code-field/acf-code-field-v4.php:118
-#: acf-code-field/acf-code-field-v5.php:121
+#: acf-code-field/acf-code-field-v5.php:117
 msgid "HTML Mixed"
 msgstr "HTML Misto"
 
 #: acf-code-field/acf-code-field-v4.php:119
-#: acf-code-field/acf-code-field-v5.php:122
+#: acf-code-field/acf-code-field-v5.php:118
 msgid "JavaScript"
 msgstr ""
 
 #: acf-code-field/acf-code-field-v4.php:120
-#: acf-code-field/acf-code-field-v5.php:123
+#: acf-code-field/acf-code-field-v5.php:119
 msgid "HTML"
 msgstr ""
 
 #: acf-code-field/acf-code-field-v4.php:121
-#: acf-code-field/acf-code-field-v5.php:124
+#: acf-code-field/acf-code-field-v5.php:120
 msgid "CSS"
 msgstr ""
 
 #: acf-code-field/acf-code-field-v4.php:122
-#: acf-code-field/acf-code-field-v5.php:125
+#: acf-code-field/acf-code-field-v5.php:121
 msgid "PHP"
 msgstr ""
 
@@ -84,15 +82,19 @@ msgstr ""
 msgid "Theme"
 msgstr "Tema"
 
-#: acf-code-field/acf-code-field-v5.php:64
+#: acf-code-field/acf-code-field-v5.php:40
+msgid "Code area field"
+msgstr "Campo de área de código"
+
+#: acf-code-field/acf-code-field-v5.php:61
 msgid "Error! Please enter a higher value"
 msgstr "Erro! Insira um valor maior"
 
-#: acf-code-field/acf-code-field-v5.php:132
+#: acf-code-field/acf-code-field-v5.php:128
 msgid "Editor theme"
 msgstr "Editar tema"
 
-#: acf-code-field/acf-code-field-v5.php:133
+#: acf-code-field/acf-code-field-v5.php:129
 msgid ""
 "Themes can be previewed on the <a href=\"https://codemirror.net/demo/theme."
 "html#default\" target=\"_blank\">codemirror website</a>"
@@ -403,15 +405,14 @@ msgstr "Postagens desse tipo devem ser excluídas dos resultados da pesquisa."
 #: acf-options.php:766 acf-options.php:864 acf-options.php:891
 #: acf-options.php:999 acf-options.php:1096 acf-options.php:1217
 #: acf-options.php:1252 acf-options.php:1287 acf-options.php:1655
-#: acf-options.php:2228 acf-options.php:2252 acf-options.php:2291
-#: acf-options.php:2315
+#: acf-options.php:2228 acf-options.php:2267 acf-options.php:2291
 msgid "Yes"
 msgstr "Sim"
 
 #: acf-options.php:767 acf-options.php:865 acf-options.php:892
 #: acf-options.php:1000 acf-options.php:1097 acf-options.php:1218
 #: acf-options.php:1253 acf-options.php:1656 acf-options.php:2227
-#: acf-options.php:2251 acf-options.php:2292 acf-options.php:2316
+#: acf-options.php:2268 acf-options.php:2292
 msgid "No"
 msgstr "Não"
 
@@ -734,20 +735,26 @@ msgstr "Post Types Personalizados"
 #: acf-options.php:1572
 msgid ""
 "Instead of creating your custom post types including many codes in your "
-"functions.php file you can create they easily here. <br><a class=\"button "
-"button-primary button-large\" href=\"post-new.php?post_type=new_post_type\" "
-"style=\"margin-top:10px;margin-right: 9px;\">New post type</a><a class="
-"\"button button-secondary button-large\" href=\"edit.php?"
-"post_type=new_post_type\" style=\"margin-top:10px\">See list of post types</"
-"a>"
+"functions.php file you can create they easily here. <br>To add, edit or "
+"delete your custom post types click on button below. WordPress can hold and "
+"display many different types of content. A single item of such a content is "
+"generally called a post, although post is also a specific post type. "
+"Internally, all the post types are stored in the same place, in the wp_posts "
+"database table, but are differentiated by a column called post_type. <a "
+"class=\"button button-secondary button-large\" href=\"edit.php?"
+"post_type=new_post_type\" style=\"margin-top:10px\">New post type</a>"
 msgstr ""
 "Em vez de criar seus tipos de postagem personalizados, incluindo muitos "
-"códigos em seu arquivo functions.php, você pode criá-los facilmente aqui."
-"<br><a class=\"button button-primary button-large\" href=\"post-new.php?"
-"post_type=new_post_type\" style=\"margin-top:10px;margin-right: 9px;\">Novo "
-"post type</a><a class=\"button button-secondary button-large\" href=\"edit."
-"php?post_type=new_post_type\" style=\"margin-top:10px\">Ver lista de post "
-"types</a>"
+"códigos em seu arquivo functions.php, você pode criá-los facilmente aqui. "
+"<br>Para adicionar, editar ou excluir seus tipos de postagem personalizados, "
+"clique no botão abaixo. O WordPress pode armazenar e exibir muitos tipos "
+"diferentes de conteúdo. Um único item desse conteúdo é geralmente chamado de "
+"postagem, embora a postagem também seja um tipo de postagem específico. "
+"Internamente, todos os tipos de postagem são armazenados no mesmo local, na "
+"tabela do banco de dados wp_posts, mas são diferenciados por uma coluna "
+"chamada post_type.\n"
+" <a class=\"button button-secondary button-large\" href=\"edit.php?"
+"post_type=new_post_type\" style=\"margin-top:10px\">Novo tipo de postagem</a>"
 
 #: acf-options.php:1606
 msgid "Hierarchical Order"
@@ -833,7 +840,7 @@ msgstr ""
 "Escreva algo se você deseja adicionar algum conteúdo abaixo do formulário de "
 "login. Opcional."
 
-#: acf-options.php:1814 acf-options.php:2342
+#: acf-options.php:1814 acf-options.php:2318
 msgid "WP Head"
 msgstr "WP Head"
 
@@ -1035,82 +1042,65 @@ msgstr "Em construção"
 msgid "Display page under construction on template?"
 msgstr "Mostrar site em construção no template?"
 
-#: acf-options.php:2238
-msgid "Form generator"
-msgstr "Gerador de formulário"
-
-#: acf-options.php:2241
-msgid "Enable post type for creating submission forms via panel?"
-msgstr "Habilitar tipo de postagem para criar formulários de envio via painel?"
-
-#: acf-options.php:2264
+#: acf-options.php:2240
 msgid "Others"
 msgstr "Outros"
 
-#: acf-options.php:2278
+#: acf-options.php:2254
 msgid "Duplicate Post"
 msgstr "Duplicar Post"
 
-#: acf-options.php:2281
+#: acf-options.php:2257
 msgid "Enable duplicate post option?"
 msgstr "Habilitar opção de duplicar Post?"
 
-#: acf-options.php:2302
+#: acf-options.php:2278
 msgid "Duplicate Page"
 msgstr "Duplicar Página"
 
-#: acf-options.php:2305
+#: acf-options.php:2281
 msgid "Enable duplicate page option?"
 msgstr "Habilitar opção de duplicar Página?"
 
-#: acf-options.php:2328
+#: acf-options.php:2304
 msgid "Advanced"
 msgstr "Avançado"
 
-#: acf-options.php:2345
+#: acf-options.php:2321
 msgid "Remove tags created by <b>wp_head()</b> function."
 msgstr "Remova as tags criadas pela função <b>wp_head()</b>."
 
-#: acf-options.php:2372 under-construction-page/under-construction.php:1511
+#: acf-options.php:2348 under-construction-page/under-construction.php:1511
 msgid "Custom CSS"
 msgstr "CSS Customizado"
 
-#: acf-options.php:2377
-msgid "Add your css to the head. The &#60;style&#62; tags will be ignored."
-msgstr "Adicione seu css no Head. As tags &#60;style&#62; serão ignoradas."
+#: acf-options.php:2353
+msgid "Add your css to the head. The &#60;style&#62 tags will be ignored."
+msgstr "Adicione seu css no Head. As tags &#60;style&#62 serão ignoradas."
 
-#: acf-options.php:2390
+#: acf-options.php:2366
 msgid "Custom JS Head"
 msgstr "JS Personalizado no Head"
 
-#: acf-options.php:2395
+#: acf-options.php:2371
 msgid ""
-"Add your javascript to the Head. The &#60;script&#62; tags will be ignored."
+"Add your javascript to the Head. The &#60;script&#62 tags will be ignored."
 msgstr ""
-"Adicione seu javascript ao Head. As tags &#60;script&#62; serão ignoradas."
+"Adicione seu javascript ao Head. As tags &#60;script&#62 serão ignoradas."
 
-#: acf-options.php:2408
+#: acf-options.php:2384
 msgid "Custom JS Footer"
 msgstr "JS Personalizado no Footer"
 
-#: acf-options.php:2413
+#: acf-options.php:2389
 msgid ""
-"Add your javascript to the Footer The &#60;script&#62; tags will be ignored."
+"Add your javascript to the Footer The &#60;script&#62 tags will be ignored."
 msgstr ""
-"Adicione seu javascript ao Footer. As tags &#60;script&#62; serão ignoradas."
+"Adicione seu javascript ao Footer. As tags &#60;script&#62 serão ignoradas."
 
-#: class.developers.php:12
+#: class.developers.php:17
 msgid "Developers"
 msgstr "Desenvolvedores"
-
-#: class.developers.php:311
-#, php-format
-msgid ""
-"Your current theme needs to be updated to display the <b>Form Generator</b> "
-"module. Minimum requested %s version is %s"
-msgstr ""
-"Seu tema atual precisa ser atualizado para exibir o módulo <b>Gerador de "
-"formulários</b>. A versão %s mínima solicitada é %s"
 
 #: duplicate-post.php:10
 msgid "No post to duplicate has been supplied!"
@@ -1123,75 +1113,6 @@ msgstr "Duplicar este item"
 #: duplicate-post.php:99
 msgid "Duplicate"
 msgstr "Duplicar"
-
-#: form-generator/form.php:18
-msgid "Formulários"
-msgstr "Forms"
-
-#: form-generator/form.php:19
-msgid "Todos os formulários"
-msgstr "All forms"
-
-#: form-generator/form.php:20
-msgid "Adicionar novo formulário"
-msgstr "Add new form"
-
-#: form-generator/form.php:21
-msgid "Novo formulário"
-msgstr "New form"
-
-#: form-generator/form.php:22
-msgid "Editar formulário"
-msgstr "Edit form"
-
-#: form-generator/form.php:23
-msgid "Atualizar formulário"
-msgstr "Update form"
-
-#: form-generator/form.php:24
-msgid "Buscar formulário"
-msgstr "Search form"
-
-#: form-generator/form.php:28
-msgid "Formulário"
-msgstr "Form"
-
-#: form-generator/form.php:29
-msgid "Adicione um novo formulário de envio."
-msgstr "Add a new submission form."
-
-#: form-generator/form.php:64
-msgid "Shortcode"
-msgstr "Shortcode"
-
-#: form-generator/template-form.php:48
-msgid "Enviar"
-msgstr "Send"
-
-#: form-generator/template-form.php:102
-#, php-format
-msgid "O campo <b>%s</b> é obrigatório."
-msgstr "The <b>%s</b> field is required."
-
-#: form-generator/template-form.php:125
-msgid "Enviando..."
-msgstr "Sending..."
-
-#: form-generator/template-form.php:133
-msgid "Enviado!"
-msgstr "Sent!"
-
-#: form-generator/template-form.php:136
-msgid "Fechar"
-msgstr "Close"
-
-#: form-generator/template-form.php:140 form-generator/template-form.php:153
-msgid "Algo deu errado!"
-msgstr "Something went wrong!"
-
-#: form-generator/template-form.php:160
-msgid "Enviar novamente"
-msgstr "Send again"
 
 #: under-construction-page/under-construction.php:135
 #, php-format
@@ -1238,7 +1159,7 @@ msgstr "Faça login para o painel administrador do WordPress"
 
 #: under-construction-page/under-construction.php:626
 msgid "Free UnderConstructionPage plugin for WordPress"
-msgstr "Plugin UnderConstructionPage gratuito para WordPress"
+msgstr ""
 
 #: under-construction-page/under-construction.php:714
 msgid ""
@@ -1387,7 +1308,7 @@ msgstr "Mostrar Copyright"
 
 #: under-construction-page/under-construction.php:1315
 msgid "Show copyright in page footer."
-msgstr "Mostrar copyright no footer da página."
+msgstr "Mostrar copyright no footer da página"
 
 #: under-construction-page/under-construction.php:1320
 msgid "Login Button"
@@ -1407,11 +1328,11 @@ msgstr "Social &amp; Ícones de contato"
 
 #: under-construction-page/under-construction.php:1336
 msgid "Facebook Page"
-msgstr "Página do facebook"
+msgstr ""
 
 #: under-construction-page/under-construction.php:1337
 msgid "Facebook business or personal page URL"
-msgstr "URL da página comercial ou pessoal do Facebook"
+msgstr ""
 
 #: under-construction-page/under-construction.php:1338
 msgid "Complete URL, with https prefix, to Facebook page."
@@ -1789,6 +1710,3 @@ msgstr "Painel"
 #: wp-dev-helper.php:153
 msgid "Create New Dashboard Widget"
 msgstr "Criar novo widgets do painel"
-
-#~ msgid "ACF Code Field"
-#~ msgstr "ACF - Campo de código"

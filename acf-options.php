@@ -1569,7 +1569,7 @@ function my_acf_add_local_field_groups() {
         ),
       ),
       array(
-        'message' => __('Instead of creating your custom post types including many codes in your functions.php file you can create they easily here. <br><a class="button button-primary button-large" href="post-new.php?post_type=new_post_type" style="margin-top:10px;margin-right: 9px;">New post type</a><a class="button button-secondary button-large" href="edit.php?post_type=new_post_type" style="margin-top:10px">See list of post types</a>', 'wpdevhelper'),
+        'message' => __('Instead of creating your custom post types including many codes in your functions.php file you can create they easily here. <br>To add, edit or delete your custom post types click on button below. WordPress can hold and display many different types of content. A single item of such a content is generally called a post, although post is also a specific post type. Internally, all the post types are stored in the same place, in the wp_posts database table, but are differentiated by a column called post_type. <a class="button button-secondary button-large" href="edit.php?post_type=new_post_type" style="margin-top:10px">New post type</a>', 'wpdevhelper'),
         'esc_html' => 0,
         'new_lines' => 'wpautop',
         'key' => 'field_5889d76862b5e',
@@ -2210,6 +2210,30 @@ function my_acf_add_local_field_groups() {
         ),
       ),
       array(
+        'key' => 'field_9582ddd930wpa',
+        'label' => __('Under Construction', 'wpdevhelper'),
+        'name' => 'wpdevhelperTemplateSettings-under_construction',
+        'type' => 'radio',
+        'instructions' => __('Display page under construction on template?', 'wpdevhelper'),
+        'required' => 0,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'layout' => 'horizontal',
+        'choices' => array(
+          'no' => __('No', 'wpdevhelper'),
+          'yes' => __('Yes', 'wpdevhelper'),
+        ),
+        'default_value' => 'no',
+        'other_choice' => 0,
+        'save_other_choice' => 0,
+        'allow_null' => 0,
+        'return_format' => 'value',
+      ),
+      array(
         'key' => 'field_sdf64dsf44',
         'label' => __('Form generator', 'wpdevhelper'),
         'name' => 'wpdevhelperTemplateSettings-form_generator',
@@ -2350,7 +2374,7 @@ function my_acf_add_local_field_groups() {
         'type' => 'code',
         'mode' => 'css',
         'placeholder' => '',
-        'instructions' => __('Add your css to the head. The &#60;style&#62; tags will be ignored.', 'wpdevhelper'),
+        'instructions' => __('Add your css to the head. The &#60;style&#62 tags will be ignored.', 'wpdevhelper'),
         'required' => 0,
         'conditional_logic' => 0,
         'wrapper' => array(
@@ -2368,7 +2392,7 @@ function my_acf_add_local_field_groups() {
         'type' => 'code',
         'mode' => 'javascript',
         'placeholder' => '',
-        'instructions' => __('Add your javascript to the Head. The &#60;script&#62; tags will be ignored.', 'wpdevhelper'),
+        'instructions' => __('Add your javascript to the Head. The &#60;script&#62 tags will be ignored.', 'wpdevhelper'),
         'required' => 0,
         'conditional_logic' => 0,
         'wrapper' => array(
@@ -2386,7 +2410,7 @@ function my_acf_add_local_field_groups() {
         'type' => 'code',
         'mode' => 'javascript',
         'placeholder' => '',
-        'instructions' => __('Add your javascript to the Footer The &#60;script&#62; tags will be ignored.', 'wpdevhelper'),
+        'instructions' => __('Add your javascript to the Footer The &#60;script&#62 tags will be ignored.', 'wpdevhelper'),
         'required' => 0,
         'conditional_logic' => 0,
         'wrapper' => array(

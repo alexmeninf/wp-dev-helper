@@ -8,7 +8,12 @@ class Developers
   {
     if (function_exists('acf_add_options_page')) {
       acf_add_options_page(array(
-        'page_title' => 'WP Dev Helper',
+        'page_title' => '
+          <h1 class="wp-helper-logo">
+            <img src="' . PLUGINROOT . '/assets/img/logo.png" class="rotate" alt="Under Construction Page">
+            WP Dev Helper
+          </h1>
+        ',
         'menu_title' => __('Developers', 'wpdevhelper'),
         'menu_slug'  => 'wp-dev-helper',
         'capability' => 'edit_posts',
@@ -282,6 +287,14 @@ class Developers
           printf('<meta property="%s" content="%s">', esc_attr($property), esc_attr($content));
         }
       }, 1);
+    }
+  }
+
+  /*----------  TEMPLATE SETTINGS -> UNDER CONSTRUCTION  ----------*/
+  public function developersTemplateSettingsUnderConstruction()
+  {
+    if (get_field('wpdevhelperTemplateSettings-under_construction', 'option') == 'yes') {
+      require_once(PLUGINPATH . 'under-construction-page/under-construction.php');
     }
   }
 

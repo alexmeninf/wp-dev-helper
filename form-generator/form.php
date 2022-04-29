@@ -182,14 +182,18 @@ function input($name, $id, $type, $is_required = false, $value = '', $custom_cla
   // Veirificar valores
   $required = $is_required ? 'required' : '';
 
+  // Verificar parametros passado na url ou pelo banco de dados
+  // Todo paramentro na url do formulário deve ser no padrão: f[nome_do_campo], para evitar confitos.
+  $received_parameter = isset($_GET['f' . $id]) && !empty($_GET['f' . $id]) ? esc_attr($_GET['f' . $id]) : $value;
+
   if ($type == 'hidden') : ?>
 
-    <input type="<?= $type ?>" id="<?= $id ?>" name="<?= $id ?>" value="<?= $value ?>" <?= $attributes ?>>
+    <input type="hidden" id="<?= $id ?>" name="<?= $id ?>" value="<?= $received_parameter ?>" <?= $attributes ?>>
 
   <?php elseif ($type == 'textarea') : ?>
 
     <label class="form-group <?= $custom_class ?>">
-      <textarea id="<?= $id ?>" name="<?= $id ?>" value="<?= $value ?>" placeholder="&nbsp;" <?= $required ?> <?= $attributes ?>></textarea>
+      <textarea id="<?= $id ?>" name="<?= $id ?>" placeholder="&nbsp;" <?= $required ?> <?= $attributes ?>><?= $received_parameter ?></textarea>
       <span class="txt">
         <?= $name ?>
         <?= $is_required ? '<sup class="text-danger">*</sup>' : '' ?>
@@ -202,14 +206,50 @@ function input($name, $id, $type, $is_required = false, $value = '', $custom_cla
     $options = split_options($value);
 
     echo '<select id="' . $id . '" name="' . $id . '" class="' . $custom_class . '">';
-    echo '<option value="" disabled selected>' . $name . '</option>';
+
+    // Verificar se recebe seleção pela url
+    $has_param = false;
+    $has_any_selected = false;
     foreach ($options as $values) {
+      $args = preg_split('/\:/', $values);
+      $attr = array_key_exists(2, $args) ? $args[2] : '';
+
+      if (isset($_GET['f' . $id]) && !empty($_GET['f' . $id]) && $_GET['f' . $id] == trim($args[0])) {
+        $has_param = true;
+      }
+
+      if (strpos($attr, 'selected') === true) {
+        $has_any_selected = true;
+      }
+    }
+
+    // Exibir opções
+    foreach ($options as $i=>$values) {
       // Separar cada campo da opção
       $args = preg_split('/\:/', $values);
       // Atributos
       $attr = array_key_exists(2, $args) ? $args[2] : '';
+      
+      if ($has_param) {
+        if ($_GET['f' . $id] == trim($args[0])) {
+          // Adicionar seleção
+          if (strpos($attr, 'selected') === false) {
+            $attr = $attr . ' selected';
+          }
+        } else {
+          // remover seleção de outros
+          $attr = str_replace('selected="selected"', '', $attr);
+          $attr = str_replace('selected', '', $attr);        
+        }
+      }
+
+      if ($i === 0) {
+        $op_default = !$has_param && !$has_any_selected ? 'selected' : '';
+        echo '<option value="" disabled '.$op_default.'>' . $name . '</option>';
+      }
+      
       // Exibir opção
-      echo '<option value="' . trim($args[0]) . '" ' . $attr . '>' . trim($args[1]) . '</option>';
+      echo '<option value="' . trim($args[0]) . '" ' . trim($attr) . '>' . trim($args[1]) . '</option>';
     }
     echo '</select>';
 
@@ -217,15 +257,39 @@ function input($name, $id, $type, $is_required = false, $value = '', $custom_cla
 
     $options = split_options($value);
 
+    // Verificar se botão foi checado pela url
+    $has_param = false;
     foreach ($options as $values) {
+      $args = preg_split('/\:/', $values);
+      $attr = array_key_exists(2, $args) ? $args[2] : '';
+
+      if (isset($_GET['f' . $id]) && !empty($_GET['f' . $id]) && $_GET['f' . $id] == trim($args[0])) {
+        $has_param = true;
+      }
+    }
+
+    foreach ($options as $i=>$values) {
       // Separar cada campo da opção
       $args = preg_split('/\:/', $values);
       // Atributos
       $attr = array_key_exists(2, $args) ? $args[2] : '';
 
+      if ($has_param) {
+        if ($_GET['f' . $id] == trim($args[0])) {
+          // Verificar
+          if (strpos($attr, 'checked') === false) {
+            $attr = $attr . ' checked';
+          }
+        } else {
+          // remover verificação de outros
+          $attr = str_replace('checked="checked"', '', $attr);
+          $attr = str_replace('checked', '', $attr);        
+        }
+      }
+
       // Exibir opção
       echo '<div class="form-check radio ' . $custom_class . '">';
-      echo '<input type="radio" id="' . trim($args[0]) . '" value="' . trim($args[0]) . '" name="' . $id . '" class="form-check-input" ' . $attr . '>';
+      echo '<input type="radio" id="' . $id . $i . '" value="' . trim($args[0]) . '" name="' . $id . '" class="form-check-input" ' . $attr . '>';
       echo '<label class="form-check-label" for="' . trim($args[0]) . '">' . trim($args[1]) . '</label>';
       echo '</div>';
     }
@@ -233,7 +297,7 @@ function input($name, $id, $type, $is_required = false, $value = '', $custom_cla
   else : ?>
 
     <label class="form-group <?= $custom_class ?>">
-      <input type="<?= $type ?>" id="<?= $id ?>" name="<?= $id ?>" value="<?= $value ?>" placeholder="&nbsp;" <?= $required ?> <?= $attributes ?>>
+      <input type="<?= $type ?>" id="<?= $id ?>" name="<?= $id ?>" value="<?= $received_parameter ?>" placeholder="&nbsp;" <?= $required ?> <?= $attributes ?>>
       <span class="txt">
         <?= $name ?>
         <?= $is_required ? '<sup class="text-danger">*</sup>' : '' ?>
@@ -245,6 +309,12 @@ function input($name, $id, $type, $is_required = false, $value = '', $custom_cla
 }
 
 
+/**
+ * split_options 
+ *
+ * @param  mixed $values
+ * @return array
+ */
 function split_options($values)
 {
   // remover mais de dois espaços vazios
