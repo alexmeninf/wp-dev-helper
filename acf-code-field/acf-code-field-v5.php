@@ -46,7 +46,7 @@ if (!class_exists('acf_code_field')) :
 			*  category (string) basic | content | choice | relational | jquery | layout | CUSTOM GROUP NAME
 			*/
 
-			$this->category = __("Code tools", 'wpdevhelper');;
+			$this->category = __("Code tools", 'wpdevhelper');
 
 
 			/*

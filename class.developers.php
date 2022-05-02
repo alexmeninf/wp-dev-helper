@@ -285,14 +285,6 @@ class Developers
     }
   }
 
-  /*----------  TEMPLATE SETTINGS -> UNDER CONSTRUCTION  ----------*/
-  public function developersTemplateSettingsUnderConstruction()
-  {
-    if (get_field('wpdevhelperTemplateSettings-under_construction', 'option') == 'yes') {
-      require_once(PLUGINPATH . 'under-construction-page/under-construction.php');
-    }
-  }
-
   /*----------  TEMPLATE SETTINGS -> FORM GENERATOR ----------*/
   public function developersTemplateSettingsFormGenerator()
   {

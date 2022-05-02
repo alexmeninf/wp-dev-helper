@@ -85,7 +85,6 @@ $wpdh->developersWPHeadMetaDescription();
 $wpdh->developersWPHeadMetaThemeColor();
 $wpdh->developersWPHeadFavicon();
 $wpdh->developersWPHeadOpenGraph();
-$wpdh->developersTemplateSettingsUnderConstruction();
 $wpdh->developersTemplateSettingsFormGenerator();
 $wpdh->developersOthersDuplicate();
 $wpdh->developersAdvancedWPHead();

@@ -15,7 +15,7 @@ jQuery(function($){
 					pluralName = 'mães';
 				} else if (singularName.toLowerCase() == 'cão') {
 					pluralName = 'cães';
-				} else if (guarsingularName.toLowerCase() == 'guardião') {
+				} else if (singularName.toLowerCase() == 'guardião') {
 					pluralName = 'guardiães';
 				} else if ( singularName.toLowerCase() == 'banner' ) {
 					pluralName = 'Banners';
