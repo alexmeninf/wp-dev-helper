@@ -8,12 +8,7 @@ class Developers
   {
     if (function_exists('acf_add_options_page')) {
       acf_add_options_page(array(
-        'page_title' => '
-          <h1 class="wp-helper-logo">
-            <img src="' . PLUGINROOT . '/assets/img/logo.png" class="rotate" alt="Under Construction Page">
-            WP Dev Helper
-          </h1>
-        ',
+        'page_title' => 'WP Dev Helper',
         'menu_title' => __('Developers', 'wpdevhelper'),
         'menu_slug'  => 'wp-dev-helper',
         'capability' => 'edit_posts',
@@ -236,7 +231,7 @@ class Developers
         $tags = [];
   
         if (is_singular()) {
-          $tags['og:description'] = trim(get_the_excerpt());
+          $tags['og:description'] = wp_trim_words( get_the_excerpt(), 36, ' ...' );
         }
 
         if ( is_front_page() ) {

@@ -1,5 +1,8 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) 
+  exit; // Exit if accessed directly.
+  
 /**
  * Limpar nome de arquivo no upload
  * 

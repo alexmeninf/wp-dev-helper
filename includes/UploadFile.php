@@ -1,5 +1,8 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) 
+  exit; // Exit if accessed directly.
+
 /**
  * Este arquivo permite o upload de arquivos para o midia no painel administrativo
  * do WordPress, atráves de formulários customizados.

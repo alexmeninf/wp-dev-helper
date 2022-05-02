@@ -1,5 +1,8 @@
-<?php 
+<?php
 
+if ( ! defined( 'ABSPATH' ) ) 
+  exit; // Exit if accessed directly.
+  
 /*====================================================
 =            REGISTER POST TYPE GENERATOR            =
 ====================================================*/
@@ -121,7 +124,7 @@ add_action('init', 'dashboard_widget_post_type', 0);
 ====================================================*/
 $postTypes = get_posts('post_type=new_post_type&posts_per_page=-1');
 if (count($postTypes) >= 1) {
-  foreach ($postTypes as $postType) {
+  foreach ($postTypes as $postType) {    
     add_action('init', function () use ($postType) {
       $postTypeArgs = array();
       # Custom archives
@@ -130,14 +133,37 @@ if (count($postTypes) >= 1) {
       } else {
         $postTypeArgs['has_archive'] = get_field('wpdevhelper-posttype-enable_archives', $postType->ID) === 'true' ? true : false;
       }
+      
       # Custom query
       if (get_field('wpdevhelper-posttype-query', $postType->ID) == 'custom') {
         $postTypeArgs['query_var'] = get_field('wpdevhelper-posttype-custom_query', $postType->ID);
+      } 
+
+      # Permalink Rewrite
+      if (get_field('wpdevhelper-posttype-permalink_rewrite', $postType->ID) == 'false') {
+        $postTypeArgs['rewrite'] = false;
+      } elseif (get_field('wpdevhelper-posttype-permalink_rewrite', $postType->ID) == 'custom') {
+        $postTypeArgs['rewrite'] = array(
+          'slug'       => get_field('wpdevhelper-posttype-url_slug', $postType->ID),
+          'with_front' => get_field('wpdevhelper-posttype-use_url_slug', $postType->ID) === 'true' ? true : false,
+          'pages'      => get_field('wpdevhelper-posttype-pagination', $postType->ID) === 'true' ? true : false,
+          'feeds'      => get_field('wpdevhelper-posttype-feeds', $postType->ID) === 'true' ? true : false,
+        );
       }
-      # Base capabilities
-      if (get_field('wpdevhelper-posttype-capabilities', $postType->ID) == 'base') {
-        $postTypeArgs['capability_type'] = get_field('wpdevhelper-posttype-base_capability_type', $postType->ID);
+
+      # Custom Capabilities
+      if (get_field('wpdevhelper-posttype-capabilities', $postType->ID) == 'custom') {
+        $postTypeArgs['capabilities'] = array(
+          'edit_post'             => get_field('wpdevhelper-posttype-edit_post', $postType->ID),
+          'read_post'             => get_field('wpdevhelper-posttype-read_post', $postType->ID),
+          'delete_post'           => get_field('wpdevhelper-posttype-delete_post', $postType->ID),
+          'edit_posts'            => get_field('wpdevhelper-posttype-edit_posts', $postType->ID),
+          'edit_others_posts'     => get_field('wpdevhelper-posttype-edit_others_posts', $postType->ID),
+          'publish_posts'         => get_field('wpdevhelper-posttype-publish_posts', $postType->ID),
+          'read_private_posts'    => get_field('wpdevhelper-posttype-read_private_posts', $postType->ID),
+        );
       }
+      
       # Register post type
       register_post_type(
         get_field('wpdevhelper-posttype-post_type_key', $postType->ID),
@@ -179,13 +205,14 @@ if (count($postTypes) >= 1) {
           'public'              => get_field('wpdevhelper-posttype-public', $postType->ID) === 'true' ? true : false,
           'show_ui'             => get_field('wpdevhelper-posttype-show_ui', $postType->ID) === 'true' ? true : false,
           'show_in_menu'        => get_field('wpdevhelper-posttype-show_in_admin_sidebar', $postType->ID) === 'true' ? true : false,
-          'menu_position'       => get_field('wpdevhelper-posttype-admin_sidebar_location', $postType->ID),
+          'menu_position'       => (int)get_field('wpdevhelper-posttype-admin_sidebar_location', $postType->ID),
           'menu_icon'           => get_field('wpdevhelper-posttype-sidebar_icon', $postType->ID) == '' ? 'dashicons-admin-post' : get_field('wpdevhelper-posttype-sidebar_icon', $postType->ID),
           'show_in_admin_bar'   => get_field('wpdevhelper-posttype-show_in_admin_bar', $postType->ID) === 'true' ? true : false,
           'show_in_nav_menus'   => get_field('wpdevhelper-posttype-show_in_navigation_menus', $postType->ID) === 'true' ? true : false,
           'can_export'          => get_field('wpdevhelper-posttype-enable_export', $postType->ID) === 'true' ? true : false,
           'exclude_from_search' => get_field('wpdevhelper-posttype-exclude_from_search', $postType->ID) === 'true' ? true : false,
           'publicly_queryable'  => get_field('wpdevhelper-posttype-publicly_queryable', $postType->ID) === 'true' ? true : false,
+          'capability_type'     => get_field('wpdevhelper-posttype-base_capability_type', $postType->ID),
           'show_in_rest'        => true,
           $postTypeArgs
         ]

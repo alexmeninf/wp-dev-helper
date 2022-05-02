@@ -114,7 +114,7 @@ if (!class_exists('acf_code_field')) :
 
 			acf_render_field_setting($field, array(
 				'label'        => __('Editor mode', 'acf'),
-				'instructions' => __('', 'acf'),
+				'instructions' => '',
 				'type'         => 'select',
 				'name'         => 'mode',
 				'choices'      => array(

@@ -27,6 +27,11 @@ From your WordPress dashboard
 
 == Changelog ==
 
+= 1.7.5 = 02/05/2022
+* Refactor: Melhoria nas traduções
+* Refactor: Adicionado outros suportes na edição post types customizados que estavam incompletos
+* Fix: Corrigido o erro que não exibia a thumbnail da postagem
+
 = 1.7.4 = 09/03/2022
 * Feat: Adicionado suporte para preenchimento automatico dos formulários customizados via url com o nome de cada campo.
 

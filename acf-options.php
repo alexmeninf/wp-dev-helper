@@ -1,5 +1,10 @@
 <?php
-add_action( 'acf/init', 'my_acf_add_local_field_groups' );
+
+if (!defined('ABSPATH'))
+  exit; // Exit if accessed directly.
+
+
+add_action('acf/init', 'my_acf_add_local_field_groups');
 
 function my_acf_add_local_field_groups() {
   acf_add_local_field_group(array(
@@ -234,7 +239,7 @@ function my_acf_add_local_field_groups() {
         ),
       ),
       array(
-        'default_value' => '',
+        'default_value' => 'Item Archives',
         'maxlength' => '',
         'placeholder' => __('Item Archives', 'wpdevhelper'),
         'prepend' => '',
@@ -253,7 +258,7 @@ function my_acf_add_local_field_groups() {
         ),
       ),
       array(
-        'default_value' => '',
+        'default_value' => 'Item Attributes',
         'maxlength' => '',
         'placeholder' => __('Item Attributes', 'wpdevhelper'),
         'prepend' => '',
@@ -272,7 +277,7 @@ function my_acf_add_local_field_groups() {
         ),
       ),
       array(
-        'default_value' => '',
+        'default_value' => 'Parent Item:',
         'maxlength' => '',
         'placeholder' => __('Parent Item:', 'wpdevhelper'),
         'prepend' => '',
@@ -511,7 +516,7 @@ function my_acf_add_local_field_groups() {
         ),
       ),
       array(
-        'default_value' => '',
+        'default_value' => 'Featured Image',
         'maxlength' => '',
         'placeholder' => __('Featured Image', 'wpdevhelper'),
         'prepend' => '',
@@ -530,7 +535,7 @@ function my_acf_add_local_field_groups() {
         ),
       ),
       array(
-        'default_value' => '',
+        'default_value' => 'Set featured image',
         'maxlength' => '',
         'placeholder' => __('Set featured image', 'wpdevhelper'),
         'prepend' => '',
@@ -549,7 +554,7 @@ function my_acf_add_local_field_groups() {
         ),
       ),
       array(
-        'default_value' => '',
+        'default_value' => 'Remove featured image',
         'maxlength' => '',
         'placeholder' => __('Remove featured image', 'wpdevhelper'),
         'prepend' => '',
@@ -568,7 +573,7 @@ function my_acf_add_local_field_groups() {
         ),
       ),
       array(
-        'default_value' => '',
+        'default_value' => 'Use as featured image',
         'maxlength' => '',
         'placeholder' => __('Use as featured image', 'wpdevhelper'),
         'prepend' => '',
@@ -587,7 +592,7 @@ function my_acf_add_local_field_groups() {
         ),
       ),
       array(
-        'default_value' => '',
+        'default_value' => 'Insert into item',
         'maxlength' => '',
         'placeholder' => __('Insert into item', 'wpdevhelper'),
         'prepend' => '',
@@ -606,7 +611,7 @@ function my_acf_add_local_field_groups() {
         ),
       ),
       array(
-        'default_value' => '',
+        'default_value' => 'Uploaded to this item',
         'maxlength' => '',
         'placeholder' => __('Uploaded to this item', 'wpdevhelper'),
         'prepend' => '',
@@ -625,7 +630,7 @@ function my_acf_add_local_field_groups() {
         ),
       ),
       array(
-        'default_value' => '',
+        'default_value' => 'Items list',
         'maxlength' => '',
         'placeholder' => __('Items list', 'wpdevhelper'),
         'prepend' => '',
@@ -644,7 +649,7 @@ function my_acf_add_local_field_groups() {
         ),
       ),
       array(
-        'default_value' => '',
+        'default_value' => 'Items list navigation',
         'maxlength' => '',
         'placeholder' => __('Items list navigation', 'wpdevhelper'),
         'prepend' => '',
@@ -663,7 +668,7 @@ function my_acf_add_local_field_groups() {
         ),
       ),
       array(
-        'default_value' => '',
+        'default_value' => 'Filter items list',
         'maxlength' => '',
         'placeholder' => __('Filter items list', 'wpdevhelper'),
         'prepend' => '',
@@ -1336,6 +1341,7 @@ function my_acf_add_local_field_groups() {
         'allow_null' => 0,
         'choices' => array(
           'base' => __('Base capabilities', 'wpdevhelper'),
+          'custom' => __('Custom capabilities', 'wpdevhelper'),
         ),
         'default_value' => array(
           0 => 'base',
@@ -1348,9 +1354,198 @@ function my_acf_add_local_field_groups() {
         'label' => __('Capabilities', 'wpdevhelper'),
         'name' => 'wpdevhelper-posttype-capabilities',
         'type' => 'select',
-        'instructions' => __('Set <a href="https://codex.wordpress.org/Roles_and_Capabilities" target="_blank">user capabilities</a> to manage post type.', 'wpdevhelper'),
+        'instructions' => __('Set <a href="https://wordpress.org/support/article/roles-and-capabilities/" target="_blank">user capabilities</a> to manage post type.', 'wpdevhelper'),
         'required' => 1,
         'conditional_logic' => 0,
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+      ),
+      array(
+        'default_value' => 'read_post',
+        'maxlength' => '',
+        'placeholder' => 'read_post',
+        'prepend' => '',
+        'append' => '',
+        'key' => 'field_0a501c5b854ed00',
+        'label' => __('Read Post', 'wpdevhelper'),
+        'name' => 'wpdevhelper-posttype-read_post',
+        'type' => 'text',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => array(
+          array(
+            array(
+              'field' => 'field_588a3d4582602',
+              'operator' => '==',
+              'value' => 'custom',
+            ),
+          ),
+        ),
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+      ),
+      array(
+        'default_value' => 'read_private_posts',
+        'maxlength' => '',
+        'placeholder' => 'read_private_posts',
+        'prepend' => '',
+        'append' => '',
+        'key' => 'field_as95a9f10e0b5cd',
+        'label' => __('Read Private Posts', 'wpdevhelper'),
+        'name' => 'wpdevhelper-posttype-read_private_posts',
+        'type' => 'text',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => array(
+          array(
+            array(
+              'field' => 'field_588a3d4582602',
+              'operator' => '==',
+              'value' => 'custom',
+            ),
+          ),
+        ),
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+      ),
+      array(
+        'default_value' => 'publish_posts',
+        'maxlength' => '',
+        'placeholder' => 'publish_posts',
+        'prepend' => '',
+        'append' => '',
+        'key' => 'field_a0a515e41e5ffbb4c',
+        'label' => __('Publish Posts', 'wpdevhelper'),
+        'name' => 'wpdevhelper-posttype-publish_posts',
+        'type' => 'text',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => array(
+          array(
+            array(
+              'field' => 'field_588a3d4582602',
+              'operator' => '==',
+              'value' => 'custom',
+            ),
+          ),
+        ),
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+      ),
+      array(
+        'default_value' => 'delete_post',
+        'maxlength' => '',
+        'placeholder' => 'delete_post',
+        'prepend' => '',
+        'append' => '',
+        'key' => 'field_b262030b05e5dff',
+        'label' => __('Delete Post', 'wpdevhelper'),
+        'name' => 'wpdevhelper-posttype-delete_post',
+        'type' => 'text',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => array(
+          array(
+            array(
+              'field' => 'field_588a3d4582602',
+              'operator' => '==',
+              'value' => 'custom',
+            ),
+          ),
+        ),
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+      ),
+      array(
+        'default_value' => 'edit_post',
+        'maxlength' => '',
+        'placeholder' => 'edit_post',
+        'prepend' => '',
+        'append' => '',
+        'key' => 'field_0545e4fb00ad5c',
+        'label' => __('Edit Post', 'wpdevhelper'),
+        'name' => 'wpdevhelper-posttype-edit_post',
+        'type' => 'text',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => array(
+          array(
+            array(
+              'field' => 'field_588a3d4582602',
+              'operator' => '==',
+              'value' => 'custom',
+            ),
+          ),
+        ),
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+      ),
+      array(
+        'default_value' => 'edit_posts',
+        'maxlength' => '',
+        'placeholder' => 'edit_posts',
+        'prepend' => '',
+        'append' => '',
+        'key' => 'field_0b22e4fb00ad2c',
+        'label' => __('Edit Posts', 'wpdevhelper'),
+        'name' => 'wpdevhelper-posttype-edit_posts',
+        'type' => 'text',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => array(
+          array(
+            array(
+              'field' => 'field_588a3d4582602',
+              'operator' => '==',
+              'value' => 'custom',
+            ),
+          ),
+        ),
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+      ),
+      array(
+        'default_value' => 'edit_others_posts',
+        'maxlength' => '',
+        'placeholder' => 'edit_others_posts',
+        'prepend' => '',
+        'append' => '',
+        'key' => 'field_a0a55b0524fdf08',
+        'label' => __('Edit Others Posts', 'wpdevhelper'),
+        'name' => 'wpdevhelper-posttype-edit_others_posts',
+        'type' => 'text',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => array(
+          array(
+            array(
+              'field' => 'field_588a3d4582602',
+              'operator' => '==',
+              'value' => 'custom',
+            ),
+          ),
+        ),
         'wrapper' => array(
           'width' => '',
           'class' => '',
@@ -1377,15 +1572,6 @@ function my_acf_add_local_field_groups() {
         'type' => 'select',
         'instructions' => __('Used as a base to construct capabilities.', 'wpdevhelper'),
         'required' => 1,
-        'conditional_logic' => array(
-          array(
-            array(
-              'field' => 'field_588a3d4582602',
-              'operator' => '==',
-              'value' => 'base',
-            ),
-          ),
-        ),
         'wrapper' => array(
           'width' => '',
           'class' => '',
@@ -2366,7 +2552,7 @@ function my_acf_add_local_field_groups() {
         'save_custom' => 0,
         'toggle' => 0,
         'return_format' => 'value',
-      ), 
+      ),
       array(
         'key' => 'field_587fb19397e05',
         'label' => __('Custom CSS', 'wpdevhelper'),

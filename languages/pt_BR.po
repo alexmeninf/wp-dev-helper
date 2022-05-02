@@ -1,80 +1,83 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WP Dev Helper 1.7\n"
-"POT-Creation-Date: 2022-02-04 10:27-0300\n"
-"PO-Revision-Date: 2022-02-04 10:30-0300\n"
+"POT-Creation-Date: 2022-05-02 10:06-0300\n"
+"PO-Revision-Date: 2022-05-02 10:09-0300\n"
 "Last-Translator: \n"
 "Language-Team: Alexandre Menin <menin.alex11@gmail.com>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0\n"
-"X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_;_e;esc_attr__\n"
+"X-Poedit-KeywordsList: __;_;_e;esc_attr__;_x\n"
 "X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPath-1: under-construction-page\n"
 "X-Poedit-SearchPathExcluded-0: advanced-custom-fields-pro\n"
-"X-Poedit-SearchPathExcluded-1: acf-code\n"
-"X-Poedit-SearchPathExcluded-2: assets\n"
+"X-Poedit-SearchPathExcluded-1: assets\n"
+"X-Poedit-SearchPathExcluded-2: acf-code-field/js\n"
+"X-Poedit-SearchPathExcluded-3: acf-code-field/css\n"
+"X-Poedit-SearchPathExcluded-4: acf-code-field/lib\n"
 
 #: acf-code-field/acf-code-field-v4.php:31
-msgid "ACF Code Field"
-msgstr "ACF - Campo de código"
+#: acf-code-field/acf-code-field-v5.php:42
+msgid "Code Area"
+msgstr "Área de código"
 
 #: acf-code-field/acf-code-field-v4.php:32
-msgid "Code Tools"
+#: acf-code-field/acf-code-field-v5.php:49
+msgid "Code tools"
 msgstr "Ferramentas de código"
 
 #: acf-code-field/acf-code-field-v4.php:77
-#: acf-code-field/acf-code-field-v5.php:96
+#: acf-code-field/acf-code-field-v5.php:100
 msgid "Default Value"
 msgstr "Valor padrão"
 
 #: acf-code-field/acf-code-field-v4.php:79
-#: acf-code-field/acf-code-field-v5.php:97
+#: acf-code-field/acf-code-field-v5.php:101
 msgid "Appears when creating a new post"
 msgstr "Aparece ao criar uma nova postagem"
 
 #: acf-code-field/acf-code-field-v4.php:93
-#: acf-code-field/acf-code-field-v5.php:105
+#: acf-code-field/acf-code-field-v5.php:109
 msgid "Placeholder Text"
-msgstr ""
+msgstr "Texto de Placeholder"
 
 #: acf-code-field/acf-code-field-v4.php:95
-#: acf-code-field/acf-code-field-v5.php:106
+#: acf-code-field/acf-code-field-v5.php:110
 msgid "Appears within the input"
 msgstr "Aparece dentro da entrada"
 
 #: acf-code-field/acf-code-field-v4.php:109
-#: acf-code-field/acf-code-field-v5.php:112
+#: acf-code-field/acf-code-field-v5.php:116
 msgid "Editor mode"
 msgstr "Modo de edição"
 
 #: acf-code-field/acf-code-field-v4.php:118
-#: acf-code-field/acf-code-field-v5.php:117
+#: acf-code-field/acf-code-field-v5.php:121
 msgid "HTML Mixed"
 msgstr "HTML Misto"
 
 #: acf-code-field/acf-code-field-v4.php:119
-#: acf-code-field/acf-code-field-v5.php:118
+#: acf-code-field/acf-code-field-v5.php:122
 msgid "JavaScript"
 msgstr ""
 
 #: acf-code-field/acf-code-field-v4.php:120
-#: acf-code-field/acf-code-field-v5.php:119
+#: acf-code-field/acf-code-field-v5.php:123
 msgid "HTML"
 msgstr ""
 
 #: acf-code-field/acf-code-field-v4.php:121
-#: acf-code-field/acf-code-field-v5.php:120
+#: acf-code-field/acf-code-field-v5.php:124
 msgid "CSS"
 msgstr ""
 
 #: acf-code-field/acf-code-field-v4.php:122
-#: acf-code-field/acf-code-field-v5.php:121
+#: acf-code-field/acf-code-field-v5.php:125
 msgid "PHP"
 msgstr ""
 
@@ -82,19 +85,15 @@ msgstr ""
 msgid "Theme"
 msgstr "Tema"
 
-#: acf-code-field/acf-code-field-v5.php:40
-msgid "Code area field"
-msgstr "Campo de área de código"
-
-#: acf-code-field/acf-code-field-v5.php:61
+#: acf-code-field/acf-code-field-v5.php:64
 msgid "Error! Please enter a higher value"
 msgstr "Erro! Insira um valor maior"
 
-#: acf-code-field/acf-code-field-v5.php:128
+#: acf-code-field/acf-code-field-v5.php:132
 msgid "Editor theme"
 msgstr "Editar tema"
 
-#: acf-code-field/acf-code-field-v5.php:129
+#: acf-code-field/acf-code-field-v5.php:133
 msgid ""
 "Themes can be previewed on the <a href=\"https://codemirror.net/demo/theme."
 "html#default\" target=\"_blank\">codemirror website</a>"
@@ -111,511 +110,515 @@ msgstr ""
 "Uh-oh. ACF não instalado. Instale o <a href=\"%s\" class=\"thickbox\">plug-"
 "in Advanced Custom Fields.</a>"
 
-#: acf-options.php:7
+#: acf-options.php:12
 msgid "Custom Post Type"
 msgstr "Post Type Personalizado"
 
-#: acf-options.php:13
+#: acf-options.php:18
 msgid "General"
 msgstr "Geral"
 
-#: acf-options.php:32 acf-options.php:35
+#: acf-options.php:37 acf-options.php:40
 msgid "Text Domain"
 msgstr "Domínio de texto"
 
-#: acf-options.php:35
+#: acf-options.php:40
 msgid "Translation file"
 msgstr "Tradução"
 
-#: acf-options.php:35 acf-options.php:1781
+#: acf-options.php:40 acf-options.php:1967
 msgid "Optional"
 msgstr "Opcional"
 
-#: acf-options.php:48 acf-options.php:101 acf-options.php:220
-#: wp-dev-helper.php:68
+#: acf-options.php:53 acf-options.php:106 acf-options.php:225
+#: includes/register-post_type.php:13 includes/register-post_type.php:15
 msgid "Post Type"
 msgstr "Post Type"
 
-#: acf-options.php:67
+#: acf-options.php:72
 msgid "Post Type Key"
 msgstr "Chave do Post Type"
 
-#: acf-options.php:70
+#: acf-options.php:75
 msgid "Key used in the code. Up to 20 characters, lowercase, no spaces."
 msgstr "Chave para query. Máximo de 20 caracteres, minúsculos e sem espaços."
 
-#: acf-options.php:82
+#: acf-options.php:87
 msgid "Post Type Description"
 msgstr "Descrição"
 
-#: acf-options.php:89
+#: acf-options.php:94
 msgid "A short descriptive summary of the post type."
 msgstr "Um breve resumo descritivo do tipo de postagem."
 
-#: acf-options.php:105
+#: acf-options.php:110
 msgid "Name (Singular)"
 msgstr "Nome (Singular)"
 
-#: acf-options.php:108
+#: acf-options.php:113
 msgid "Post type singular name. e.g. Product, Event or Movie."
 msgstr "Post type com nome no singular. Por exemplo: Produto, Evento ou Filme."
 
-#: acf-options.php:120 acf-options.php:201 wp-dev-helper.php:67
-#: wp-dev-helper.php:94
+#: acf-options.php:125 acf-options.php:206 includes/register-post_type.php:12
+#: includes/register-post_type.php:14 includes/register-post_type.php:41
 msgid "Post Types"
 msgstr "Post Types"
 
-#: acf-options.php:124
+#: acf-options.php:129
 msgid "Name (Plural)"
 msgstr "Nome (Plural)"
 
-#: acf-options.php:127
+#: acf-options.php:132
 msgid "Post type plural name. e.g. Products, Events or Movies."
 msgstr ""
 "Post type com nome no plural. Por exemplo: Produtos, Eventos ou Filmes."
 
-#: acf-options.php:143
+#: acf-options.php:148
 msgid "Link To Taxonomies"
 msgstr "Link para taxonomias"
 
-#: acf-options.php:146
+#: acf-options.php:151
 msgid "Comma separated list of"
 msgstr "Lista separada por vírgula"
 
-#: acf-options.php:146 acf-options.php:1592
+#: acf-options.php:151 acf-options.php:1778
 msgid "Taxonomies"
 msgstr "Taxonomias"
 
-#: acf-options.php:159
+#: acf-options.php:164
 msgid "Yes (like pages)"
 msgstr "Sim (tipo páginas)"
 
-#: acf-options.php:160
+#: acf-options.php:165
 msgid "No (like posts)"
 msgstr "Não (tipo posts)"
 
-#: acf-options.php:170
+#: acf-options.php:175
 msgid "Hierarchical"
 msgstr "Hierárquico"
 
-#: acf-options.php:173
+#: acf-options.php:178
 msgid "Hierarchical post types allows descendants."
 msgstr "Tipos de postagens hierárquicas permitem descendentes."
 
-#: acf-options.php:186
+#: acf-options.php:191
 msgid "Labels"
 msgstr "Labels"
 
-#: acf-options.php:205
+#: acf-options.php:210
 msgid "Menu Name"
 msgstr "Nome do Menu"
 
-#: acf-options.php:224
+#: acf-options.php:229
 msgid "Admin Bar Name"
 msgstr "Nome da barra do Administrador"
 
-#: acf-options.php:239 wp-dev-helper.php:69 wp-dev-helper.php:127
+#: acf-options.php:244 includes/register-post_type.php:16
+#: includes/register-post_type.php:74
 msgid "Item Archives"
 msgstr "Arquivos de itens"
 
-#: acf-options.php:243
+#: acf-options.php:248
 msgid "Archives"
 msgstr "Arquivos"
 
-#: acf-options.php:258 wp-dev-helper.php:70 wp-dev-helper.php:128
+#: acf-options.php:263 includes/register-post_type.php:17
+#: includes/register-post_type.php:75
 msgid "Item Attributes"
 msgstr "Atributos do Item"
 
-#: acf-options.php:262
+#: acf-options.php:267
 msgid "Attributes"
 msgstr "Atributos"
 
-#: acf-options.php:277 wp-dev-helper.php:71 wp-dev-helper.php:129
+#: acf-options.php:282 includes/register-post_type.php:18
+#: includes/register-post_type.php:76
 msgid "Parent Item:"
 msgstr "Item Pai:"
 
-#: acf-options.php:281
+#: acf-options.php:286
 msgid "Parent Item"
 msgstr "Item Pai"
 
-#: acf-options.php:296 acf-options.php:297 acf-options.php:301
-#: wp-dev-helper.php:72 wp-dev-helper.php:130
+#: acf-options.php:301 acf-options.php:302 acf-options.php:306
+#: includes/register-post_type.php:19 includes/register-post_type.php:77
 msgid "All Items"
 msgstr "Todos os Itens"
 
-#: acf-options.php:316 acf-options.php:317 acf-options.php:321
-#: wp-dev-helper.php:73 wp-dev-helper.php:131
+#: acf-options.php:321 acf-options.php:322 acf-options.php:326
+#: includes/register-post_type.php:20 includes/register-post_type.php:78
 msgid "Add New Item"
 msgstr "Adicionar Novo Post Type"
 
-#: acf-options.php:336 acf-options.php:337 acf-options.php:341
-#: wp-dev-helper.php:74 wp-dev-helper.php:132
+#: acf-options.php:341 acf-options.php:342 acf-options.php:346
+#: includes/register-post_type.php:21 includes/register-post_type.php:79
 msgid "Add New"
 msgstr "Adicionar Novo"
 
-#: acf-options.php:356 acf-options.php:357 acf-options.php:361
-#: wp-dev-helper.php:75 wp-dev-helper.php:133
+#: acf-options.php:361 acf-options.php:362 acf-options.php:366
+#: includes/register-post_type.php:22 includes/register-post_type.php:80
 msgid "New Item"
 msgstr "Novo Item"
 
-#: acf-options.php:376 acf-options.php:377 acf-options.php:381
-#: wp-dev-helper.php:76 wp-dev-helper.php:134
+#: acf-options.php:381 acf-options.php:382 acf-options.php:386
+#: includes/register-post_type.php:23 includes/register-post_type.php:81
 msgid "Edit Item"
 msgstr "Editar Item"
 
-#: acf-options.php:396 acf-options.php:397 acf-options.php:401
-#: wp-dev-helper.php:77 wp-dev-helper.php:135
+#: acf-options.php:401 acf-options.php:402 acf-options.php:406
+#: includes/register-post_type.php:24 includes/register-post_type.php:82
 msgid "Update Item"
 msgstr "Atualizar Item"
 
-#: acf-options.php:416 acf-options.php:417 acf-options.php:421
-#: wp-dev-helper.php:78 wp-dev-helper.php:136
+#: acf-options.php:421 acf-options.php:422 acf-options.php:426
+#: includes/register-post_type.php:25 includes/register-post_type.php:83
 msgid "View Item"
 msgstr "Ver Item"
 
-#: acf-options.php:436 acf-options.php:437 acf-options.php:441
-#: wp-dev-helper.php:79 wp-dev-helper.php:137
+#: acf-options.php:441 acf-options.php:442 acf-options.php:446
+#: includes/register-post_type.php:26 includes/register-post_type.php:84
 msgid "View Items"
 msgstr "Ver Itens"
 
-#: acf-options.php:456 acf-options.php:457 acf-options.php:461
-#: wp-dev-helper.php:80 wp-dev-helper.php:138
+#: acf-options.php:461 acf-options.php:462 acf-options.php:466
+#: includes/register-post_type.php:27 includes/register-post_type.php:85
 msgid "Search Item"
 msgstr "Pesquisar Item"
 
-#: acf-options.php:476 acf-options.php:477 wp-dev-helper.php:81
-#: wp-dev-helper.php:139
+#: acf-options.php:481 acf-options.php:482 includes/register-post_type.php:28
+#: includes/register-post_type.php:86
 msgid "Not found"
 msgstr "Nada encontrado"
 
-#: acf-options.php:481
+#: acf-options.php:486
 msgid "Not Found"
 msgstr "Nada Encontrado"
 
-#: acf-options.php:496 acf-options.php:497 wp-dev-helper.php:82
-#: wp-dev-helper.php:140
+#: acf-options.php:501 acf-options.php:502 includes/register-post_type.php:29
+#: includes/register-post_type.php:87
 msgid "Not found in Trash"
 msgstr "Nada encontrado na Lixeira"
 
-#: acf-options.php:501
+#: acf-options.php:506
 msgid "Not Found in Trash"
 msgstr "Nada Encontrado na Lixeira"
 
-#: acf-options.php:516 acf-options.php:520 acf-options.php:707
-#: wp-dev-helper.php:83 wp-dev-helper.php:141
+#: acf-options.php:521 acf-options.php:525 acf-options.php:712
+#: includes/register-post_type.php:30 includes/register-post_type.php:88
 msgid "Featured Image"
 msgstr "Imagem Destaque"
 
-#: acf-options.php:535 acf-options.php:539 wp-dev-helper.php:84
-#: wp-dev-helper.php:142
+#: acf-options.php:540 acf-options.php:544 includes/register-post_type.php:31
+#: includes/register-post_type.php:89
 msgid "Set featured image"
 msgstr "Definir imagem em destaque"
 
-#: acf-options.php:554 acf-options.php:558 wp-dev-helper.php:85
-#: wp-dev-helper.php:143
+#: acf-options.php:559 acf-options.php:563 includes/register-post_type.php:32
+#: includes/register-post_type.php:90
 msgid "Remove featured image"
 msgstr "Remover imagem em destaque"
 
-#: acf-options.php:573 acf-options.php:577 wp-dev-helper.php:86
-#: wp-dev-helper.php:144
+#: acf-options.php:578 acf-options.php:582 includes/register-post_type.php:33
+#: includes/register-post_type.php:91
 msgid "Use as featured image"
 msgstr "Usar como imagem em destaque"
 
-#: acf-options.php:592 acf-options.php:596 wp-dev-helper.php:87
-#: wp-dev-helper.php:145
+#: acf-options.php:597 acf-options.php:601 includes/register-post_type.php:34
+#: includes/register-post_type.php:92
 msgid "Insert into item"
 msgstr "Inserir no item"
 
-#: acf-options.php:611 acf-options.php:615 wp-dev-helper.php:88
-#: wp-dev-helper.php:146
+#: acf-options.php:616 acf-options.php:620 includes/register-post_type.php:35
+#: includes/register-post_type.php:93
 msgid "Uploaded to this item"
 msgstr "Enviado para este item"
 
-#: acf-options.php:630 acf-options.php:634 wp-dev-helper.php:89
-#: wp-dev-helper.php:147
+#: acf-options.php:635 acf-options.php:639 includes/register-post_type.php:36
+#: includes/register-post_type.php:94
 msgid "Items list"
 msgstr "Lista de Itens"
 
-#: acf-options.php:649 acf-options.php:653 wp-dev-helper.php:90
-#: wp-dev-helper.php:148
+#: acf-options.php:654 acf-options.php:658 includes/register-post_type.php:37
+#: includes/register-post_type.php:95
 msgid "Items list navigation"
 msgstr "Navegação da lista de itens"
 
-#: acf-options.php:668 acf-options.php:672 wp-dev-helper.php:91
-#: wp-dev-helper.php:149
+#: acf-options.php:673 acf-options.php:677 includes/register-post_type.php:38
+#: includes/register-post_type.php:96
 msgid "Filter items list"
 msgstr "Filtar itens da lista"
 
-#: acf-options.php:688
+#: acf-options.php:693
 msgid "Options"
 msgstr "Opções"
 
-#: acf-options.php:703 under-construction-page/under-construction.php:1276
+#: acf-options.php:708
 msgid "Title"
 msgstr "Título"
 
-#: acf-options.php:704
+#: acf-options.php:709
 msgid "Content (editor)"
 msgstr "Content (Editor de conteúdo)"
 
-#: acf-options.php:705
+#: acf-options.php:710
 msgid "Excerpt"
 msgstr "Excerto"
 
-#: acf-options.php:706
+#: acf-options.php:711
 msgid "Author"
 msgstr "Autor"
 
-#: acf-options.php:708
+#: acf-options.php:713
 msgid "Comments"
 msgstr "Comentários"
 
-#: acf-options.php:709
+#: acf-options.php:714
 msgid "Trackbacks"
 msgstr "Trackbacks"
 
-#: acf-options.php:710
+#: acf-options.php:715
 msgid "Revisions"
 msgstr "Revisões"
 
-#: acf-options.php:711
+#: acf-options.php:716
 msgid "Custom Fields"
 msgstr "Campos personalizados"
 
-#: acf-options.php:712
+#: acf-options.php:717
 msgid "Page Attributes"
 msgstr "Atributos da Página"
 
-#: acf-options.php:713
+#: acf-options.php:718
 msgid "Post Formats"
 msgstr "Formato de Post"
 
-#: acf-options.php:723
+#: acf-options.php:728
 msgid "Supports"
 msgstr "Suportes"
 
-#: acf-options.php:750
+#: acf-options.php:755
 msgid "Exclude From Search"
 msgstr "Excluir da pesquisa"
 
-#: acf-options.php:753
+#: acf-options.php:758
 msgid "Posts of this type should be excluded from search results."
 msgstr "Postagens desse tipo devem ser excluídas dos resultados da pesquisa."
 
-#: acf-options.php:766 acf-options.php:864 acf-options.php:891
-#: acf-options.php:999 acf-options.php:1096 acf-options.php:1217
-#: acf-options.php:1252 acf-options.php:1287 acf-options.php:1655
-#: acf-options.php:2228 acf-options.php:2267 acf-options.php:2291
+#: acf-options.php:771 acf-options.php:869 acf-options.php:896
+#: acf-options.php:1004 acf-options.php:1101 acf-options.php:1222
+#: acf-options.php:1257 acf-options.php:1292 acf-options.php:1841
+#: acf-options.php:2414 acf-options.php:2438 acf-options.php:2477
+#: acf-options.php:2501
 msgid "Yes"
 msgstr "Sim"
 
-#: acf-options.php:767 acf-options.php:865 acf-options.php:892
-#: acf-options.php:1000 acf-options.php:1097 acf-options.php:1218
-#: acf-options.php:1253 acf-options.php:1656 acf-options.php:2227
-#: acf-options.php:2268 acf-options.php:2292
+#: acf-options.php:772 acf-options.php:870 acf-options.php:897
+#: acf-options.php:1005 acf-options.php:1102 acf-options.php:1223
+#: acf-options.php:1258 acf-options.php:1842 acf-options.php:2413
+#: acf-options.php:2437 acf-options.php:2478 acf-options.php:2502
 msgid "No"
 msgstr "Não"
 
-#: acf-options.php:777
+#: acf-options.php:782
 msgid "Enable Export"
 msgstr "Ativar exportação"
 
-#: acf-options.php:780
+#: acf-options.php:785
 msgid "Enables post type export."
 msgstr "Permite a exportação do tipo de postagem."
 
-#: acf-options.php:793
+#: acf-options.php:798
 msgid "No (prevent archive pages)"
 msgstr "Não (impedir páginas de arquivo)"
 
-#: acf-options.php:794
+#: acf-options.php:799
 msgid "Yes (use default slug)"
 msgstr "Sim (use slug padrão)"
 
-#: acf-options.php:795
+#: acf-options.php:800
 msgid "Yes (set custom archive slug)"
 msgstr "Sim (definir slug de arquivo personalizado)"
 
-#: acf-options.php:805
+#: acf-options.php:810
 msgid "Enable Archives"
 msgstr "Ativar arquivos"
 
-#: acf-options.php:808
+#: acf-options.php:813
 msgid ""
 "Enables post type archives. Post type key is used as default archive slug."
 msgstr ""
 "Permite arquivos do tipo post. A chave do tipo post é usada como slug de "
 "archive padrão."
 
-#: acf-options.php:824
+#: acf-options.php:829
 msgid "Custom Archive Slug"
 msgstr "Slug de arquivo personalizado"
 
-#: acf-options.php:827
+#: acf-options.php:832
 msgid "Set custom archive slug."
 msgstr "Definir slug de arquivo personalizado."
 
-#: acf-options.php:875
+#: acf-options.php:880
 msgid "Public"
 msgstr "Público"
 
-#: acf-options.php:878
+#: acf-options.php:883
 msgid "Show post type in the admin UI."
 msgstr "Mostrar o tipo de postagem na interface do usuário do administrador."
 
-#: acf-options.php:902
+#: acf-options.php:907
 msgid "Show UI"
 msgstr "Mostrar interface do usuário"
 
-#: acf-options.php:905
+#: acf-options.php:910
 msgid "Show post type UI in the admin."
 msgstr "Mostrar o tipo de mensagem do post no admin."
 
-#: acf-options.php:929
+#: acf-options.php:934
 msgid "Show in Admin Sidebar"
 msgstr "Mostrar na Barra Lateral do Administrador"
 
-#: acf-options.php:932
+#: acf-options.php:937
 msgid "Show post type in admin sidebar."
 msgstr "Mostrar na Barra Lateral do Administrador."
 
-#: acf-options.php:945
+#: acf-options.php:950
 msgid "5 below Posts"
 msgstr "5 abaixo dos posts"
 
-#: acf-options.php:946
+#: acf-options.php:951
 msgid "10 below Posts"
 msgstr "10 abaixo dos posts"
 
-#: acf-options.php:947
+#: acf-options.php:952
 msgid "15 below Links"
 msgstr "15 abaixo Links"
 
-#: acf-options.php:948
+#: acf-options.php:953
 msgid "20 below Pages"
 msgstr "20 páginas abaixo"
 
-#: acf-options.php:949
+#: acf-options.php:954
 msgid "25 below Comments"
 msgstr "25 abaixo dos comentários"
 
-#: acf-options.php:950
+#: acf-options.php:955
 msgid "60 below first separator"
 msgstr "60 abaixo do primeiro separador"
 
-#: acf-options.php:951
+#: acf-options.php:956
 msgid "65 below Plugins"
 msgstr "65 abaixo de Plugins"
 
-#: acf-options.php:952
+#: acf-options.php:957
 msgid "70 below Users"
 msgstr "70 abaixo de usuários"
 
-#: acf-options.php:953
+#: acf-options.php:958
 msgid "75 below Tools"
 msgstr "75 abaixo de Ferramentas"
 
-#: acf-options.php:954
+#: acf-options.php:959
 msgid "80 below Settings"
 msgstr "80 abaixo de Configurações"
 
-#: acf-options.php:955
+#: acf-options.php:960
 msgid "100 below second separator"
 msgstr "100 abaixo do segundo separador"
 
-#: acf-options.php:963
+#: acf-options.php:968
 msgid "Admin Sidebar Location"
 msgstr "Localização da Sidebar Administrativa"
 
-#: acf-options.php:982
+#: acf-options.php:987
 msgid "Sidebar Icon"
 msgstr "Ícone da Sidebar"
 
-#: acf-options.php:985
+#: acf-options.php:990
 msgid "Post type icon."
 msgstr "Descrição."
 
-#: acf-options.php:985
+#: acf-options.php:990
 msgid "Use"
 msgstr "Usar"
 
-#: acf-options.php:986
+#: acf-options.php:991
 msgid "name or full icon URL"
 msgstr "nome ou URL completo do ícone"
 
-#: acf-options.php:1010
+#: acf-options.php:1015
 msgid "Show in Admin Bar"
 msgstr "Mostrar na barra de administração"
 
-#: acf-options.php:1013 acf-options.php:1040
+#: acf-options.php:1018 acf-options.php:1045
 msgid "Show post type in"
 msgstr "Mostrar o tipo de postagem"
 
-#: acf-options.php:1013
+#: acf-options.php:1018
 msgid "admin bar"
 msgstr "barra de administração"
 
-#: acf-options.php:1037
+#: acf-options.php:1042
 msgid "Show in Navigation Menus"
 msgstr "Mostrar nos Menus de Navegação"
 
-#: acf-options.php:1040
+#: acf-options.php:1045
 msgid "Navigation Menus"
 msgstr "Menus de Navegação"
 
-#: acf-options.php:1053 acf-options.php:1080
+#: acf-options.php:1058 acf-options.php:1085
 msgid "Query"
 msgstr "Query"
 
-#: acf-options.php:1069
+#: acf-options.php:1074
 msgid "Default (post type key)"
 msgstr "Padrão (chave do tipo de postagem)"
 
-#: acf-options.php:1070
+#: acf-options.php:1075
 msgid "Custom query variable"
 msgstr "Variável de consulta personalizada"
 
-#: acf-options.php:1083
+#: acf-options.php:1088
 msgid "Direct query variable used in"
 msgstr "Variável de consulta direta usada em"
 
-#: acf-options.php:1105
+#: acf-options.php:1110
 msgid "Publicly Queryable"
 msgstr "Publicamente Queryable"
 
-#: acf-options.php:1108
+#: acf-options.php:1113
 msgid "Enable front end queries as part of parse_request()."
 msgstr "Ative consultas front-end como parte de parse_request ()."
 
-#: acf-options.php:1124
+#: acf-options.php:1129
 msgid "Custom Query"
-msgstr "JS Personalizado no Footer"
+msgstr "Consulta personalizada"
 
-#: acf-options.php:1127
+#: acf-options.php:1132
 msgid "Custom query variable."
 msgstr "Variável de consulta personalizada."
 
-#: acf-options.php:1148
+#: acf-options.php:1153
 msgid "Permalink"
 msgstr "Permalink"
 
-#: acf-options.php:1164
+#: acf-options.php:1169
 msgid "No permalink (prevent URL rewriting)"
 msgstr "Sem permalink (evitar regravação de URL)"
 
-#: acf-options.php:1165
+#: acf-options.php:1170
 msgid "Default permalink (post type key)"
 msgstr "Permalink padrão (chave do tipo de postagem)"
 
-#: acf-options.php:1166
+#: acf-options.php:1171
 msgid "Custom permalink"
-msgstr "JS Personalizado no Head"
+msgstr "Link personalizado"
 
-#: acf-options.php:1174
+#: acf-options.php:1179
 msgid "Permalink Rewrite"
 msgstr "Reescrever permalink"
 
-#: acf-options.php:1177
+#: acf-options.php:1182
 msgid ""
 "Use Default Permalinks (using post type key), prevent automatic URL "
 "rewriting (no pretty permalinks), or set custom permalinks."
@@ -624,115 +627,148 @@ msgstr ""
 "regravação automática de URL (sem permalinks) ou defina permalinks "
 "personalizados."
 
-#: acf-options.php:1193
+#: acf-options.php:1198
 msgid "URL Slug"
 msgstr "Slug da URL"
 
-#: acf-options.php:1196
+#: acf-options.php:1201
 msgid "Pretty permalink base text."
 msgstr "Texto base do permalink."
 
-#: acf-options.php:1228
+#: acf-options.php:1233
 msgid "Use URL Slug"
 msgstr "Use o Slug da URL"
 
-#: acf-options.php:1231
+#: acf-options.php:1236
 msgid "Use Post Type slug as URL base. Default: Yes."
 msgstr "Use o slug Post Type como base de URL. Padrão: sim."
 
-#: acf-options.php:1263
+#: acf-options.php:1268
 msgid "Pagination"
 msgstr "Paginação"
 
-#: acf-options.php:1266
+#: acf-options.php:1271
 msgid "Allow post-type pagination. Default: Yes."
 msgstr "Permitir paginação de tipo de postagem. Padrão: sim."
 
-#: acf-options.php:1288
+#: acf-options.php:1293
 msgid "False"
 msgstr "Falso"
 
-#: acf-options.php:1298
+#: acf-options.php:1303
 msgid "Feeds"
-msgstr "Feed"
+msgstr "Feeds"
 
-#: acf-options.php:1301
+#: acf-options.php:1306
 msgid "Build feed permastruct. Default: Yes."
 msgstr "Construa o feed permastruct. Padrão: sim."
 
-#: acf-options.php:1322 acf-options.php:1348
+#: acf-options.php:1327 acf-options.php:1354
 msgid "Capabilities"
 msgstr "Capacidades"
 
-#: acf-options.php:1338
+#: acf-options.php:1343
 msgid "Base capabilities"
 msgstr "Capacidades base"
 
-#: acf-options.php:1351
-msgid ""
-"Set <a href=\"https://codex.wordpress.org/Roles_and_Capabilities\" target="
-"\"_blank\">user capabilities</a> to manage post type."
-msgstr ""
-"Defina <a href=\"https://codex.wordpress.org/Roles_and_Capabilities\" target="
-"\"_blank\">capacidades do usuário</a> para gerenciar o tipo de postagem."
+#: acf-options.php:1344
+msgid "Custom capabilities"
+msgstr "Recursos personalizados"
 
-#: acf-options.php:1375
+#: acf-options.php:1357
+msgid ""
+"Set <a href=\"https://wordpress.org/support/article/roles-and-capabilities/"
+"\" target=\"_blank\">user capabilities</a> to manage post type."
+msgstr ""
+"Defina <a href=\"https://wordpress.org/support/article/roles-and-"
+"capabilities/\" target=\"_blank\">Recursos do Usuário</a> para gerenciar o "
+"tipo de postagem."
+
+#: acf-options.php:1373
+msgid "Read Post"
+msgstr "Ler postagem"
+
+#: acf-options.php:1400
+msgid "Read Private Posts"
+msgstr "Ler mensagens privadas"
+
+#: acf-options.php:1427
+msgid "Publish Posts"
+msgstr "Publicar postagens"
+
+#: acf-options.php:1454
+msgid "Delete Post"
+msgstr "Deletar postagem"
+
+#: acf-options.php:1481
+msgid "Edit Post"
+msgstr "Editar postagem"
+
+#: acf-options.php:1508
+msgid "Edit Posts"
+msgstr "Editar postagens"
+
+#: acf-options.php:1535
+msgid "Edit Others Posts"
+msgstr "Editar outras postagens"
+
+#: acf-options.php:1570
 msgid "Base Capability Type"
 msgstr "Tipo de capacidade de base"
 
-#: acf-options.php:1378
+#: acf-options.php:1573
 msgid "Used as a base to construct capabilities."
 msgstr "Usado como base para construir recursos."
 
-#: acf-options.php:1494
+#: acf-options.php:1680
 msgid "Developers Options"
 msgstr "Opções para Desenvolvedores"
 
-#: acf-options.php:1500
+#: acf-options.php:1686
 msgid "Dashboard"
 msgstr "Painel"
 
-#: acf-options.php:1514
+#: acf-options.php:1700
 msgid "Remove Widgets"
 msgstr "Remover Widgets"
 
-#: acf-options.php:1517
+#: acf-options.php:1703
 msgid "Hide defaults dashboard widgets."
 msgstr "Esconder widgets padrões do painel."
 
-#: acf-options.php:1527
+#: acf-options.php:1713
 msgid "At a Glance"
 msgstr "Agora"
 
-#: acf-options.php:1528
+#: acf-options.php:1714
 msgid "Quick Draft"
 msgstr "Rascunho Rápido"
 
-#: acf-options.php:1529
+#: acf-options.php:1715
 msgid "WordPress News"
 msgstr "Novidades do WordPress"
 
-#: acf-options.php:1530
+#: acf-options.php:1716
 msgid "Activity"
 msgstr "Atividade"
 
-#: acf-options.php:1539
+#: acf-options.php:1725
 msgid "Click here"
 msgstr "Clique aqui"
 
-#: acf-options.php:1539
+#: acf-options.php:1725
 msgid "to view, edit or remove your Dashboard widgets boxes."
 msgstr "para ver, editar ou remover widgets to Painel."
 
-#: acf-options.php:1543
+#: acf-options.php:1729
 msgid "Manage Widgets Boxes"
 msgstr "Gerenciar caixas de widgets"
 
-#: acf-options.php:1559 acf-options.php:1576
+#: acf-options.php:1745 acf-options.php:1762
 msgid "Custom Post Types"
 msgstr "Post Types Personalizados"
 
-#: acf-options.php:1572
+#: acf-options.php:1758
 msgid ""
 "Instead of creating your custom post types including many codes in your "
 "functions.php file you can create they easily here. <br>To add, edit or "
@@ -756,11 +792,11 @@ msgstr ""
 " <a class=\"button button-secondary button-large\" href=\"edit.php?"
 "post_type=new_post_type\" style=\"margin-top:10px\">Novo tipo de postagem</a>"
 
-#: acf-options.php:1606
+#: acf-options.php:1792
 msgid "Hierarchical Order"
 msgstr "Ordem hierárquica"
 
-#: acf-options.php:1609
+#: acf-options.php:1795
 msgid ""
 "Insert which taxonomies (slug separated by comma) do you want to maintain in "
 "hierarchical order when editing the post/page."
@@ -768,97 +804,97 @@ msgstr ""
 "Inserir quais taxonomias (slug separados por vírgula) você deseja manter em "
 "ordem hierárquica ao editar o post / página."
 
-#: acf-options.php:1619
+#: acf-options.php:1805
 msgid "Example"
 msgstr "Exemplo"
 
-#: acf-options.php:1627
+#: acf-options.php:1813
 msgid "Login Screen"
 msgstr "Tela de Login"
 
-#: acf-options.php:1641
+#: acf-options.php:1827
 msgid "Enable Custom Login Screen?"
 msgstr "Habilitar Tela de Login Personalizada?"
 
-#: acf-options.php:1644
+#: acf-options.php:1830
 msgid "Select Yes if you want to customize the WordPress login default screen."
 msgstr ""
 "Selecione Sim se desejar personalizar a tela padrão de login do WordPress."
 
-#: acf-options.php:1668
+#: acf-options.php:1854
 msgid "Logo Image"
 msgstr "Imagem da Logo"
 
-#: acf-options.php:1671
+#: acf-options.php:1857
 msgid "Send an image with 100px wide per 100px height."
 msgstr "Envie uma imagem de 100px de largura por 100px de altura."
 
-#: acf-options.php:1700
+#: acf-options.php:1886
 msgid "Logo URL"
 msgstr "URL da Logo"
 
-#: acf-options.php:1703
+#: acf-options.php:1889
 msgid "Select the URL that will be placed in the login screen logo."
 msgstr "Selecione o URL que será colocado no logotipo da tela de login."
 
-#: acf-options.php:1724
+#: acf-options.php:1910
 msgid "Logo Title"
 msgstr "Título da Logo"
 
-#: acf-options.php:1727
+#: acf-options.php:1913
 msgid "Enter the link title attribute."
 msgstr "Digite o atributo do título do link."
 
-#: acf-options.php:1751
+#: acf-options.php:1937
 msgid "Login Text Color Style"
 msgstr "Cor de Texto no Login"
 
-#: acf-options.php:1754
+#: acf-options.php:1940
 msgid "Default is Light."
 msgstr "Padrão: Light."
 
-#: acf-options.php:1765
+#: acf-options.php:1951
 msgid "Light"
 msgstr "Light"
 
-#: acf-options.php:1766
+#: acf-options.php:1952
 msgid "Dark"
 msgstr "Dark"
 
-#: acf-options.php:1778
+#: acf-options.php:1964
 msgid "Body Background Color"
 msgstr "Cor de Fundo"
 
-#: acf-options.php:1793
+#: acf-options.php:1979
 msgid "Add Footer Content"
 msgstr "Conteúdo no Rodapé"
 
-#: acf-options.php:1796
+#: acf-options.php:1982
 msgid ""
 "Type something if you want to add a content below the login form. Optional."
 msgstr ""
 "Escreva algo se você deseja adicionar algum conteúdo abaixo do formulário de "
 "login. Opcional."
 
-#: acf-options.php:1814 acf-options.php:2318
+#: acf-options.php:2000 acf-options.php:2528
 msgid "WP Head"
 msgstr "WP Head"
 
-#: acf-options.php:1829
+#: acf-options.php:2015
 msgid "Theme Color"
 msgstr "Cor do tema"
 
-#: acf-options.php:1832
+#: acf-options.php:2018
 msgid "Change the color of header bar and address bar in mobile browsers."
 msgstr ""
 "Altere a cor da barra de cabeçalho e da barra de endereço nos navegadores "
 "móveis."
 
-#: acf-options.php:1848
+#: acf-options.php:2034
 msgid "Meta Description"
 msgstr "Meta Descrição"
 
-#: acf-options.php:1851
+#: acf-options.php:2037
 msgid ""
 "Put a description of your site to show in browser searches. <b>Note:</b> "
 "Maximum 150 characters."
@@ -866,11 +902,11 @@ msgstr ""
 "Coloque uma descrição do seu site para mostrar nas pesquisas do navegador. "
 "<b> Nota: </b> Máximo de 150 caracteres."
 
-#: acf-options.php:1872
+#: acf-options.php:2058
 msgid "Open Graph image"
 msgstr "Open Graph imagem"
 
-#: acf-options.php:1875
+#: acf-options.php:2061
 msgid ""
 "Send an image with 1200px wide per 630px height. <br> Keep a default image "
 "in the links, and display a social media post."
@@ -878,19 +914,19 @@ msgstr ""
 "Envie uma imagem com 1200px de largura por 630px de altura. <br> Mantenha "
 "uma imagem padrão nos links e exiba uma postagem de mídia social."
 
-#: acf-options.php:1896
+#: acf-options.php:2082
 msgid "Favicon"
 msgstr "Favicon"
 
-#: acf-options.php:1899
+#: acf-options.php:2085
 msgid "Send an image with 32px wide per 32px height."
 msgstr "Envie uma imagem com 32px de largura por 32px de altura."
 
-#: acf-options.php:1920
+#: acf-options.php:2106
 msgid "Apple-touch-icon 57x57 pixels"
 msgstr ""
 
-#: acf-options.php:1923
+#: acf-options.php:2109
 msgid ""
 "Send an image with 57px width per 57px height. Send an image with the "
 "extension PNG."
@@ -898,11 +934,11 @@ msgstr ""
 "Envie uma imagem com 57px de largura por 57px de altura. Envie uma imagem "
 "com a extensão PNG."
 
-#: acf-options.php:1944
+#: acf-options.php:2130
 msgid "Apple-touch-icon 60x60 pixels"
 msgstr ""
 
-#: acf-options.php:1947
+#: acf-options.php:2133
 msgid ""
 "Send an image with 60px width per 60px height. Send an image with the "
 "extension PNG."
@@ -910,11 +946,11 @@ msgstr ""
 "Envie uma imagem com 60px de largura por 60px de altura. Envie uma imagem "
 "com a extensão PNG."
 
-#: acf-options.php:1968
+#: acf-options.php:2154
 msgid "Apple-touch-icon 72x72 pixels"
 msgstr ""
 
-#: acf-options.php:1971
+#: acf-options.php:2157
 msgid ""
 "Send an image with 72px width per 72px height. Send an image with the "
 "extension PNG."
@@ -922,11 +958,11 @@ msgstr ""
 "Envie uma imagem com 72px de largura por 72px de altura. Envie uma imagem "
 "com a extensão PNG."
 
-#: acf-options.php:1992
+#: acf-options.php:2178
 msgid "Apple-touch-icon 76x76 pixels"
 msgstr ""
 
-#: acf-options.php:1995
+#: acf-options.php:2181
 msgid ""
 "Send an image with 76px width per 76px height. Send an image with the "
 "extension PNG."
@@ -934,11 +970,11 @@ msgstr ""
 "Envie uma imagem com 76px de largura por 76px de altura. Envie uma imagem "
 "com a extensão PNG."
 
-#: acf-options.php:2016
+#: acf-options.php:2202
 msgid "Apple-touch-icon 114x114 pixels"
 msgstr ""
 
-#: acf-options.php:2019
+#: acf-options.php:2205
 msgid ""
 "Send an image with 114px width per 114px height. Send an image with the "
 "extension PNG."
@@ -946,11 +982,11 @@ msgstr ""
 "Envie uma imagem com 114px de largura por 114px de altura. Envie uma imagem "
 "com a extensão PNG."
 
-#: acf-options.php:2040
+#: acf-options.php:2226
 msgid "Apple-touch-icon 120x120 pixels"
 msgstr ""
 
-#: acf-options.php:2043
+#: acf-options.php:2229
 msgid ""
 "Send an image with 120px width per 120px height. Send an image with the "
 "extension PNG."
@@ -958,11 +994,11 @@ msgstr ""
 "Envie uma imagem com 120px de largura por 120px de altura. Envie uma imagem "
 "com a extensão PNG."
 
-#: acf-options.php:2064
+#: acf-options.php:2250
 msgid "Apple-touch-icon 144x144 pixels"
 msgstr ""
 
-#: acf-options.php:2067
+#: acf-options.php:2253
 msgid ""
 "Send an image with 144px width per 144px height. Send an image with the "
 "extension PNG."
@@ -970,11 +1006,11 @@ msgstr ""
 "Envie uma imagem com 144px de largura por 144px de altura. Envie uma imagem "
 "com a extensão PNG."
 
-#: acf-options.php:2088
+#: acf-options.php:2274
 msgid "Apple-touch-icon 152x152 pixels"
 msgstr ""
 
-#: acf-options.php:2091
+#: acf-options.php:2277
 msgid ""
 "Send an image with 152px width per 152px height. Send an image with the "
 "extension PNG."
@@ -982,11 +1018,11 @@ msgstr ""
 "Envie uma imagem com 152px de largura por 152px de altura. Envie uma imagem "
 "com a extensão PNG."
 
-#: acf-options.php:2112
+#: acf-options.php:2298
 msgid "Apple-touch-icon 180x180 pixels"
 msgstr ""
 
-#: acf-options.php:2115
+#: acf-options.php:2301
 msgid ""
 "Send an image with 180px width per 180px height. Send an image with the "
 "extension PNG."
@@ -994,11 +1030,11 @@ msgstr ""
 "Envie uma imagem com 180px de largura por 180px de altura. Envie uma imagem "
 "com a extensão PNG."
 
-#: acf-options.php:2136
+#: acf-options.php:2322
 msgid "Head icon 192x192 pixels"
 msgstr ""
 
-#: acf-options.php:2139
+#: acf-options.php:2325
 msgid ""
 "Send an image with 192px width per 192px height. Send an image with the "
 "extension PNG."
@@ -1006,11 +1042,11 @@ msgstr ""
 "Envie uma imagem com 192px de largura por 192px de altura. Envie uma imagem "
 "com a extensão PNG."
 
-#: acf-options.php:2160
+#: acf-options.php:2346
 msgid "Head icon 96x96 pixels"
 msgstr ""
 
-#: acf-options.php:2163
+#: acf-options.php:2349
 msgid ""
 "Send an image with 96px width per 96px height. Send an image with the "
 "extension PNG."
@@ -1018,11 +1054,11 @@ msgstr ""
 "Envie uma imagem com 96px de largura por 96px de altura. Envie uma imagem "
 "com a extensão PNG."
 
-#: acf-options.php:2184
+#: acf-options.php:2370
 msgid "Head icon 16x16 pixels"
 msgstr ""
 
-#: acf-options.php:2187
+#: acf-options.php:2373
 msgid ""
 "Send an image with 16px width per 16px height. Send an image with the "
 "extension PNG."
@@ -1030,77 +1066,94 @@ msgstr ""
 "Envie uma imagem com 16px de largura por 16px de altura. Envie uma imagem "
 "com a extensão PNG."
 
-#: acf-options.php:2200
+#: acf-options.php:2386
 msgid "Template Settings"
 msgstr "Configurações do template"
 
-#: acf-options.php:2214 under-construction-page/under-construction.php:1440
+#: acf-options.php:2400
 msgid "Under Construction"
 msgstr "Em construção"
 
-#: acf-options.php:2217
+#: acf-options.php:2403
 msgid "Display page under construction on template?"
 msgstr "Mostrar site em construção no template?"
 
-#: acf-options.php:2240
+#: acf-options.php:2424
+msgid "Form generator"
+msgstr "Gerador de formulários"
+
+#: acf-options.php:2427
+msgid "Enable post type for creating submission forms via panel?"
+msgstr "Habilitar tipo de postagem para criar formulários de envio via painel?"
+
+#: acf-options.php:2450
 msgid "Others"
 msgstr "Outros"
 
-#: acf-options.php:2254
+#: acf-options.php:2464
 msgid "Duplicate Post"
 msgstr "Duplicar Post"
 
-#: acf-options.php:2257
+#: acf-options.php:2467
 msgid "Enable duplicate post option?"
 msgstr "Habilitar opção de duplicar Post?"
 
-#: acf-options.php:2278
+#: acf-options.php:2488
 msgid "Duplicate Page"
 msgstr "Duplicar Página"
 
-#: acf-options.php:2281
+#: acf-options.php:2491
 msgid "Enable duplicate page option?"
 msgstr "Habilitar opção de duplicar Página?"
 
-#: acf-options.php:2304
+#: acf-options.php:2514
 msgid "Advanced"
 msgstr "Avançado"
 
-#: acf-options.php:2321
+#: acf-options.php:2531
 msgid "Remove tags created by <b>wp_head()</b> function."
 msgstr "Remova as tags criadas pela função <b>wp_head()</b>."
 
-#: acf-options.php:2348 under-construction-page/under-construction.php:1511
+#: acf-options.php:2558
 msgid "Custom CSS"
 msgstr "CSS Customizado"
 
-#: acf-options.php:2353
+#: acf-options.php:2563
 msgid "Add your css to the head. The &#60;style&#62 tags will be ignored."
 msgstr "Adicione seu css no Head. As tags &#60;style&#62 serão ignoradas."
 
-#: acf-options.php:2366
+#: acf-options.php:2576
 msgid "Custom JS Head"
 msgstr "JS Personalizado no Head"
 
-#: acf-options.php:2371
+#: acf-options.php:2581
 msgid ""
 "Add your javascript to the Head. The &#60;script&#62 tags will be ignored."
 msgstr ""
 "Adicione seu javascript ao Head. As tags &#60;script&#62 serão ignoradas."
 
-#: acf-options.php:2384
+#: acf-options.php:2594
 msgid "Custom JS Footer"
 msgstr "JS Personalizado no Footer"
 
-#: acf-options.php:2389
+#: acf-options.php:2599
 msgid ""
 "Add your javascript to the Footer The &#60;script&#62 tags will be ignored."
 msgstr ""
 "Adicione seu javascript ao Footer. As tags &#60;script&#62 serão ignoradas."
 
-#: class.developers.php:17
+#: class.developers.php:12
 msgid "Developers"
 msgstr "Desenvolvedores"
+
+#: class.developers.php:311
+#, php-format
+msgid ""
+"Your current theme needs to be updated to display the <b>Form Generator</b> "
+"module. Minimum requested %s version is %s"
+msgstr ""
+"Seu tema atual precisa ser atualizado para exibir o módulo <b>Gerador de "
+"formulários</b>. A versão %s mínima solicitada é %s"
 
 #: duplicate-post.php:10
 msgid "No post to duplicate has been supplied!"
@@ -1114,599 +1167,318 @@ msgstr "Duplicar este item"
 msgid "Duplicate"
 msgstr "Duplicar"
 
-#: under-construction-page/under-construction.php:135
+#: form-generator/form.php:16 form-generator/form.php:18
+msgid "Formulários"
+msgstr ""
+
+#: form-generator/form.php:17 form-generator/form.php:28
+msgid "Formulário"
+msgstr ""
+
+#: form-generator/form.php:19
+msgid "Todos os formulários"
+msgstr ""
+
+#: form-generator/form.php:20
+msgid "Adicionar novo formulário"
+msgstr ""
+
+#: form-generator/form.php:21
+msgid "Novo formulário"
+msgstr ""
+
+#: form-generator/form.php:22
+msgid "Editar formulário"
+msgstr ""
+
+#: form-generator/form.php:23
+msgid "Atualizar formulário"
+msgstr ""
+
+#: form-generator/form.php:24
+msgid "Buscar formulário"
+msgstr ""
+
+#: form-generator/form.php:29
+msgid "Adicione um novo formulário de envio."
+msgstr ""
+
+#: form-generator/form.php:64
+msgid "Shortcode"
+msgstr ""
+
+#: form-generator/template-form.php:46
+msgid "Enviar"
+msgstr ""
+
+#: form-generator/template-form.php:111
 #, php-format
-msgid ""
-"UnderConstruction plugin <b>requires WordPress version 4.0</b> or higher to "
-"function properly. You are using WordPress version %s. Please <a href=\"%s"
-"\">update it</a>."
+msgid "Adicione o arquivo no campo <b>%s</b>."
 msgstr ""
-"O plugin UnderConstruction <b>requer o WordPress versão 4.0</b> ou superior "
-"para funcionar corretamente. Você está usando a versão %s do WordPress. Por "
-"favor, <a href=\"%s\">atualize</a>."
 
-#: under-construction-page/under-construction.php:319
-msgid ""
-"An undocumented error has occured. Please refresh the page and try again."
-msgstr "Ocorreu um erro não documentado. Atualize a página e tente novamente."
-
-#: under-construction-page/under-construction.php:320
-#: under-construction-page/under-construction.php:913
-msgid "UnderConstructionPage"
-msgstr ""
-
-#: under-construction-page/under-construction.php:322
-msgid "Select whitelisted user(s)"
-msgstr "Selecione os usuários na lista de permissões"
-
-#: under-construction-page/under-construction.php:328
-msgid ""
-"Are you sure you want to deactivate UnderConstruction plugin?\n"
-"If you are removing it because of a problem please contact our support. They "
-"will be more than happy to help."
-msgstr ""
-"Tem certeza de que deseja desativar o plugin UnderConstruction?\n"
-"Se você estiver removendo por causa de um problema, entre em contato com "
-"nosso suporte. Eles terão o maior prazer em ajudar."
-
-#: under-construction-page/under-construction.php:600
-msgid "Open WordPress admin"
-msgstr "Abrir o painel administrador do WordPress"
-
-#: under-construction-page/under-construction.php:603
-msgid "Log in to WordPress admin"
-msgstr "Faça login para o painel administrador do WordPress"
-
-#: under-construction-page/under-construction.php:626
-msgid "Free UnderConstructionPage plugin for WordPress"
-msgstr ""
-
-#: under-construction-page/under-construction.php:714
-msgid ""
-"<b>Under Construction Mode is enabled</b> but you are whitelisted so you see "
-"the normal site."
-msgstr ""
-"O <b>Modo em construção está ativado</b>, mas você está na lista de "
-"permissões para ver o site normal."
-
-#: under-construction-page/under-construction.php:714
-msgid "Preview UnderConstructionPage"
-msgstr "Visualizar UnderConstructionPage"
-
-#: under-construction-page/under-construction.php:714
-msgid "Configure UnderConstructionPage"
-msgstr "Configurar UnderConstructionPage"
-
-#: under-construction-page/under-construction.php:851
-msgid "Under construction mode is enabled"
-msgstr "O modo Em construção está ativado"
-
-#: under-construction-page/under-construction.php:851
-#: under-construction-page/under-construction.php:858
-#: under-construction-page/under-construction.php:948
-msgid "UnderConstruction"
-msgstr ""
-
-#: under-construction-page/under-construction.php:855
-#: under-construction-page/under-construction.php:862
-#: under-construction-page/under-construction.php:1215
-msgid "Under Construction Mode"
-msgstr "Ativar Em construção"
-
-#: under-construction-page/under-construction.php:858
-msgid "Under construction mode is disabled"
-msgstr "O modo em construção está desativado"
-
-#: under-construction-page/under-construction.php:881
-#: under-construction-page/under-construction.php:1504
-#: under-construction-page/under-construction.php:1618
-msgid "Preview"
-msgstr "Visualizar"
-
-#: under-construction-page/under-construction.php:888
-msgid "Settings"
-msgstr "Configurações"
-
-#: under-construction-page/under-construction.php:899
-msgid "Under Construction Mode is <b>enabled</b>."
-msgstr "O Modo Em Construção está <b>ativado</b>."
-
-#: under-construction-page/under-construction.php:970
-msgid "Sorry, we're doing some work on the site"
-msgstr "Desculpe, estamos trabalhando no site"
-
-#: under-construction-page/under-construction.php:971
-msgid ""
-"Thank you for being patient. We are doing some work on the site and will be "
-"back shortly."
-msgstr ""
-"Obrigado por ser paciente. Estamos fazendo alguns trabalhos no site e "
-"voltaremos em breve."
-
-#: under-construction-page/under-construction.php:1059
-msgid "Please enter a valid Google Analytics Tracking ID or disable tracking."
-msgstr ""
-"Insira um ID de rastreamento válido do Google Analytics ou desative o "
-"rastreamento."
-
-#: under-construction-page/under-construction.php:1223
-msgid ""
-"By enabling construction mode users will not be able to access the site's "
-"content. They will only see the under construction page. To configure "
-"exceptions set <a class=\"change_tab\" data-tab=\"3\" href=\"#whitelisted-"
-"roles\">whitelisted user roles</a>."
-msgstr ""
-"Ao habilitar o modo construção, os usuários não poderão acessar o conteúdo "
-"do site. Eles verão apenas a página em construção. Para configurar exceções, "
-"defina <a class=\"change_tab\" data-tab=\"3\" href=\"#whitelisted-roles"
-"\">funções de usuário na lista de permissões</a>."
-
-#: under-construction-page/under-construction.php:1227
-msgid "Automatic End Date &amp; Time"
-msgstr "Data de término automática &amp; Tempo"
-
-#: under-construction-page/under-construction.php:1233
-msgid "Open date & time picker"
-msgstr "Abrir seletor de data e hora"
-
-#: under-construction-page/under-construction.php:1234
-msgid ""
-"If enabled, construction mode will automatically stop showing on the "
-"selected date.\n"
-"    This option will not \"auto-enable\" construction mode. Status has to be "
-"set to \"On\"."
-msgstr ""
-"Se ativado, o modo de construção parará automaticamente de ser exibido na "
-"data selecionada.\n"
-"     Esta opção não \"habilitará automaticamente\" o modo de construção. O "
-"status deve ser definido como \"Ligado\"."
-
-#: under-construction-page/under-construction.php:1239
-msgid "Google Analytics Tracking"
-msgstr "Acompanhamento do Google Analytics"
-
-#: under-construction-page/under-construction.php:1246
-msgid ""
-"Enter the unique tracking ID found in your GA tracking profile settings to "
-"track visits to pages."
-msgstr ""
-"Insira o ID de acompanhamento exclusivo encontrado nas configurações do seu "
-"perfil de acompanhamento do GA para acompanhar as visitas às páginas."
-
-#: under-construction-page/under-construction.php:1252
-msgid "Reset Settings"
-msgstr "Redefinir as configurações"
-
-#: under-construction-page/under-construction.php:1254
-msgid "Reset all settings to default values"
-msgstr "Redefinir todas as configurações para os valores padrão"
-
-#: under-construction-page/under-construction.php:1255
-msgid ""
-"By resetting all settings to their default values any customizations you "
-"have done will be lost. There is no undo."
-msgstr ""
-"Ao redefinir todas as configurações para seus valores padrão, todas as "
-"personalizações feitas serão perdidas. Não há desfazer."
-
-#: under-construction-page/under-construction.php:1290
-msgid "Description"
-msgstr "Descrição"
-
-#: under-construction-page/under-construction.php:1296
-msgid "Headline"
-msgstr "Título principal"
-
-#: under-construction-page/under-construction.php:1302
-#: under-construction-page/under-construction.php:1584
-msgid "Content"
-msgstr "Conteúdo"
-
-#: under-construction-page/under-construction.php:1309
-msgid "Show Copyright"
-msgstr "Mostrar Copyright"
-
-#: under-construction-page/under-construction.php:1315
-msgid "Show copyright in page footer."
-msgstr "Mostrar copyright no footer da página"
-
-#: under-construction-page/under-construction.php:1320
-msgid "Login Button"
-msgstr "Botão de login"
-
-#: under-construction-page/under-construction.php:1326
-msgid ""
-"Show a discrete link to the login form, or WP admin if you're logged in, in "
-"the lower right corner of the page."
-msgstr ""
-"Mostre um link discreto para o formulário de login, ou WP admin, se você "
-"estiver logado, no canto inferior direito da página."
-
-#: under-construction-page/under-construction.php:1332
-msgid "Social &amp; Contact Icons"
-msgstr "Social &amp; Ícones de contato"
-
-#: under-construction-page/under-construction.php:1336
-msgid "Facebook Page"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1337
-msgid "Facebook business or personal page URL"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1338
-msgid "Complete URL, with https prefix, to Facebook page."
-msgstr ""
-
-#: under-construction-page/under-construction.php:1342
-msgid "Twitter Profile"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1343
-msgid "Twitter profile URL"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1344
-msgid "Complete URL, with https prefix, to Twitter profile page."
-msgstr ""
-
-#: under-construction-page/under-construction.php:1348
-msgid "LinkedIn Profile"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1349
-msgid "LinkedIn profile page URL"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1350
-msgid "Complete URL, with https prefix, to LinkedIn profile page."
-msgstr ""
-
-#: under-construction-page/under-construction.php:1354
-msgid "YouTube Profile Page or Video"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1355
-msgid "YouTube page or video URL"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1356
-msgid "Complete URL, with https prefix, to YouTube page or video."
-msgstr ""
-
-#: under-construction-page/under-construction.php:1360
-msgid "Vimeo Profile Page or Video"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1361
-msgid "Vimeo page or video URL"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1362
-msgid "Complete URL, with https prefix, to Vimeo page or video."
-msgstr ""
-
-#: under-construction-page/under-construction.php:1366
-msgid "Pinterest Profile"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1367
-msgid "Pinterest profile URL"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1368
-msgid "Complete URL, with https prefix, to Pinterest profile."
-msgstr ""
-
-#: under-construction-page/under-construction.php:1372
-msgid "Dribbble Profile"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1373
-msgid "Dribbble profile URL"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1374
-msgid "Complete URL, with https prefix, to Dribbble profile."
-msgstr ""
-
-#: under-construction-page/under-construction.php:1378
-msgid "Behance Profile"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1379
-msgid "Behance profile URL"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1380
-msgid "Complete URL, with https prefix, to Behance profile."
-msgstr ""
-
-#: under-construction-page/under-construction.php:1384
-msgid "Instagram Profile"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1385
-msgid "Instagram profile URL"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1386
-msgid "Complete URL, with https prefix, to Instagram profile."
-msgstr ""
-
-#: under-construction-page/under-construction.php:1390
-msgid "VK Profile"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1391
-msgid "VK profile URL"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1392
-msgid "Complete URL, with https prefix, to VK profile."
-msgstr ""
-
-#: under-construction-page/under-construction.php:1396
-msgid "Telegram Group, Channel or Account"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1397
-msgid "Telegram group, channel or account URL"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1398
-msgid "Complete URL, with https prefix to Telegram group, channel or account."
-msgstr ""
-
-#: under-construction-page/under-construction.php:1402
-msgid "Skype Username"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1403
-msgid "Skype username or account name"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1404
-msgid "Skype username or account name."
-msgstr ""
-
-#: under-construction-page/under-construction.php:1408
-msgid "WhatsApp Phone Number"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1409
-msgid "123-456-789"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1410
-msgid "WhatsApp phone number in international format without + or 55 prefix."
-msgstr ""
-"Número de telefone do WhatsApp em formato internacional sem prefixo + ou 55."
-
-#: under-construction-page/under-construction.php:1414
-msgid "Email Address"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1415
-msgid "name@domain.com"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1416
-msgid ""
-"Email will be encoded on the page to protect it from email address "
-"harvesters."
-msgstr ""
-"O e-mail será codificado na página para protegê-la de coletores de endereço "
-"de e-mail."
-
-#: under-construction-page/under-construction.php:1420
-msgid "Phone Number"
-msgstr "Número de telefone"
-
-#: under-construction-page/under-construction.php:1421
-msgid "+55999999999"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1422
-msgid "Phone number in full international format."
-msgstr "Número de telefone em formato internacional completo."
-
-#: under-construction-page/under-construction.php:1425
-msgid "Show more Social &amp; Contact Icons"
-msgstr "Mostrar mais Social &amp; Ícones de contato"
-
-#: under-construction-page/under-construction.php:1438
-msgid "Mad Designer"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1439
-msgid "Plain Text"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1441
-msgid "Things Went Dark"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1442
-msgid "Forklift at Work"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1443
-msgid "Under Construction Text"
-msgstr "Texto de 'em construção'"
-
-#: under-construction-page/under-construction.php:1444
-msgid "Cyber Chick"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1445
-msgid "Rocket Launch"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1446
-msgid "Loader at Work"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1447
-msgid "Cyber Chick Dark"
+#: form-generator/template-form.php:121
+#, php-format
+msgid "O campo <b>%s</b> é obrigatório."
 msgstr ""
 
-#: under-construction-page/under-construction.php:1448
-msgid "Safe"
+#: form-generator/template-form.php:171
+msgid "Enviando..."
 msgstr ""
 
-#: under-construction-page/under-construction.php:1449
-msgid "People at Work"
+#: form-generator/template-form.php:179
+msgid "Enviado!"
 msgstr ""
 
-#: under-construction-page/under-construction.php:1450
-msgid "Windmill"
+#: form-generator/template-form.php:182
+msgid "Fechar"
 msgstr ""
 
-#: under-construction-page/under-construction.php:1451
-msgid "Sad Site"
+#: form-generator/template-form.php:186 form-generator/template-form.php:199
+msgid "Algo deu errado!"
 msgstr ""
 
-#: under-construction-page/under-construction.php:1452
-msgid "Soothing Nature"
+#: form-generator/template-form.php:206
+msgid "Enviar novamente"
 msgstr ""
-
-#: under-construction-page/under-construction.php:1453
-msgid "Lighthouse"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1454
-msgid "Hot Air Balloon"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1455
-msgid "People at Work #2"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1456
-msgid "Rocket Launch #2"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1457
-msgid "Light Bulb"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1458
-msgid "Ambulance"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1459
-msgid "Laptop"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1460
-msgid "Puzzles"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1461
-msgid "Internet of Things"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1462
-msgid "Setup"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1463
-msgid "Stop"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1464
-msgid "Clock"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1465
-msgid "Bulldozer at Work"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1466
-msgid "Christmas Greetings"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1467
-msgid "Hard Worker"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1468
-msgid "Temporarily Closed"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1469
-msgid "Dumper Truck"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1470
-msgid "000webhost"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1471
-msgid "Work Desk"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1472
-msgid "Research"
-msgstr "Pesquisa"
-
-#: under-construction-page/under-construction.php:1490
-msgid "Themes"
-msgstr "Temas"
-
-#: under-construction-page/under-construction.php:1502
-msgid "Activate"
-msgstr "Ativar"
-
-#: under-construction-page/under-construction.php:1546
-msgid "Whitelisted User Roles"
-msgstr "Funções de usuário permitidas"
-
-#: under-construction-page/under-construction.php:1551
-msgid ""
-"Selected user roles will <b>not</b> be affected by the under construction "
-"mode and will always see the \"normal\" site. Default: administrator."
-msgstr ""
-"As funções de usuário selecionadas <b>não</b> serão afetadas pelo modo em "
-"construção e sempre verão o site \"normal\". Padrão: administrador."
-
-#: under-construction-page/under-construction.php:1555
-msgid "Whitelisted Users"
-msgstr "Usuários autorizados"
-
-#: under-construction-page/under-construction.php:1559
-msgid ""
-"Selected users (when logged in) will <b>not</b> be affected by the under "
-"construction mode and will always see the \"normal\" site."
-msgstr ""
-"Os usuários selecionados (quando logados) <b>não</b> serão afetados pelo "
-"modo em construção e sempre verão o site \"normal\"."
-
-#: under-construction-page/under-construction.php:1582
-msgid "Main"
-msgstr "Principal"
-
-#: under-construction-page/under-construction.php:1583
-msgid "Design"
-msgstr ""
-
-#: under-construction-page/under-construction.php:1585
-msgid "Access"
-msgstr "Acessar"
-
-#: under-construction-page/under-construction.php:1617
-msgid "Save Changes"
-msgstr "Salvar mudanças"
 
-#: wp-dev-helper.php:95
+#: includes/register-post_type.php:42
 msgid "Create New Post Type"
 msgstr "Criar novo Post Type"
 
-#: wp-dev-helper.php:125 wp-dev-helper.php:126 wp-dev-helper.php:152
+#: includes/register-post_type.php:70 includes/register-post_type.php:72
+#: includes/register-post_type.php:73 includes/register-post_type.php:99
 msgid "Dashboard Widgets"
 msgstr "Painel"
 
-#: wp-dev-helper.php:153
+#: includes/register-post_type.php:71
+msgid "Dashboard Widget"
+msgstr "Widget do painel"
+
+#: includes/register-post_type.php:100
 msgid "Create New Dashboard Widget"
 msgstr "Criar novo widgets do painel"
+
+#~ msgid "ACF Code Field"
+#~ msgstr "ACF - Campo de código"
+
+#, php-format
+#~ msgid ""
+#~ "UnderConstruction plugin <b>requires WordPress version 4.0</b> or higher "
+#~ "to function properly. You are using WordPress version %s. Please <a href="
+#~ "\"%s\">update it</a>."
+#~ msgstr ""
+#~ "O plugin UnderConstruction <b>requer o WordPress versão 4.0</b> ou "
+#~ "superior para funcionar corretamente. Você está usando a versão %s do "
+#~ "WordPress. Por favor, <a href=\"%s\">atualize</a>."
+
+#~ msgid ""
+#~ "An undocumented error has occured. Please refresh the page and try again."
+#~ msgstr ""
+#~ "Ocorreu um erro não documentado. Atualize a página e tente novamente."
+
+#~ msgid "Select whitelisted user(s)"
+#~ msgstr "Selecione os usuários na lista de permissões"
+
+#~ msgid ""
+#~ "Are you sure you want to deactivate UnderConstruction plugin?\n"
+#~ "If you are removing it because of a problem please contact our support. "
+#~ "They will be more than happy to help."
+#~ msgstr ""
+#~ "Tem certeza de que deseja desativar o plugin UnderConstruction?\n"
+#~ "Se você estiver removendo por causa de um problema, entre em contato com "
+#~ "nosso suporte. Eles terão o maior prazer em ajudar."
+
+#~ msgid "Open WordPress admin"
+#~ msgstr "Abrir o painel administrador do WordPress"
+
+#~ msgid "Log in to WordPress admin"
+#~ msgstr "Faça login para o painel administrador do WordPress"
+
+#~ msgid ""
+#~ "<b>Under Construction Mode is enabled</b> but you are whitelisted so you "
+#~ "see the normal site."
+#~ msgstr ""
+#~ "O <b>Modo em construção está ativado</b>, mas você está na lista de "
+#~ "permissões para ver o site normal."
+
+#~ msgid "Preview UnderConstructionPage"
+#~ msgstr "Visualizar UnderConstructionPage"
+
+#~ msgid "Configure UnderConstructionPage"
+#~ msgstr "Configurar UnderConstructionPage"
+
+#~ msgid "Under construction mode is enabled"
+#~ msgstr "O modo Em construção está ativado"
+
+#~ msgid "Under Construction Mode"
+#~ msgstr "Ativar Em construção"
+
+#~ msgid "Under construction mode is disabled"
+#~ msgstr "O modo em construção está desativado"
+
+#~ msgid "Preview"
+#~ msgstr "Visualizar"
+
+#~ msgid "Settings"
+#~ msgstr "Configurações"
+
+#~ msgid "Under Construction Mode is <b>enabled</b>."
+#~ msgstr "O Modo Em Construção está <b>ativado</b>."
+
+#~ msgid "Sorry, we're doing some work on the site"
+#~ msgstr "Desculpe, estamos trabalhando no site"
+
+#~ msgid ""
+#~ "Thank you for being patient. We are doing some work on the site and will "
+#~ "be back shortly."
+#~ msgstr ""
+#~ "Obrigado por ser paciente. Estamos fazendo alguns trabalhos no site e "
+#~ "voltaremos em breve."
+
+#~ msgid ""
+#~ "Please enter a valid Google Analytics Tracking ID or disable tracking."
+#~ msgstr ""
+#~ "Insira um ID de rastreamento válido do Google Analytics ou desative o "
+#~ "rastreamento."
+
+#~ msgid ""
+#~ "By enabling construction mode users will not be able to access the site's "
+#~ "content. They will only see the under construction page. To configure "
+#~ "exceptions set <a class=\"change_tab\" data-tab=\"3\" href=\"#whitelisted-"
+#~ "roles\">whitelisted user roles</a>."
+#~ msgstr ""
+#~ "Ao habilitar o modo construção, os usuários não poderão acessar o "
+#~ "conteúdo do site. Eles verão apenas a página em construção. Para "
+#~ "configurar exceções, defina <a class=\"change_tab\" data-tab=\"3\" href="
+#~ "\"#whitelisted-roles\">funções de usuário na lista de permissões</a>."
+
+#~ msgid "Automatic End Date &amp; Time"
+#~ msgstr "Data de término automática &amp; Tempo"
+
+#~ msgid "Open date & time picker"
+#~ msgstr "Abrir seletor de data e hora"
+
+#~ msgid ""
+#~ "If enabled, construction mode will automatically stop showing on the "
+#~ "selected date.\n"
+#~ "    This option will not \"auto-enable\" construction mode. Status has to "
+#~ "be set to \"On\"."
+#~ msgstr ""
+#~ "Se ativado, o modo de construção parará automaticamente de ser exibido na "
+#~ "data selecionada.\n"
+#~ "     Esta opção não \"habilitará automaticamente\" o modo de construção. "
+#~ "O status deve ser definido como \"Ligado\"."
+
+#~ msgid "Google Analytics Tracking"
+#~ msgstr "Acompanhamento do Google Analytics"
+
+#~ msgid ""
+#~ "Enter the unique tracking ID found in your GA tracking profile settings "
+#~ "to track visits to pages."
+#~ msgstr ""
+#~ "Insira o ID de acompanhamento exclusivo encontrado nas configurações do "
+#~ "seu perfil de acompanhamento do GA para acompanhar as visitas às páginas."
+
+#~ msgid "Reset Settings"
+#~ msgstr "Redefinir as configurações"
+
+#~ msgid "Reset all settings to default values"
+#~ msgstr "Redefinir todas as configurações para os valores padrão"
+
+#~ msgid ""
+#~ "By resetting all settings to their default values any customizations you "
+#~ "have done will be lost. There is no undo."
+#~ msgstr ""
+#~ "Ao redefinir todas as configurações para seus valores padrão, todas as "
+#~ "personalizações feitas serão perdidas. Não há desfazer."
+
+#~ msgid "Description"
+#~ msgstr "Descrição"
+
+#~ msgid "Headline"
+#~ msgstr "Título principal"
+
+#~ msgid "Content"
+#~ msgstr "Conteúdo"
+
+#~ msgid "Show Copyright"
+#~ msgstr "Mostrar Copyright"
+
+#~ msgid "Show copyright in page footer."
+#~ msgstr "Mostrar copyright no footer da página"
+
+#~ msgid "Login Button"
+#~ msgstr "Botão de login"
+
+#~ msgid ""
+#~ "Show a discrete link to the login form, or WP admin if you're logged in, "
+#~ "in the lower right corner of the page."
+#~ msgstr ""
+#~ "Mostre um link discreto para o formulário de login, ou WP admin, se você "
+#~ "estiver logado, no canto inferior direito da página."
+
+#~ msgid "Social &amp; Contact Icons"
+#~ msgstr "Social &amp; Ícones de contato"
+
+#~ msgid ""
+#~ "WhatsApp phone number in international format without + or 55 prefix."
+#~ msgstr ""
+#~ "Número de telefone do WhatsApp em formato internacional sem prefixo + ou "
+#~ "55."
+
+#~ msgid ""
+#~ "Email will be encoded on the page to protect it from email address "
+#~ "harvesters."
+#~ msgstr ""
+#~ "O e-mail será codificado na página para protegê-la de coletores de "
+#~ "endereço de e-mail."
+
+#~ msgid "Phone Number"
+#~ msgstr "Número de telefone"
+
+#~ msgid "Phone number in full international format."
+#~ msgstr "Número de telefone em formato internacional completo."
+
+#~ msgid "Show more Social &amp; Contact Icons"
+#~ msgstr "Mostrar mais Social &amp; Ícones de contato"
+
+#~ msgid "Under Construction Text"
+#~ msgstr "Texto de 'em construção'"
+
+#~ msgid "Research"
+#~ msgstr "Pesquisa"
+
+#~ msgid "Themes"
+#~ msgstr "Temas"
+
+#~ msgid "Activate"
+#~ msgstr "Ativar"
+
+#~ msgid "Whitelisted User Roles"
+#~ msgstr "Funções de usuário permitidas"
+
+#~ msgid ""
+#~ "Selected user roles will <b>not</b> be affected by the under construction "
+#~ "mode and will always see the \"normal\" site. Default: administrator."
+#~ msgstr ""
+#~ "As funções de usuário selecionadas <b>não</b> serão afetadas pelo modo em "
+#~ "construção e sempre verão o site \"normal\". Padrão: administrador."
+
+#~ msgid "Whitelisted Users"
+#~ msgstr "Usuários autorizados"
+
+#~ msgid ""
+#~ "Selected users (when logged in) will <b>not</b> be affected by the under "
+#~ "construction mode and will always see the \"normal\" site."
+#~ msgstr ""
+#~ "Os usuários selecionados (quando logados) <b>não</b> serão afetados pelo "
+#~ "modo em construção e sempre verão o site \"normal\"."
+
+#~ msgid "Main"
+#~ msgstr "Principal"
+
+#~ msgid "Access"
+#~ msgstr "Acessar"
+
+#~ msgid "Save Changes"
+#~ msgstr "Salvar mudanças"
