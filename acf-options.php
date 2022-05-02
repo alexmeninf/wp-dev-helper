@@ -2478,10 +2478,10 @@ function my_acf_add_local_field_groups() {
       ),
       array(
         'key' => 'field_sdf64dsf44',
-        'label' => __('Form generator', 'wpdevhelper'),
+        'label' => __('Form generator', 'wpdevhelper') . ' (Beta)',
         'name' => 'wpdevhelperTemplateSettings-form_generator',
         'type' => 'radio',
-        'instructions' => __('Add your css to the head. The &#60;style&#62; tags will be ignored.', 'wpdevhelper'),
+        'instructions' => __('Quickly create forms to place in your template.', 'wpdevhelper'),
         'required' => 0,
         'conditional_logic' => 0,
         'wrapper' => array(
@@ -2504,7 +2504,7 @@ function my_acf_add_local_field_groups() {
         'placement' => 'left',
         'endpoint' => 0,
         'key' => 'field_5890e99978558',
-        'label' => __('Others', 'wpdevhelper'),
+        'label' => __('Admin panel', 'wpdevhelper'),
         'name' => '',
         'type' => 'tab',
         'instructions' => '',

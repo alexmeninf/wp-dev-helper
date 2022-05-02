@@ -1,13 +1,41 @@
 .wp-helper-logo {
   font-variant: small-caps;
-  font-family: 'Open-sans', sans-serif;
+  font-family: "Open-sans", sans-serif;
   font-weight: 900;
 }
 
-
 h1.wp-helper-logo img {
-    height: 23px;
-    margin-right: 10px;
-    margin-bottom: -2px;
-    transition: transform 1.5s ease-in-out;
+  height: 23px;
+  margin-right: 10px;
+  margin-bottom: -2px;
+  transition: transform 1.5s ease-in-out;
+}
+
+#poststuff .stuffbox>h3, #poststuff h2, #poststuff h3.hndle {
+  font-size: 15px;
+  padding: 13px 17px;
+}
+
+.postbox {
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#wp-admin-bar-user-info .avatar {
+  border-radius: 16px;
+}
+
+@media (min-width: 601px) {
+  #wpadminbar .ab-top-menu>.menupop>.ab-sub-wrapper {
+    border-bottom-left-radius: 15px;
+  }
+}
+
+#adminmenu div.separator {
+  background-color: #8b92a128;
+}
+
+#adminmenu li.wp-menu-separator {
+  margin: 9px 0 9px 38px;
 }

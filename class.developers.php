@@ -12,6 +12,7 @@ class Developers
         'menu_title' => __('Developers', 'wpdevhelper'),
         'menu_slug'  => 'wp-dev-helper',
         'capability' => 'edit_posts',
+        'icon_url'  => 'dashicons-coffee',
         'redirect'   => false
       ));
     }

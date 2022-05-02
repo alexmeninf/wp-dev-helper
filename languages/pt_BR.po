@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WP Dev Helper 1.7\n"
-"POT-Creation-Date: 2022-05-02 10:06-0300\n"
-"PO-Revision-Date: 2022-05-02 10:09-0300\n"
+"POT-Creation-Date: 2022-05-02 15:06-0300\n"
+"PO-Revision-Date: 2022-05-02 15:07-0300\n"
 "Last-Translator: \n"
 "Language-Team: Alexandre Menin <menin.alex11@gmail.com>\n"
 "Language: pt_BR\n"
@@ -126,7 +126,7 @@ msgstr "Domínio de texto"
 msgid "Translation file"
 msgstr "Tradução"
 
-#: acf-options.php:40 acf-options.php:1967
+#: acf-options.php:40 acf-options.php:2048
 msgid "Optional"
 msgstr "Opcional"
 
@@ -178,10 +178,10 @@ msgid "Link To Taxonomies"
 msgstr "Link para taxonomias"
 
 #: acf-options.php:151
-msgid "Comma separated list of"
-msgstr "Lista separada por vírgula"
+msgid "Comma separated list of "
+msgstr "Lista separada por vírgula "
 
-#: acf-options.php:151 acf-options.php:1778
+#: acf-options.php:151 acf-options.php:1859
 msgid "Taxonomies"
 msgstr "Taxonomias"
 
@@ -406,16 +406,16 @@ msgstr "Postagens desse tipo devem ser excluídas dos resultados da pesquisa."
 
 #: acf-options.php:771 acf-options.php:869 acf-options.php:896
 #: acf-options.php:1004 acf-options.php:1101 acf-options.php:1222
-#: acf-options.php:1257 acf-options.php:1292 acf-options.php:1841
-#: acf-options.php:2414 acf-options.php:2438 acf-options.php:2477
-#: acf-options.php:2501
+#: acf-options.php:1257 acf-options.php:1292 acf-options.php:1343
+#: acf-options.php:1922 acf-options.php:2495 acf-options.php:2534
+#: acf-options.php:2558
 msgid "Yes"
 msgstr "Sim"
 
 #: acf-options.php:772 acf-options.php:870 acf-options.php:897
 #: acf-options.php:1005 acf-options.php:1102 acf-options.php:1223
-#: acf-options.php:1258 acf-options.php:1842 acf-options.php:2413
-#: acf-options.php:2437 acf-options.php:2478 acf-options.php:2502
+#: acf-options.php:1258 acf-options.php:1344 acf-options.php:1923
+#: acf-options.php:2494 acf-options.php:2535 acf-options.php:2559
 msgid "No"
 msgstr "Não"
 
@@ -663,19 +663,48 @@ msgstr "Feeds"
 msgid "Build feed permastruct. Default: Yes."
 msgstr "Construa o feed permastruct. Padrão: sim."
 
-#: acf-options.php:1327 acf-options.php:1354
+#: acf-options.php:1327 acf-options.php:1435
 msgid "Capabilities"
 msgstr "Capacidades"
 
-#: acf-options.php:1343
+#: acf-options.php:1357
+msgid "Whether to add the post type in the REST API."
+msgstr "Se o tipo de postagem deve ser adicionado à API REST."
+
+#: acf-options.php:1373
+msgid "Rest Base"
+msgstr "Base da Rest"
+
+#: acf-options.php:1376
+msgid ""
+"The base slug that this post type will use when accessed using the REST API. "
+"Default: $post_type"
+msgstr ""
+"O slug base que esse tipo de postagem usará quando acessado usando a API "
+"REST. Padrão: $post_type"
+
+#: acf-options.php:1400
+msgid "Rest Controller Class"
+msgstr "Rest Controller Class"
+
+#: acf-options.php:1403
+msgid ""
+"An optional custom controller to use instead of WP_REST_Posts_Controller. "
+"Must be a subclass of WP_REST_Controller. Default: WP_REST_Posts_Controller"
+msgstr ""
+"Um controlador personalizado opcional para usar em vez de "
+"WP_REST_Posts_Controller. Deve ser uma subclasse de WP_REST_Controller. "
+"Padrão: WP_REST_Posts_Controller"
+
+#: acf-options.php:1424
 msgid "Base capabilities"
 msgstr "Capacidades base"
 
-#: acf-options.php:1344
+#: acf-options.php:1425
 msgid "Custom capabilities"
 msgstr "Recursos personalizados"
 
-#: acf-options.php:1357
+#: acf-options.php:1438
 msgid ""
 "Set <a href=\"https://wordpress.org/support/article/roles-and-capabilities/"
 "\" target=\"_blank\">user capabilities</a> to manage post type."
@@ -684,119 +713,113 @@ msgstr ""
 "capabilities/\" target=\"_blank\">Recursos do Usuário</a> para gerenciar o "
 "tipo de postagem."
 
-#: acf-options.php:1373
+#: acf-options.php:1454
 msgid "Read Post"
 msgstr "Ler postagem"
 
-#: acf-options.php:1400
+#: acf-options.php:1481
 msgid "Read Private Posts"
 msgstr "Ler mensagens privadas"
 
-#: acf-options.php:1427
+#: acf-options.php:1508
 msgid "Publish Posts"
 msgstr "Publicar postagens"
 
-#: acf-options.php:1454
+#: acf-options.php:1535
 msgid "Delete Post"
 msgstr "Deletar postagem"
 
-#: acf-options.php:1481
+#: acf-options.php:1562
 msgid "Edit Post"
 msgstr "Editar postagem"
 
-#: acf-options.php:1508
+#: acf-options.php:1589
 msgid "Edit Posts"
 msgstr "Editar postagens"
 
-#: acf-options.php:1535
+#: acf-options.php:1616
 msgid "Edit Others Posts"
 msgstr "Editar outras postagens"
 
-#: acf-options.php:1570
+#: acf-options.php:1651
 msgid "Base Capability Type"
 msgstr "Tipo de capacidade de base"
 
-#: acf-options.php:1573
+#: acf-options.php:1654
 msgid "Used as a base to construct capabilities."
 msgstr "Usado como base para construir recursos."
 
-#: acf-options.php:1680
+#: acf-options.php:1761
 msgid "Developers Options"
 msgstr "Opções para Desenvolvedores"
 
-#: acf-options.php:1686
+#: acf-options.php:1767
 msgid "Dashboard"
 msgstr "Painel"
 
-#: acf-options.php:1700
+#: acf-options.php:1781
 msgid "Remove Widgets"
 msgstr "Remover Widgets"
 
-#: acf-options.php:1703
+#: acf-options.php:1784
 msgid "Hide defaults dashboard widgets."
 msgstr "Esconder widgets padrões do painel."
 
-#: acf-options.php:1713
+#: acf-options.php:1794
 msgid "At a Glance"
 msgstr "Agora"
 
-#: acf-options.php:1714
+#: acf-options.php:1795
 msgid "Quick Draft"
 msgstr "Rascunho Rápido"
 
-#: acf-options.php:1715
+#: acf-options.php:1796
 msgid "WordPress News"
 msgstr "Novidades do WordPress"
 
-#: acf-options.php:1716
+#: acf-options.php:1797
 msgid "Activity"
 msgstr "Atividade"
 
-#: acf-options.php:1725
+#: acf-options.php:1806
 msgid "Click here"
 msgstr "Clique aqui"
 
-#: acf-options.php:1725
+#: acf-options.php:1806
 msgid "to view, edit or remove your Dashboard widgets boxes."
 msgstr "para ver, editar ou remover widgets to Painel."
 
-#: acf-options.php:1729
+#: acf-options.php:1810
 msgid "Manage Widgets Boxes"
 msgstr "Gerenciar caixas de widgets"
 
-#: acf-options.php:1745 acf-options.php:1762
+#: acf-options.php:1826 acf-options.php:1843
 msgid "Custom Post Types"
 msgstr "Post Types Personalizados"
 
-#: acf-options.php:1758
+#: acf-options.php:1839
 msgid ""
 "Instead of creating your custom post types including many codes in your "
-"functions.php file you can create they easily here. <br>To add, edit or "
-"delete your custom post types click on button below. WordPress can hold and "
-"display many different types of content. A single item of such a content is "
-"generally called a post, although post is also a specific post type. "
-"Internally, all the post types are stored in the same place, in the wp_posts "
-"database table, but are differentiated by a column called post_type. <a "
-"class=\"button button-secondary button-large\" href=\"edit.php?"
-"post_type=new_post_type\" style=\"margin-top:10px\">New post type</a>"
+"functions.php file you can create they easily here. <br><a class=\"button "
+"button-primary button-large\" href=\"post-new.php?post_type=new_post_type\" "
+"style=\"margin-top:10px;margin-right: 9px;\">New post type</a><a class="
+"\"button button-secondary button-large\" href=\"edit.php?"
+"post_type=new_post_type\" style=\"margin-top:10px\">See list of post types</"
+"a>"
 msgstr ""
 "Em vez de criar seus tipos de postagem personalizados, incluindo muitos "
 "códigos em seu arquivo functions.php, você pode criá-los facilmente aqui. "
-"<br>Para adicionar, editar ou excluir seus tipos de postagem personalizados, "
-"clique no botão abaixo. O WordPress pode armazenar e exibir muitos tipos "
-"diferentes de conteúdo. Um único item desse conteúdo é geralmente chamado de "
-"postagem, embora a postagem também seja um tipo de postagem específico. "
-"Internamente, todos os tipos de postagem são armazenados no mesmo local, na "
-"tabela do banco de dados wp_posts, mas são diferenciados por uma coluna "
-"chamada post_type.\n"
-" <a class=\"button button-secondary button-large\" href=\"edit.php?"
-"post_type=new_post_type\" style=\"margin-top:10px\">Novo tipo de postagem</a>"
+"<br><a class=\"button button-primary button-large\" href=\"post-new.php?"
+"post_type=new_post_type\" style=\"margin-top:10px;margin-right: 9px;\">Novo "
+"tipo de postagem</a><a class=\"button button-secondary button-large\" href="
+"\"edit.php?post_type=new_post_type\" style=\"margin-top:10px\">Ver lista de "
+"tipos de postagem</a>"
 
-#: acf-options.php:1792
+#: acf-options.php:1873
 msgid "Hierarchical Order"
 msgstr "Ordem hierárquica"
 
-#: acf-options.php:1795
+#: acf-options.php:1876
 msgid ""
 "Insert which taxonomies (slug separated by comma) do you want to maintain in "
 "hierarchical order when editing the post/page."
@@ -804,97 +827,97 @@ msgstr ""
 "Inserir quais taxonomias (slug separados por vírgula) você deseja manter em "
 "ordem hierárquica ao editar o post / página."
 
-#: acf-options.php:1805
+#: acf-options.php:1886
 msgid "Example"
 msgstr "Exemplo"
 
-#: acf-options.php:1813
+#: acf-options.php:1894
 msgid "Login Screen"
 msgstr "Tela de Login"
 
-#: acf-options.php:1827
+#: acf-options.php:1908
 msgid "Enable Custom Login Screen?"
 msgstr "Habilitar Tela de Login Personalizada?"
 
-#: acf-options.php:1830
+#: acf-options.php:1911
 msgid "Select Yes if you want to customize the WordPress login default screen."
 msgstr ""
 "Selecione Sim se desejar personalizar a tela padrão de login do WordPress."
 
-#: acf-options.php:1854
+#: acf-options.php:1935
 msgid "Logo Image"
 msgstr "Imagem da Logo"
 
-#: acf-options.php:1857
+#: acf-options.php:1938
 msgid "Send an image with 100px wide per 100px height."
 msgstr "Envie uma imagem de 100px de largura por 100px de altura."
 
-#: acf-options.php:1886
+#: acf-options.php:1967
 msgid "Logo URL"
 msgstr "URL da Logo"
 
-#: acf-options.php:1889
+#: acf-options.php:1970
 msgid "Select the URL that will be placed in the login screen logo."
 msgstr "Selecione o URL que será colocado no logotipo da tela de login."
 
-#: acf-options.php:1910
+#: acf-options.php:1991
 msgid "Logo Title"
 msgstr "Título da Logo"
 
-#: acf-options.php:1913
+#: acf-options.php:1994
 msgid "Enter the link title attribute."
 msgstr "Digite o atributo do título do link."
 
-#: acf-options.php:1937
+#: acf-options.php:2018
 msgid "Login Text Color Style"
 msgstr "Cor de Texto no Login"
 
-#: acf-options.php:1940
+#: acf-options.php:2021
 msgid "Default is Light."
 msgstr "Padrão: Light."
 
-#: acf-options.php:1951
+#: acf-options.php:2032
 msgid "Light"
 msgstr "Light"
 
-#: acf-options.php:1952
+#: acf-options.php:2033
 msgid "Dark"
 msgstr "Dark"
 
-#: acf-options.php:1964
+#: acf-options.php:2045
 msgid "Body Background Color"
 msgstr "Cor de Fundo"
 
-#: acf-options.php:1979
+#: acf-options.php:2060
 msgid "Add Footer Content"
 msgstr "Conteúdo no Rodapé"
 
-#: acf-options.php:1982
+#: acf-options.php:2063
 msgid ""
 "Type something if you want to add a content below the login form. Optional."
 msgstr ""
 "Escreva algo se você deseja adicionar algum conteúdo abaixo do formulário de "
 "login. Opcional."
 
-#: acf-options.php:2000 acf-options.php:2528
+#: acf-options.php:2081 acf-options.php:2585
 msgid "WP Head"
 msgstr "WP Head"
 
-#: acf-options.php:2015
+#: acf-options.php:2096
 msgid "Theme Color"
 msgstr "Cor do tema"
 
-#: acf-options.php:2018
+#: acf-options.php:2099
 msgid "Change the color of header bar and address bar in mobile browsers."
 msgstr ""
 "Altere a cor da barra de cabeçalho e da barra de endereço nos navegadores "
 "móveis."
 
-#: acf-options.php:2034
+#: acf-options.php:2115
 msgid "Meta Description"
 msgstr "Meta Descrição"
 
-#: acf-options.php:2037
+#: acf-options.php:2118
 msgid ""
 "Put a description of your site to show in browser searches. <b>Note:</b> "
 "Maximum 150 characters."
@@ -902,11 +925,11 @@ msgstr ""
 "Coloque uma descrição do seu site para mostrar nas pesquisas do navegador. "
 "<b> Nota: </b> Máximo de 150 caracteres."
 
-#: acf-options.php:2058
+#: acf-options.php:2139
 msgid "Open Graph image"
 msgstr "Open Graph imagem"
 
-#: acf-options.php:2061
+#: acf-options.php:2142
 msgid ""
 "Send an image with 1200px wide per 630px height. <br> Keep a default image "
 "in the links, and display a social media post."
@@ -914,19 +937,19 @@ msgstr ""
 "Envie uma imagem com 1200px de largura por 630px de altura. <br> Mantenha "
 "uma imagem padrão nos links e exiba uma postagem de mídia social."
 
-#: acf-options.php:2082
+#: acf-options.php:2163
 msgid "Favicon"
 msgstr "Favicon"
 
-#: acf-options.php:2085
+#: acf-options.php:2166
 msgid "Send an image with 32px wide per 32px height."
 msgstr "Envie uma imagem com 32px de largura por 32px de altura."
 
-#: acf-options.php:2106
+#: acf-options.php:2187
 msgid "Apple-touch-icon 57x57 pixels"
 msgstr ""
 
-#: acf-options.php:2109
+#: acf-options.php:2190
 msgid ""
 "Send an image with 57px width per 57px height. Send an image with the "
 "extension PNG."
@@ -934,11 +957,11 @@ msgstr ""
 "Envie uma imagem com 57px de largura por 57px de altura. Envie uma imagem "
 "com a extensão PNG."
 
-#: acf-options.php:2130
+#: acf-options.php:2211
 msgid "Apple-touch-icon 60x60 pixels"
 msgstr ""
 
-#: acf-options.php:2133
+#: acf-options.php:2214
 msgid ""
 "Send an image with 60px width per 60px height. Send an image with the "
 "extension PNG."
@@ -946,11 +969,11 @@ msgstr ""
 "Envie uma imagem com 60px de largura por 60px de altura. Envie uma imagem "
 "com a extensão PNG."
 
-#: acf-options.php:2154
+#: acf-options.php:2235
 msgid "Apple-touch-icon 72x72 pixels"
 msgstr ""
 
-#: acf-options.php:2157
+#: acf-options.php:2238
 msgid ""
 "Send an image with 72px width per 72px height. Send an image with the "
 "extension PNG."
@@ -958,11 +981,11 @@ msgstr ""
 "Envie uma imagem com 72px de largura por 72px de altura. Envie uma imagem "
 "com a extensão PNG."
 
-#: acf-options.php:2178
+#: acf-options.php:2259
 msgid "Apple-touch-icon 76x76 pixels"
 msgstr ""
 
-#: acf-options.php:2181
+#: acf-options.php:2262
 msgid ""
 "Send an image with 76px width per 76px height. Send an image with the "
 "extension PNG."
@@ -970,11 +993,11 @@ msgstr ""
 "Envie uma imagem com 76px de largura por 76px de altura. Envie uma imagem "
 "com a extensão PNG."
 
-#: acf-options.php:2202
+#: acf-options.php:2283
 msgid "Apple-touch-icon 114x114 pixels"
 msgstr ""
 
-#: acf-options.php:2205
+#: acf-options.php:2286
 msgid ""
 "Send an image with 114px width per 114px height. Send an image with the "
 "extension PNG."
@@ -982,11 +1005,11 @@ msgstr ""
 "Envie uma imagem com 114px de largura por 114px de altura. Envie uma imagem "
 "com a extensão PNG."
 
-#: acf-options.php:2226
+#: acf-options.php:2307
 msgid "Apple-touch-icon 120x120 pixels"
 msgstr ""
 
-#: acf-options.php:2229
+#: acf-options.php:2310
 msgid ""
 "Send an image with 120px width per 120px height. Send an image with the "
 "extension PNG."
@@ -994,11 +1017,11 @@ msgstr ""
 "Envie uma imagem com 120px de largura por 120px de altura. Envie uma imagem "
 "com a extensão PNG."
 
-#: acf-options.php:2250
+#: acf-options.php:2331
 msgid "Apple-touch-icon 144x144 pixels"
 msgstr ""
 
-#: acf-options.php:2253
+#: acf-options.php:2334
 msgid ""
 "Send an image with 144px width per 144px height. Send an image with the "
 "extension PNG."
@@ -1006,11 +1029,11 @@ msgstr ""
 "Envie uma imagem com 144px de largura por 144px de altura. Envie uma imagem "
 "com a extensão PNG."
 
-#: acf-options.php:2274
+#: acf-options.php:2355
 msgid "Apple-touch-icon 152x152 pixels"
 msgstr ""
 
-#: acf-options.php:2277
+#: acf-options.php:2358
 msgid ""
 "Send an image with 152px width per 152px height. Send an image with the "
 "extension PNG."
@@ -1018,11 +1041,11 @@ msgstr ""
 "Envie uma imagem com 152px de largura por 152px de altura. Envie uma imagem "
 "com a extensão PNG."
 
-#: acf-options.php:2298
+#: acf-options.php:2379
 msgid "Apple-touch-icon 180x180 pixels"
 msgstr ""
 
-#: acf-options.php:2301
+#: acf-options.php:2382
 msgid ""
 "Send an image with 180px width per 180px height. Send an image with the "
 "extension PNG."
@@ -1030,11 +1053,11 @@ msgstr ""
 "Envie uma imagem com 180px de largura por 180px de altura. Envie uma imagem "
 "com a extensão PNG."
 
-#: acf-options.php:2322
+#: acf-options.php:2403
 msgid "Head icon 192x192 pixels"
 msgstr ""
 
-#: acf-options.php:2325
+#: acf-options.php:2406
 msgid ""
 "Send an image with 192px width per 192px height. Send an image with the "
 "extension PNG."
@@ -1042,11 +1065,11 @@ msgstr ""
 "Envie uma imagem com 192px de largura por 192px de altura. Envie uma imagem "
 "com a extensão PNG."
 
-#: acf-options.php:2346
+#: acf-options.php:2427
 msgid "Head icon 96x96 pixels"
 msgstr ""
 
-#: acf-options.php:2349
+#: acf-options.php:2430
 msgid ""
 "Send an image with 96px width per 96px height. Send an image with the "
 "extension PNG."
@@ -1054,11 +1077,11 @@ msgstr ""
 "Envie uma imagem com 96px de largura por 96px de altura. Envie uma imagem "
 "com a extensão PNG."
 
-#: acf-options.php:2370
+#: acf-options.php:2451
 msgid "Head icon 16x16 pixels"
 msgstr ""
 
-#: acf-options.php:2373
+#: acf-options.php:2454
 msgid ""
 "Send an image with 16px width per 16px height. Send an image with the "
 "extension PNG."
@@ -1066,87 +1089,79 @@ msgstr ""
 "Envie uma imagem com 16px de largura por 16px de altura. Envie uma imagem "
 "com a extensão PNG."
 
-#: acf-options.php:2386
+#: acf-options.php:2467
 msgid "Template Settings"
 msgstr "Configurações do template"
 
-#: acf-options.php:2400
-msgid "Under Construction"
-msgstr "Em construção"
-
-#: acf-options.php:2403
-msgid "Display page under construction on template?"
-msgstr "Mostrar site em construção no template?"
-
-#: acf-options.php:2424
+#: acf-options.php:2481
 msgid "Form generator"
 msgstr "Gerador de formulários"
 
-#: acf-options.php:2427
-msgid "Enable post type for creating submission forms via panel?"
-msgstr "Habilitar tipo de postagem para criar formulários de envio via painel?"
+#: acf-options.php:2484
+msgid "Quickly create forms to place in your template."
+msgstr "Crie rapidamente formulários para colocar em seu template."
 
-#: acf-options.php:2450
-msgid "Others"
-msgstr "Outros"
+#: acf-options.php:2507
+msgid "Admin panel"
+msgstr "Painel do administrador"
 
-#: acf-options.php:2464
+#: acf-options.php:2521
 msgid "Duplicate Post"
 msgstr "Duplicar Post"
 
-#: acf-options.php:2467
+#: acf-options.php:2524
 msgid "Enable duplicate post option?"
 msgstr "Habilitar opção de duplicar Post?"
 
-#: acf-options.php:2488
+#: acf-options.php:2545
 msgid "Duplicate Page"
 msgstr "Duplicar Página"
 
-#: acf-options.php:2491
+#: acf-options.php:2548
 msgid "Enable duplicate page option?"
 msgstr "Habilitar opção de duplicar Página?"
 
-#: acf-options.php:2514
+#: acf-options.php:2571
 msgid "Advanced"
 msgstr "Avançado"
 
-#: acf-options.php:2531
+#: acf-options.php:2588
 msgid "Remove tags created by <b>wp_head()</b> function."
 msgstr "Remova as tags criadas pela função <b>wp_head()</b>."
 
-#: acf-options.php:2558
+#: acf-options.php:2615
 msgid "Custom CSS"
 msgstr "CSS Customizado"
 
-#: acf-options.php:2563
+#: acf-options.php:2620
 msgid "Add your css to the head. The &#60;style&#62 tags will be ignored."
 msgstr "Adicione seu css no Head. As tags &#60;style&#62 serão ignoradas."
 
-#: acf-options.php:2576
+#: acf-options.php:2633
 msgid "Custom JS Head"
 msgstr "JS Personalizado no Head"
 
-#: acf-options.php:2581
+#: acf-options.php:2638
 msgid ""
-"Add your javascript to the Head. The &#60;script&#62 tags will be ignored."
+"Add your javascript to the Head. The &#60;script&#62; tags will be ignored."
 msgstr ""
-"Adicione seu javascript ao Head. As tags &#60;script&#62 serão ignoradas."
+"Adicione seu javascript ao Head. As tags  &#60;script&#62; serão ignoradas."
 
-#: acf-options.php:2594
+#: acf-options.php:2651
 msgid "Custom JS Footer"
 msgstr "JS Personalizado no Footer"
 
-#: acf-options.php:2599
+#: acf-options.php:2656
 msgid ""
-"Add your javascript to the Footer The &#60;script&#62 tags will be ignored."
+"Add your javascript to the Footer The &#60;script&#62; tags will be ignored."
 msgstr ""
-"Adicione seu javascript ao Footer. As tags &#60;script&#62 serão ignoradas."
+"Adicione seu javascript ao rodapé As tags &#60;script&#62; serão ignoradas."
 
 #: class.developers.php:12
 msgid "Developers"
 msgstr "Desenvolvedores"
 
-#: class.developers.php:311
+#: class.developers.php:304
 #, php-format
 msgid ""
 "Your current theme needs to be updated to display the <b>Form Generator</b> "
@@ -1257,6 +1272,22 @@ msgstr "Widget do painel"
 #: includes/register-post_type.php:100
 msgid "Create New Dashboard Widget"
 msgstr "Criar novo widgets do painel"
+
+#~ msgid "Others"
+#~ msgstr "Outros"
+
+#~ msgid "Add your css to the head. The &#60;style&#62; tags will be ignored."
+#~ msgstr "Adicione seu css à cabeça. O &#60;estilo&#62; tags serão ignoradas."
+
+#~ msgid "Under Construction"
+#~ msgstr "Em construção"
+
+#~ msgid "Display page under construction on template?"
+#~ msgstr "Mostrar site em construção no template?"
+
+#~ msgid "Enable post type for creating submission forms via panel?"
+#~ msgstr ""
+#~ "Habilitar tipo de postagem para criar formulários de envio via painel?"
 
 #~ msgid "ACF Code Field"
 #~ msgstr "ACF - Campo de código"
