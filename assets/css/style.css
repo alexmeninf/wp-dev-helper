@@ -18,24 +18,23 @@ h1.wp-helper-logo img {
 
 .postbox {
   border: 1px solid #dddddd;
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
 }
 
-#wp-admin-bar-user-info .avatar {
-  border-radius: 16px;
+.acf-image-uploader .image-wrap {
+	border-radius: 8px;
+    overflow: hidden;
 }
+.wp-core-ui .notice {border-radius:6px}
 
-@media (min-width: 601px) {
-  #wpadminbar .ab-top-menu>.menupop>.ab-sub-wrapper {
-    border-bottom-left-radius: 15px;
-  }
-}
+#wp-admin-bar-user-info .avatar {  border-radius: 16px;}
 
-#adminmenu div.separator {
-  background-color: #8b92a128;
-}
+#adminmenu div.separator {	height: 1px;}
+#adminmenu div.separator {  background-color: #8b92a121;}
+#adminmenu li.wp-menu-separator {  margin: 7px 0 7px 38px;}
+#titlediv #title{height: 2.2em;}
 
-#adminmenu li.wp-menu-separator {
-  margin: 9px 0 9px 38px;
+input[type=color], input[type=date], input[type=datetime-local], input[type=datetime], input[type=email], input[type=month], input[type=number], input[type=password], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week], select, textarea {
+   border: 1px solid #dfdfdf;
 }
