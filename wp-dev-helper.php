@@ -3,7 +3,7 @@
  * Plugin Name: WP Dev Helper
  * Plugin URI: https://github.com/alexmeninf/wp-dev-helper
  * Description: An awesome plugin that help WordPress developers to develop their themes faster than ever.
- * Version: 1.7.5
+ * Version: 1.8
  * License: GPL
  * Author: Alexandre Menin
  * Author URI: https://github.com/alexmeninf
@@ -20,7 +20,7 @@ require_once(ABSPATH . "wp-includes/pluggable.php");
 /*============================
 =            INFO            =
 ============================*/
-define('WPDEVHELPER_VERSION', '1.7.5');
+define('WPDEVHELPER_VERSION', '1.8');
 define('WPDEVHELPER_REPOSITORY', 'https://github.com/alexmeninf/wp-dev-helper');
 define('WPDEVHELPER__MINIMUM_WP_VERSION', '5.8');
 
@@ -66,6 +66,11 @@ include PLUGINPATH . 'acf-options.php';
 include_once PLUGINPATH . 'includes/register-post_type.php';
 
 /*==============================================================
+=                ADICIONAR CÓDIGO NAS PÁGINAS               =
+==============================================================*/
+include_once PLUGINPATH . 'includes/add-code-in-page.php';
+
+/*==============================================================
 =            HTML, CSS, JS MINIFIER; DUPLICATE POST            =
 ==============================================================*/
 include_once PLUGINPATH . 'duplicate-post.php';
@@ -77,6 +82,7 @@ include_once PLUGINPATH . 'class.developers.php';
 
 $wpdh = new Developers();
 $wpdh->pageDevelopers();
+$wpdh->pageHeadFooterPostInjections();
 $wpdh->developersDashboardRemoveWidgets();
 $wpdh->developersDashboardAddBox();
 $wpdh->developersTaxonomiesHierarchical();
@@ -89,8 +95,6 @@ $wpdh->developersTemplateSettingsFormGenerator();
 $wpdh->developersOthersDuplicate();
 $wpdh->developersAdvancedWPHead();
 $wpdh->developersAdvancedCustomCSS($wpdhCssCode = get_field('wpdevhelperAdvanced-custom_css', 'option'));
-$wpdh->developersAdvancedCustomJSHead($wpdhJsHeadCode = get_field('wpdevhelperAdvanced-custom_js_head', 'option'));
-$wpdh->developersAdvancedCustomJSFooter($wpdhJsFooterCode = get_field('wpdevhelperAdvanced-custom_js_footer', 'option'));
 
 /*----------  Custom style  ----------*/
 add_filter('admin_enqueue_scripts', 'admin_header_styles', 10);

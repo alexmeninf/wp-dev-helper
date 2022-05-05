@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WP Dev Helper 1.7\n"
-"POT-Creation-Date: 2022-05-02 15:06-0300\n"
-"PO-Revision-Date: 2022-05-02 15:07-0300\n"
+"POT-Creation-Date: 2022-05-05 10:58-0300\n"
+"PO-Revision-Date: 2022-05-05 10:59-0300\n"
 "Last-Translator: \n"
 "Language-Team: Alexandre Menin <menin.alex11@gmail.com>\n"
 "Language: pt_BR\n"
@@ -408,7 +408,8 @@ msgstr "Postagens desse tipo devem ser excluídas dos resultados da pesquisa."
 #: acf-options.php:1004 acf-options.php:1101 acf-options.php:1222
 #: acf-options.php:1257 acf-options.php:1292 acf-options.php:1343
 #: acf-options.php:1922 acf-options.php:2495 acf-options.php:2534
-#: acf-options.php:2558
+#: acf-options.php:2558 includes/add-code-in-page.php:215
+#: includes/add-code-in-page.php:337 includes/add-code-in-page.php:459
 msgid "Yes"
 msgstr "Sim"
 
@@ -416,6 +417,8 @@ msgstr "Sim"
 #: acf-options.php:1005 acf-options.php:1102 acf-options.php:1223
 #: acf-options.php:1258 acf-options.php:1344 acf-options.php:1923
 #: acf-options.php:2494 acf-options.php:2535 acf-options.php:2559
+#: includes/add-code-in-page.php:216 includes/add-code-in-page.php:338
+#: includes/add-code-in-page.php:460
 msgid "No"
 msgstr "Não"
 
@@ -874,15 +877,15 @@ msgstr "Cor de Texto no Login"
 
 #: acf-options.php:2021
 msgid "Default is Light."
-msgstr "Padrão: Light."
+msgstr "Padrão: Claro."
 
 #: acf-options.php:2032
 msgid "Light"
-msgstr "Light"
+msgstr "Claro"
 
 #: acf-options.php:2033
 msgid "Dark"
-msgstr "Dark"
+msgstr "Escuro"
 
 #: acf-options.php:2045
 msgid "Body Background Color"
@@ -1137,31 +1140,19 @@ msgstr "CSS Customizado"
 msgid "Add your css to the head. The &#60;style&#62 tags will be ignored."
 msgstr "Adicione seu css no Head. As tags &#60;style&#62 serão ignoradas."
 
-#: acf-options.php:2633
-msgid "Custom JS Head"
-msgstr "JS Personalizado no Head"
-
-#: acf-options.php:2638
-msgid ""
-"Add your javascript to the Head. The &#60;script&#62; tags will be ignored."
-msgstr ""
-"Adicione seu javascript ao Head. As tags  &#60;script&#62; serão ignoradas."
-
-#: acf-options.php:2651
-msgid "Custom JS Footer"
-msgstr "JS Personalizado no Footer"
-
-#: acf-options.php:2656
-msgid ""
-"Add your javascript to the Footer The &#60;script&#62; tags will be ignored."
-msgstr ""
-"Adicione seu javascript ao rodapé As tags &#60;script&#62; serão ignoradas."
-
 #: class.developers.php:12
 msgid "Developers"
 msgstr "Desenvolvedores"
 
-#: class.developers.php:304
+#: class.developers.php:28 includes/add-code-in-page.php:139
+msgid "Head, Footer and Post Injections"
+msgstr "Injeção para Head, Footer e Post"
+
+#: class.developers.php:29
+msgid "Code Injections"
+msgstr "Injeção de código"
+
+#: class.developers.php:322
 #, php-format
 msgid ""
 "Your current theme needs to be updated to display the <b>Form Generator</b> "
@@ -1183,78 +1174,127 @@ msgid "Duplicate"
 msgstr "Duplicar"
 
 #: form-generator/form.php:16 form-generator/form.php:18
-msgid "Formulários"
-msgstr ""
+msgid "Forms"
+msgstr "Formulários"
 
 #: form-generator/form.php:17 form-generator/form.php:28
-msgid "Formulário"
-msgstr ""
+msgid "Form"
+msgstr "Formulário"
 
 #: form-generator/form.php:19
-msgid "Todos os formulários"
-msgstr ""
+msgid "All Forms"
+msgstr "Todos os Formulários"
 
 #: form-generator/form.php:20
-msgid "Adicionar novo formulário"
-msgstr ""
+msgid "Add new form"
+msgstr "Adicionar novo formulário"
 
 #: form-generator/form.php:21
-msgid "Novo formulário"
-msgstr ""
+msgid "New form"
+msgstr "Novo formulário"
 
 #: form-generator/form.php:22
-msgid "Editar formulário"
-msgstr ""
+msgid "Edit form"
+msgstr "Editar formulário"
 
 #: form-generator/form.php:23
-msgid "Atualizar formulário"
-msgstr ""
+msgid "Update form"
+msgstr "Atualizar formulário"
 
 #: form-generator/form.php:24
-msgid "Buscar formulário"
-msgstr ""
+msgid "Search form"
+msgstr "Pesquisar formulário"
 
 #: form-generator/form.php:29
-msgid "Adicione um novo formulário de envio."
-msgstr ""
+msgid "Add a new submission form."
+msgstr "Adicione um novo formulário de envio."
 
 #: form-generator/form.php:64
 msgid "Shortcode"
 msgstr ""
 
 #: form-generator/template-form.php:46
-msgid "Enviar"
-msgstr ""
+msgid "Send"
+msgstr "Enviar"
 
 #: form-generator/template-form.php:111
 #, php-format
-msgid "Adicione o arquivo no campo <b>%s</b>."
-msgstr ""
+msgid "Add the file in the <b>%s</b> field."
+msgstr "Adicione o arquivo no campo <b>%s</b>."
 
 #: form-generator/template-form.php:121
 #, php-format
-msgid "O campo <b>%s</b> é obrigatório."
-msgstr ""
+msgid "The <b>%s</b> field is required."
+msgstr "O campo <b>%s</b> é obrigatório."
 
 #: form-generator/template-form.php:171
-msgid "Enviando..."
-msgstr ""
+msgid "Sending..."
+msgstr "Enviando..."
 
 #: form-generator/template-form.php:179
-msgid "Enviado!"
-msgstr ""
+msgid "Sent!"
+msgstr "Enviado!"
 
 #: form-generator/template-form.php:182
-msgid "Fechar"
-msgstr ""
+msgid "Close"
+msgstr "Fechar"
 
 #: form-generator/template-form.php:186 form-generator/template-form.php:199
-msgid "Algo deu errado!"
-msgstr ""
+msgid "Something went wrong!"
+msgstr "Algo deu errado!"
 
 #: form-generator/template-form.php:206
-msgid "Enviar novamente"
-msgstr ""
+msgid "Send again"
+msgstr "Enviar novamente"
+
+#: includes/add-code-in-page.php:143
+msgid "Inside the head tag"
+msgstr "Dentro da tag head"
+
+#: includes/add-code-in-page.php:159
+msgid "Add code to &lt;head&gt;"
+msgstr "Adicione o código em &lt;head&gt;"
+
+#: includes/add-code-in-page.php:178 includes/add-code-in-page.php:300
+#: includes/add-code-in-page.php:422
+msgid "Code"
+msgstr "Código"
+
+#: includes/add-code-in-page.php:196 includes/add-code-in-page.php:318
+#: includes/add-code-in-page.php:440
+msgid "Display on specific pages?"
+msgstr "Exibir em páginas específicas?"
+
+#: includes/add-code-in-page.php:199 includes/add-code-in-page.php:321
+#: includes/add-code-in-page.php:443
+msgid "Leave unchecked to display on all pages"
+msgstr "Deixe desmarcado para exibir em todas as páginas"
+
+#: includes/add-code-in-page.php:228 includes/add-code-in-page.php:350
+#: includes/add-code-in-page.php:472
+msgid "Add code in"
+msgstr "Adicionar código em"
+
+#: includes/add-code-in-page.php:231 includes/add-code-in-page.php:353
+#: includes/add-code-in-page.php:475
+msgid "Select the pages to which the code will be added."
+msgstr "Selecione as páginas às quais o código será adicionado."
+
+#: includes/add-code-in-page.php:265
+msgid "Start of body tag"
+msgstr "Início da tag body"
+
+#: includes/add-code-in-page.php:281
+msgid "Add code after &lt;body&gt;"
+msgstr "Adicione o código após &lt;body&gt;"
+
+#: includes/add-code-in-page.php:387
+msgid "End of body tag (Footer)"
+msgstr "Fim da tag body (rodapé)"
+
+#: includes/add-code-in-page.php:403
+msgid "Add code before &lt;/body&gt;"
+msgstr "Adicione o código antes de &lt;/body&gt;"
 
 #: includes/register-post_type.php:42
 msgid "Create New Post Type"
@@ -1272,6 +1312,29 @@ msgstr "Widget do painel"
 #: includes/register-post_type.php:100
 msgid "Create New Dashboard Widget"
 msgstr "Criar novo widgets do painel"
+
+#~ msgid "Enviar"
+#~ msgstr "Send"
+
+#~ msgid "Custom JS Head"
+#~ msgstr "JS Personalizado no Head"
+
+#~ msgid ""
+#~ "Add your javascript to the Head. The &#60;script&#62; tags will be "
+#~ "ignored."
+#~ msgstr ""
+#~ "Adicione seu javascript ao Head. As tags  &#60;script&#62; serão "
+#~ "ignoradas."
+
+#~ msgid "Custom JS Footer"
+#~ msgstr "JS Personalizado no Footer"
+
+#~ msgid ""
+#~ "Add your javascript to the Footer The &#60;script&#62; tags will be "
+#~ "ignored."
+#~ msgstr ""
+#~ "Adicione seu javascript ao rodapé As tags &#60;script&#62; serão "
+#~ "ignoradas."
 
 #~ msgid "Others"
 #~ msgstr "Outros"

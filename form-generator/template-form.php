@@ -43,7 +43,7 @@ if (have_rows('campos')) :
     endwhile;
     ?>
     <button type="submit" class="<?php echo esc_attr(get_field('button_class')) ?>">
-      <span><?php echo get_field('button_text') ? get_field('button_text') : __('Enviar', 'wpdevhelper'); ?></span>
+      <span><?php echo get_field('button_text') ? get_field('button_text') : __('Send', 'wpdevhelper'); ?></span>
     </button>
   </form>
 
@@ -108,7 +108,7 @@ if (have_rows('campos')) :
               Swal.fire({
                 type: 'warning',
                 title: 'Oops...',
-                html: '<?php printf(__("Adicione o arquivo no campo <b>%s</b>.", 'wpdevhelper'), $name) ?>'
+                html: '<?php printf(__("Add the file in the <b>%s</b> field.", 'wpdevhelper'), $name) ?>'
               });  
             } else
 
@@ -118,7 +118,7 @@ if (have_rows('campos')) :
               Swal.fire({
                 type: 'warning',
                 title: 'Oops...',
-                html: '<?php printf(__("O campo <b>%s</b> é obrigatório.", 'wpdevhelper'), $name) ?>'
+                html: '<?php printf(__("The <b>%s</b> field is required.", 'wpdevhelper'), $name) ?>'
               });
             } else
 
@@ -168,7 +168,7 @@ if (have_rows('campos')) :
         <?php endif; ?>
         data: <?php echo trim(esc_attr(get_field('ajax_data'))) ?>,
         beforeSend: () => {
-          $(btnForm).html('<?= __("Enviando...", 'wpdevhelper') ?>');
+          $(btnForm).html('<?= __("Sending...", 'wpdevhelper') ?>');
         }
 
       }).done(function(data) {
@@ -176,14 +176,14 @@ if (have_rows('campos')) :
         console.log(obj)
         if (obj.success) {
           Swal.fire({
-            title: '<?= __("Enviado!", 'wpdevhelper') ?>',
+            title: '<?= __("Sent!", 'wpdevhelper') ?>',
             text: `${obj.message}`,
             type: 'success',
-            confirmButtonText: '<?= __("Fechar", 'wpdevhelper') ?>'
+            confirmButtonText: '<?= __("Close", 'wpdevhelper') ?>'
           });
         } else {
           Swal.fire({
-            title: '<?= __( "Algo deu errado!", 'wpdevhelper') ?>',
+            title: '<?= __( "Something went wrong!", 'wpdevhelper') ?>',
             text: `${obj.message}`,
             type: 'error',
             confirmButtonText: 'Ok'
@@ -196,14 +196,14 @@ if (have_rows('campos')) :
         const obj = JSON.parse(JSON.stringify(data));
 
         Swal.fire({
-          title: '<?= __( "Algo deu errado!", 'wpdevhelper') ?>',
+          title: '<?= __( "Something went wrong!", 'wpdevhelper') ?>',
           text: `${obj.message}`,
           type: 'error',
           confirmButtonText: 'Ok'
         });
 
       }).always(function() {
-        $(btnForm).html('<?= __("Enviar novamente", 'wpdevhelper') ?>');
+        $(btnForm).html('<?= __("Send again", 'wpdevhelper') ?>');
       });
 
       <?php echo $count_requireds > 0 ? '}' : '' ?>

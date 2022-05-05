@@ -13,20 +13,20 @@ require 'acf-options.php';
 function post_type_generator_form()
 {
   $labels = array(
-    'name'                  => _x('Formulários', 'Post Type General Name', 'wpdevhelper'),
-    'singular_name'         => _x('Formulário', 'Post Type Singular Name', 'wpdevhelper'),
-    'menu_name'             => __('Formulários', 'wpdevhelper'),
-    'all_items'             => __('Todos os formulários', 'wpdevhelper'),
-    'add_new_item'          => __('Adicionar novo formulário', 'wpdevhelper'),
-    'new_item'              => __('Novo formulário', 'wpdevhelper'),
-    'edit_item'             => __('Editar formulário', 'wpdevhelper'),
-    'update_item'           => __('Atualizar formulário', 'wpdevhelper'),
-    'search_items'          => __('Buscar formulário', 'wpdevhelper'),
+    'name'                  => __('Forms', 'wpdevhelper'),
+    'singular_name'         => __('Form', 'wpdevhelper'),
+    'menu_name'             => __('Forms', 'wpdevhelper'),
+    'all_items'             => __('All Forms', 'wpdevhelper'),
+    'add_new_item'          => __('Add new form', 'wpdevhelper'),
+    'new_item'              => __('New form', 'wpdevhelper'),
+    'edit_item'             => __('Edit form', 'wpdevhelper'),
+    'update_item'           => __('Update form', 'wpdevhelper'),
+    'search_items'          => __('Search form', 'wpdevhelper'),
   );
 
   $args = array(
-    'label'                 => __('Formulário', 'wpdevhelper'),
-    'description'           => __('Adicione um novo formulário de envio.', 'wpdevhelper'),
+    'label'                 => __('Form', 'wpdevhelper'),
+    'description'           => __('Add a new submission form.', 'wpdevhelper'),
     'labels'                => $labels,
     'supports'              => array('title', 'custom-fields'),
     'hierarchical'          => false,

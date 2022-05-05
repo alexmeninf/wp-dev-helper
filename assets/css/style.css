@@ -22,11 +22,11 @@ h1.wp-helper-logo img {
   overflow: hidden;
 }
 
-.acf-image-uploader .image-wrap {
-	border-radius: 8px;
-    overflow: hidden;
-}
-.wp-core-ui .notice {border-radius:6px}
+.wp-core-ui .notice,
+.woocommerce-message,
+.woocommerce-store-alerts {border-radius: 4px !important;overflow: hidden;}
+
+.acf-image-uploader .image-wrap {border-radius: 8px;overflow: hidden;}
 
 #wp-admin-bar-user-info .avatar {  border-radius: 16px;}
 
@@ -35,6 +35,8 @@ h1.wp-helper-logo img {
 #adminmenu li.wp-menu-separator {  margin: 7px 0 7px 38px;}
 #titlediv #title{height: 2.2em;}
 
-input[type=color], input[type=date], input[type=datetime-local], input[type=datetime], input[type=email], input[type=month], input[type=number], input[type=password], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week], select, textarea {
-   border: 1px solid #dfdfdf;
+.wp-core-ui select, input[type=color], input[type=date], input[type=datetime-local], input[type=datetime], input[type=email], input[type=month], input[type=number], input[type=password], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week], select, textarea {
+  border-color:#bfbfbf !important;
 }
+
+#titlediv #title-prompt-text {padding: 15px 10px;}

@@ -12,7 +12,25 @@ class Developers
         'menu_title' => __('Developers', 'wpdevhelper'),
         'menu_slug'  => 'wp-dev-helper',
         'capability' => 'edit_posts',
-        'icon_url'  => 'dashicons-coffee',
+        'icon_url'   => 'dashicons-coffee',
+        'redirect'   => false
+      ));
+    }
+  }
+
+  /**
+   * Ceate page Head, Footer and Post Injections
+   */
+  public function pageHeadFooterPostInjections()
+  {
+    if (function_exists('acf_add_options_page')) {
+      acf_add_options_page(array(
+        'page_title' => __('Head, Footer and Post Injections', 'wpdevhelper'),
+        'menu_title' => __('Code Injections', 'wpdevhelper'),
+        'menu_slug'  => 'wpdh-injections',
+        'parent_slug' => 'wp-dev-helper',
+        'capability' => 'edit_posts',
+        'icon_url'   => 'dashicons-editor-code',
         'redirect'   => false
       ));
     }
@@ -364,28 +382,6 @@ class Developers
         global $wpdhCssCode;
         echo '<style>' . $wpdhCssCode . '</style>';
       });
-    }
-  }
-
-  /*----------  ADVANCED -> CUSTOM JS  ----------*/
-  public function developersAdvancedCustomJSHead($wpdhJsHeadCode)
-  {
-    if (trim($wpdhJsHeadCode) != '') {
-      add_action('wp_head', function () {
-        global $wpdhJsHeadCode;
-        echo '<script>' . $wpdhJsHeadCode . '</script>';
-      });
-    }
-  }
-
-  /*----------  ADVANCED -> CUSTOM JS  ----------*/
-  public function developersAdvancedCustomJSFooter($wpdhJsFooterCode)
-  {
-    if (trim($wpdhJsFooterCode) != '') {
-      add_action('wp_footer', function () {
-        global $wpdhJsFooterCode;
-        echo '<script>' . $wpdhJsFooterCode . '</script>';
-      }, 98);
     }
   }
 }
