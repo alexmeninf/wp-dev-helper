@@ -151,7 +151,11 @@ class Developers
         # Meta Description
         echo '<meta name="description" content="' . get_field('wpdevhelperWPHead-meta_description', 'option') . '">' . "\n";
       }, 0);
-    }
+    } else {
+	    add_action('wp_head', function () {
+		    echo '<meta name="description" content="' . get_bloginfo('description') . '">' . "\n";
+	    }, 0);
+	  }
   }
 
   /*----------  WP HEAD -> Theme color  ----------*/
@@ -248,37 +252,80 @@ class Developers
       add_action('wp_head', function () {
         # Og Graph
         $tags = [];
-  
-        if (is_singular()) {
-          $tags['og:description'] = wp_trim_words( get_the_excerpt(), 36, ' ...' );
+        
+        // Single pages
+        if (is_single()) {
+		      $tags['og:type'] = 'article';
+			
+		      $desc = str_replace('"', '\'', get_the_excerpt());
+          $tags['og:description'] = wp_trim_words( $desc, 25, ' ...' );
+			
+        } elseif ( ! empty(get_field('wpdevhelperWPHead-meta_description', 'option')) ) {
+          $tags['og:description'] = get_field('wpdevhelperWPHead-meta_description', 'option');
         }
 
+        // Página inicial
         if ( is_front_page() ) {
           $tags['og:title'] = get_bloginfo('name');
         }
+
+        // Usuário
+        if ( is_author() ) {
+          $curauth = get_userdata(get_the_author_meta('ID'));
+                
+          if ( ! empty($curauth->first_name) ) {
+            $tags['profile:first_name'] = $curauth->first_name;
+            $tags['profile:last_name'] = $curauth->last_name;
+          } else {
+            $tags['profile:first_name'] = $curauth->display_name;
+          }
+			
+          $tags['og:type'] = 'profile';
+        }
   
+        // Taxonomia
         if (is_tax()) {
           $tags['og:url'] = get_term_link(get_queried_object(), get_queried_object()->taxonomy);
         }
-  
+        
+        // Imagens
         if (has_post_thumbnail()) {
           $tags['og:image'] = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), "full")[0];   
-  
-        } elseif ( ! empty(get_site_icon_url()) ) {
-          $tags['og:image'] = get_site_icon_url();
           
-        } elseif (function_exists('get_field')) { 
+        } elseif( is_author() ) {
+
+          $id = get_the_author_meta('ID');
+          $tags['og:image'] = get_avatar_url( $id, ['size' => 350] );
+
+        } elseif (function_exists('get_field')) {
 
           if (trim(get_field('head-opengraph-image', 'option')) != '') {
             $tags['og:image'] = esc_url(wp_get_attachment_image_src(get_field('head-opengraph-image', 'option'), 'full', false)[0]);
+            $tags['og:image:width'] = '1200';
+            $tags['og:image:height'] = '630';
   
-          } elseif (trim(get_field('head-icon-192x192', 'option')) != '') {
+          } if ( ! empty(get_site_icon_url()) ) {
+          	$tags['og:image'] = get_site_icon_url();
+			  
+		      } elseif (trim(get_field('head-icon-192x192', 'option')) != '') {
             $tags['og:image'] = esc_url(get_field('head-icon-192x192', 'option'));
           }
         }
-        
-        if (is_single()) {
-          $tag['og:type'] = 'article';
+
+        // Para Woocommerce
+        if ( class_exists( 'WooCommerce' ) ) {
+          $product = wc_get_product( get_the_ID() );
+          
+          if (is_product()) {
+            $tags['og:type'] = 'product';
+            $tags['product:plural_title'] = get_the_title();
+            $tags['product:price.amount'] = $product->get_price();
+            $tags['product:price.currency'] = get_woocommerce_currency();
+          }
+          
+          if (is_account_page()) {
+            $tags['og:type'] = 'profile';
+          }
         }
         
         // Valores padrão

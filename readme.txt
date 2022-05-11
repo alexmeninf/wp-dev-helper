@@ -30,6 +30,7 @@ From your WordPress dashboard
 = 1.8 = 05/05/2022
 * Feat: Adicionado suporte de injeção de códigos na página
 * Refactor: Removido suporte na aba "Avançado", para adicionar script (A feature de cima é a melhoria desta antiga função)
+* Refactor: Melhorias para o Open Graph
 
 = 1.7.5 = 02/05/2022
 * Refactor: Melhoria nas traduções
