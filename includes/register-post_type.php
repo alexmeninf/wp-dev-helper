@@ -125,6 +125,9 @@ add_action('init', 'dashboard_widget_post_type', 0);
 $postTypes = get_posts('post_type=new_post_type&posts_per_page=-1');
 if (count($postTypes) >= 1) {
   foreach ($postTypes as $postType) {    
+    /**
+     * registrar post type
+     */
     add_action('init', function () use ($postType) {
       $post_type_settings = array(
         'labels' => [
@@ -237,4 +240,73 @@ if (count($postTypes) >= 1) {
       );
     });
   }
+}
+
+
+/**
+ * 
+ * Display custom column in post type 
+ * 
+ */
+
+add_filter('manage_new_post_type_posts_columns', function($columns) {      
+  $columns['code'] = __('Code', 'wpdevhelper');
+
+  return $columns;
+});
+
+add_action('manage_new_post_type_posts_custom_column', function($column, $post_id) {
+  $post_type_key = get_field('wpdevhelper-posttype-post_type_key', $post_id);
+
+  /**
+   * HTML Symbols to scape
+   *  
+   *  &#60; = <
+   *  &#62; = > 
+   *  &#x24; = $
+   * */
+  $code = "&#60;?php 
+  &#x24;args = array(
+    'post_type'      => '".$post_type_key."',
+    'posts_per_page' => 12,
+    'order'          => 'desc',
+  );
+  &#x24;query = new WP_Query(&#x24;args);
+  if (&#x24;query->have_posts()) : while (&#x24;query->have_posts()) : &#x24;query->the_post(); ?&#62;
+    
+    // Your code here
+
+  &#60;?php endwhile; endif; wp_reset_query(); ?&#62;";
+  
+  switch ($column) {
+    case 'code':
+      echo '<textarea onfocus="this.select();" readonly="readonly" class="code-input-post" title="'.__('Copy the query code from this post type and paste it into your theme file.', 'wpdevhelper').'">' . $code . '</textarea>';
+      break;
+  }
+}, 10, 2);
+
+
+/**
+ * Botão de retorno
+ */
+add_action('edit_form_top','addCustomImportButton');
+
+function addCustomImportButton()
+{
+  global $current_screen;
+
+  // Not our post type, exit earlier
+  // You can remove this if condition if you don't have any specific post type to restrict to. 
+  if ('new_post_type' != $current_screen->post_type) {
+    return;
+  }
+
+  ?>
+  <script type="text/javascript">
+    jQuery(document).ready( function($)
+    {
+      jQuery(jQuery(".wrap .page-title-action")[0]).after('<a href="edit.php?post_type=new_post_type" class="page-title-action" style="border: navajowhite;background: transparent;text-decoration: underline;">Voltar para todos</a>');
+    });
+  </script>
+  <?php
 }

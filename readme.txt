@@ -27,6 +27,14 @@ From your WordPress dashboard
 
 == Changelog ==
 
+= 2.0 = 11/05/2022
+* Feat: Adicionado suporte de copiar string de código em novo post type
+* Feat: Adicionado suporte para desabilitar comentários do painel
+* Feat: Adicionado suporte para habilitar parâmetros dos dados pela URL no gerador de formulário
+* Feat: Adicionado suporte para desabilitar tags geradas no wp_head do site
+* Feat: Melhorias no UI do painel WordPress
+* Fix: Melhorias no plugin
+
 = 1.8 = 05/05/2022
 * Feat: Adicionado suporte de injeção de códigos na página
 * Refactor: Removido suporte na aba "Avançado", para adicionar script (A feature de cima é a melhoria desta antiga função)

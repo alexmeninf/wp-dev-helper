@@ -371,7 +371,7 @@ class Developers
         } );
 
       } else {
-        require_once(PLUGINPATH . 'form-generator/form.php');
+        require_once(PLUGINPATH . 'includes/form-generator/form.php');
       }
     }
   }
@@ -387,20 +387,50 @@ class Developers
     }
   }
 
+  /** Remover comentários do dashboard */
+  public function developersAdminPanelComments()
+  {
+    if (get_field('wpdevhelperOthers-remove-comment', 'option') == 'yes') {
+      // Removes from admin menu
+      function wdh_remove_admin_menus() {
+        remove_menu_page( 'edit-comments.php' );
+      }
+
+      // Removes from post and pages
+      function wpdh_remove_comment_support() {
+        remove_post_type_support( 'post', 'comments' );
+        remove_post_type_support( 'page', 'comments' );
+        
+        $postTypes = get_posts('post_type=new_post_type&posts_per_page=-1');
+        if (count($postTypes) >= 1) {
+          foreach ($postTypes as $postType) { 
+            remove_post_type_support( get_field('wpdevhelper-posttype-post_type_key', $postType->ID), 'comments' );            
+          }
+        }
+      }
+
+      // Removes from admin bar
+      function wpdh_admin_bar_render() {
+        global $wp_admin_bar;
+        $wp_admin_bar->remove_menu('comments');
+      }
+
+      add_action( 'admin_menu', 'wdh_remove_admin_menus' );
+      add_action('init', 'wpdh_remove_comment_support', 100);
+      add_action( 'wp_before_admin_bar_render', 'wpdh_admin_bar_render' );
+    }
+  }
+
   /*----------  ADVANCED -> WP HEAD  ----------*/
   public function developersAdvancedWPHead()
   {
     if (is_array(get_field('wpdevhelperAdvanced-wp_head', 'option'))) {
-      # EditURI
-      if (in_array('EditURI', get_field('wpdevhelperAdvanced-wp_head', 'option'))) {
-        remove_action('wp_head', 'rsd_link');
-      }
       # wlwmanifest
       if (in_array('wlwmanifest', get_field('wpdevhelperAdvanced-wp_head', 'option'))) {
         remove_action('wp_head', 'wlwmanifest_link');
       }
       # generator
-      if (in_array('wlwmanifest', get_field('wpdevhelperAdvanced-wp_head', 'option'))) {
+      if (in_array('generator', get_field('wpdevhelperAdvanced-wp_head', 'option'))) {
         remove_action('wp_head', 'wp_generator');
       }
       # canonical
@@ -417,6 +447,29 @@ class Developers
         remove_action('wp_print_styles', 'print_emoji_styles');
         remove_action('admin_print_scripts', 'print_emoji_detection_script');
         remove_action('admin_print_styles', 'print_emoji_styles');
+      }
+      # Disable WordPress REST API
+      if (in_array('rest_api', get_field('wpdevhelperAdvanced-wp_head', 'option'))) {
+        add_filter('rest_authentication_errors', function ($access) {
+          if (!current_user_can('administrator')) {
+            return new WP_Error('rest_cannot_access', 'Only authenticated users can access the REST API.', ['status' => rest_authorization_required_code()]);
+          }
+          return $access;
+        });
+      }
+      # Disable WordPress REST API
+      if (in_array('xmlrpc', get_field('wpdevhelperAdvanced-wp_head', 'option'))) {
+        add_filter('xmlrpc_enabled', function (): bool {
+          return false;
+        }); 
+        remove_action('wp_head', 'rsd_link');
+      }
+      # Gutenberg 
+      if (in_array('gutenberg', get_field('wpdevhelperAdvanced-wp_head', 'option'))) {
+        add_action('wp_print_styles', function (): void {
+          wp_dequeue_style('wp-block-library');
+          wp_dequeue_style('wp-block-library-theme');
+        });
       }
     }
   }
