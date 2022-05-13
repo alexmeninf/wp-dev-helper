@@ -421,7 +421,7 @@ class Developers
     }
   }
 
-  /*----------  ADVANCED -> WP HEAD  ----------*/
+  /*----------  WP HEAD -> Meta tags  ----------*/
   public function developersAdvancedWPHead()
   {
     if (is_array(get_field('wpdevhelperAdvanced-wp_head', 'option'))) {

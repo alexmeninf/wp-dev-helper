@@ -101,12 +101,12 @@ $wpdh->developersAdvancedCustomCSS($wpdhCssCode = get_field('wpdevhelperAdvanced
 add_filter('admin_enqueue_scripts', 'admin_header_styles', 10);
 function admin_header_styles()
 {
-  wp_enqueue_style('my_custom_style', PLUGINROOT . '/assets/css/wpdh-style.css');
+  wp_enqueue_style('wpdh-style', PLUGINROOT . '/assets/css/wpdh-style.css');
 }
 
 /*----------  Custom script  ----------*/
 add_filter('admin_enqueue_scripts', 'admin_footer_scripts', 10);
 function admin_footer_scripts()
 {
-  wp_enqueue_script('my_custom_script', PLUGINROOT . '/assets/js/wpdh-scripts.js');
+  wp_enqueue_script('wpdh-script', PLUGINROOT . '/assets/js/wpdh-scripts.js');
 }
