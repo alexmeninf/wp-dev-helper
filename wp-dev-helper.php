@@ -3,7 +3,7 @@
  * Plugin Name: WP Dev Helper
  * Plugin URI: https://github.com/alexmeninf/wp-dev-helper
  * Description: An awesome plugin that help WordPress developers to develop their themes faster than ever.
- * Version: 2.0.1
+ * Version: 2.1.0
  * License: GPL
  * Author: Alexandre Menin
  * Author URI: https://github.com/alexmeninf
@@ -20,7 +20,7 @@ require_once(ABSPATH . "wp-includes/pluggable.php");
 /*============================
 =            INFO            =
 ============================*/
-define('WPDEVHELPER_VERSION', '2.0.1');
+define('WPDEVHELPER_VERSION', '2.1.0');
 define('WPDEVHELPER_REPOSITORY', 'https://github.com/alexmeninf/wp-dev-helper');
 define('WPDEVHELPER__MINIMUM_WP_VERSION', '5.8');
 
@@ -45,6 +45,11 @@ load_theme_textdomain('wpdevhelper', PLUGINPATH . 'languages');
 =            INCLUDES            =
 =================================*/
 require ( PLUGINPATH . 'includes/sanitize-characters.php' );
+
+/**
+ * Delete revision posts, pages
+ */
+require ( PLUGINPATH . 'includes/disable-post-revision.php' );
 
 /*=======================================
 =            INCLUDE ACF PRO            =

@@ -27,7 +27,9 @@ From your WordPress dashboard
 
 == Changelog ==
 
-= 2.0.1 = 16/05/2022
+
+= 2.1.0 = 16/05/2022
+* Feat: Adicionado suporte para deletar as revisões de posts e páginas do banco de dados para otimizar as tabelas.
 * Fix: Adicionado um 'else', que faltou na condição
 
 = 2.0 = 11/05/2022

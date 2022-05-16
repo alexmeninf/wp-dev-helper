@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WP Dev Helper 1.7\n"
-"POT-Creation-Date: 2022-05-12 14:23-0300\n"
-"PO-Revision-Date: 2022-05-12 14:23-0300\n"
+"POT-Creation-Date: 2022-05-16 16:15-0300\n"
+"PO-Revision-Date: 2022-05-16 16:16-0300\n"
 "Last-Translator: \n"
 "Language-Team: Alexandre Menin <menin.alex11@gmail.com>\n"
 "Language: pt_BR\n"
@@ -407,8 +407,8 @@ msgstr "Postagens desse tipo devem ser excluídas dos resultados da pesquisa."
 #: acf-options.php:771 acf-options.php:869 acf-options.php:896
 #: acf-options.php:1004 acf-options.php:1101 acf-options.php:1222
 #: acf-options.php:1257 acf-options.php:1292 acf-options.php:1343
-#: acf-options.php:1922 acf-options.php:2495 acf-options.php:2534
-#: acf-options.php:2558 acf-options.php:2582 includes/add-code-in-page.php:215
+#: acf-options.php:1922 acf-options.php:2529 acf-options.php:2568
+#: acf-options.php:2592 acf-options.php:2616 includes/add-code-in-page.php:215
 #: includes/add-code-in-page.php:337 includes/add-code-in-page.php:459
 msgid "Yes"
 msgstr "Sim"
@@ -416,8 +416,8 @@ msgstr "Sim"
 #: acf-options.php:772 acf-options.php:870 acf-options.php:897
 #: acf-options.php:1005 acf-options.php:1102 acf-options.php:1223
 #: acf-options.php:1258 acf-options.php:1344 acf-options.php:1923
-#: acf-options.php:2494 acf-options.php:2535 acf-options.php:2559
-#: acf-options.php:2583 includes/add-code-in-page.php:216
+#: acf-options.php:2528 acf-options.php:2569 acf-options.php:2593
+#: acf-options.php:2617 includes/add-code-in-page.php:216
 #: includes/add-code-in-page.php:338 includes/add-code-in-page.php:460
 msgid "No"
 msgstr "Não"
@@ -902,25 +902,33 @@ msgstr ""
 "Escreva algo se você deseja adicionar algum conteúdo abaixo do formulário de "
 "login. Opcional."
 
-#: acf-options.php:2081 acf-options.php:2609
+#: acf-options.php:2081
 msgid "WP Head"
 msgstr "WP Head"
 
-#: acf-options.php:2096
+#: acf-options.php:2095
+msgid "Meta Tags"
+msgstr ""
+
+#: acf-options.php:2098
+msgid "Remove tags created by <b>wp_head()</b> function."
+msgstr "Remova as tags criadas pela função <b>wp_head()</b>."
+
+#: acf-options.php:2130
 msgid "Theme Color"
 msgstr "Cor do tema"
 
-#: acf-options.php:2099
+#: acf-options.php:2133
 msgid "Change the color of header bar and address bar in mobile browsers."
 msgstr ""
 "Altere a cor da barra de cabeçalho e da barra de endereço nos navegadores "
 "móveis."
 
-#: acf-options.php:2115
+#: acf-options.php:2149
 msgid "Meta Description"
 msgstr "Meta Descrição"
 
-#: acf-options.php:2118
+#: acf-options.php:2152
 msgid ""
 "Put a description of your site to show in browser searches. <b>Note:</b> "
 "Maximum 150 characters."
@@ -928,11 +936,11 @@ msgstr ""
 "Coloque uma descrição do seu site para mostrar nas pesquisas do navegador. "
 "<b> Nota: </b> Máximo de 150 caracteres."
 
-#: acf-options.php:2139
+#: acf-options.php:2173
 msgid "Open Graph image"
 msgstr "Open Graph imagem"
 
-#: acf-options.php:2142
+#: acf-options.php:2176
 msgid ""
 "Send an image with 1200px wide per 630px height. <br> Keep a default image "
 "in the links, and display a social media post."
@@ -940,19 +948,19 @@ msgstr ""
 "Envie uma imagem com 1200px de largura por 630px de altura. <br> Mantenha "
 "uma imagem padrão nos links e exiba uma postagem de mídia social."
 
-#: acf-options.php:2163
+#: acf-options.php:2197
 msgid "Favicon"
 msgstr "Favicon"
 
-#: acf-options.php:2166
+#: acf-options.php:2200
 msgid "Send an image with 32px wide per 32px height."
 msgstr "Envie uma imagem com 32px de largura por 32px de altura."
 
-#: acf-options.php:2187
+#: acf-options.php:2221
 msgid "Apple-touch-icon 57x57 pixels"
 msgstr ""
 
-#: acf-options.php:2190
+#: acf-options.php:2224
 msgid ""
 "Send an image with 57px width per 57px height. Send an image with the "
 "extension PNG."
@@ -960,11 +968,11 @@ msgstr ""
 "Envie uma imagem com 57px de largura por 57px de altura. Envie uma imagem "
 "com a extensão PNG."
 
-#: acf-options.php:2211
+#: acf-options.php:2245
 msgid "Apple-touch-icon 60x60 pixels"
 msgstr ""
 
-#: acf-options.php:2214
+#: acf-options.php:2248
 msgid ""
 "Send an image with 60px width per 60px height. Send an image with the "
 "extension PNG."
@@ -972,11 +980,11 @@ msgstr ""
 "Envie uma imagem com 60px de largura por 60px de altura. Envie uma imagem "
 "com a extensão PNG."
 
-#: acf-options.php:2235
+#: acf-options.php:2269
 msgid "Apple-touch-icon 72x72 pixels"
 msgstr ""
 
-#: acf-options.php:2238
+#: acf-options.php:2272
 msgid ""
 "Send an image with 72px width per 72px height. Send an image with the "
 "extension PNG."
@@ -984,11 +992,11 @@ msgstr ""
 "Envie uma imagem com 72px de largura por 72px de altura. Envie uma imagem "
 "com a extensão PNG."
 
-#: acf-options.php:2259
+#: acf-options.php:2293
 msgid "Apple-touch-icon 76x76 pixels"
 msgstr ""
 
-#: acf-options.php:2262
+#: acf-options.php:2296
 msgid ""
 "Send an image with 76px width per 76px height. Send an image with the "
 "extension PNG."
@@ -996,11 +1004,11 @@ msgstr ""
 "Envie uma imagem com 76px de largura por 76px de altura. Envie uma imagem "
 "com a extensão PNG."
 
-#: acf-options.php:2283
+#: acf-options.php:2317
 msgid "Apple-touch-icon 114x114 pixels"
 msgstr ""
 
-#: acf-options.php:2286
+#: acf-options.php:2320
 msgid ""
 "Send an image with 114px width per 114px height. Send an image with the "
 "extension PNG."
@@ -1008,11 +1016,11 @@ msgstr ""
 "Envie uma imagem com 114px de largura por 114px de altura. Envie uma imagem "
 "com a extensão PNG."
 
-#: acf-options.php:2307
+#: acf-options.php:2341
 msgid "Apple-touch-icon 120x120 pixels"
 msgstr ""
 
-#: acf-options.php:2310
+#: acf-options.php:2344
 msgid ""
 "Send an image with 120px width per 120px height. Send an image with the "
 "extension PNG."
@@ -1020,11 +1028,11 @@ msgstr ""
 "Envie uma imagem com 120px de largura por 120px de altura. Envie uma imagem "
 "com a extensão PNG."
 
-#: acf-options.php:2331
+#: acf-options.php:2365
 msgid "Apple-touch-icon 144x144 pixels"
 msgstr ""
 
-#: acf-options.php:2334
+#: acf-options.php:2368
 msgid ""
 "Send an image with 144px width per 144px height. Send an image with the "
 "extension PNG."
@@ -1032,11 +1040,11 @@ msgstr ""
 "Envie uma imagem com 144px de largura por 144px de altura. Envie uma imagem "
 "com a extensão PNG."
 
-#: acf-options.php:2355
+#: acf-options.php:2389
 msgid "Apple-touch-icon 152x152 pixels"
 msgstr ""
 
-#: acf-options.php:2358
+#: acf-options.php:2392
 msgid ""
 "Send an image with 152px width per 152px height. Send an image with the "
 "extension PNG."
@@ -1044,11 +1052,11 @@ msgstr ""
 "Envie uma imagem com 152px de largura por 152px de altura. Envie uma imagem "
 "com a extensão PNG."
 
-#: acf-options.php:2379
+#: acf-options.php:2413
 msgid "Apple-touch-icon 180x180 pixels"
 msgstr ""
 
-#: acf-options.php:2382
+#: acf-options.php:2416
 msgid ""
 "Send an image with 180px width per 180px height. Send an image with the "
 "extension PNG."
@@ -1056,11 +1064,11 @@ msgstr ""
 "Envie uma imagem com 180px de largura por 180px de altura. Envie uma imagem "
 "com a extensão PNG."
 
-#: acf-options.php:2403
+#: acf-options.php:2437
 msgid "Head icon 192x192 pixels"
 msgstr ""
 
-#: acf-options.php:2406
+#: acf-options.php:2440
 msgid ""
 "Send an image with 192px width per 192px height. Send an image with the "
 "extension PNG."
@@ -1068,11 +1076,11 @@ msgstr ""
 "Envie uma imagem com 192px de largura por 192px de altura. Envie uma imagem "
 "com a extensão PNG."
 
-#: acf-options.php:2427
+#: acf-options.php:2461
 msgid "Head icon 96x96 pixels"
 msgstr ""
 
-#: acf-options.php:2430
+#: acf-options.php:2464
 msgid ""
 "Send an image with 96px width per 96px height. Send an image with the "
 "extension PNG."
@@ -1080,11 +1088,11 @@ msgstr ""
 "Envie uma imagem com 96px de largura por 96px de altura. Envie uma imagem "
 "com a extensão PNG."
 
-#: acf-options.php:2451
+#: acf-options.php:2485
 msgid "Head icon 16x16 pixels"
 msgstr ""
 
-#: acf-options.php:2454
+#: acf-options.php:2488
 msgid ""
 "Send an image with 16px width per 16px height. Send an image with the "
 "extension PNG."
@@ -1092,59 +1100,67 @@ msgstr ""
 "Envie uma imagem com 16px de largura por 16px de altura. Envie uma imagem "
 "com a extensão PNG."
 
-#: acf-options.php:2467
+#: acf-options.php:2501
 msgid "Template Settings"
 msgstr "Configurações do template"
 
-#: acf-options.php:2481
+#: acf-options.php:2515
 msgid "Form generator"
 msgstr "Gerador de formulários"
 
-#: acf-options.php:2484
+#: acf-options.php:2518
 msgid "Quickly create forms to place in your template."
 msgstr "Crie rapidamente formulários para colocar em seu template."
 
-#: acf-options.php:2507
+#: acf-options.php:2541
 msgid "Admin panel"
 msgstr "Painel do administrador"
 
-#: acf-options.php:2521
+#: acf-options.php:2555
 msgid "Duplicate Post"
 msgstr "Duplicar Post"
 
-#: acf-options.php:2524
+#: acf-options.php:2558
 msgid "Enable duplicate post option?"
 msgstr "Habilitar opção de duplicar Post?"
 
-#: acf-options.php:2545
+#: acf-options.php:2579
 msgid "Duplicate Page"
 msgstr "Duplicar Página"
 
-#: acf-options.php:2548
+#: acf-options.php:2582
 msgid "Enable duplicate page option?"
 msgstr "Habilitar opção de duplicar Página?"
 
-#: acf-options.php:2569
+#: acf-options.php:2603
 msgid "Remove comment support"
 msgstr "Remover suporte para comentário"
 
-#: acf-options.php:2572
+#: acf-options.php:2606
 msgid "Disable comments page in dashboard and for posts and pages."
 msgstr "Desabilitar comentários no painel e para páginas e posts."
 
-#: acf-options.php:2595
+#: acf-options.php:2629
 msgid "Advanced"
 msgstr "Avançado"
 
-#: acf-options.php:2612
-msgid "Remove tags created by <b>wp_head()</b> function."
-msgstr "Remova as tags criadas pela função <b>wp_head()</b>."
-
 #: acf-options.php:2643
+msgid "Delete revisions"
+msgstr "Excluir revisões"
+
+#: acf-options.php:2647
+msgid ""
+"Clear all revisions generated by posts and pages from your database. Only "
+"run this if you know what you are doing."
+msgstr ""
+"Limpe todas as revisões geradas por posts e páginas do seu banco de dados. "
+"Só execute isso se você souber o que está fazendo."
+
+#: acf-options.php:2658
 msgid "Custom CSS"
 msgstr "CSS Customizado"
 
-#: acf-options.php:2648
+#: acf-options.php:2663
 msgid "Add your css to the head. The &#60;style&#62 tags will be ignored."
 msgstr "Adicione seu css no Head. As tags &#60;style&#62 serão ignoradas."
 
