@@ -304,10 +304,10 @@ class Developers
             $tags['og:image:width'] = '1200';
             $tags['og:image:height'] = '630';
   
-          } if ( ! empty(get_site_icon_url()) ) {
+          } elseif ( ! empty(get_site_icon_url()) ) {
           	$tags['og:image'] = get_site_icon_url();
 			  
-		      } elseif (trim(get_field('head-icon-192x192', 'option')) != '') {
+	  } elseif (trim(get_field('head-icon-192x192', 'option')) != '') {
             $tags['og:image'] = esc_url(get_field('head-icon-192x192', 'option'));
           }
         }
