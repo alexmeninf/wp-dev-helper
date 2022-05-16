@@ -13,7 +13,7 @@ require("src/SMTP.php");
 require("src/Exception.php");
 require("src/TBodyHTML.php");
 
-require('../../../includes/UploadFile.php');
+require('../../../includes/class.upload-file-to-media.php');
 
 /**
  * Tratar os valores recebidos por serialize() do javascript

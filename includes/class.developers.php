@@ -475,13 +475,13 @@ class Developers
   }
 
   /*----------  ADVANCED -> CUSTOM CSS  ----------*/
-  public function developersAdvancedCustomCSS($wpdhCssCode)
+  public function developersAdvancedCustomCSS()
   {
-    if (trim($wpdhCssCode) != '') {
-      add_action('wp_head', function () {
-        global $wpdhCssCode;
+    add_action('wp_head', function () {
+      $wpdhCssCode = get_field('wpdevhelperAdvanced-custom_css', 'option');
+      if (trim($wpdhCssCode) != '') {
         echo '<style>' . $wpdhCssCode . '</style>';
-      });
-    }
+      }
+    });
   }
 }
