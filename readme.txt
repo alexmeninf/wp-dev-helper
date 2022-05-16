@@ -27,6 +27,9 @@ From your WordPress dashboard
 
 == Changelog ==
 
+= 2.0.1 = 16/05/2022
+* Fix: Adicionado um 'else', que faltou na condição
+
 = 2.0 = 11/05/2022
 * Feat: Adicionado suporte de copiar string de código em novo post type
 * Feat: Adicionado suporte para desabilitar comentários do painel
