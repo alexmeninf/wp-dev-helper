@@ -20,7 +20,7 @@ function wpdh_get_form_code() {
    */
   if (have_rows('campos')) :
   
-    $html .= '<form id="form-theme-'. get_the_ID() .'" action="javascript:void(0);" method="POST" class="d-flex flex-wrap '. esc_attr(get_field('form_style')) .'">';
+    $html .= '<form id="form-theme-'. get_the_ID() .'" name="form'. get_the_ID() .'" action="javascript:void(0);" method="POST" class="d-flex flex-wrap '. esc_attr(get_field('form_style')) .'">';
 
       while (have_rows('campos')) :
         the_row();
@@ -162,7 +162,7 @@ function wpdh_get_form_code() {
       }
 
     }).done(function(data) {
-      const obj = JSON.parse(JSON.stringify(data));    
+      const obj = JSON.parse(data);    
 
       if (obj.success) {
         Swal.fire({
@@ -183,7 +183,7 @@ function wpdh_get_form_code() {
       clear_form_elements(form". get_the_ID() .");
       
     }).fail(function(data) {
-      const obj = JSON.parse(JSON.stringify(data));
+      const obj = JSON.parse(data);    
 
       Swal.fire({
         title: '". __( "Something went wrong!", "wpdevhelper") ."',

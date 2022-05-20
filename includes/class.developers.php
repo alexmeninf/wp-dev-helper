@@ -143,19 +143,22 @@ class Developers
     }
   }
 
-  /*----------  WP HEAD -> Meta Description  ----------*/
-  public function developersWPHeadMetaDescription()
+  /*----------  WP HEAD -> Meta tags  ----------*/
+  public function developersWPHeadMetas()
   {
-    if (trim(get_field('wpdevhelperWPHead-meta_description', 'option')) != '') {
-      add_action('wp_head', function () {
-        # Meta Description
+    add_action('wp_head', function () {
+      // Number detection
+      if (get_field('phone_number_detection', 'option') != 'default') {
+        echo ' <meta name="format-detection" content="telephone='.get_field('phone_number_detection', 'option').'">';
+      }
+
+      // Meta description
+      if (trim(get_field('wpdevhelperWPHead-meta_description', 'option')) != '') {      
         echo '<meta name="description" content="' . get_field('wpdevhelperWPHead-meta_description', 'option') . '">' . "\n";
-      }, 0);
-    } else {
-	    add_action('wp_head', function () {
-		    echo '<meta name="description" content="' . get_bloginfo('description') . '">' . "\n";
-	    }, 0);
-	  }
+      } else {
+        echo '<meta name="description" content="' . get_bloginfo('description') . '">' . "\n";
+      }
+    }, 0);
   }
 
   /*----------  WP HEAD -> Theme color  ----------*/
@@ -177,59 +180,71 @@ class Developers
     // Verifica se o tema não possui um favicon definido
     if ( empty( get_site_icon_url() ) ) {
       add_action('wp_head', function () {
-        # Favicon
-        if (trim(get_field('head-icon-favicon', 'option')) != '') {
-          $favicon = wp_get_attachment_image_src(get_field('head-icon-favicon', 'option'), 'thumbnail', false);
-          echo "\n\n" . '<link rel="shortcut icon" type="image/png" href="' . $favicon[0] . '">' . "\n";
-        }
-        # Apple Touch Icon iPhone
-        if (trim(get_field('head-icon-apple-touch-icon-57x57', 'option')) != '') {
-          echo '<link rel="apple-touch-icon" sizes="57x57" href="' . get_field('head-icon-apple-touch-icon-57x57', 'option') . '">' . "\n";
-        }
-  
-        if (trim(get_field('head-icon-apple-touch-icon-60x60', 'option')) != '') {
-          echo '<link rel="apple-touch-icon" sizes="60x60" href="' . get_field('head-icon-apple-touch-icon-60x60', 'option') . '">' . "\n";
-        }
-  
-        if (trim(get_field('head-icon-apple-touch-icon-72x72', 'option')) != '') {
-          echo '<link rel="apple-touch-icon" sizes="72x72" href="' . get_field('head-icon-apple-touch-icon-72x72', 'option') . '">' . "\n";
-        }
-  
-        if (trim(get_field('head-icon-apple-touch-icon-76x76', 'option')) != '') {
-          echo '<link rel="apple-touch-icon" sizes="76x76" href="' . get_field('head-icon-apple-touch-icon-76x76', 'option') . '">' . "\n";
-        }
-  
-        if (trim(get_field('head-icon-apple-touch-icon-114x114', 'option')) != '') {
-          echo '<link rel="apple-touch-icon" sizes="114x114" href="' . get_field('head-icon-apple-touch-icon-114x114', 'option') . '">' . "\n";
-        }
-  
-        if (trim(get_field('head-icon-apple-touch-icon-120x120', 'option')) != '') {
-          echo '<link rel="apple-touch-icon" sizes="120x120" href="' . get_field('head-icon-apple-touch-icon-120x120', 'option') . '">' . "\n";
-        }
-  
-        if (trim(get_field('head-icon-apple-touch-icon-144x144', 'option')) != '') {
-          echo '<link rel="apple-touch-icon" sizes="144x144" href="' . get_field('head-icon-apple-touch-icon-144x144', 'option') . '">' . "\n";
-        }
-  
-        if (trim(get_field('head-icon-apple-touch-icon-152x152', 'option')) != '') {
-          echo '<meta name="msapplication-TileImage" content="' . get_field('head-icon-apple-touch-icon-152x152', 'option') . '">
-          <link rel="apple-touch-icon" sizes="152x152" href="' . get_field('head-icon-apple-touch-icon-152x152', 'option') . '">' . "\n";
-        }
-  
-        if (trim(get_field('head-icon-apple-touch-icon-180x180', 'option')) != '') {
-          echo '<link rel="apple-touch-icon" sizes="180x180" href="' . get_field('head-icon-apple-touch-icon-180x180', 'option') . '">' . "\n";
-        }
-  
-        if (trim(get_field('head-icon-192x192', 'option')) != '') {
-          echo '<link rel="icon" type="image/png" sizes="192x192" href="' . get_field('head-icon-192x192', 'option') . '">' . "\n";
-        }
-  
-        if (trim(get_field('head-icon-96x96', 'option')) != '') {
-          echo '<link rel="icon" type="image/png" sizes="96x96" href="' . get_field('head-icon-96x96', 'option') . '">' . "\n";
-        }
-  
+        // Favicon 16x16
         if (trim(get_field('head-icon-16x16', 'option')) != '') {
-          echo '<link rel="icon" type="image/png" sizes="16x16" href="' . get_field('head-icon-16x16', 'option') . '">' . "\n";
+          echo '<link rel="icon" type="image/png" sizes="16x16" href="' . get_field('head-icon-16x16', 'option') . '">';
+        }
+
+        // Favicon 32x32
+        if (trim(get_field('head-icon-favicon', 'option')) != '') {
+          echo '<link rel="shortcut icon" type="image/png" href="' . get_field('head-icon-favicon', 'option') . '">';
+        }
+
+        // Para iOS
+        if (trim(get_field('head-icon-apple-touch-icon-180x180', 'option')) != '') {
+          echo '<link rel="apple-touch-icon" sizes="180x180" href="' . get_field('head-icon-apple-touch-icon-180x180', 'option') . '">';
+        }
+
+        // Android
+        if (trim(get_field('head-icon-192x192', 'option')) != '') {
+          echo '<link rel="icon" type="image/png" sizes="192x192" href="' . get_field('head-icon-192x192', 'option') . '">';
+        }
+
+        // Adding a Pinned Tab icon for Safari
+        if (!empty(get_field('head-maskable_icon_safari_tabs', 'option'))) {
+          $color = get_field('wpdevhelperWPHead-theme_color', 'option') ? get_field('wpdevhelperWPHead-theme_color', 'option') : '#46444c';
+          echo '<link rel="mask-icon" href="'.get_field('head-maskable_icon_safari_tabs', 'option').'" color="'.$color.'">';
+        }
+
+        // Outros tamanhos de favicons, tamanhos não recomendados mais a utilizar em navegadores novos.
+        if (get_field('all_favicon_sizes', 'option') == true) {
+
+          if (trim(get_field('head-icon-apple-touch-icon-57x57', 'option')) != '') {
+            echo '<link rel="apple-touch-icon" sizes="57x57" href="' . get_field('head-icon-apple-touch-icon-57x57', 'option') . '">';
+          }
+
+          if (trim(get_field('head-icon-apple-touch-icon-60x60', 'option')) != '') {
+            echo '<link rel="apple-touch-icon" sizes="60x60" href="' . get_field('head-icon-apple-touch-icon-60x60', 'option') . '">';
+          }
+
+          if (trim(get_field('head-icon-apple-touch-icon-72x72', 'option')) != '') {
+            echo '<link rel="apple-touch-icon" sizes="72x72" href="' . get_field('head-icon-apple-touch-icon-72x72', 'option') . '">';
+          }
+
+          if (trim(get_field('head-icon-apple-touch-icon-76x76', 'option')) != '') {
+            echo '<link rel="apple-touch-icon" sizes="76x76" href="' . get_field('head-icon-apple-touch-icon-76x76', 'option') . '">';
+          }
+
+          if (trim(get_field('head-icon-apple-touch-icon-114x114', 'option')) != '') {
+            echo '<link rel="apple-touch-icon" sizes="114x114" href="' . get_field('head-icon-apple-touch-icon-114x114', 'option') . '">';
+          }
+
+          if (trim(get_field('head-icon-apple-touch-icon-120x120', 'option')) != '') {
+            echo '<link rel="apple-touch-icon" sizes="120x120" href="' . get_field('head-icon-apple-touch-icon-120x120', 'option') . '">';
+          }
+
+          if (trim(get_field('head-icon-apple-touch-icon-144x144', 'option')) != '') {
+            echo '<meta name="msapplication-TileImage" content="' . get_field('head-icon-apple-touch-icon-144x144', 'option') . '">';
+            echo '<link rel="apple-touch-icon" sizes="144x144" href="' . get_field('head-icon-apple-touch-icon-144x144', 'option') . '">';
+          }
+
+          if (trim(get_field('head-icon-apple-touch-icon-152x152', 'option')) != '') {
+            echo '<link rel="apple-touch-icon" sizes="152x152" href="' . get_field('head-icon-apple-touch-icon-152x152', 'option') . '">';
+          }
+
+          if (trim(get_field('head-icon-96x96', 'option')) != '') {
+            echo '<link rel="icon" type="image/png" sizes="96x96" href="' . get_field('head-icon-96x96', 'option') . '">';
+          }
         }
       }, 2);
     }
@@ -307,7 +322,7 @@ class Developers
           } elseif ( ! empty(get_site_icon_url()) ) {
           	$tags['og:image'] = get_site_icon_url();
 			  
-	  } elseif (trim(get_field('head-icon-192x192', 'option')) != '') {
+	        } elseif (trim(get_field('head-icon-192x192', 'option')) != '') {
             $tags['og:image'] = esc_url(get_field('head-icon-192x192', 'option'));
           }
         }
@@ -349,6 +364,79 @@ class Developers
         }
       }, 1);
     }
+  }
+
+  /*----------  Progressive web app  ----------*/
+  public function developersWPHeadManifest() 
+  {
+    if (function_exists('acf_add_options_page')) {
+      acf_add_options_page(array(
+        'page_title' => __('Progressive web app', 'wpdevhelper'),
+        'menu_title' => __('Progressive web app', 'wpdevhelper'),
+        'menu_slug'  => 'wpdh-pwa',
+        'parent_slug' => 'wp-dev-helper',
+        'capability' => 'edit_posts',
+        'redirect'   => false
+      ));
+    }
+
+    if (get_field('pwa_enable', 'option') == true) {
+      include_once PLUGINPATH . 'includes/class.pwa.php';
+    }
+
+    add_action('wp_head', function () {
+      $version_ios = preg_replace("/(.*) OS ([0-9]*)_(.*)/","$2", $_SERVER['HTTP_USER_AGENT']);
+      $is_ios      = preg_match("/iPhone|iPod|iPad/", $_SERVER['HTTP_USER_AGENT']);
+
+      if (get_field('pwa_enable', 'option') == true) {
+
+        // Make the app title different than the page title - iOS
+        echo '<meta name="apple-mobile-web-app-title" content="'.get_field('aplication_name', 'option').'">';
+
+        // Make the app title different than the page title - Windows
+        echo '<meta name="application-name" content="'.get_field('aplication_name', 'option').'">';
+        
+        // Allow web app to be run in full-screen mode - Android.
+        echo '<meta name="mobile-web-app-capable" content="yes">';
+
+        // Make the app title different than the page title and configure icons
+        echo '<link rel="manifest" href="'.get_field('web_app_manifest', 'option').'">';
+
+        // Configure the status bar - iOS
+        echo '<meta name="apple-mobile-web-app-status-bar-style" content="'.get_field('ios_status_bar', 'option').'">';
+
+        // Windows 8.1 + IE11 and above
+        if (!empty(get_field('browserconfig', 'option'))) {
+          echo '<meta name="msapplication-config" content="'.get_field('browserconfig', 'option').'" />';
+        }
+
+        // Corrige o espaço de status do dispositivo, mantendo o site 100% na tela do iOS.
+        if ($is_ios && (get_field('ios_status_bar', 'option') == 'default' || get_field('ios_status_bar', 'option') == 'black-translucent')) {
+          
+          $style = '<style id="wpdw-ios-app">';
+          $enable = false;
+
+          if (get_field('stretch_document_height', 'option') == 'yes') {
+
+            echo '<meta name="viewport" content="width=device-width, viewport-fit=cover, initial-scale=1, maximum-scale=1, user-scalable=no">';
+
+            $style .= 'html{min-height: calc(100% + env(safe-area-inset-top));padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left) !important;}';
+            $enable = true;
+          }          
+          if (!empty(get_field('stretch_fixed_elements_up', 'option'))) {
+            $style .= get_field('stretch_fixed_elements_up', 'option') . '{padding-top: env(safe-area-inset-top) !important;}';
+            $enable = true;
+          }
+          if (!empty(get_field('stretch_fixed_elements_down', 'option'))) {
+            $style .= get_field('stretch_fixed_elements_down', 'option') . '{padding-top: env(safe-area-inset-bottom) !important;}';
+            $enable = true;
+          }
+
+          $style .= '</style>';
+          echo $enable ? $style : '';
+        }
+      }
+    }, 0);
   }
 
   /*----------  TEMPLATE SETTINGS -> FORM GENERATOR ----------*/

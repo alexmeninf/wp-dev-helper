@@ -19,34 +19,14 @@
 // If this file is called directly, abort.
 defined('ABSPATH') or exit;
 
-if (!class_exists('Disable_Post_Revision')) :
+if (!class_exists('WPDH_Disable_Post_Revision')) :
 
-	class Disable_Post_Revision
+	class WPDH_Disable_Post_Revision
 	{
 		function __construct()
 		{
-			add_action('admin_enqueue_scripts', array($this, 'init_script_revision'));
 			add_action('wp_ajax_delete_revision_posts', [$this, 'delete_revision_posts']);
 			add_action('wp_ajax_nopriv_delete_revision_posts', [$this, 'delete_revision_posts']);
-		}
-
-		public function init_script_revision()
-		{
-			wp_enqueue_script(
-				'wpdh-ajax_revision',
-				PLUGINROOT . '/assets/js/wpdh-revision.js',
-				array('jquery'),
-				true
-			);
-
-			wp_localize_script(
-				'wpdh-ajax_revision',
-				'revision_var',
-				array(
-					'url'   => admin_url('admin-ajax.php'),
-					'nonce' => wp_create_nonce("delete_revision_posts_nonce"),
-				)
-			);
 		}
 
 		public function delete_revision_posts()
@@ -66,14 +46,14 @@ if (!class_exists('Disable_Post_Revision')) :
 						echo json_encode(
 							array(
 								'success' => 1,
-								'message' => 'Todas as revisões foram excluídas! Total de ' . $r . ' linhas encontradas.',
+								'message' => sprintf(__('Todas as revisões foram excluídas! Total de %s linhas encontradas.', 'wpdevhelper'), $r),
 							)
 						);
 					} else {
 						echo json_encode(
 							array(
 								'success' => 1,
-								'message' => 'Não existe revisões nas suas tabelas. Nenhuma linha foi afetada.',
+								'message' => __('Não existe revisões nas suas tabelas. Nenhuma linha foi afetada.', 'wpdevhelper'),
 							)
 						);
 					}
@@ -93,4 +73,4 @@ if (!class_exists('Disable_Post_Revision')) :
 	}
 endif;
 
-new Disable_Post_Revision();
+new WPDH_Disable_Post_Revision();

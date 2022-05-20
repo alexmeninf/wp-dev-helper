@@ -28,6 +28,13 @@ From your WordPress dashboard
 == Changelog ==
 
 
+= 2.2.0 = 19/05/2022
+* Feat: Implementado suporte para uso do Progressive web app.
+* Feat: Adicionado Phone number detection na aba WP Head.
+* Refactor: Removido exibição direta para todos os tamanhos de favicon.
+* Refactor: Ajuste nas traduções.
+* Refactor: Ajuste no gerador de formulário.
+
 = 2.1.0 = 16/05/2022
 * Feat: Adicionado suporte para deletar as revisões de posts e páginas do banco de dados para otimizar as tabelas.
 * Fix: Adicionado um 'else', que faltou na condição

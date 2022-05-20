@@ -13,22 +13,22 @@ require("src/SMTP.php");
 require("src/Exception.php");
 require("src/TBodyHTML.php");
 
-require('../../../includes/class.upload-file-to-media.php');
+// require('../../../includes/class.upload-file-to-media.php');
 
 /**
  * Tratar os valores recebidos por serialize() do javascript
  * 
  * Caso estiver recebendo algum arquivo, comente esta parte abaixo e use diretamente o $_POST
  */
-$data = array();
+// $data = array();
 
-if ($_POST['formData']) 
-  parse_str($_POST['formData'], $data);
+// if (isset($_POST['formData'])) 
+//   parse_str($_POST['formData'], $data);
 
 /**
  * Verificar campos
  */
-if ( empty($data['email']) ) {
+if ( empty($_POST['email']) ) {
   echo 'O campo e-mail é obrigatório.';
 
 } else {
@@ -39,10 +39,10 @@ if ( empty($data['email']) ) {
   $template = new TBodyHTML;
 
   // Faz o upload dos arquivos recebidos
-  if (! empty($_FILES['files']) ) {
-    $up = new UploadFileToMedia();
-    $url_file = $up->upload($_FILES['files']);
-  }
+  // if (! empty($_FILES['files']) ) {
+  //   $up = new UploadFileToMedia();
+  //   $url_file = $up->upload($_FILES['files']);
+  // }
 
   try {
       //Server settings
@@ -75,12 +75,13 @@ if ( empty($data['email']) ) {
       $mail->Subject = 'Here is the subject';
       $mail->Body          = $template->getContent(
         array(
-          'name' => $data['name'],
-          'email' => $data['email'],
-          'phone' => $data['phone'],
+          'name' => $_POST['name'],
+          'email' => $_POST['email'],
+          'phone' => $_POST['phone'],
+          'message' => $_POST['message'],
         )
       );
-      $mail->AltBody = 'Nome:' . $data['name'] . ' | E-mail:' . $data['email']. ' | Telefone:' . $data['phone']; // 'This is the body in plain text for non-HTML mail clients'
+      $mail->AltBody = 'Nome:' . $_POST['name'] . ' | E-mail:' . $_POST['email']. ' | Telefone:' . $_POST['phone'] . ' | Mensagem:' . $_POST['message']; // 'This is the body in plain text for non-HTML mail clients'
       $mail->send();
 
       $info = json_encode(

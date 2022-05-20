@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WP Dev Helper 1.7\n"
-"POT-Creation-Date: 2022-05-16 16:15-0300\n"
-"PO-Revision-Date: 2022-05-16 16:16-0300\n"
+"POT-Creation-Date: 2022-05-19 17:35-0300\n"
+"PO-Revision-Date: 2022-05-19 17:35-0300\n"
 "Last-Translator: \n"
 "Language-Team: Alexandre Menin <menin.alex11@gmail.com>\n"
 "Language: pt_BR\n"
@@ -15,11 +15,10 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_;_e;esc_attr__;_x\n"
 "X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPathExcluded-0: advanced-custom-fields-pro\n"
+"X-Poedit-SearchPathExcluded-0: includes/advanced-custom-fields-pro\n"
 "X-Poedit-SearchPathExcluded-1: assets\n"
-"X-Poedit-SearchPathExcluded-2: includes/acf-code-field/js\n"
-"X-Poedit-SearchPathExcluded-3: includes/acf-code-field/css\n"
-"X-Poedit-SearchPathExcluded-4: includes/acf-code-field/lib\n"
+"X-Poedit-SearchPathExcluded-2: includes/acf-code-field/css\n"
+"X-Poedit-SearchPathExcluded-3: includes/acf-code-field/js\n"
 
 #: includes/acf-code-field/acf-code-field-v4.php:31
 #: includes/acf-code-field/acf-code-field-v5.php:42
@@ -110,6 +109,106 @@ msgstr ""
 "Uh-oh. ACF não instalado. Instale o <a href=\"%s\" class=\"thickbox\">plug-"
 "in Advanced Custom Fields.</a>"
 
+#: includes/class.developers.php:12
+msgid "Developers"
+msgstr "Desenvolvedores"
+
+#: includes/class.developers.php:28 includes/wpdh-code-in-page.php:139
+msgid "Head, Footer and Post Injections"
+msgstr "Injeção para Head, Footer e Post"
+
+#: includes/class.developers.php:29
+msgid "Code Injections"
+msgstr "Injeção de código"
+
+#: includes/class.developers.php:361 includes/class.developers.php:362
+msgid "Progressive web app"
+msgstr ""
+
+#: includes/class.developers.php:440
+#, php-format
+msgid ""
+"Your current theme needs to be updated to display the <b>Form Generator</b> "
+"module. Minimum requested %s version is %s"
+msgstr ""
+"Seu tema atual precisa ser atualizado para exibir o módulo <b>Gerador de "
+"formulários</b>. A versão %s mínima solicitada é %s"
+
+#: includes/form-generator/form.php:17 includes/form-generator/form.php:19
+msgid "Forms"
+msgstr "Formulários"
+
+#: includes/form-generator/form.php:18 includes/form-generator/form.php:29
+msgid "Form"
+msgstr "Formulário"
+
+#: includes/form-generator/form.php:20
+msgid "All Forms"
+msgstr "Todos os Formulários"
+
+#: includes/form-generator/form.php:21
+msgid "Add new form"
+msgstr "Adicionar novo formulário"
+
+#: includes/form-generator/form.php:22
+msgid "New form"
+msgstr "Novo formulário"
+
+#: includes/form-generator/form.php:23
+msgid "Edit form"
+msgstr "Editar formulário"
+
+#: includes/form-generator/form.php:24
+msgid "Update form"
+msgstr "Atualizar formulário"
+
+#: includes/form-generator/form.php:25
+msgid "Search form"
+msgstr "Pesquisar formulário"
+
+#: includes/form-generator/form.php:30
+msgid "Add a new submission form."
+msgstr "Adicione um novo formulário de envio."
+
+#: includes/form-generator/form.php:65
+msgid "Shortcode"
+msgstr ""
+
+#: includes/form-generator/template-form.php:48
+msgid "Send"
+msgstr "Enviar"
+
+#: includes/form-generator/template-form.php:102
+#, php-format
+msgid "Add the file in the <b>%s</b> field."
+msgstr "Adicione o arquivo no campo <b>%s</b>."
+
+#: includes/form-generator/template-form.php:112
+#, php-format
+msgid "The <b>%s</b> field is required."
+msgstr "O campo <b>%s</b> é obrigatório."
+
+#: includes/form-generator/template-form.php:161
+msgid "Sending..."
+msgstr "Enviando..."
+
+#: includes/form-generator/template-form.php:169
+msgid "Sent!"
+msgstr "Enviado!"
+
+#: includes/form-generator/template-form.php:172
+msgid "Close"
+msgstr "Fechar"
+
+#: includes/form-generator/template-form.php:176
+#: includes/form-generator/template-form.php:189
+msgid "Something went wrong!"
+msgstr "Algo deu errado!"
+
+#: includes/form-generator/template-form.php:196
+msgid "Send again"
+msgstr "Enviar novamente"
+
 #: includes/wpdh-acf-options.php:12
 msgid "Custom Post Type"
 msgstr "Post Type Personalizado"
@@ -130,8 +229,9 @@ msgstr "Tradução"
 msgid "Optional"
 msgstr "Opcional"
 
-#: includes/wpdh-acf-options.php:53 includes/wpdh-acf-options.php:106 includes/wpdh-acf-options.php:225
-#: includes/wpdh-register-post_type.php:13 includes/wpdh-register-post_type.php:15
+#: includes/wpdh-acf-options.php:53 includes/wpdh-acf-options.php:106
+#: includes/wpdh-acf-options.php:225 includes/wpdh-register-post_type.php:13
+#: includes/wpdh-register-post_type.php:15
 msgid "Post Type"
 msgstr "Post Type"
 
@@ -159,8 +259,10 @@ msgstr "Nome (Singular)"
 msgid "Post type singular name. e.g. Product, Event or Movie."
 msgstr "Post type com nome no singular. Por exemplo: Produto, Evento ou Filme."
 
-#: includes/wpdh-acf-options.php:125 includes/wpdh-acf-options.php:206 includes/wpdh-register-post_type.php:12
-#: includes/wpdh-register-post_type.php:14 includes/wpdh-register-post_type.php:41
+#: includes/wpdh-acf-options.php:125 includes/wpdh-acf-options.php:206
+#: includes/wpdh-register-post_type.php:12
+#: includes/wpdh-register-post_type.php:14
+#: includes/wpdh-register-post_type.php:41
 msgid "Post Types"
 msgstr "Post Types"
 
@@ -240,52 +342,62 @@ msgstr "Item Pai:"
 msgid "Parent Item"
 msgstr "Item Pai"
 
-#: includes/wpdh-acf-options.php:301 includes/wpdh-acf-options.php:302 includes/wpdh-acf-options.php:306
-#: includes/wpdh-register-post_type.php:19 includes/wpdh-register-post_type.php:77
+#: includes/wpdh-acf-options.php:301 includes/wpdh-acf-options.php:302
+#: includes/wpdh-acf-options.php:306 includes/wpdh-register-post_type.php:19
+#: includes/wpdh-register-post_type.php:77
 msgid "All Items"
 msgstr "Todos os Itens"
 
-#: includes/wpdh-acf-options.php:321 includes/wpdh-acf-options.php:322 includes/wpdh-acf-options.php:326
-#: includes/wpdh-register-post_type.php:20 includes/wpdh-register-post_type.php:78
+#: includes/wpdh-acf-options.php:321 includes/wpdh-acf-options.php:322
+#: includes/wpdh-acf-options.php:326 includes/wpdh-register-post_type.php:20
+#: includes/wpdh-register-post_type.php:78
 msgid "Add New Item"
 msgstr "Adicionar Novo Post Type"
 
-#: includes/wpdh-acf-options.php:341 includes/wpdh-acf-options.php:342 includes/wpdh-acf-options.php:346
-#: includes/wpdh-register-post_type.php:21 includes/wpdh-register-post_type.php:79
+#: includes/wpdh-acf-options.php:341 includes/wpdh-acf-options.php:342
+#: includes/wpdh-acf-options.php:346 includes/wpdh-register-post_type.php:21
+#: includes/wpdh-register-post_type.php:79
 msgid "Add New"
 msgstr "Adicionar Novo"
 
-#: includes/wpdh-acf-options.php:361 includes/wpdh-acf-options.php:362 includes/wpdh-acf-options.php:366
-#: includes/wpdh-register-post_type.php:22 includes/wpdh-register-post_type.php:80
+#: includes/wpdh-acf-options.php:361 includes/wpdh-acf-options.php:362
+#: includes/wpdh-acf-options.php:366 includes/wpdh-register-post_type.php:22
+#: includes/wpdh-register-post_type.php:80
 msgid "New Item"
 msgstr "Novo Item"
 
-#: includes/wpdh-acf-options.php:381 includes/wpdh-acf-options.php:382 includes/wpdh-acf-options.php:386
-#: includes/wpdh-register-post_type.php:23 includes/wpdh-register-post_type.php:81
+#: includes/wpdh-acf-options.php:381 includes/wpdh-acf-options.php:382
+#: includes/wpdh-acf-options.php:386 includes/wpdh-register-post_type.php:23
+#: includes/wpdh-register-post_type.php:81
 msgid "Edit Item"
 msgstr "Editar Item"
 
-#: includes/wpdh-acf-options.php:401 includes/wpdh-acf-options.php:402 includes/wpdh-acf-options.php:406
-#: includes/wpdh-register-post_type.php:24 includes/wpdh-register-post_type.php:82
+#: includes/wpdh-acf-options.php:401 includes/wpdh-acf-options.php:402
+#: includes/wpdh-acf-options.php:406 includes/wpdh-register-post_type.php:24
+#: includes/wpdh-register-post_type.php:82
 msgid "Update Item"
 msgstr "Atualizar Item"
 
-#: includes/wpdh-acf-options.php:421 includes/wpdh-acf-options.php:422 includes/wpdh-acf-options.php:426
-#: includes/wpdh-register-post_type.php:25 includes/wpdh-register-post_type.php:83
+#: includes/wpdh-acf-options.php:421 includes/wpdh-acf-options.php:422
+#: includes/wpdh-acf-options.php:426 includes/wpdh-register-post_type.php:25
+#: includes/wpdh-register-post_type.php:83
 msgid "View Item"
 msgstr "Ver Item"
 
-#: includes/wpdh-acf-options.php:441 includes/wpdh-acf-options.php:442 includes/wpdh-acf-options.php:446
-#: includes/wpdh-register-post_type.php:26 includes/wpdh-register-post_type.php:84
+#: includes/wpdh-acf-options.php:441 includes/wpdh-acf-options.php:442
+#: includes/wpdh-acf-options.php:446 includes/wpdh-register-post_type.php:26
+#: includes/wpdh-register-post_type.php:84
 msgid "View Items"
 msgstr "Ver Itens"
 
-#: includes/wpdh-acf-options.php:461 includes/wpdh-acf-options.php:462 includes/wpdh-acf-options.php:466
-#: includes/wpdh-register-post_type.php:27 includes/wpdh-register-post_type.php:85
+#: includes/wpdh-acf-options.php:461 includes/wpdh-acf-options.php:462
+#: includes/wpdh-acf-options.php:466 includes/wpdh-register-post_type.php:27
+#: includes/wpdh-register-post_type.php:85
 msgid "Search Item"
 msgstr "Pesquisar Item"
 
-#: includes/wpdh-acf-options.php:481 includes/wpdh-acf-options.php:482 includes/wpdh-register-post_type.php:28
+#: includes/wpdh-acf-options.php:481 includes/wpdh-acf-options.php:482
+#: includes/wpdh-register-post_type.php:28
 #: includes/wpdh-register-post_type.php:86
 msgid "Not found"
 msgstr "Nada encontrado"
@@ -294,7 +406,8 @@ msgstr "Nada encontrado"
 msgid "Not Found"
 msgstr "Nada Encontrado"
 
-#: includes/wpdh-acf-options.php:501 includes/wpdh-acf-options.php:502 includes/wpdh-register-post_type.php:29
+#: includes/wpdh-acf-options.php:501 includes/wpdh-acf-options.php:502
+#: includes/wpdh-register-post_type.php:29
 #: includes/wpdh-register-post_type.php:87
 msgid "Not found in Trash"
 msgstr "Nada encontrado na Lixeira"
@@ -303,47 +416,56 @@ msgstr "Nada encontrado na Lixeira"
 msgid "Not Found in Trash"
 msgstr "Nada Encontrado na Lixeira"
 
-#: includes/wpdh-acf-options.php:521 includes/wpdh-acf-options.php:525 includes/wpdh-acf-options.php:712
-#: includes/wpdh-register-post_type.php:30 includes/wpdh-register-post_type.php:88
+#: includes/wpdh-acf-options.php:521 includes/wpdh-acf-options.php:525
+#: includes/wpdh-acf-options.php:712 includes/wpdh-register-post_type.php:30
+#: includes/wpdh-register-post_type.php:88
 msgid "Featured Image"
 msgstr "Imagem Destaque"
 
-#: includes/wpdh-acf-options.php:540 includes/wpdh-acf-options.php:544 includes/wpdh-register-post_type.php:31
+#: includes/wpdh-acf-options.php:540 includes/wpdh-acf-options.php:544
+#: includes/wpdh-register-post_type.php:31
 #: includes/wpdh-register-post_type.php:89
 msgid "Set featured image"
 msgstr "Definir imagem em destaque"
 
-#: includes/wpdh-acf-options.php:559 includes/wpdh-acf-options.php:563 includes/wpdh-register-post_type.php:32
+#: includes/wpdh-acf-options.php:559 includes/wpdh-acf-options.php:563
+#: includes/wpdh-register-post_type.php:32
 #: includes/wpdh-register-post_type.php:90
 msgid "Remove featured image"
 msgstr "Remover imagem em destaque"
 
-#: includes/wpdh-acf-options.php:578 includes/wpdh-acf-options.php:582 includes/wpdh-register-post_type.php:33
+#: includes/wpdh-acf-options.php:578 includes/wpdh-acf-options.php:582
+#: includes/wpdh-register-post_type.php:33
 #: includes/wpdh-register-post_type.php:91
 msgid "Use as featured image"
 msgstr "Usar como imagem em destaque"
 
-#: includes/wpdh-acf-options.php:597 includes/wpdh-acf-options.php:601 includes/wpdh-register-post_type.php:34
+#: includes/wpdh-acf-options.php:597 includes/wpdh-acf-options.php:601
+#: includes/wpdh-register-post_type.php:34
 #: includes/wpdh-register-post_type.php:92
 msgid "Insert into item"
 msgstr "Inserir no item"
 
-#: includes/wpdh-acf-options.php:616 includes/wpdh-acf-options.php:620 includes/wpdh-register-post_type.php:35
+#: includes/wpdh-acf-options.php:616 includes/wpdh-acf-options.php:620
+#: includes/wpdh-register-post_type.php:35
 #: includes/wpdh-register-post_type.php:93
 msgid "Uploaded to this item"
 msgstr "Enviado para este item"
 
-#: includes/wpdh-acf-options.php:635 includes/wpdh-acf-options.php:639 includes/wpdh-register-post_type.php:36
+#: includes/wpdh-acf-options.php:635 includes/wpdh-acf-options.php:639
+#: includes/wpdh-register-post_type.php:36
 #: includes/wpdh-register-post_type.php:94
 msgid "Items list"
 msgstr "Lista de Itens"
 
-#: includes/wpdh-acf-options.php:654 includes/wpdh-acf-options.php:658 includes/wpdh-register-post_type.php:37
+#: includes/wpdh-acf-options.php:654 includes/wpdh-acf-options.php:658
+#: includes/wpdh-register-post_type.php:37
 #: includes/wpdh-register-post_type.php:95
 msgid "Items list navigation"
 msgstr "Navegação da lista de itens"
 
-#: includes/wpdh-acf-options.php:673 includes/wpdh-acf-options.php:677 includes/wpdh-register-post_type.php:38
+#: includes/wpdh-acf-options.php:673 includes/wpdh-acf-options.php:677
+#: includes/wpdh-register-post_type.php:38
 #: includes/wpdh-register-post_type.php:96
 msgid "Filter items list"
 msgstr "Filtar itens da lista"
@@ -404,20 +526,25 @@ msgstr "Excluir da pesquisa"
 msgid "Posts of this type should be excluded from search results."
 msgstr "Postagens desse tipo devem ser excluídas dos resultados da pesquisa."
 
-#: includes/wpdh-acf-options.php:771 includes/wpdh-acf-options.php:869 includes/wpdh-acf-options.php:896
-#: includes/wpdh-acf-options.php:1004 includes/wpdh-acf-options.php:1101 includes/wpdh-acf-options.php:1222
-#: includes/wpdh-acf-options.php:1257 includes/wpdh-acf-options.php:1292 includes/wpdh-acf-options.php:1343
-#: includes/wpdh-acf-options.php:1922 includes/wpdh-acf-options.php:2529 includes/wpdh-acf-options.php:2568
-#: includes/wpdh-acf-options.php:2592 includes/wpdh-acf-options.php:2616 includes/wpdh-code-in-page.php:215
-#: includes/wpdh-code-in-page.php:337 includes/wpdh-code-in-page.php:459
+#: includes/wpdh-acf-options.php:771 includes/wpdh-acf-options.php:869
+#: includes/wpdh-acf-options.php:896 includes/wpdh-acf-options.php:1004
+#: includes/wpdh-acf-options.php:1101 includes/wpdh-acf-options.php:1222
+#: includes/wpdh-acf-options.php:1257 includes/wpdh-acf-options.php:1292
+#: includes/wpdh-acf-options.php:1343 includes/wpdh-acf-options.php:1922
+#: includes/wpdh-acf-options.php:2554 includes/wpdh-acf-options.php:2593
+#: includes/wpdh-acf-options.php:2617 includes/wpdh-acf-options.php:2641
+#: includes/wpdh-code-in-page.php:215 includes/wpdh-code-in-page.php:337
+#: includes/wpdh-code-in-page.php:459
 msgid "Yes"
 msgstr "Sim"
 
-#: includes/wpdh-acf-options.php:772 includes/wpdh-acf-options.php:870 includes/wpdh-acf-options.php:897
-#: includes/wpdh-acf-options.php:1005 includes/wpdh-acf-options.php:1102 includes/wpdh-acf-options.php:1223
-#: includes/wpdh-acf-options.php:1258 includes/wpdh-acf-options.php:1344 includes/wpdh-acf-options.php:1923
-#: includes/wpdh-acf-options.php:2528 includes/wpdh-acf-options.php:2569 includes/wpdh-acf-options.php:2593
-#: includes/wpdh-acf-options.php:2617 includes/wpdh-code-in-page.php:216
+#: includes/wpdh-acf-options.php:772 includes/wpdh-acf-options.php:870
+#: includes/wpdh-acf-options.php:897 includes/wpdh-acf-options.php:1005
+#: includes/wpdh-acf-options.php:1102 includes/wpdh-acf-options.php:1223
+#: includes/wpdh-acf-options.php:1258 includes/wpdh-acf-options.php:1344
+#: includes/wpdh-acf-options.php:1923 includes/wpdh-acf-options.php:2553
+#: includes/wpdh-acf-options.php:2594 includes/wpdh-acf-options.php:2618
+#: includes/wpdh-acf-options.php:2642 includes/wpdh-code-in-page.php:216
 #: includes/wpdh-code-in-page.php:338 includes/wpdh-code-in-page.php:460
 msgid "No"
 msgstr "Não"
@@ -914,21 +1041,33 @@ msgstr ""
 msgid "Remove tags created by <b>wp_head()</b> function."
 msgstr "Remova as tags criadas pela função <b>wp_head()</b>."
 
-#: includes/wpdh-acf-options.php:2130
+#: includes/wpdh-acf-options.php:2129
+msgid "Automatic phone number detection?"
+msgstr "Detecção automática de número de telefone?"
+
+#: includes/wpdh-acf-options.php:2132
+msgid ""
+"Determines whether or not telephone numbers in the HTML content will appear "
+"as links. Default on Safari in iOS is yes."
+msgstr ""
+"Determina se os números de telefone no conteúdo HTML aparecerão como links. "
+"O padrão no Safari no iOS é sim."
+
+#: includes/wpdh-acf-options.php:2155
 msgid "Theme Color"
 msgstr "Cor do tema"
 
-#: includes/wpdh-acf-options.php:2133
+#: includes/wpdh-acf-options.php:2158
 msgid "Change the color of header bar and address bar in mobile browsers."
 msgstr ""
 "Altere a cor da barra de cabeçalho e da barra de endereço nos navegadores "
 "móveis."
 
-#: includes/wpdh-acf-options.php:2149
+#: includes/wpdh-acf-options.php:2174
 msgid "Meta Description"
 msgstr "Meta Descrição"
 
-#: includes/wpdh-acf-options.php:2152
+#: includes/wpdh-acf-options.php:2177
 msgid ""
 "Put a description of your site to show in browser searches. <b>Note:</b> "
 "Maximum 150 characters."
@@ -936,219 +1075,119 @@ msgstr ""
 "Coloque uma descrição do seu site para mostrar nas pesquisas do navegador. "
 "<b> Nota: </b> Máximo de 150 caracteres."
 
-#: includes/wpdh-acf-options.php:2173
-msgid "Open Graph image"
-msgstr "Open Graph imagem"
+#: includes/wpdh-acf-options.php:2198
+msgid "Default image for social media"
+msgstr "Imagem padrão para mídia social"
 
-#: includes/wpdh-acf-options.php:2176
+#: includes/wpdh-acf-options.php:2201
 msgid ""
-"Send an image with 1200px wide per 630px height. <br> Keep a default image "
-"in the links, and display a social media post."
+"Resolution 1200x630 pixels. <br> Keep a default image in the links, and "
+"display a social media post."
 msgstr ""
-"Envie uma imagem com 1200px de largura por 630px de altura. <br> Mantenha "
-"uma imagem padrão nos links e exiba uma postagem de mídia social."
+"Resolução 1200x630 pixels. <br> Mantenha uma imagem padrão nos links e exiba "
+"uma postagem de mídia social."
 
-#: includes/wpdh-acf-options.php:2197
-msgid "Favicon"
-msgstr "Favicon"
+#: includes/wpdh-acf-options.php:2225
+msgid "Resolution 32x32 pixels."
+msgstr "Resolução 32x32 pixels."
 
-#: includes/wpdh-acf-options.php:2200
-msgid "Send an image with 32px wide per 32px height."
-msgstr "Envie uma imagem com 32px de largura por 32px de altura."
+#: includes/wpdh-acf-options.php:2249
+msgid "Resolution 57x57 pixels."
+msgstr "Resolução 57x57 pixels."
 
-#: includes/wpdh-acf-options.php:2221
-msgid "Apple-touch-icon 57x57 pixels"
-msgstr ""
+#: includes/wpdh-acf-options.php:2273
+msgid "Resolution 60x60 pixels."
+msgstr "Resolução 60x60 pixels."
 
-#: includes/wpdh-acf-options.php:2224
-msgid ""
-"Send an image with 57px width per 57px height. Send an image with the "
-"extension PNG."
-msgstr ""
-"Envie uma imagem com 57px de largura por 57px de altura. Envie uma imagem "
-"com a extensão PNG."
+#: includes/wpdh-acf-options.php:2297
+msgid "Resolution 72x72 pixels."
+msgstr "Resolução 72x72 pixels."
 
-#: includes/wpdh-acf-options.php:2245
-msgid "Apple-touch-icon 60x60 pixels"
-msgstr ""
+#: includes/wpdh-acf-options.php:2321
+msgid "Resolution 76x76 pixels."
+msgstr "Resolução 76x76 pixels."
 
-#: includes/wpdh-acf-options.php:2248
-msgid ""
-"Send an image with 60px width per 60px height. Send an image with the "
-"extension PNG."
-msgstr ""
-"Envie uma imagem com 60px de largura por 60px de altura. Envie uma imagem "
-"com a extensão PNG."
+#: includes/wpdh-acf-options.php:2345
+msgid "Resolution 114x114 pixels."
+msgstr "Resolução 114x114 pixels."
 
-#: includes/wpdh-acf-options.php:2269
-msgid "Apple-touch-icon 72x72 pixels"
-msgstr ""
+#: includes/wpdh-acf-options.php:2369
+msgid "Resolution 120x120 pixels."
+msgstr "Resolução 120x120 pixels."
 
-#: includes/wpdh-acf-options.php:2272
-msgid ""
-"Send an image with 72px width per 72px height. Send an image with the "
-"extension PNG."
-msgstr ""
-"Envie uma imagem com 72px de largura por 72px de altura. Envie uma imagem "
-"com a extensão PNG."
+#: includes/wpdh-acf-options.php:2393
+msgid "Resolution 144x144 pixels."
+msgstr "Resolução 144x144 pixels."
 
-#: includes/wpdh-acf-options.php:2293
-msgid "Apple-touch-icon 76x76 pixels"
-msgstr ""
+#: includes/wpdh-acf-options.php:2417
+msgid "Resolution 152x152 pixels."
+msgstr "Resolução 152x152 pixels."
 
-#: includes/wpdh-acf-options.php:2296
-msgid ""
-"Send an image with 76px width per 76px height. Send an image with the "
-"extension PNG."
-msgstr ""
-"Envie uma imagem com 76px de largura por 76px de altura. Envie uma imagem "
-"com a extensão PNG."
+#: includes/wpdh-acf-options.php:2441
+msgid "Resolution 180x180 pixels."
+msgstr "Resolução 180x180 pixels."
 
-#: includes/wpdh-acf-options.php:2317
-msgid "Apple-touch-icon 114x114 pixels"
-msgstr ""
+#: includes/wpdh-acf-options.php:2465
+msgid "Resolution 192x192 pixels."
+msgstr "Resolução 192x192 pixels."
 
-#: includes/wpdh-acf-options.php:2320
-msgid ""
-"Send an image with 114px width per 114px height. Send an image with the "
-"extension PNG."
-msgstr ""
-"Envie uma imagem com 114px de largura por 114px de altura. Envie uma imagem "
-"com a extensão PNG."
+#: includes/wpdh-acf-options.php:2489
+msgid "Resolution 96x96 pixels."
+msgstr "Resolução 96x96 pixels."
 
-#: includes/wpdh-acf-options.php:2341
-msgid "Apple-touch-icon 120x120 pixels"
-msgstr ""
+#: includes/wpdh-acf-options.php:2513
+msgid "Resolution 16x16 pixels."
+msgstr "Resolução 16x16 pixels."
 
-#: includes/wpdh-acf-options.php:2344
-msgid ""
-"Send an image with 120px width per 120px height. Send an image with the "
-"extension PNG."
-msgstr ""
-"Envie uma imagem com 120px de largura por 120px de altura. Envie uma imagem "
-"com a extensão PNG."
-
-#: includes/wpdh-acf-options.php:2365
-msgid "Apple-touch-icon 144x144 pixels"
-msgstr ""
-
-#: includes/wpdh-acf-options.php:2368
-msgid ""
-"Send an image with 144px width per 144px height. Send an image with the "
-"extension PNG."
-msgstr ""
-"Envie uma imagem com 144px de largura por 144px de altura. Envie uma imagem "
-"com a extensão PNG."
-
-#: includes/wpdh-acf-options.php:2389
-msgid "Apple-touch-icon 152x152 pixels"
-msgstr ""
-
-#: includes/wpdh-acf-options.php:2392
-msgid ""
-"Send an image with 152px width per 152px height. Send an image with the "
-"extension PNG."
-msgstr ""
-"Envie uma imagem com 152px de largura por 152px de altura. Envie uma imagem "
-"com a extensão PNG."
-
-#: includes/wpdh-acf-options.php:2413
-msgid "Apple-touch-icon 180x180 pixels"
-msgstr ""
-
-#: includes/wpdh-acf-options.php:2416
-msgid ""
-"Send an image with 180px width per 180px height. Send an image with the "
-"extension PNG."
-msgstr ""
-"Envie uma imagem com 180px de largura por 180px de altura. Envie uma imagem "
-"com a extensão PNG."
-
-#: includes/wpdh-acf-options.php:2437
-msgid "Head icon 192x192 pixels"
-msgstr ""
-
-#: includes/wpdh-acf-options.php:2440
-msgid ""
-"Send an image with 192px width per 192px height. Send an image with the "
-"extension PNG."
-msgstr ""
-"Envie uma imagem com 192px de largura por 192px de altura. Envie uma imagem "
-"com a extensão PNG."
-
-#: includes/wpdh-acf-options.php:2461
-msgid "Head icon 96x96 pixels"
-msgstr ""
-
-#: includes/wpdh-acf-options.php:2464
-msgid ""
-"Send an image with 96px width per 96px height. Send an image with the "
-"extension PNG."
-msgstr ""
-"Envie uma imagem com 96px de largura por 96px de altura. Envie uma imagem "
-"com a extensão PNG."
-
-#: includes/wpdh-acf-options.php:2485
-msgid "Head icon 16x16 pixels"
-msgstr ""
-
-#: includes/wpdh-acf-options.php:2488
-msgid ""
-"Send an image with 16px width per 16px height. Send an image with the "
-"extension PNG."
-msgstr ""
-"Envie uma imagem com 16px de largura por 16px de altura. Envie uma imagem "
-"com a extensão PNG."
-
-#: includes/wpdh-acf-options.php:2501
+#: includes/wpdh-acf-options.php:2526
 msgid "Template Settings"
 msgstr "Configurações do template"
 
-#: includes/wpdh-acf-options.php:2515
+#: includes/wpdh-acf-options.php:2540
 msgid "Form generator"
 msgstr "Gerador de formulários"
 
-#: includes/wpdh-acf-options.php:2518
+#: includes/wpdh-acf-options.php:2543
 msgid "Quickly create forms to place in your template."
 msgstr "Crie rapidamente formulários para colocar em seu template."
 
-#: includes/wpdh-acf-options.php:2541
+#: includes/wpdh-acf-options.php:2566
 msgid "Admin panel"
 msgstr "Painel do administrador"
 
-#: includes/wpdh-acf-options.php:2555
+#: includes/wpdh-acf-options.php:2580
 msgid "Duplicate Post"
 msgstr "Duplicar Post"
 
-#: includes/wpdh-acf-options.php:2558
+#: includes/wpdh-acf-options.php:2583
 msgid "Enable duplicate post option?"
 msgstr "Habilitar opção de duplicar Post?"
 
-#: includes/wpdh-acf-options.php:2579
+#: includes/wpdh-acf-options.php:2604
 msgid "Duplicate Page"
 msgstr "Duplicar Página"
 
-#: includes/wpdh-acf-options.php:2582
+#: includes/wpdh-acf-options.php:2607
 msgid "Enable duplicate page option?"
 msgstr "Habilitar opção de duplicar Página?"
 
-#: includes/wpdh-acf-options.php:2603
+#: includes/wpdh-acf-options.php:2628
 msgid "Remove comment support"
 msgstr "Remover suporte para comentário"
 
-#: includes/wpdh-acf-options.php:2606
+#: includes/wpdh-acf-options.php:2631
 msgid "Disable comments page in dashboard and for posts and pages."
 msgstr "Desabilitar comentários no painel e para páginas e posts."
 
-#: includes/wpdh-acf-options.php:2629
+#: includes/wpdh-acf-options.php:2654
 msgid "Advanced"
 msgstr "Avançado"
 
-#: includes/wpdh-acf-options.php:2643
+#: includes/wpdh-acf-options.php:2668
 msgid "Delete revisions"
 msgstr "Excluir revisões"
 
-#: includes/wpdh-acf-options.php:2647
+#: includes/wpdh-acf-options.php:2672
 msgid ""
 "Clear all revisions generated by posts and pages from your database. Only "
 "run this if you know what you are doing."
@@ -1156,46 +1195,13 @@ msgstr ""
 "Limpe todas as revisões geradas por posts e páginas do seu banco de dados. "
 "Só execute isso se você souber o que está fazendo."
 
-#: includes/wpdh-acf-options.php:2658
+#: includes/wpdh-acf-options.php:2683
 msgid "Custom CSS"
 msgstr "CSS Customizado"
 
-#: includes/wpdh-acf-options.php:2663
+#: includes/wpdh-acf-options.php:2688
 msgid "Add your css to the head. The &#60;style&#62 tags will be ignored."
 msgstr "Adicione seu css no Head. As tags &#60;style&#62 serão ignoradas."
-
-#: includes/class.developers.php:12
-msgid "Developers"
-msgstr "Desenvolvedores"
-
-#: includes/class.developers.php:28 includes/wpdh-code-in-page.php:139
-msgid "Head, Footer and Post Injections"
-msgstr "Injeção para Head, Footer e Post"
-
-#: includes/class.developers.php:29
-msgid "Code Injections"
-msgstr "Injeção de código"
-
-#: includes/class.developers.php:369
-#, php-format
-msgid ""
-"Your current theme needs to be updated to display the <b>Form Generator</b> "
-"module. Minimum requested %s version is %s"
-msgstr ""
-"Seu tema atual precisa ser atualizado para exibir o módulo <b>Gerador de "
-"formulários</b>. A versão %s mínima solicitada é %s"
-
-#: includes/wpdh-duplicate-post.php:10
-msgid "No post to duplicate has been supplied!"
-msgstr "Nenhum post para duplicar foi fornecido!"
-
-#: includes/wpdh-duplicate-post.php:99
-msgid "Duplicate this item"
-msgstr "Duplicar este item"
-
-#: includes/wpdh-duplicate-post.php:99
-msgid "Duplicate"
-msgstr "Duplicar"
 
 #: includes/wpdh-code-in-page.php:143
 msgid "Inside the head tag"
@@ -1246,87 +1252,146 @@ msgstr "Fim da tag body (rodapé)"
 msgid "Add code before &lt;/body&gt;"
 msgstr "Adicione o código antes de &lt;/body&gt;"
 
-#: includes/form-generator/form.php:17 includes/form-generator/form.php:19
-msgid "Forms"
-msgstr "Formulários"
+#: includes/wpdh-duplicate-post.php:10
+msgid "No post to duplicate has been supplied!"
+msgstr "Nenhum post para duplicar foi fornecido!"
 
-#: includes/form-generator/form.php:18 includes/form-generator/form.php:29
-msgid "Form"
-msgstr "Formulário"
+#: includes/wpdh-duplicate-post.php:99
+msgid "Duplicate this item"
+msgstr "Duplicar este item"
 
-#: includes/form-generator/form.php:20
-msgid "All Forms"
-msgstr "Todos os Formulários"
+#: includes/wpdh-duplicate-post.php:99
+msgid "Duplicate"
+msgstr "Duplicar"
 
-#: includes/form-generator/form.php:21
-msgid "Add new form"
-msgstr "Adicionar novo formulário"
+#: includes/wpdh-pwa.php:17
+msgid "Enable Progressive web app?"
+msgstr "Ativar aplicativo da Web progressivo (PWA)?"
 
-#: includes/form-generator/form.php:22
-msgid "New form"
-msgstr "Novo formulário"
+#: includes/wpdh-pwa.php:20
+msgid "Basic PWA functionality on your mobile site and for app format."
+msgstr "Funcionalidades básicas de PWA em seu site."
 
-#: includes/form-generator/form.php:23
-msgid "Edit form"
-msgstr "Editar formulário"
+#: includes/wpdh-pwa.php:36
+msgid "Settings"
+msgstr "Configurações"
 
-#: includes/form-generator/form.php:24
-msgid "Update form"
-msgstr "Atualizar formulário"
+#: includes/wpdh-pwa.php:52
+msgid "Aplication Name"
+msgstr "Nome da Aplicação"
 
-#: includes/form-generator/form.php:25
-msgid "Search form"
-msgstr "Pesquisar formulário"
+#: includes/wpdh-pwa.php:55
+msgid "Make the app title different than the page title."
+msgstr "Torne o título do aplicativo diferente do título da página."
 
-#: includes/form-generator/form.php:30
-msgid "Add a new submission form."
-msgstr "Adicione um novo formulário de envio."
+#: includes/wpdh-pwa.php:79
+msgid "Web app manifest"
+msgstr "Manifesto do aplicativo da Web"
 
-#: includes/form-generator/form.php:65
-msgid "Shortcode"
+#: includes/wpdh-pwa.php:82
+msgid ""
+"Add the link to your site directory containing the <b>manifest.json</b> file "
+"for the PWA to work."
 msgstr ""
+"Adicione o link do diretório do seu site contendo o arquivo <b>manifest."
+"json</b> para que o PWA funcione."
 
-#: includes/form-generator/template-form.php:48
-msgid "Send"
-msgstr "Enviar"
+#: includes/wpdh-pwa.php:103
+msgid "iOS Status Bar"
+msgstr "Barra de status do iOS"
 
-#: includes/form-generator/template-form.php:102
-#, php-format
-msgid "Add the file in the <b>%s</b> field."
-msgstr "Adicione o arquivo no campo <b>%s</b>."
+#: includes/wpdh-pwa.php:106
+msgid ""
+"Change the iOS status bar of your progressive web app. Attention, this tag "
+"is no longer supported since iOS version 15.0 being replaced by the theme "
+"color meta tag."
+msgstr ""
+"Altere a barra de status do iOS do seu aplicativo da web progressivo. "
+"Atenção, essa tag não é mais suportada desde a versão 15.0 do iOS sendo "
+"substituído pela meta tag de cor do tema."
 
-#: includes/form-generator/template-form.php:112
-#, php-format
-msgid "The <b>%s</b> field is required."
-msgstr "O campo <b>%s</b> é obrigatório."
+#: includes/wpdh-pwa.php:147
+msgid "Maskable icon (Android)"
+msgstr "Ícone mascarável (Android)"
 
-#: includes/form-generator/template-form.php:161
-msgid "Sending..."
-msgstr "Enviando..."
+#: includes/wpdh-pwa.php:150
+msgid ""
+"A maskable icon ensures that the image fills the entire shape without a "
+"letterbox effect when installing the app on a device. Minimum resolution "
+"512x512 pixels. <br>Must be <b>placed manually</b>, use it in manifest.json "
+"file."
+msgstr ""
+"Um ícone mascarável garante que a imagem preencha toda a forma sem um efeito "
+"letterbox ao instalar o aplicativo em um dispositivo. Resolução mínima "
+"512x512 pixels. <br>Deve ser <b>colocado manualmente</b>, use-o no arquivo "
+"manifest.json."
 
-#: includes/form-generator/template-form.php:169
-msgid "Sent!"
-msgstr "Enviado!"
+#: includes/wpdh-pwa.php:179
+msgid "Mask icon for Safari pinned tabs"
+msgstr "Ícone de máscara para guias fixadas no Safari"
 
-#: includes/form-generator/template-form.php:172
-msgid "Close"
-msgstr "Fechar"
+#: includes/wpdh-pwa.php:182
+msgid "Upload the full color .svg icon in black."
+msgstr "Carregue o ícone .svg completamente em cor preta."
 
-#: includes/form-generator/template-form.php:176
-#: includes/form-generator/template-form.php:189
-msgid "Something went wrong!"
-msgstr "Algo deu errado!"
+#: includes/wpdh-pwa.php:201
+msgid "Browser configuration files"
+msgstr "Arquivos de configuração do navegador"
 
-#: includes/form-generator/template-form.php:196
-msgid "Send again"
-msgstr "Enviar novamente"
+#: includes/wpdh-pwa.php:204
+msgid ""
+"This file is only loaded by Windows 8 and 10 devices. The browserconfig.xml "
+"is very useful when it comes to favicon: it defines the various block images "
+"and the background color."
+msgstr ""
+"Este arquivo é carregado apenas por dispositivos Windows 8 e 10. O "
+"browserconfig.xml é muito útil quando se trata de favicon: define as várias "
+"imagens de bloco e a cor de fundo."
+
+#: includes/wpdh-pwa.php:228
+msgid "Strech elements"
+msgstr "Esticar elementos"
+
+#: includes/wpdh-pwa.php:244
+msgid "Stretch document height?"
+msgstr "Esticar a altura do documento web?"
+
+#: includes/wpdh-pwa.php:247
+msgid ""
+"Set the minimum height of the document to 100% plus the height of the safe "
+"area on top. This will prevent a white bar in the bottom which gets shown "
+"since you moved the document \"up\"."
+msgstr ""
+"Defina a altura mínima do documento para 100% mais a altura da área segura "
+"na parte superior. Isso evitará uma barra branca na parte inferior que é "
+"exibida desde que você moveu o documento \"para cima\"."
+
+#: includes/wpdh-pwa.php:276
+msgid "Stretch fixed elements up"
+msgstr "Esticar os elementos fixos para cima"
+
+#: includes/wpdh-pwa.php:279
+msgid ""
+"Add the element classes with fixed position, stretching them, making them "
+"look like a native app on iOS. Note: Separate each element with a comma. "
+"Attention, your padding will be replaced by this one."
+msgstr ""
+"Adicione as classes de elemento com posição fixa, esticando-as, fazendo com "
+"que pareçam um aplicativo nativo no iOS. Nota: Separe cada elemento com uma "
+"vírgula. Atenção, seu estofamento será substituído por este."
+
+#: includes/wpdh-pwa.php:303
+msgid "Stretch fixed elements down"
+msgstr "Esticar os elementos fixos para baixo"
 
 #: includes/wpdh-register-post_type.php:42
 msgid "Create New Post Type"
 msgstr "Criar novo Post Type"
 
-#: includes/wpdh-register-post_type.php:70 includes/wpdh-register-post_type.php:72
-#: includes/wpdh-register-post_type.php:73 includes/wpdh-register-post_type.php:99
+#: includes/wpdh-register-post_type.php:70
+#: includes/wpdh-register-post_type.php:72
+#: includes/wpdh-register-post_type.php:73
+#: includes/wpdh-register-post_type.php:99
 msgid "Dashboard Widgets"
 msgstr "Painel"
 
@@ -1343,3 +1408,716 @@ msgid ""
 "Copy the query code from this post type and paste it into your theme file."
 msgstr ""
 "Copie o código de consulta deste post type e cole em um arquivo de seu tema."
+
+#, fuzzy
+#~| msgid "Custom Fields"
+#~ msgid "Advanced Custom Fields"
+#~ msgstr "Campos personalizados"
+
+#, fuzzy
+#~| msgid "Not found in Trash"
+#~ msgid "No Field Groups found in Trash"
+#~ msgstr "Nada encontrado na Lixeira"
+
+#, fuzzy
+#~| msgid "Custom Fields"
+#~ msgid "Fields"
+#~ msgstr "Campos personalizados"
+
+#, fuzzy
+#~| msgid "Add New Item"
+#~ msgid "Add New Field"
+#~ msgstr "Adicionar Novo Post Type"
+
+#, fuzzy
+#~| msgid "Edit Item"
+#~ msgid "Edit Field"
+#~ msgstr "Editar Item"
+
+#, fuzzy
+#~| msgid "View Item"
+#~ msgid "View Field"
+#~ msgstr "Ver Item"
+
+#, fuzzy
+#~| msgid "Search Item"
+#~ msgid "Search Fields"
+#~ msgstr "Pesquisar Item"
+
+#, fuzzy
+#~| msgid "Not found"
+#~ msgid "No Fields found"
+#~ msgstr "Nada encontrado"
+
+#, fuzzy
+#~| msgid "Not found in Trash"
+#~ msgid "No Fields found in Trash"
+#~ msgstr "Nada encontrado na Lixeira"
+
+#, fuzzy
+#~| msgid "Custom Fields"
+#~ msgid "Move Custom Field"
+#~ msgstr "Campos personalizados"
+
+#, fuzzy
+#~| msgid "Form"
+#~ msgid "or"
+#~ msgstr "Formulário"
+
+#, fuzzy
+#~| msgid "Featured Image"
+#~ msgid "Select Image"
+#~ msgstr "Imagem Destaque"
+
+#, fuzzy
+#~| msgid "Edit Item"
+#~ msgid "Edit Image"
+#~ msgstr "Editar Item"
+
+#, fuzzy
+#~| msgid "Update Item"
+#~ msgid "Update Image"
+#~ msgstr "Atualizar Item"
+
+#, fuzzy
+#~| msgid "Edit Item"
+#~ msgid "Edit File"
+#~ msgstr "Editar Item"
+
+#, fuzzy
+#~| msgid "Update Item"
+#~ msgid "Update File"
+#~ msgstr "Atualizar Item"
+
+#, fuzzy
+#~| msgid "Not found"
+#~ msgid "No matches found"
+#~ msgstr "Nada encontrado"
+
+#, fuzzy
+#~| msgid "All Items"
+#~ msgid "All images"
+#~ msgstr "Todos os Itens"
+
+#, fuzzy
+#~| msgid "Uploaded to this item"
+#~ msgid "Uploaded to this post"
+#~ msgstr "Enviado para este item"
+
+#, fuzzy
+#~| msgid "Update Item"
+#~ msgid "Update"
+#~ msgstr "Atualizar Item"
+
+#, fuzzy
+#~| msgid "Translation file"
+#~ msgid "Validation failed"
+#~ msgstr "Tradução"
+
+#, fuzzy
+#~| msgid "Remove Widgets"
+#~ msgid "Remove"
+#~ msgstr "Remover Widgets"
+
+#, fuzzy
+#~| msgid "Edit Posts"
+#~ msgid "Posts"
+#~ msgstr "Editar postagens"
+
+#, fuzzy
+#~| msgid "Remove Widgets"
+#~ msgid "Widgets"
+#~ msgstr "Remover Widgets"
+
+#, fuzzy
+#~| msgid "Menu Name"
+#~ msgid "Menu items"
+#~ msgstr "Nome do Menu"
+
+#, fuzzy
+#~| msgid "Activity"
+#~ msgid "Active"
+#~ msgstr "Atividade"
+
+#, fuzzy
+#~| msgid "Custom Fields"
+#~ msgid "Move Field"
+#~ msgstr "Campos personalizados"
+
+#, fuzzy
+#~| msgid "Meta Description"
+#~ msgid "Description"
+#~ msgstr "Meta Descrição"
+
+#, fuzzy
+#~| msgid "Supports"
+#~ msgid "Help & Support"
+#~ msgstr "Suportes"
+
+#, fuzzy, php-format
+#~| msgid "Revisions"
+#~ msgid "Version %s"
+#~ msgstr "Revisões"
+
+#, fuzzy
+#~| msgid "View Items"
+#~ msgid "View details"
+#~ msgstr "Ver Itens"
+
+#, fuzzy
+#~| msgid "General"
+#~ msgid "Generate PHP"
+#~ msgstr "Geral"
+
+#, fuzzy
+#~| msgid "Edit form"
+#~ msgid "Edit field"
+#~ msgstr "Editar formulário"
+
+#, fuzzy
+#~| msgid "Edit Item"
+#~ msgid "Edit"
+#~ msgstr "Editar Item"
+
+#, fuzzy
+#~| msgid "Duplicate Page"
+#~ msgid "Duplicate field"
+#~ msgstr "Duplicar Página"
+
+#, fuzzy
+#~| msgid "Delete Post"
+#~ msgid "Delete field"
+#~ msgstr "Deletar postagem"
+
+#, fuzzy
+#~| msgid "Delete Post"
+#~ msgid "Delete"
+#~ msgstr "Deletar postagem"
+
+#, fuzzy
+#~| msgid "Menu Name"
+#~ msgid "Field Name"
+#~ msgstr "Nome do Menu"
+
+#, fuzzy
+#~| msgid "Page Attributes"
+#~ msgid "Wrapper Attributes"
+#~ msgstr "Atributos da Página"
+
+#, fuzzy
+#~| msgid "Custom Fields"
+#~ msgid "Close Field"
+#~ msgstr "Campos personalizados"
+
+#, fuzzy
+#~| msgid "Labels"
+#~ msgid "Label"
+#~ msgstr "Labels"
+
+#, fuzzy
+#~| msgid "Menu Name"
+#~ msgid "Name"
+#~ msgstr "Nome do Menu"
+
+#, fuzzy
+#~| msgid "Post Type"
+#~ msgid "Type"
+#~ msgstr "Post Type"
+
+#, fuzzy
+#~| msgid "Pagination"
+#~ msgid "Position"
+#~ msgstr "Paginação"
+
+#, fuzzy
+#~| msgid "20 below Pages"
+#~ msgid "Below labels"
+#~ msgstr "20 páginas abaixo"
+
+#, fuzzy
+#~| msgid "Content (editor)"
+#~ msgid "Content Editor"
+#~ msgstr "Content (Editor de conteúdo)"
+
+#, fuzzy
+#~| msgid "URL Slug"
+#~ msgid "Slug"
+#~ msgstr "Slug da URL"
+
+#, fuzzy
+#~| msgid "Form"
+#~ msgid "Format"
+#~ msgstr "Formulário"
+
+#, fuzzy
+#~| msgid "Trackbacks"
+#~ msgid "Send Trackbacks"
+#~ msgstr "Trackbacks"
+
+#, fuzzy
+#~| msgid "Login Screen"
+#~ msgid "Hide on screen"
+#~ msgstr "Tela de Login"
+
+#, fuzzy
+#~| msgid "Custom query variable."
+#~ msgid "No updates available."
+#~ msgstr "Variável de consulta personalizada."
+
+#, fuzzy
+#~| msgid "Options"
+#~ msgid "Options Page"
+#~ msgstr "Opções"
+
+#, fuzzy
+#~| msgid "Logo Title"
+#~ msgid "(no title)"
+#~ msgstr "Título da Logo"
+
+#, fuzzy
+#~| msgid "Content (editor)"
+#~ msgid "Content"
+#~ msgstr "Content (Editor de conteúdo)"
+
+#, fuzzy
+#~| msgid "Optional"
+#~ msgid "Relational"
+#~ msgstr "Opcional"
+
+#, fuzzy
+#~| msgid "Query"
+#~ msgid "jQuery"
+#~ msgstr "Query"
+
+#, fuzzy
+#~| msgid "Hierarchical"
+#~ msgid "Vertical"
+#~ msgstr "Hierárquico"
+
+#, fuzzy
+#~| msgid "Default Value"
+#~ msgid "Return Value"
+#~ msgstr "Valor padrão"
+
+#, fuzzy
+#~| msgid "Add new form"
+#~ msgid "Add new choice"
+#~ msgstr "Adicionar novo formulário"
+
+#, fuzzy
+#~| msgid "Post Formats"
+#~ msgid "Display Format"
+#~ msgstr "Formato de Post"
+
+#, fuzzy
+#~| msgid "Custom CSS"
+#~ msgid "Custom:"
+#~ msgstr "CSS Customizado"
+
+#, fuzzy
+#~| msgid "Post Formats"
+#~ msgid "Save Format"
+#~ msgstr "Formato de Post"
+
+#, fuzzy
+#~| msgid "Post Formats"
+#~ msgid "Return Format"
+#~ msgstr "Formato de Post"
+
+#, fuzzy
+#~| msgid "No"
+#~ msgid "Now"
+#~ msgstr "Não"
+
+#, fuzzy
+#~| msgid "Appears within the input"
+#~ msgid "Appears before the input"
+#~ msgstr "Aparece dentro da entrada"
+
+#, fuzzy
+#~| msgid "Appears within the input"
+#~ msgid "Appears after the input"
+#~ msgstr "Aparece dentro da entrada"
+
+#, fuzzy
+#~| msgid "Add New"
+#~ msgid "Add File"
+#~ msgstr "Adicionar Novo"
+
+#, fuzzy
+#~| msgid "Uploaded to this item"
+#~ msgid "Uploaded to post"
+#~ msgstr "Enviado para este item"
+
+#, fuzzy
+#~| msgid "Comma separated list of "
+#~ msgid "Comma separated list. Leave blank for all types"
+#~ msgstr "Lista separada por vírgula "
+
+#, fuzzy
+#~| msgid "Search Item"
+#~ msgid "Search"
+#~ msgstr "Pesquisar Item"
+
+#, fuzzy
+#~| msgid "Admin Sidebar Location"
+#~ msgid "Clear location"
+#~ msgstr "Localização da Sidebar Administrativa"
+
+#, fuzzy
+#~| msgid "Search form"
+#~ msgid "Search for address..."
+#~ msgstr "Pesquisar formulário"
+
+#, fuzzy
+#~| msgid "Enter the link title attribute."
+#~ msgid "Center the initial map"
+#~ msgstr "Digite o atributo do título do link."
+
+#, fuzzy
+#~| msgid "Light"
+#~ msgid "Height"
+#~ msgstr "Claro"
+
+#, fuzzy
+#~| msgid "Custom Fields"
+#~ msgid "Sub Fields"
+#~ msgstr "Campos personalizados"
+
+#, fuzzy
+#~| msgid "Logo Image"
+#~ msgid "Image"
+#~ msgstr "Imagem da Logo"
+
+#, fuzzy
+#~| msgid "Logo Image"
+#~ msgid "Add Image"
+#~ msgstr "Imagem da Logo"
+
+#, fuzzy
+#~| msgid "Logo URL"
+#~ msgid "Link URL"
+#~ msgstr "URL da Logo"
+
+#, fuzzy
+#~| msgid "15 below Links"
+#~ msgid "New Lines"
+#~ msgstr "15 abaixo Links"
+
+#, fuzzy
+#~| msgid "Post Formats"
+#~ msgid "No Formatting"
+#~ msgstr "Formato de Post"
+
+#, fuzzy
+#~| msgid "Default Value"
+#~ msgid "Maximum Value"
+#~ msgstr "Valor padrão"
+
+#, fuzzy
+#~| msgid "Parent Item"
+#~ msgid "Parent"
+#~ msgstr "Item Pai"
+
+#, fuzzy
+#~| msgid "Create New Post Type"
+#~ msgid "Filter by Post Type"
+#~ msgstr "Criar novo Post Type"
+
+#, fuzzy
+#~| msgid "Post Types"
+#~ msgid "All post types"
+#~ msgstr "Post Types"
+
+#, fuzzy
+#~| msgid "Taxonomies"
+#~ msgid "All taxonomies"
+#~ msgstr "Taxonomias"
+
+#, fuzzy
+#~| msgid "Post Type"
+#~ msgid "Post Object"
+#~ msgstr "Post Type"
+
+#, fuzzy
+#~| msgid "Post Type"
+#~ msgid "Post ID"
+#~ msgstr "Post Type"
+
+#, fuzzy
+#~| msgid "Show post type in"
+#~ msgid "Select post type"
+#~ msgstr "Mostrar o tipo de postagem"
+
+#, fuzzy
+#~| msgid "Search Item"
+#~ msgid "Search..."
+#~ msgstr "Pesquisar Item"
+
+#, fuzzy
+#~| msgid "Taxonomies"
+#~ msgid "Taxonomy"
+#~ msgstr "Taxonomias"
+
+#, fuzzy
+#~| msgid "Comments"
+#~ msgid "Elements"
+#~ msgstr "Comentários"
+
+#, fuzzy
+#~| msgid "Default Value"
+#~ msgid "Multiple Values"
+#~ msgstr "Valor padrão"
+
+#, fuzzy
+#~| msgid "Add New"
+#~ msgid "Add"
+#~ msgstr "Adicionar Novo"
+
+#, fuzzy
+#~| msgid "Code Area"
+#~ msgid "Text Area"
+#~ msgstr "Área de código"
+
+#, fuzzy
+#~| msgid "Text Domain"
+#~ msgid "Text Only"
+#~ msgstr "Domínio de texto"
+
+#, fuzzy
+#~| msgid "Post Type"
+#~ msgid "Post updated"
+#~ msgstr "Post Type"
+
+#, fuzzy
+#~| msgid "Post Type"
+#~ msgid "Post"
+#~ msgstr "Post Type"
+
+#, fuzzy, php-format
+#~| msgid "All Forms"
+#~ msgid "All %s formats"
+#~ msgstr "Todos os Formulários"
+
+#, fuzzy
+#~| msgid "Comments"
+#~ msgid "Comment"
+#~ msgstr "Comentários"
+
+#, fuzzy
+#~| msgid "New Item"
+#~ msgid "Menu Item"
+#~ msgstr "Novo Item"
+
+#, fuzzy
+#~| msgid "Menu Name"
+#~ msgid "Menu"
+#~ msgstr "Nome do Menu"
+
+#, fuzzy
+#~| msgid "Default Value"
+#~ msgid "Default Template"
+#~ msgstr "Valor padrão"
+
+#, fuzzy
+#~| msgid "Post Type"
+#~ msgid "Page Type"
+#~ msgstr "Post Type"
+
+#, fuzzy
+#~| msgid "Post Type"
+#~ msgid "Posts Page"
+#~ msgstr "Post Type"
+
+#, fuzzy
+#~| msgid "Post Formats"
+#~ msgid "Post Format"
+#~ msgstr "Formato de Post"
+
+#, fuzzy
+#~| msgid "Post Formats"
+#~ msgid "Post Status"
+#~ msgstr "Formato de Post"
+
+#, fuzzy
+#~| msgid "Post Type"
+#~ msgid "Post Taxonomy"
+#~ msgstr "Post Type"
+
+#, fuzzy
+#~| msgid "Post Type"
+#~ msgid "Post Template"
+#~ msgstr "Post Type"
+
+#, fuzzy
+#~| msgid "Form"
+#~ msgid "User Form"
+#~ msgstr "Formulário"
+
+#, fuzzy
+#~| msgid "Remove Widgets"
+#~ msgid "Widget"
+#~ msgstr "Remover Widgets"
+
+#, fuzzy, php-format
+#~| msgid "The <b>%s</b> field is required."
+#~ msgid "%s value is required"
+#~ msgstr "O campo <b>%s</b> é obrigatório."
+
+#, fuzzy
+#~| msgid "Custom Fields"
+#~ msgid "Advanced Custom Fields PRO"
+#~ msgstr "Campos personalizados"
+
+#, fuzzy
+#~| msgid "Public"
+#~ msgid "Publish"
+#~ msgstr "Público"
+
+#, fuzzy
+#~| msgid "Update Item"
+#~ msgid "Updates"
+#~ msgstr "Atualizar Item"
+
+#, fuzzy
+#~| msgid "Update form"
+#~ msgid "Update Information"
+#~ msgstr "Atualizar formulário"
+
+#, fuzzy
+#~| msgid "Add New"
+#~ msgid "Add Row"
+#~ msgstr "Adicionar Novo"
+
+#, fuzzy
+#~| msgid "Duplicate Post"
+#~ msgid "Duplicate layout"
+#~ msgstr "Duplicar Post"
+
+#, fuzzy
+#~| msgid "Delete Post"
+#~ msgid "Delete Layout"
+#~ msgstr "Deletar postagem"
+
+#, fuzzy
+#~| msgid "Duplicate Post"
+#~ msgid "Duplicate Layout"
+#~ msgstr "Duplicar Post"
+
+#, fuzzy
+#~| msgid "Add New Item"
+#~ msgid "Add New Layout"
+#~ msgstr "Adicionar Novo Post Type"
+
+#, fuzzy
+#~| msgid "Options"
+#~ msgid "Caption"
+#~ msgstr "Opções"
+
+#, fuzzy
+#~| msgid "Add New"
+#~ msgid "Add row"
+#~ msgstr "Adicionar Novo"
+
+#, fuzzy
+#~| msgid "Duplicate"
+#~ msgid "Duplicate row"
+#~ msgstr "Duplicar"
+
+#, fuzzy
+#~| msgid "Options"
+#~ msgid "Options Updated"
+#~ msgstr "Opções"
+
+#~ msgid "Open Graph image"
+#~ msgstr "Open Graph imagem"
+
+#~ msgid "Favicon"
+#~ msgstr "Favicon"
+
+#~ msgid "Send an image with 32px wide per 32px height."
+#~ msgstr "Envie uma imagem com 32px de largura por 32px de altura."
+
+#~ msgid ""
+#~ "Send an image with 57px width per 57px height. Send an image with the "
+#~ "extension PNG."
+#~ msgstr ""
+#~ "Envie uma imagem com 57px de largura por 57px de altura. Envie uma imagem "
+#~ "com a extensão PNG."
+
+#~ msgid ""
+#~ "Send an image with 60px width per 60px height. Send an image with the "
+#~ "extension PNG."
+#~ msgstr ""
+#~ "Envie uma imagem com 60px de largura por 60px de altura. Envie uma imagem "
+#~ "com a extensão PNG."
+
+#~ msgid ""
+#~ "Send an image with 72px width per 72px height. Send an image with the "
+#~ "extension PNG."
+#~ msgstr ""
+#~ "Envie uma imagem com 72px de largura por 72px de altura. Envie uma imagem "
+#~ "com a extensão PNG."
+
+#~ msgid ""
+#~ "Send an image with 76px width per 76px height. Send an image with the "
+#~ "extension PNG."
+#~ msgstr ""
+#~ "Envie uma imagem com 76px de largura por 76px de altura. Envie uma imagem "
+#~ "com a extensão PNG."
+
+#~ msgid ""
+#~ "Send an image with 114px width per 114px height. Send an image with the "
+#~ "extension PNG."
+#~ msgstr ""
+#~ "Envie uma imagem com 114px de largura por 114px de altura. Envie uma "
+#~ "imagem com a extensão PNG."
+
+#~ msgid ""
+#~ "Send an image with 120px width per 120px height. Send an image with the "
+#~ "extension PNG."
+#~ msgstr ""
+#~ "Envie uma imagem com 120px de largura por 120px de altura. Envie uma "
+#~ "imagem com a extensão PNG."
+
+#~ msgid ""
+#~ "Send an image with 144px width per 144px height. Send an image with the "
+#~ "extension PNG."
+#~ msgstr ""
+#~ "Envie uma imagem com 144px de largura por 144px de altura. Envie uma "
+#~ "imagem com a extensão PNG."
+
+#~ msgid ""
+#~ "Send an image with 152px width per 152px height. Send an image with the "
+#~ "extension PNG."
+#~ msgstr ""
+#~ "Envie uma imagem com 152px de largura por 152px de altura. Envie uma "
+#~ "imagem com a extensão PNG."
+
+#~ msgid ""
+#~ "Send an image with 180px width per 180px height. Send an image with the "
+#~ "extension PNG."
+#~ msgstr ""
+#~ "Envie uma imagem com 180px de largura por 180px de altura. Envie uma "
+#~ "imagem com a extensão PNG."
+
+#~ msgid ""
+#~ "Send an image with 192px width per 192px height. Send an image with the "
+#~ "extension PNG."
+#~ msgstr ""
+#~ "Envie uma imagem com 192px de largura por 192px de altura. Envie uma "
+#~ "imagem com a extensão PNG."
+
+#~ msgid ""
+#~ "Send an image with 96px width per 96px height. Send an image with the "
+#~ "extension PNG."
+#~ msgstr ""
+#~ "Envie uma imagem com 96px de largura por 96px de altura. Envie uma imagem "
+#~ "com a extensão PNG."
+
+#~ msgid ""
+#~ "Send an image with 16px width per 16px height. Send an image with the "
+#~ "extension PNG."
+#~ msgstr ""
+#~ "Envie uma imagem com 16px de largura por 16px de altura. Envie uma imagem "
+#~ "com a extensão PNG."
