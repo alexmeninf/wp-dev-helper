@@ -3,6 +3,7 @@
 if (!defined('ABSPATH'))
   exit; // Exit if accessed directly.
 
+require_once PLUGINPATH . 'includes/wpdh-simple_html_dom.php';
 
 if (!class_exists('WPDH_PWA')) :
 
@@ -65,10 +66,8 @@ if (!class_exists('WPDH_PWA')) :
       try {
         if ($op_files == false || $regenerate) {
           if (is_writable($this->path_file)) {
-            require_once PLUGINPATH . 'includes/wpdh-simple_html_dom.php';
 
-            // $url = get_home_url();
-            $url            = 'https://revistasaudevida.com.br/';
+            $url = get_home_url();
             $website        = file_get_html($url);
             $offiline_files = "'./', ";
 
@@ -76,7 +75,7 @@ if (!class_exists('WPDH_PWA')) :
               $offiline_files .= "'" . $stylesheet->href . "', ";
             }
 
-            foreach ($website->find('script[src*="revistasaudevida.com.br"]') as $script) {
+            foreach ($website->find('script[src*="'.$url.'"])') as $script) {
               $offiline_files .= "'" . $script->src . "', ";
             }
 

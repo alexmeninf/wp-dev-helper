@@ -75,7 +75,7 @@ $wpdh->developersWPHeadMetas();
 $wpdh->developersWPHeadMetaThemeColor();
 $wpdh->developersWPHeadFavicon();
 $wpdh->developersWPHeadOpenGraph();
-$wpdh->developersWPHeadManifest();
+// $wpdh->developersWPHeadManifest(); /** PWA Desativado: funcionalidades em construção ainda */
 $wpdh->developersTemplateSettingsFormGenerator();
 $wpdh->developersOthersDuplicate();
 $wpdh->developersAdminPanelComments();
