@@ -12,3 +12,8 @@ Thumbs.db
 ###########
 /thumb/cache/*.touch
 /thumb/cache/*.txt
+
+
+# Aquivos modificaveis por site
+includes/form-generator/mail/send.php
+includes/form-generator/mail/TBodyHTML.php

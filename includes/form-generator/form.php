@@ -359,3 +359,33 @@ function split_options($values)
 
   return $options;
 }
+
+/**
+ * 
+ */
+function wpdh_create_db_forms() 
+{
+	global $wpdb;
+  
+  $version = get_option( 'wp_dev_helper_version', WPDEVHELPER_VERSION );
+	$charset_collate = $wpdb->get_charset_collate();
+	$table_name = $wpdb->prefix . WPDEVHELPER_PREFIX_DB . 'form_data';
+
+	$sql = "CREATE TABLE IF NOT EXISTS $table_name (
+		id mediumint(9) NOT NULL AUTO_INCREMENT,
+    post_id BIGINT(20) UNSIGNED NOT NULL,
+    form_data longtext NOT NULL,
+		send_date datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
+    PRIMARY KEY  (id),
+    CONSTRAINT Constr_Unique_FormID UNIQUE(id),
+    CONSTRAINT Constr_Unique_PostID UNIQUE( post_id ),
+    CONSTRAINT Constr_My_FormsData
+    FOREIGN KEY (`post_id`) REFERENCES ".$wpdb->prefix."posts (`ID`) ON DELETE CASCADE ON UPDATE CASCADE
+	) $charset_collate;";
+
+	require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+
+	dbDelta( $sql );
+}
+
+wpdh_create_db_forms();

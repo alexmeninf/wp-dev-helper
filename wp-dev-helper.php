@@ -17,8 +17,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Informations
  */
+
+// Versão do plugin
 define('WPDEVHELPER_VERSION', '2.2.0');
+ // Prefixo para o banco de dados
+define('WPDEVHELPER_PREFIX_DB', 'wpdh_');
+// Repositório de origem
 define('WPDEVHELPER_REPOSITORY', 'https://github.com/alexmeninf/wp-dev-helper');
+// Versão mínima do wordpress para instalação 
 define('WPDEVHELPER__MINIMUM_WP_VERSION', '5.8');
 
 // Directories

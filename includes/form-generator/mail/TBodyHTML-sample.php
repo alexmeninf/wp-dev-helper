@@ -22,18 +22,26 @@ class TBodyHTML
    *
    * @param  mixed $content
    */
-  public function getContent($content) {
+  public function getContent($data_content)
+  {
 
-    $name  = $content['name'] != '' ? $content['name'] : '<i>Não informado</i>';
-    $email = $content['email'] != '' ? $content['email'] : '<i>Não informado</i>';
-    $phone = $content['phone'] != '' ? $content['phone'] : '<i>Não informado</i>';
-    $message = $content['message'] != '' ? $content['message'] : '<i>Não informado</i>';
+    $body = '';
+    foreach ($data_content as $key => $value) {
+      if (!empty($value)) {
+        if (is_array($value)) {
+          $body .= '<p><b>' . $key . '</b>';
+          foreach ($value as $url) {
+            $body .= '<br>(' . $url .')';
+          }
+          $body .= '</p>';
+        } else {
+          $body .= '<p><b>' . $key . '</b> ' . $value . ' </p>';
+        }
+      }
+    }
 
-    $body_html = '<h2 class="title">Dados recebidos:</h2>
-      <p><b>Nome:</b> ' . $name . '</p>
-      <p><b>E-mail:</b> ' . $email . '</p>
-      <p><b>Telefone de contato:</b> ' . $phone . '</p>
-      <p><b>Mensagem:</b> ' . $message . '</p>';
+    $body_html = '<h2 class="title">Dados recebidos:</h2>';
+    $body_html .= $body;
 
     $html = '<html>
       <head>
