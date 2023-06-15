@@ -3,7 +3,7 @@
  * Plugin Name: WP Dev Helper
  * Plugin URI: https://github.com/alexmeninf/wp-dev-helper
  * Description: An awesome plugin that help WordPress developers to develop their themes faster than ever.
- * Version: 2.2.0
+ * Version: 2.2.1
  * License: GPL
  * Author: Alexandre Menin
  * Author URI: https://github.com/alexmeninf
@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Informations
  */
-define('WPDEVHELPER_VERSION', '2.2.0');
+define('WPDEVHELPER_VERSION', '2.2.1');
 define('WPDEVHELPER_REPOSITORY', 'https://github.com/alexmeninf/wp-dev-helper');
 define('WPDEVHELPER__MINIMUM_WP_VERSION', '5.8');
 
@@ -48,7 +48,7 @@ require ( PLUGINPATH . 'includes/class.notices.php' );
 /**
  * ACF PRO
  */
-if (!is_plugin_active('advanced-custom-fields-pro/acf.php')) {  
+if (!is_plugin_active('advanced-custom-fields-pro/acf.php')) {
   define('ACF_LITE', false);
   require_once PLUGINPATH . 'includes/advanced-custom-fields-pro/acf.php';
   include_once PLUGINPATH . 'includes/acf-code-field/acf-code-field.php';
@@ -116,7 +116,7 @@ function admin_header_styles()
  */
 add_filter('admin_enqueue_scripts', 'admin_footer_scripts');
 function admin_footer_scripts()
-{  
+{
   wp_enqueue_script('wpdh-script', PLUGINROOT . '/assets/js/wpdh-scripts.js', array(), '1.1');
 
   wp_localize_script(
@@ -138,7 +138,7 @@ function wpdh_add_type( $wp_get_mime_types ) {
   if (current_user_can('manage_options')) {
     $wp_get_mime_types['svg'] = 'image/svg+xml';
   }
-  
+
   return $wp_get_mime_types;
 }
 

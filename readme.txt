@@ -27,6 +27,8 @@ From your WordPress dashboard
 
 == Changelog ==
 
+= 2.2.1 = 13/05/2023
+* Feat: Remove PHPMailer, agora ele vai ficar integrado no theme WP starter theme
 
 = 2.2.0 = 19/05/2022
 * Feat: Implementado suporte para uso do Progressive web app.

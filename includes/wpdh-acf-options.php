@@ -2656,7 +2656,7 @@ function my_acf_add_local_field_groups() {
         ),
         array(
           'key' => 'field_sdf64dsf44',
-          'label' => __('Form generator', 'wpdevhelper') . ' (Beta)',
+          'label' => __('Form generator', 'wpdevhelper'),
           'name' => 'wpdevhelperTemplateSettings-form_generator',
           'type' => 'radio',
           'instructions' => __('Quickly create forms to place in your template.', 'wpdevhelper'),
@@ -2796,7 +2796,7 @@ function my_acf_add_local_field_groups() {
             'class' => '',
             'id' => '',
           ),
-        ),   
+        ),
         array(
           'key' => 'field_587fb19397e05',
           'label' => __('Custom CSS', 'wpdevhelper'),
@@ -3244,7 +3244,7 @@ function my_acf_add_local_field_groups() {
     //         'class' => '',
     //         'id' => '',
     //       ),
-    //     ),   
+    //     ),
     //   ),
     //   'location' => array(
     //     array(

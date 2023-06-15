@@ -1,15 +1,15 @@
-<?php 
+<?php
 
-if ( ! defined( 'ABSPATH' ) ) 
-	exit;
+if (!defined('ABSPATH'))
+  exit;
 
 require PLUGINPATH . '/includes/form-generator/acf-options.php';
 require PLUGINPATH . '/includes/form-generator/template-form.php';
 
-/**  
- * 
+/**
+ *
  * Register Custom Post Type
- * 
+ *
  */
 function post_type_generator_form()
 {
@@ -53,9 +53,9 @@ add_action('init', 'post_type_generator_form', 0);
 
 
 /**
- * 
- * Display custom column shortcode 
- * 
+ *
+ * Display custom column shortcode
+ *
  * */
 add_filter('manage_generator_form_posts_columns', 'set_custom_edit_generator_form_columns');
 add_action('manage_generator_form_posts_custom_column', 'custom_generator_form_column', 10, 2);
@@ -79,9 +79,9 @@ function custom_generator_form_column($column, $post_id)
 
 
 /**
- * 
+ *
  * Register shortcode
- * 
+ *
  */
 function theme_form_shortcode($atts, $content = null, $tag)
 {
@@ -110,7 +110,7 @@ function theme_form_shortcode($atts, $content = null, $tag)
     $html .= wpdh_js_clear_input();
 
   endif;
-  
+
   wp_reset_query();
 
   return $html;
@@ -120,16 +120,16 @@ add_shortcode('form_template', 'theme_form_shortcode');
 
 
 /**
- * 
+ *
  * Verifica a quantidade de shortcodes na página
- * 
+ *
  */
 function mf_count_shortcode_in_page()
 {
   global $page;
   static $i = 1;
 
-  $spp = 100; // Limite de shortcodes na página.  
+  $spp = 100; // Limite de shortcodes na página.
   $ii = $i + (($page - 1) * $spp);
   $quantity = $ii;
   $i++;
@@ -139,9 +139,9 @@ function mf_count_shortcode_in_page()
 
 
 /**
- * 
+ *
  * Scripts necessários para envio e validação.
- * 
+ *
  */
 function wpdh_js_clear_input()
 {
@@ -154,6 +154,7 @@ function wpdh_js_clear_input()
           switch (this.type) {
             case 'password':
             case 'text':
+            case 'url':
             case 'textarea':
             case 'file':
             case 'select-one':
@@ -199,26 +200,27 @@ function input($name, $id, $type, $is_required = false, $value = '', $custom_cla
   // Veirificar valores
   $required = $is_required ? 'required' : '';
 
+  $html_required = $is_required ? '<sup class="text-danger">*</sup>' : '';
+
   // Verificar parâmetros passado na url ou pelo banco de dados
   // Todo paramentro na url do formulário deve ser no padrão: f[nome_do_campo], para evitar confitos.
-  if ( $enable_parameter ) {
-    $received_parameter = isset($_GET['f' . $id]) && !empty($_GET['f' . $id]) ? esc_attr($_GET['f' . $id]) : $value;
+  if ($enable_parameter) {
+    $received_parameter = isset($_GET['f' . $id]) && !empty($_GET['f' . $id]) ? esc_attr($_GET['f' . $id]) : esc_attr($value);
   } else {
-    $received_parameter = $value;
+    $received_parameter = esc_attr($value);
   }
 
   if ($type == 'hidden') :
 
-    $html .= '<input type="hidden" id="'. $id .'" name="'. $id .'" value="'. $received_parameter .'" '. $attributes .'>';
+    $html .= '<input type="hidden" id="' . $id . '" name="' . $id . '" value="' . $received_parameter . '" ' . $attributes . '>';
 
   elseif ($type == 'textarea') :
 
-    $html_required = $is_required ? '<sup class="text-danger">*</sup>' : '';
-    $html .= '<label class="form-group '. $custom_class .'">
-      <textarea id="'. $id .'" name="'. $id .'" placeholder="&nbsp;" '. $required .' '. $attributes .'>'. $received_parameter .'</textarea>
+    $html .= '<label class="form-group ' . $custom_class . '">
+      <textarea id="' . $id . '" name="' . $id . '" placeholder="&nbsp;" ' . $required . ' ' . $attributes . '>' . $received_parameter . '</textarea>
       <span class="txt">
-        '. $name .'
-        '. $html_required .'
+        ' . $name . '
+        ' . $html_required . '
       </span>
       <span class="bar"></span>
     </label>';
@@ -236,11 +238,11 @@ function input($name, $id, $type, $is_required = false, $value = '', $custom_cla
       $args = preg_split('/\:/', $values);
       $attr = array_key_exists(2, $args) ? $args[2] : '';
 
-      if ( $enable_parameter ) {
+      if ($enable_parameter) {
         if (isset($_GET['f' . $id]) && !empty($_GET['f' . $id]) && $_GET['f' . $id] == trim($args[0])) {
           $has_param = true;
         }
-      }      
+      }
 
       if (strpos($attr, 'selected') === true) {
         $has_any_selected = true;
@@ -248,12 +250,12 @@ function input($name, $id, $type, $is_required = false, $value = '', $custom_cla
     }
 
     // Exibir opções
-    foreach ($options as $i=>$values) {
+    foreach ($options as $i => $values) {
       // Separar cada campo da opção
       $args = preg_split('/\:/', $values);
       // Atributos
       $attr = array_key_exists(2, $args) ? $args[2] : '';
-      
+
       if ($has_param) {
         if ($_GET['f' . $id] == trim($args[0])) {
           // Adicionar seleção
@@ -263,27 +265,27 @@ function input($name, $id, $type, $is_required = false, $value = '', $custom_cla
         } else {
           // remover seleção de outros
           $attr = str_replace('selected="selected"', '', $attr);
-          $attr = str_replace('selected', '', $attr);        
+          $attr = str_replace('selected', '', $attr);
         }
       }
 
       if ($i === 0) {
         $op_default = !$has_param && !$has_any_selected ? 'selected' : '';
-        $html .= '<option value="" disabled '.$op_default.'>' . $name . '</option>';
+        $html .= '<option value="" disabled ' . $op_default . '>' . $name . '</option>';
       }
-      
+
       // Exibir opção
       $html .= '<option value="' . trim($args[0]) . '" ' . trim($attr) . '>' . trim($args[1]) . '</option>';
     }
     $html .= '</select>';
 
-  elseif ($type == 'radio') :
+  elseif ($type == 'radio' || $type == 'checkbox') :
 
     $options = split_options($value);
 
     // Verificar se botão foi checado pela url
     $has_param = false;
-    if ( $enable_parameter ) {
+    if ($enable_parameter) {
       foreach ($options as $values) {
         $args = preg_split('/\:/', $values);
         $attr = array_key_exists(2, $args) ? $args[2] : '';
@@ -291,10 +293,12 @@ function input($name, $id, $type, $is_required = false, $value = '', $custom_cla
         if (isset($_GET['f' . $id]) && !empty($_GET['f' . $id]) && $_GET['f' . $id] == trim($args[0])) {
           $has_param = true;
         }
-      }      
+      }
     }
 
-    foreach ($options as $i=>$values) {
+    $html .= '<div class="title-input-' . $type . '">' . $name . ' ' . $html_required . '</div>';
+
+    foreach ($options as $i => $values) {
       // Separar cada campo da opção
       $args = preg_split('/\:/', $values);
       // Atributos
@@ -309,25 +313,36 @@ function input($name, $id, $type, $is_required = false, $value = '', $custom_cla
         } else {
           // remover verificação de outros
           $attr = str_replace('checked="checked"', '', $attr);
-          $attr = str_replace('checked', '', $attr);        
+          $attr = str_replace('checked', '', $attr);
         }
       }
 
+      // Salva no value da input um array com o valor e o nome formatado
+      $valueInput = htmlspecialchars(
+        json_encode(
+          array(
+            'value' => trim($args[0]),
+            'name' => trim($args[1]),
+          )
+        ),
+        ENT_QUOTES,
+        'UTF-8'
+      );
+
       // Exibir opção
-      $html .= '<div class="form-check radio ' . $custom_class . '">';
-      $html .= '<input type="radio" id="' . $id . $i . '" value="' . trim($args[0]) . '" name="' . $id . '" class="form-check-input" ' . $attr . '>';
-      $html .= '<label class="form-check-label" for="' . trim($args[0]) . '">' . trim($args[1]) . '</label>';
+      $html .= '<div class="form-check ' . $type . ' ' . $custom_class . '">';
+      $html .= '<input type="' . $type . '" id="' . $id . $i . '" value="' . $valueInput . '" name="' . $id . '" class="form-check-input" ' . $attr . '>';
+      $html .= '<label class="form-check-label" for="' . $id . $i . '">' . trim($args[1]) . '</label>';
       $html .= '</div>';
     }
 
   else :
 
-    $html_required = $is_required ? '<sup class="text-danger">*</sup>' : '';
-    $html .= '<label class="form-group '. $custom_class .'">
-      <input type="'. $type .'" id="'. $id .'" name="'. $id .'" value="'. $received_parameter .'" placeholder="&nbsp;" '. $required .' '. $attributes .'>
+    $html .= '<label class="form-group ' . $custom_class . '">
+      <input type="' . $type . '" id="' . $id . '" name="' . $id . '" value="' . $received_parameter . '" placeholder="&nbsp;" ' . $required . ' ' . $attributes . '>
       <span class="txt">
-        '. $name .'
-        '. $html_required .'
+        ' . $name . '
+        ' . $html_required . '
       </span>
       <span class="bar"></span>
     </label>';
@@ -339,7 +354,7 @@ function input($name, $id, $type, $is_required = false, $value = '', $custom_cla
 
 
 /**
- * split_options 
+ * split_options
  *
  * @param  mixed $values
  * @return array
