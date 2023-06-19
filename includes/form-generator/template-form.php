@@ -16,6 +16,7 @@ function wpdh_get_form_code()
 
   $html = '';
   $field_list = array('values' => array());
+  $has_file = false;
 
   /**
    * API para envio de e-mail.
@@ -24,7 +25,8 @@ function wpdh_get_form_code()
   $api = get_field('api_url') != '' ? '\'' . esc_url(get_field('api_url')) . '\'' : 'ajaxURL';
 
   // parametros para enviar para a função no tema.
-  $parameters_data = trim(get_field('api_url')) != '' ? '' : 'action: \'save_new_form_data\',';
+  $actionName = '\'save_new_form_data\'';
+  $parameters_data = trim(get_field('api_url')) != '' ? '' : 'action: ' . $actionName . ',';
 
   // Classes do formulário
   $form_class = get_field('custom_form_class') ? get_field('custom_form_class') : '';
@@ -36,21 +38,31 @@ function wpdh_get_form_code()
   $subject = get_field('subject_email') ? "'" . get_field('subject_email') . "'" : "'Novo e-mail recebido'";
 
   // Ajax data com os dados do formulário
+  // Não é permitida quando possui input tipo file no formulário, pois precisa usar o "append".
   $ajax_data = get_field('ajax_data') ? trim(esc_attr(get_field('ajax_data'))) : '';
 
   // Localização do formulário
   $location = get_field('form_location');
+
+  // permitir receber valores pela url
+  $enable_parameter = get_field('enable_received_parameter');
 
   /**
    * Gerar formulário
    */
   if (have_rows('campos')) :
 
+    while (have_rows('campos')) :
+      the_row();
+      if (get_sub_field('input_type') == 'file') $has_file = true;
+    endwhile;
+
     $html .= '<form ';
     $html .= 'class="' . esc_attr($form_class) . ' ' . esc_attr(get_field('form_style')) . '" ';
     $html .= 'id="form-theme-' . get_the_ID() . '" ';
     $html .= 'name="form' . get_the_ID() . '" ';
     $html .= 'action="javascript:void(0);" ';
+    $html .= $has_file ? 'enctype="multipart/form-data" ' : '';
     $html .= 'method="POST">';
 
     while (have_rows('campos')) :
@@ -65,11 +77,11 @@ function wpdh_get_form_code()
         $input_value  = get_sub_field('input_value');
         $custom_class = get_sub_field('class_name');
         $attributes   = get_sub_field('attributes');
-        $enable_parameter = get_field('enable_received_parameter');
+        $upload_multiple_files = get_sub_field('upload_multiple_files');
 
         array_push($field_list['values'], $input_name);
 
-        $html .= input($input_name, $input_id, $input_type, $is_required, $input_value, $custom_class, $attributes, $enable_parameter);
+        $html .= input($input_name, $input_id, $input_type, $is_required, $input_value, $custom_class, $attributes, $enable_parameter, $upload_multiple_files);
       else :
 
         $html .= '<div class="title-form-group">' . get_sub_field('group_title') . '</div>';
@@ -109,9 +121,6 @@ function wpdh_get_form_code()
       }
     ";
 
-    // Verificar se existe algum campo de arquivo
-    $has_file = false;
-
     while (have_rows('campos')) :
       the_row();
 
@@ -122,7 +131,6 @@ function wpdh_get_form_code()
 
       // File type
       if ($input_type == 'file') :
-        $has_file = true;
         $html .= "const files_" . $id . " = $('input[name=" . $id . "]')[0].files;";
       // Radio type
       elseif ($input_type == 'radio') :
@@ -147,11 +155,11 @@ function wpdh_get_form_code()
 
       if (get_sub_field('display') == 'title') continue;
 
-      if (get_sub_field('is_required')) :
-        $id   = get_sub_field('input_id');
-        $name = get_sub_field('input_name');
-        $input_type  = get_sub_field('input_type');
+      $id   = get_sub_field('input_id');
+      $name = get_sub_field('input_name');
+      $input_type  = get_sub_field('input_type');
 
+      if (get_sub_field('is_required')) :
         if ($input_type == 'file') :
           $html .= "if (files_" . $id . ".length === 0) {
             Swal.fire({
@@ -174,15 +182,53 @@ function wpdh_get_form_code()
         endif;
         $count_requireds++;
       endif;
+
+      if ($input_type == 'file') :
+        $upload_multiple_files = get_sub_field('upload_multiple_files');
+        $upload_max_files = get_sub_field('upload_max_files');
+
+        if ($upload_multiple_files) :
+          $html .= "if (files_" . $id . ".length > " . $upload_max_files . ") {
+            Swal.fire({
+              type: 'warning',
+              title: 'Oops...',
+              html: '" . sprintf(__("You can only upload a maximum of <b>%s</b> files", "wpdevhelper"), $upload_max_files) . "'
+            });
+          } else ";
+        endif;
+      endif;
     endwhile;
 
     $html .= $count_requireds > 0 ? '{' : '';
 
     // Send informations
     $html .= "const btnForm = form" . get_the_ID() . " + ' button[type=submit]';";
+    $html .= "const serializeData = $(form" . get_the_ID() . ").serializeArray();";
+
+    // Parametros ajax
+    $paramsFile = '';
+    $dataAjax = '';
+    $enableSendEmail = '';
+
+    if (get_field('enable_send_email')) {
+      if ($has_file) {
+        $enableSendEmail  = "formData.append('enable_email', true);";
+        $enableSendEmail .= "formData.append('subject', " . $subject . ");";
+      } else {
+        $enableSendEmail = "enable_email: true, subject: " . $subject . ",";
+      }
+    }
 
     if ($has_file) :
       $html .= "const formData = new FormData();";
+      $html .= "
+        let fields;
+        $.each(serializeData, function(i, field) {
+          const value = getAllCheckedValue('[name=\"'+field.name+'\"]');
+          fields = {...fields, [field.name]: value};
+        });
+        formData.append('formData', JSON.stringify(fields));
+      ";
 
       while (have_rows('campos')) :
         the_row();
@@ -194,52 +240,54 @@ function wpdh_get_form_code()
 
         // Verificar o tipo da input
         if ($input_type == 'file') :
+          $upload_max_files = get_sub_field('upload_max_files') ?: 1;
+
+          // TODO: Precisa de melhoria para multiplias inputs com esse dado diferente
+          $html .= "formData.append('upload_max_files', ".$upload_max_files.");";
+
           $html .= "
             $.each(files_" . $id . ", function(i, file) {
               formData.append('files[]', file, file.name);
             });";
-        else :
-          $html .= "formData.append('" . $id . "', " . $id . ");";
         endif;
       endwhile;
+
+      $paramsFile = 'processData: false, contentType: false, ';
+      $html .= 'formData.append(\'action\', ' . $actionName . ');';
+      $html .= 'formData.append(\'form_id\', ' . get_the_ID() . ');';
+      $html .= 'formData.append(\'location\', \'' . $location . '\');';
+      $html .= $enableSendEmail;
+      $dataAjax = 'formData';
+
     else :
-      $html .= "const serializeData = $(form" . get_the_ID() . ").serializeArray();";
+
       $html .= "
-        let formData;
+        let fields;
         $.each(serializeData, function(i, field) {
           const value = getAllCheckedValue('[name=\"'+field.name+'\"]');
-          formData = {...formData, [field.name]: value};
+          fields = {...fields, [field.name]: value};
         });
-        ";
-    endif;
-
-    // Parametros para arquivo
-    $file = '';
-    if ($has_file) :
-      $file = 'processData: false, contentType: false,';
-    endif;
-
-    $enableSendEmail = '';
-    if (get_field('enable_send_email')) {
-      $enableSendEmail = "enable_email: true, subject: " . $subject . ",";
-    }
-
-    $html .= "$.ajax({
-      url: " . $api . ",
-      method: 'POST',
-      " . $file . "
-      data: {
+      ";
+      $dataAjax = "{
         " . $parameters_data . "
-        data: {...formData},
+        formData: {...fields},
         form_id: " . get_the_ID() . ",
         location: '" . $location . "',
         " . $enableSendEmail . "
         " . $ajax_data . "
-      },
+      }";
+    endif;
+
+    $html .= "$.ajax({
+      url: " . $api . ",
+      method: 'POST',
+      " . $paramsFile . "
+      data: " . $dataAjax . ",
       beforeSend: () => {
         $(btnForm).html('" . __("Sending...", "wpdevhelper") . "');
       }
     }).done(function(data) {
+      console.log(data)
       const response = JSON.parse(data);
 
       if (response.success) {
@@ -261,6 +309,7 @@ function wpdh_get_form_code()
       clear_form_elements(form" . get_the_ID() . ");
 
     }).fail(function(data) {
+      console.log(data)
       const response = JSON.parse(data);
 
       Swal.fire({

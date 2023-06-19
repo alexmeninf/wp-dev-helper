@@ -193,7 +193,7 @@ function wpdh_js_clear_input()
  * @param  boolean $enable_parameter - Permitir receber valores pela URL
  * @return void
  */
-function input($name, $id, $type, $is_required = false, $value = '', $custom_class = '', $attributes = '', $enable_parameter = false)
+function input($name, $id, $type, $is_required = false, $value = '', $custom_class = '', $attributes = '', $enable_parameter = false, $upload_multiple_files = false)
 {
   $html = '';
 
@@ -337,9 +337,11 @@ function input($name, $id, $type, $is_required = false, $value = '', $custom_cla
     }
 
   else :
+    $multiple = $upload_multiple_files ? 'multiple' : '';
+    $attrFile = $type === 'file' ? $multiple . ' name="' . $id . '"' : 'name="' . $id . '"';
 
     $html .= '<label class="form-group ' . $custom_class . '">
-      <input type="' . $type . '" id="' . $id . '" name="' . $id . '" value="' . $received_parameter . '" placeholder="&nbsp;" ' . $required . ' ' . $attributes . '>
+      <input type="' . $type . '" id="' . $id . '" ' . $attrFile . ' value="' . $received_parameter . '" placeholder="&nbsp;" ' . $required . ' ' . $attributes . '>
       <span class="txt">
         ' . $name . '
         ' . $html_required . '

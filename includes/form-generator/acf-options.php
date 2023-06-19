@@ -263,6 +263,75 @@ if (function_exists('acf_add_local_field_group')) :
 						'new_lines' => '',
 					),
 					array(
+						'key' => 'field_453bff098aa35',
+						'label' => 'Permitir upload de multiplos arquivos?',
+						'name' => 'upload_multiple_files',
+						'type' => 'true_false',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => array(
+							array(
+								array(
+									'field' => 'field_6138f181d1615',
+									'operator' => '==',
+									'value' => 'file',
+								),
+								array(
+									'field' => 'field_613a1644eff7f',
+									'operator' => '==',
+									'value' => 'input',
+								),
+							),
+						),
+						'wrapper' => array(
+							'width' => '16.66666666666667',
+							'class' => '',
+							'id' => '',
+						),
+						'message' => '',
+						'default_value' => 0,
+						'ui' => 0,
+						'ui_on_text' => '',
+						'ui_off_text' => '',
+					),
+					array(
+						'key' => 'field_d47f0b88ac153c',
+						'label' => 'Quantidade máxima de arquivos',
+						'name' => 'upload_max_files',
+						'type' => 'number',
+						'instructions' => 'Defina um número máximo de arquivos que podem ser enviados no formulário. Valor padrão: 10.',
+						'required' => 1,
+						'conditional_logic' => array(
+							array(
+								array(
+									'field' => 'field_6138f181d1615',
+									'operator' => '==',
+									'value' => 'file',
+								),
+								array(
+									'field' => 'field_613a1644eff7f',
+									'operator' => '==',
+									'value' => 'input',
+								),
+								array(
+									'field' => 'field_453bff098aa35',
+									'operator' => '==',
+									'value' => 1,
+								),
+							),
+						),
+						'wrapper' => array(
+							'width' => '16.66666666666667',
+							'class' => '',
+							'id' => '',
+						),
+						'message' => '',
+						'default_value' => 10,
+						'ui' => 0,
+						'ui_on_text' => '',
+						'ui_off_text' => '',
+					),
+					array(
 						'key' => 'field_6138f36dd1617',
 						'label' => 'Campo obrigatório?',
 						'name' => 'is_required',

@@ -1,11 +1,11 @@
 <?php
 
-if ( ! defined( 'ABSPATH' ) ) 
+if ( ! defined( 'ABSPATH' ) )
   exit; // Exit if accessed directly.
-  
+
 /**
  * Limpar nome de arquivo no upload
- * 
+ *
  * Sanitization test done with the filename:
  * ÄäÆæÀàÁáÂâÃãÅåªₐāĆćÇçÐđÈèÉéÊêËëₑƒğĞÌìÍíÎîÏïīıÑñⁿÒòÓóÔôÕõØøₒÖöŒœßŠšşŞ™ÙùÚúÛûÜüÝýÿŽž¢€‰№$℃°C℉°F⁰¹²³⁴⁵⁶⁷⁸⁹₀₁₂₃₄₅₆₇₈₉±×₊₌⁼⁻₋–—‑․‥…‧.png
  * @author toscho
@@ -13,7 +13,6 @@ if ( ! defined( 'ABSPATH' ) )
  */
 function devh_sanitize_filename( $filename )
 {
-
   $filename = html_entity_decode( $filename, ENT_QUOTES, 'utf-8' );
   $filename = devh_translit( $filename );
   $filename = devh_lower_ascii( $filename );
@@ -33,7 +32,7 @@ function devh_lower_ascii( $str )
 {
   $str   = strtolower( $str );
   $regex = array(
-    'pattern'     => '~([^a-z\d_.-])~', 
+    'pattern'     => '~([^a-z\d_.-])~',
     'replacement'  => ''
   );
   // Leave underscores, otherwise the taxonomy tag cloud in the
@@ -52,7 +51,7 @@ function devh_lower_ascii( $str )
 function devh_remove_doubles( $str )
 {
   $regex = array(
-    'pattern'     => '~([=+.])\1+~', 
+    'pattern'     => '~([=+.])\1+~',
     'replacement' => "\1"
   );
   return preg_replace( $regex['pattern'], $regex['replacement'], $str );
