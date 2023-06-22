@@ -11,7 +11,7 @@ add_action('wp_head', function () {
 
 function wpdh_get_form_code()
 {
-
+  global $location_page;
   global $post;
 
   $html = '';
@@ -42,7 +42,7 @@ function wpdh_get_form_code()
   $ajax_data = get_field('ajax_data') ? trim(esc_attr(get_field('ajax_data'))) : '';
 
   // Localização do formulário
-  $location = get_field('form_location');
+  $location = $location_page ?: get_field('form_location');
 
   // permitir receber valores pela url
   $enable_parameter = get_field('enable_received_parameter');

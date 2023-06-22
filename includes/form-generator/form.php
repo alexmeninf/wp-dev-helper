@@ -6,6 +6,8 @@ if (!defined('ABSPATH'))
 require PLUGINPATH . '/includes/form-generator/acf-options.php';
 require PLUGINPATH . '/includes/form-generator/template-form.php';
 
+global $location_page;
+
 /**
  *
  * Register Custom Post Type
@@ -83,13 +85,17 @@ function custom_generator_form_column($column, $post_id)
  * Register shortcode
  *
  */
-function theme_form_shortcode($atts, $content = null, $tag)
+function theme_form_shortcode($atts)
 {
+  global $location_page;
   $html = '';
 
   extract(shortcode_atts(array(
-    'id' => null
+    'id' => null,
+    'location' => null,
   ), $atts));
+
+  $location_page = $location ?: null;
 
   $args = array(
     'post_type'      => 'generator_form',
