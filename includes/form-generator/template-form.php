@@ -15,7 +15,7 @@ function wpdh_get_form_code()
   global $post;
 
   $html = '';
-  $field_list = array('values' => array());
+  $field_list = array('fields' => array());
   $has_file = false;
 
   /**
@@ -79,7 +79,12 @@ function wpdh_get_form_code()
         $attributes   = get_sub_field('attributes');
         $upload_multiple_files = get_sub_field('upload_multiple_files');
 
-        array_push($field_list['values'], $input_name);
+        array_push($field_list['fields'],
+          array(
+            'value' => $input_id,
+            'name' => $input_name
+          )
+        );
 
         $html .= input($input_name, $input_id, $input_type, $is_required, $input_value, $custom_class, $attributes, $enable_parameter, $upload_multiple_files);
       else :
@@ -96,9 +101,14 @@ function wpdh_get_form_code()
     // Lista com o título/nome de todos os campos.
     $html .= input(null, 'field_list', 'hidden', true, htmlspecialchars(json_encode($field_list), ENT_QUOTES, 'UTF-8'));
 
-    $html .= '<button type="submit" class="' . esc_attr(get_field('button_class')) . '">
-          <span>' . $text_btn . '</span>
-        </button>
+    $html .= '<div class="pull-left">
+          <button type="submit" class="' . esc_attr(get_field('button_class')) . '">
+            <span class="btn-wrap">
+              <span class="text-one">' . $text_btn . '</span>
+              <span class="text-two">' . $text_btn . '</span>
+            </span>
+          </button>
+        </div>
       </form>';
 
     // Abertura do script
@@ -243,7 +253,7 @@ function wpdh_get_form_code()
           $upload_max_files = get_sub_field('upload_max_files') ?: 1;
 
           // TODO: Precisa de melhoria para multiplias inputs com esse dado diferente
-          $html .= "formData.append('upload_max_files', ".$upload_max_files.");";
+          $html .= "formData.append('upload_max_files', " . $upload_max_files . ");";
 
           $html .= "
             $.each(files_" . $id . ", function(i, file) {
