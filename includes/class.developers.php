@@ -447,10 +447,10 @@ class Developers
 
     if (get_field('wpdevhelperTemplateSettings-form_generator', 'option') == 'yes') {
 
-      if ($theme_name == 'WP Starter Theme' && $v < '3.5.4' || $theme_name == 'WP Starter Theme Child' && $v < '1.2') {
+      if ($theme_name == 'WP Simple Theme' && $v < '2.1' || $theme_name !== 'WP Simple Theme') {
 
         add_action( 'admin_notices', function () {
-          $minimum_version = wp_get_theme()->get( 'Name' ) == 'WP Starter Theme' ? '3.5.4' : '1.2';
+          $minimum_version = '2.1';
           echo '<div class="notice notice-warning is-dismissible">';
           echo '<h3>WP Dev Helper v'.WPDEVHELPER_VERSION.'</h3>';
           echo '<p>';
