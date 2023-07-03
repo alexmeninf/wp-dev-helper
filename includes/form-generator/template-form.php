@@ -78,6 +78,7 @@ function wpdh_get_form_code()
         $custom_class = get_sub_field('class_name');
         $attributes   = get_sub_field('attributes');
         $upload_multiple_files = get_sub_field('upload_multiple_files');
+        $switchInput = get_sub_field('enable_ui_switch');
 
         array_push($field_list['fields'],
           array(
@@ -86,7 +87,7 @@ function wpdh_get_form_code()
           )
         );
 
-        $html .= input($input_name, $input_id, $input_type, $is_required, $input_value, $custom_class, $attributes, $enable_parameter, $upload_multiple_files);
+        $html .= input($input_name, $input_id, $input_type, $is_required, $input_value, $custom_class, $attributes, $enable_parameter, $upload_multiple_files, $switchInput);
       else :
 
         $html .= '<div class="title-form-group">' . get_sub_field('group_title') . '</div>';
@@ -99,16 +100,11 @@ function wpdh_get_form_code()
     endwhile;
 
     // Lista com o título/nome de todos os campos.
-    $html .= input(null, 'field_list', 'hidden', true, htmlspecialchars(json_encode($field_list), ENT_QUOTES, 'UTF-8'));
+    $html .= input(null, 'field_list', 'hidden', true, htmlspecialchars(json_encode($field_list, JSON_UNESCAPED_UNICODE), ENT_QUOTES, 'UTF-8'));
 
-    $html .= '<div class="pull-left">
-          <button type="submit" class="' . esc_attr(get_field('button_class')) . '">
-            <span class="btn-wrap">
-              <span class="text-one">' . $text_btn . '</span>
-              <span class="text-two">' . $text_btn . '</span>
-            </span>
-          </button>
-        </div>
+    $html .= '<button type="submit" class="' . esc_attr(get_field('button_class')) . '">
+          <span>' . $text_btn . '</span>
+        </button>
       </form>';
 
     // Abertura do script

@@ -197,9 +197,11 @@ function wpdh_js_clear_input()
  * @param  string  $custom_class     - Classe customizada
  * @param  string  $attributes       - Atributos para a tag do campo
  * @param  boolean $enable_parameter - Permitir receber valores pela URL
+ * @param boolean $upload_multiple_files - Permitir enviar varios arquivos no upload
+ * @param boolean $switchInput       - Estiliza o checkbox/radio como um switch input
  * @return void
  */
-function input($name, $id, $type, $is_required = false, $value = '', $custom_class = '', $attributes = '', $enable_parameter = false, $upload_multiple_files = false)
+function input($name, $id, $type, $is_required = false, $value = '', $custom_class = '', $attributes = '', $enable_parameter = false, $upload_multiple_files = false, $switchInput = false)
 {
   $html = '';
 
@@ -335,9 +337,17 @@ function input($name, $id, $type, $is_required = false, $value = '', $custom_cla
         'UTF-8'
       );
 
+      $switch = '';
+      if ($switchInput)
+        $switch = 'switch-checkbox';
+
       // Exibir opção
       $html .= '<div class="form-check ' . $type . ' ' . $custom_class . '">';
-      $html .= '<input type="' . $type . '" id="' . $id . $i . '" value="' . $valueInput . '" name="' . $id . '" class="form-check-input" ' . $attr . '>';
+      $html .= '<input type="' . $type . '" id="' . $id . $i . '" value="' . $valueInput . '" name="' . $id . '" class="form-check-input ' . $switch . '" ' . $attr . '>';
+
+      if ($switchInput)
+        $html .= '<label class="switch-button" for="' . $id . $i . '"></label>';
+
       $html .= '<label class="form-check-label" for="' . $id . $i . '">' . trim($args[1]) . '</label>';
       $html .= '</div>';
     }

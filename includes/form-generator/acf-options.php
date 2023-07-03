@@ -332,6 +332,50 @@ if (function_exists('acf_add_local_field_group')) :
 						'ui_off_text' => '',
 					),
 					array(
+						'key' => 'field_09f8b98ca3d6e',
+						'label' => 'Habilitar UI Switch?',
+						'name' => 'enable_ui_switch',
+						'type' => 'true_false',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => array(
+							array(
+								array(
+									'field' => 'field_6138f181d1615',
+									'operator' => '==',
+									'value' => 'checkbox',
+								),
+								array(
+									'field' => 'field_613a1644eff7f',
+									'operator' => '==',
+									'value' => 'input',
+								),
+							),
+							array(
+								array(
+									'field' => 'field_6138f181d1615',
+									'operator' => '==',
+									'value' => 'radio',
+								),
+								array(
+									'field' => 'field_613a1644eff7f',
+									'operator' => '==',
+									'value' => 'input',
+								),
+							),
+						),
+						'wrapper' => array(
+							'width' => '16.66666666666667',
+							'class' => '',
+							'id' => '',
+						),
+						'message' => '',
+						'default_value' => 0,
+						'ui' => 0,
+						'ui_on_text' => '',
+						'ui_off_text' => '',
+					),
+					array(
 						'key' => 'field_6138f36dd1617',
 						'label' => 'Campo obrigatório?',
 						'name' => 'is_required',
