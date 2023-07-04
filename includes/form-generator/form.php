@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * @version 4.0 - This file version
+ */
+
 if (!defined('ABSPATH'))
   exit;
 
@@ -155,7 +159,68 @@ function wpdh_js_clear_input()
   if (mf_count_shortcode_in_page() == 1) :
 
     return "<script>
-      function clear_form_elements(parentClass) {
+      getAllCheckedValue = (input) => {
+        if ($(input).length <= 1) return $(input).val();
+
+        const values = [];
+        $(input).each(function () {
+          const self = $(this);
+          if (self.is(':checked')) {
+            values.push(JSON.parse(self.val()));
+          }
+        });
+        return values;
+      }
+      scrollToElement = (input, id = null, type = null) => {
+        $('html, body').animate({
+          scrollTop: ($(input).offset().top - 250)
+        }, 1000);
+        $(input).focus();
+
+        if (['checkbox', 'radio', 'select'].includes(type)) {
+          if (type == 'select') $(input).css({borderColor: '#C62828'})
+
+          $('.title-input.' + id).css({color: '#C62828'})
+          $(input).on('click', function () {
+            if (type == 'select') $(input).css({borderColor: ''})
+
+            $('.title-input.' + id).css({color: ''})
+          });
+        } else {
+          $(input).css({borderColor: '#C62828'})
+          $(input + ' + .txt').css({color: '#C62828'})
+
+          $(input).on('keyup', function () {
+            $(input).css({borderColor: ''})
+            $(input + ' + .txt').css({color: ''})
+          });
+        }
+      }
+      toggleResetButton = (formID, elButton) => {
+        const serializeData = $(formID).serializeArray();
+        let hasValue = false;
+
+        $.each(serializeData, function(i, field) {
+          if (field.name === 'field_list') return;
+
+          const value = getAllCheckedValue('[name=\"'+field.name+'\"]');
+          if (Array.isArray(value) && value.length || value.trim() !== '') hasValue = true;
+        });
+
+        if ($('input[type=file]').length) {
+          $.each($('input[type=file]'), function(i, field) {
+            const value = $(field)[0].files;
+            if (value.length) hasValue = true;
+          });
+        }
+
+        if (hasValue) {
+          elButton.css('display', 'block');
+        } else {
+          elButton.css('display', 'none');
+        }
+      }
+      clear_form_elements = (parentClass) => {
         $(parentClass).find(':input').each(function() {
           switch (this.type) {
             case 'password':
@@ -189,19 +254,20 @@ function wpdh_js_clear_input()
 /**
  * input
  *
- * @param  string  $name             - Título da input
- * @param  string  $id               - Identificador
- * @param  string  $type             - Tipo do campo
- * @param  boolean $is_required      - Se é obrigatório ou não
- * @param  string  $value            - Valor padrão
- * @param  string  $custom_class     - Classe customizada
- * @param  string  $attributes       - Atributos para a tag do campo
- * @param  boolean $enable_parameter - Permitir receber valores pela URL
+ * @param string  $name                  - Título da input
+ * @param string  $id                    - Identificador
+ * @param string  $type                  - Tipo do campo
+ * @param boolean $is_required           - Se é obrigatório ou não
+ * @param string  $value                 - Valor padrão
+ * @param string  $custom_class          - Classe customizada
+ * @param string  $attributes            - Atributos para a tag do campo
+ * @param boolean $enable_parameter      - Permitir receber valores pela URL
  * @param boolean $upload_multiple_files - Permitir enviar varios arquivos no upload
- * @param boolean $switchInput       - Estiliza o checkbox/radio como um switch input
+ * @param boolean $switchInput           - Estiliza o checkbox/radio como um switch input
+ * @param boolean $inline_options_ui     - Exibe as opções de radio ou checkbox um do lado do outro
  * @return void
  */
-function input($name, $id, $type, $is_required = false, $value = '', $custom_class = '', $attributes = '', $enable_parameter = false, $upload_multiple_files = false, $switchInput = false)
+function input($name, $id, $type, $is_required = false, $value = '', $custom_class = '', $attributes = '', $enable_parameter = false, $upload_multiple_files = false, $switchInput = false, $inline_options_ui = false)
 {
   $html = '';
 
@@ -236,6 +302,8 @@ function input($name, $id, $type, $is_required = false, $value = '', $custom_cla
   elseif ($type == 'select') :
 
     $options = split_options($value);
+
+    $html .= '<div class="title-input ' . $id . '">' . $name . ' ' . $html_required . '</div>';
 
     $html .= '<select id="' . $id . '" name="' . $id . '" class="' . $custom_class . '">';
 
@@ -304,7 +372,10 @@ function input($name, $id, $type, $is_required = false, $value = '', $custom_cla
       }
     }
 
-    $html .= '<div class="title-input-' . $type . '">' . $name . ' ' . $html_required . '</div>';
+    $html .= '<div class="title-input ' . $id . '">' . $name . ' ' . $html_required . '</div>';
+
+    $is_group = $inline_options_ui ? ' input-group' : '';
+    $html .= '<div class="wrapper-' . $type . '-options' . $is_group . '">';
 
     foreach ($options as $i => $values) {
       // Separar cada campo da opção
@@ -342,7 +413,7 @@ function input($name, $id, $type, $is_required = false, $value = '', $custom_cla
         $switch = 'switch-checkbox';
 
       // Exibir opção
-      $html .= '<div class="form-check ' . $type . ' ' . $custom_class . '">';
+      $html .= '<div class="form-check ' . $custom_class . '">';
       $html .= '<input type="' . $type . '" id="' . $id . $i . '" value="' . $valueInput . '" name="' . $id . '" class="form-check-input ' . $switch . '" ' . $attr . '>';
 
       if ($switchInput)
@@ -351,6 +422,8 @@ function input($name, $id, $type, $is_required = false, $value = '', $custom_cla
       $html .= '<label class="form-check-label" for="' . $id . $i . '">' . trim($args[1]) . '</label>';
       $html .= '</div>';
     }
+
+    $html .= '</div>';
 
   else :
     $multiple = $upload_multiple_files ? 'multiple' : '';

@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * @version 4.1.0 - This file version
+ */
+
 // Exit if accessed directly
 if (!defined('ABSPATH'))
   exit;
@@ -79,15 +83,17 @@ function wpdh_get_form_code()
         $attributes   = get_sub_field('attributes');
         $upload_multiple_files = get_sub_field('upload_multiple_files');
         $switchInput = get_sub_field('enable_ui_switch');
+        $inline_options_ui = get_sub_field('inline_options_ui');
 
-        array_push($field_list['fields'],
+        array_push(
+          $field_list['fields'],
           array(
             'value' => $input_id,
             'name' => $input_name
           )
         );
 
-        $html .= input($input_name, $input_id, $input_type, $is_required, $input_value, $custom_class, $attributes, $enable_parameter, $upload_multiple_files, $switchInput);
+        $html .= input($input_name, $input_id, $input_type, $is_required, $input_value, $custom_class, $attributes, $enable_parameter, $upload_multiple_files, $switchInput, $inline_options_ui);
       else :
 
         $html .= '<div class="title-form-group">' . get_sub_field('group_title') . '</div>';
@@ -105,51 +111,53 @@ function wpdh_get_form_code()
     $html .= '<button type="submit" class="' . esc_attr(get_field('button_class')) . '">
           <span>' . $text_btn . '</span>
         </button>
+        <button type="reset" class="reset-button" style="display: none">
+          <span>' . __('Clear Form', 'wpdevhelper') . '</span>
+        </button>
       </form>';
 
     // Abertura do script
-    $html .= "<script>const form" . get_the_ID() . " = '#form-theme-" . get_the_ID() . "';";
+    $html .= "<script>";
+    $html .= "const form" . get_the_ID() . " = '#form-theme-" . get_the_ID() . "';";
+    $html .= "const resetButton = $(form" . get_the_ID() . " + ' .reset-button');";
+    $html .= "
+    $(form" . get_the_ID() . " + ' :input').on('keyup click change', function() {
+      toggleResetButton(form" . get_the_ID() . ", resetButton);
+    });
+    resetButton.on('click', function() {
+      resetButton.css('display', 'none');
+    });
+    ";
+
     $html .= "$(form" . get_the_ID() . ").find('input, select, textarea').prop('required', false);";
     $html .= "$(form" . get_the_ID() . ").on('submit', function(e) {";
     $html .= "e.preventDefault();";
-    $html .= "
-      getAllCheckedValue = (input) => {
-        if ($(input).length <= 1) return $(input).val();
-
-        const values = [];
-        $(input).each(function () {
-          const self = $(this);
-          if (self.is(':checked')) {
-            values.push(JSON.parse(self.val()));
-          }
-        });
-        return values;
-      }
-    ";
 
     while (have_rows('campos')) :
       the_row();
 
       if (get_sub_field('display') == 'title') continue;
 
-      $id = get_sub_field('input_id');
+      $id          = get_sub_field('input_id');
       $input_type  = get_sub_field('input_type');
+
+      $input_name = wpdh_get_field_name($input_type, $id);
 
       // File type
       if ($input_type == 'file') :
-        $html .= "const files_" . $id . " = $('input[name=" . $id . "]')[0].files;";
+        $html .= "const files_" . $id . " = $('" . $input_name . "')[0].files;";
       // Radio type
       elseif ($input_type == 'radio') :
-        $html .= "const " . $id . " = !!$('input[name=" . $id . "]:checked').val() ? $('input[name=" . $id . "]:checked').val() : '';";
+        $html .= "const " . $id . " = !!$('" . $input_name . ":checked').val() ? $('" . $input_name . ":checked').val() : '';";
       // Checkbox
       elseif ($input_type == 'checkbox') :
-        $html .= "const " . $id . " = !!$('input[name=" . $id . "]:checked').val() ? $('input[name=" . $id . "]:checked').val() : '';";
+        $html .= "const " . $id . " = !!$('" . $input_name . ":checked').val() ? $('" . $input_name . ":checked').val() : '';";
       // Select type
       elseif ($input_type == 'select') :
-        $html .= "const " . $id . " = $(this).find('select[name=" . $id . "] option').filter(':selected').val();";
+        $html .= "const " . $id . " = $(this).find('" . $input_name . " option').filter(':selected').val();";
       // Other types
       else :
-        $html .= "const " . $id . " = $(this).find('[name=" . $id . "]').val();";
+        $html .= "const " . $id . " = $(this).find('" . $input_name . "').val();";
       endif;
     endwhile;
 
@@ -165,9 +173,12 @@ function wpdh_get_form_code()
       $name = get_sub_field('input_name');
       $input_type  = get_sub_field('input_type');
 
+      $input_name = wpdh_get_field_name($input_type, $id);
+
       if (get_sub_field('is_required')) :
         if ($input_type == 'file') :
           $html .= "if (files_" . $id . ".length === 0) {
+            scrollToElement('" . $input_name . "')
             Swal.fire({
               type: 'warning',
               title: 'Oops...',
@@ -178,6 +189,7 @@ function wpdh_get_form_code()
         else :
 
           $html .= "if (" . $id . ".trim() == '') {
+            scrollToElement('" . $input_name . "', '" . $id . "', '" . $input_type . "')
             Swal.fire({
               type: 'warning',
               title: 'Oops...',
@@ -246,7 +258,8 @@ function wpdh_get_form_code()
 
         // Verificar o tipo da input
         if ($input_type == 'file') :
-          $upload_max_files = get_sub_field('upload_max_files') ?: 1;
+          $upload_multiple_files = get_sub_field('upload_multiple_files');
+          $upload_max_files = $upload_multiple_files ? get_sub_field('upload_max_files') : 1;
 
           // TODO: Precisa de melhoria para multiplias inputs com esse dado diferente
           $html .= "formData.append('upload_max_files', " . $upload_max_files . ");";
@@ -336,4 +349,15 @@ function wpdh_get_form_code()
   endif;
 
   return $html;
+}
+
+function wpdh_get_field_name($input_type, $id)
+{
+  $input_name = 'input';
+
+  if (in_array($input_type, ['select', 'textarea'])) {
+    $input_name = $input_type;
+  }
+
+  return $input_name . "[name=" . $id . "]";
 }

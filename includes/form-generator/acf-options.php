@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * @version 4.0 - This file version
+ */
+
 if (function_exists('acf_add_local_field_group')) :
 
 	acf_add_local_field_group(array(
@@ -376,6 +380,50 @@ if (function_exists('acf_add_local_field_group')) :
 						'ui_off_text' => '',
 					),
 					array(
+						'key' => 'field_4faa24d0b6f3da',
+						'label' => 'Exibir opções em linha?',
+						'name' => 'inline_options_ui',
+						'type' => 'true_false',
+						'instructions' => 'Exiba todas as opções nos espaços disponíveis entre a largura de cada opção, em vez de um embaixo do outro.',
+						'required' => 0,
+						'conditional_logic' => array(
+							array(
+								array(
+									'field' => 'field_6138f181d1615',
+									'operator' => '==',
+									'value' => 'checkbox',
+								),
+								array(
+									'field' => 'field_613a1644eff7f',
+									'operator' => '==',
+									'value' => 'input',
+								),
+							),
+							array(
+								array(
+									'field' => 'field_6138f181d1615',
+									'operator' => '==',
+									'value' => 'radio',
+								),
+								array(
+									'field' => 'field_613a1644eff7f',
+									'operator' => '==',
+									'value' => 'input',
+								),
+							),
+						),
+						'wrapper' => array(
+							'width' => '16.66666666666667',
+							'class' => '',
+							'id' => '',
+						),
+						'message' => '',
+						'default_value' => 0,
+						'ui' => 0,
+						'ui_on_text' => '',
+						'ui_off_text' => '',
+					),
+					array(
 						'key' => 'field_6138f36dd1617',
 						'label' => 'Campo obrigatório?',
 						'name' => 'is_required',
@@ -469,25 +517,6 @@ if (function_exists('acf_add_local_field_group')) :
 				),
 			),
 			array(
-				'key' => 'field_345d0eb89935',
-				'label' => 'Assunto do e-mail',
-				'name' => 'subject_email',
-				'type' => 'text',
-				'instructions' => 'Informe o título do assunto que será enviado no e-mail.',
-				'required' => 1,
-				'conditional_logic' => 0,
-				'wrapper' => array(
-					'width' => '',
-					'class' => '',
-					'id' => '',
-				),
-				'default_value' => '',
-				'placeholder' => 'Ex: Nova mensagem recebida',
-				'prepend' => '',
-				'append' => '',
-				'maxlength' => '',
-			),
-			array(
 				'key' => 'field_9f8bdda146300',
 				'label' => 'Localização do formulário',
 				'name' => 'form_location',
@@ -502,44 +531,6 @@ if (function_exists('acf_add_local_field_group')) :
 				),
 				'default_value' => '',
 				'placeholder' => 'Ex: Página de contato',
-				'prepend' => '',
-				'append' => '',
-				'maxlength' => '',
-			),
-			array(
-				'key' => 'field_6138f7c479584',
-				'label' => 'Texto do botão',
-				'name' => 'button_text',
-				'type' => 'text',
-				'instructions' => 'Texto no botão de envio.',
-				'required' => 0,
-				'conditional_logic' => 0,
-				'wrapper' => array(
-					'width' => '',
-					'class' => '',
-					'id' => '',
-				),
-				'default_value' => '',
-				'placeholder' => '',
-				'prepend' => '',
-				'append' => '',
-				'maxlength' => '',
-			),
-			array(
-				'key' => 'field_4d539abf470e',
-				'label' => 'Classes para o botão',
-				'name' => 'button_class',
-				'type' => 'text',
-				'instructions' => 'Estilize o botão com outras classes. Padrão <i>btn-theme btn-medium</i>',
-				'required' => 0,
-				'conditional_logic' => 0,
-				'wrapper' => array(
-					'width' => '',
-					'class' => '',
-					'id' => '',
-				),
-				'default_value' => 'btn-theme btn-medium',
-				'placeholder' => '',
 				'prepend' => '',
 				'append' => '',
 				'maxlength' => '',
@@ -586,6 +577,44 @@ if (function_exists('acf_add_local_field_group')) :
 					'id' => '',
 				),
 				'default_value' => 'd-flex flex-wrap',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'maxlength' => '',
+			),
+			array(
+				'key' => 'field_6138f7c479584',
+				'label' => 'Texto do botão',
+				'name' => 'button_text',
+				'type' => 'text',
+				'instructions' => 'Texto no botão de envio.',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'maxlength' => '',
+			),
+			array(
+				'key' => 'field_4d539abf470e',
+				'label' => 'Classes para o botão',
+				'name' => 'button_class',
+				'type' => 'text',
+				'instructions' => 'Estilize o botão com outras classes. Padrão <i>btn-theme btn-medium</i>',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => 'btn-theme btn-medium',
 				'placeholder' => '',
 				'prepend' => '',
 				'append' => '',
@@ -643,6 +672,33 @@ if (function_exists('acf_add_local_field_group')) :
 				'ui' => 0,
 				'ui_on_text' => '',
 				'ui_off_text' => '',
+			),
+			array(
+				'key' => 'field_345d0eb89935',
+				'label' => 'Assunto do e-mail',
+				'name' => 'subject_email',
+				'type' => 'text',
+				'instructions' => 'Informe o título do assunto que será enviado no e-mail.',
+				'required' => 1,
+				'conditional_logic' => array(
+					array(
+						array(
+							'field' => 'field_545308f9d9612',
+							'operator' => '==',
+							'value' => 1,
+						),
+					),
+				),
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'placeholder' => 'Ex: Nova mensagem recebida',
+				'prepend' => '',
+				'append' => '',
+				'maxlength' => '',
 			),
 			array(
 				'key' => 'field_06578aed0544c8bb5',
