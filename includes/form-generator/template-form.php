@@ -340,6 +340,7 @@ function wpdh_get_form_code()
 
     }).always(function() {
       $(btnForm).html('" . $text_btn . "');
+      resetButton.css('display', 'none');
     });";
 
     $html .= $count_requireds > 0 ? '}' : '';
