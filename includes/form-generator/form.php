@@ -265,9 +265,10 @@ function wpdh_js_clear_input()
  * @param boolean $upload_multiple_files - Permitir enviar varios arquivos no upload
  * @param boolean $switchInput           - Estiliza o checkbox/radio como um switch input
  * @param boolean $inline_options_ui     - Exibe as opções de radio ou checkbox um do lado do outro
+ * @param boolean $enable_tooltip        - Exibe um tooltip com o nome da input. Precisa do bootstrap.js e popper.js
  * @return void
  */
-function input($name, $id, $type, $is_required = false, $value = '', $custom_class = '', $attributes = '', $enable_parameter = false, $upload_multiple_files = false, $switchInput = false, $inline_options_ui = false)
+function input($name, $id, $type, $is_required = false, $value = '', $custom_class = '', $attributes = '', $enable_parameter = false, $upload_multiple_files = false, $switchInput = false, $inline_options_ui = false, $enable_tooltip = false)
 {
   $html = '';
 
@@ -290,7 +291,7 @@ function input($name, $id, $type, $is_required = false, $value = '', $custom_cla
 
   elseif ($type == 'textarea') :
 
-    $html .= '<label class="form-group ' . $custom_class . '">
+    $html .= '<label class="form-group ' . $custom_class . '" ' . show_tooltip($name, $enable_tooltip) . '>
       <textarea id="' . $id . '" name="' . $id . '" placeholder="&nbsp;" ' . $required . ' ' . $attributes . '>' . $received_parameter . '</textarea>
       <span class="txt">
         ' . $name . '
@@ -429,7 +430,7 @@ function input($name, $id, $type, $is_required = false, $value = '', $custom_cla
     $multiple = $upload_multiple_files ? 'multiple' : '';
     $attrFile = $type === 'file' ? $multiple . ' name="' . $id . '"' : 'name="' . $id . '"';
 
-    $html .= '<label class="form-group ' . $custom_class . '">
+    $html .= '<label class="form-group ' . $custom_class . '" ' . show_tooltip($name, $enable_tooltip) . '>
       <input type="' . $type . '" id="' . $id . '" ' . $attrFile . ' value="' . $received_parameter . '" placeholder="&nbsp;" ' . $required . ' ' . $attributes . '>
       <span class="txt">
         ' . $name . '
@@ -441,6 +442,13 @@ function input($name, $id, $type, $is_required = false, $value = '', $custom_cla
   endif;
 
   return $html;
+}
+
+function show_tooltip($name, $enable_tooltip)
+{
+  if (!$enable_tooltip) return '';
+
+  return 'data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="' . $name . '"';
 }
 
 

@@ -51,6 +51,9 @@ function wpdh_get_form_code()
   // permitir receber valores pela url
   $enable_parameter = get_field('enable_received_parameter');
 
+  // Exibe o tooltip na input
+  $enable_tooltip = get_field('enable_tooltip');
+
   /**
    * Gerar formulário
    */
@@ -93,7 +96,7 @@ function wpdh_get_form_code()
           )
         );
 
-        $html .= input($input_name, $input_id, $input_type, $is_required, $input_value, $custom_class, $attributes, $enable_parameter, $upload_multiple_files, $switchInput, $inline_options_ui);
+        $html .= input($input_name, $input_id, $input_type, $is_required, $input_value, $custom_class, $attributes, $enable_parameter, $upload_multiple_files, $switchInput, $inline_options_ui, $enable_tooltip);
       else :
 
         $html .= '<div class="title-form-group">' . get_sub_field('group_title') . '</div>';

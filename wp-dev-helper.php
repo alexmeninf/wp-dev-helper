@@ -3,7 +3,7 @@
  * Plugin Name: WP Dev Helper
  * Plugin URI: https://github.com/alexmeninf/wp-dev-helper
  * Description: An awesome plugin that help WordPress developers to develop their themes faster than ever.
- * Version: 2.2.1
+ * Version: 2.3
  * License: GPL
  * Author: Alexandre Menin
  * Author URI: https://github.com/alexmeninf
