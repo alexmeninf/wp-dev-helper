@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Informations
  */
-define('WPDEVHELPER_VERSION', '2.2.1');
+define('WPDEVHELPER_VERSION', '2.3');
 define('WPDEVHELPER_REPOSITORY', 'https://github.com/alexmeninf/wp-dev-helper');
 define('WPDEVHELPER__MINIMUM_WP_VERSION', '5.8');
 

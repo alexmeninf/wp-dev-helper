@@ -1,8 +1,8 @@
 <?php
 
-if ( ! defined( 'ABSPATH' ) ) 
+if ( ! defined( 'ABSPATH' ) )
   exit; // Exit if accessed directly.
-  
+
 /*====================================================
 =            REGISTER POST TYPE GENERATOR            =
 ====================================================*/
@@ -124,7 +124,7 @@ add_action('init', 'dashboard_widget_post_type', 0);
 ====================================================*/
 $postTypes = get_posts('post_type=new_post_type&posts_per_page=-1');
 if (count($postTypes) >= 1) {
-  foreach ($postTypes as $postType) {    
+  foreach ($postTypes as $postType) {
     /**
      * registrar post type
      */
@@ -187,11 +187,11 @@ if (count($postTypes) >= 1) {
       } else {
         $post_type_settings['has_archive'] = get_field('wpdevhelper-posttype-enable_archives', $postType->ID) === 'true' ? true : false;
       }
-      
+
       # Custom query
       if (get_field('wpdevhelper-posttype-query', $postType->ID) == 'custom') {
         $post_type_settings['query_var'] = get_field('wpdevhelper-posttype-custom_query', $postType->ID);
-      } 
+      }
 
       # Permalink Rewrite
       if (get_field('wpdevhelper-posttype-permalink_rewrite', $postType->ID) == 'false') {
@@ -210,7 +210,7 @@ if (count($postTypes) >= 1) {
       # Show in REST API
       if (get_field('wpdevhelper-show_in_rest_api', $postType->ID) == 'true') {
         $post_type_settings['show_in_rest'] = true;
-        
+
         if (trim(get_field('wpdevhelper-posttype-rest_base', $postType->ID)) != '') {
           $post_type_settings['rest_base'] = get_field('wpdevhelper-posttype-rest_base', $postType->ID);
         }
@@ -232,7 +232,7 @@ if (count($postTypes) >= 1) {
           'read_private_posts'    => get_field('wpdevhelper-posttype-read_private_posts', $postType->ID),
         );
       }
-      
+
       # Register post type
       register_post_type(
         get_field('wpdevhelper-posttype-post_type_key', $postType->ID),
@@ -244,12 +244,12 @@ if (count($postTypes) >= 1) {
 
 
 /**
- * 
- * Display custom column in post type 
- * 
+ *
+ * Display custom column in post type
+ *
  */
 
-add_filter('manage_new_post_type_posts_columns', function($columns) {      
+add_filter('manage_new_post_type_posts_columns', function($columns) {
   $columns['code'] = __('Code', 'wpdevhelper');
 
   return $columns;
@@ -260,24 +260,54 @@ add_action('manage_new_post_type_posts_custom_column', function($column, $post_i
 
   /**
    * HTML Symbols to scape
-   *  
+   *
    *  &#60; = <
-   *  &#62; = > 
+   *  &#62; = >
    *  &#x24; = $
    * */
-  $code = "&#60;?php 
+  $code = "&#60;?php
+  &#x24;posts_total    = new WP_Query(array('post_type' => '".$post_type_key."', 'posts_per_page' => -1));
+  &#x24;posts_count    = &#x24;posts_total->post_count;
+  &#x24;posts_per_page = 12;
+  &#x24;pages_count    = ceil(&#x24;posts_count / &#x24;posts_per_page);
+  &#x24;current_page   = (isset(&#x24;_GET['pg']) && (int)&#x24;_GET['pg'] > 1 && (int)&#x24;_GET['pg'] <= &#x24;pages_count) ? (int)&#x24;_GET['pg'] : 1;
+
   &#x24;args = array(
     'post_type'      => '".$post_type_key."',
-    'posts_per_page' => 12,
     'order'          => 'desc',
+    'posts_per_page' => &#x24;posts_per_page,
+    'paged' => &#x24;current_page,
   );
+
   &#x24;query = new WP_Query(&#x24;args);
+
   if (&#x24;query->have_posts()) : while (&#x24;query->have_posts()) : &#x24;query->the_post(); ?&#62;
-    
-    // Your code here
+
+    <div class=\"\">
+      &#60;?php if (has_post_thumbnail()) : ?&#62;
+        <a href=\"&#60;?php the_permalink() ?&#62\">
+          <img
+            src=\"&#60;?= get_the_post_thumbnail_url(get_the_ID(), 'medium') ?&#62;\"
+            alt=\"&#60;?php the_title() ?&#62;\"
+            loading=\"lazy\"
+          >
+        </a>
+      &#60;?php endif; ?&#62;
+
+      <a href=\"&#60;?php the_permalink() ?&#62\">
+        &#60;?php the_title() ?&#62
+      </a>
+
+      &#60;?php if ( has_excerpt() ) : ?&#62
+        &#60;?= wp_trim_excerpt() ?&#62
+      &#60;?php endif; ?&#62
+
+      &#60;?php // the_content() ?&#62
+      &#60;?php // the_field() ?&#62
+    </div>
 
   &#60;?php endwhile; endif; wp_reset_query(); ?&#62;";
-  
+
   switch ($column) {
     case 'code':
       echo '<textarea onfocus="this.select();" readonly="readonly" class="code-input-post" title="'.__('Copy the query code from this post type and paste it into your theme file.', 'wpdevhelper').'">' . $code . '</textarea>';
@@ -296,7 +326,7 @@ function addCustomImportButton()
   global $current_screen;
 
   // Not our post type, exit earlier
-  // You can remove this if condition if you don't have any specific post type to restrict to. 
+  // You can remove this if condition if you don't have any specific post type to restrict to.
   if ('new_post_type' != $current_screen->post_type) {
     return;
   }

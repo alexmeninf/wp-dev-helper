@@ -27,6 +27,9 @@ From your WordPress dashboard
 
 == Changelog ==
 
+= 2.3 = 21/07/2023
+* Feat: Melhoria no código após gerar um post_type
+
 = 2.2.1 = 13/05/2023
 * Feat: Remove PHPMailer, agora ele vai ficar integrado no theme WP starter theme
 
