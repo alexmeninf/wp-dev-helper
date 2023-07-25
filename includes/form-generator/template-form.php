@@ -306,7 +306,8 @@ function wpdh_get_form_code()
       " . $paramsFile . "
       data: " . $dataAjax . ",
       beforeSend: () => {
-        $(btnForm).html(loadingUI('me-3') + '" . __("Sending...", "wpdevhelper") . "');
+        $(btnForm).html('<i class=\"fa-duotone fa-loader fa-spin icon-before\"></i> " . __("Sending...", "wpdevhelper") . "');
+        $(btnForm).attr('disabled', true);
       }
     }).done(function(data) {
       console.log(data)
@@ -349,6 +350,7 @@ function wpdh_get_form_code()
 
     }).always(function() {
       $(btnForm).html('" . $text_btn . "');
+      $(btnForm).attr('disabled', false);
       resetButton.css('display', 'none');
     });";
 
