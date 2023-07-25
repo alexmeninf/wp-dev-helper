@@ -306,13 +306,16 @@ function wpdh_get_form_code()
       " . $paramsFile . "
       data: " . $dataAjax . ",
       beforeSend: () => {
-        $(btnForm).html('" . __("Sending...", "wpdevhelper") . "');
+        $(btnForm).html(loadingUI('me-3') + '" . __("Sending...", "wpdevhelper") . "');
       }
     }).done(function(data) {
       console.log(data)
       const response = JSON.parse(data);
 
       if (response.success) {
+        const audioSent = new Audio(rootpath() + '/assets/audio/whoosh.mp3');
+        audioSent.play();
+
         Swal.fire({
           title: '" . __("Sent!", "wpdevhelper") . "',
           html: `\${response.message}`,
@@ -333,6 +336,9 @@ function wpdh_get_form_code()
     }).fail(function(data) {
       console.log(data)
       const response = JSON.parse(data);
+
+      const audioError = new Audio(rootpath() + '/assets/audio/error.mp3');
+      audioError.play();
 
       Swal.fire({
         title: '" . __("Something went wrong!", "wpdevhelper") . "',

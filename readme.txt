@@ -27,6 +27,12 @@ From your WordPress dashboard
 
 == Changelog ==
 
+= 2.4.1 = 25/07/2023
+* Feat: Suporte para a nova nova versão 3.0 de WP Premium Theme.
+
+= 2.4 = 23/07/2023
+* Feat: Adiciona aba para remover layouts da single de um post_type
+
 = 2.3 = 21/07/2023
 * Feat: Melhoria no código após gerar um post_type
 

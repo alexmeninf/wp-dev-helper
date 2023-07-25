@@ -153,7 +153,7 @@ class Developers
       }
 
       // Meta description
-      if (trim(get_field('wpdevhelperWPHead-meta_description', 'option')) != '') {      
+      if (trim(get_field('wpdevhelperWPHead-meta_description', 'option')) != '') {
         echo '<meta name="description" content="' . get_field('wpdevhelperWPHead-meta_description', 'option') . '">' . "\n";
       } else {
         echo '<meta name="description" content="' . get_bloginfo('description') . '">' . "\n";
@@ -252,7 +252,7 @@ class Developers
 
   /*----------  WP HEAD -> Open Graph  ----------*/
   public function developersWPHeadOpenGraph() {
-    
+
     // Verifica se alguns plugins populares de SEO não estão ativos, para exibir o Open Graph padrão.
     $has_seo_plugin = false;
     if (is_plugin_active( 'wordpress-seo/wp-seo.php' )) {
@@ -267,14 +267,14 @@ class Developers
       add_action('wp_head', function () {
         # Og Graph
         $tags = [];
-        
+
         // Single pages
         if (is_single()) {
 		      $tags['og:type'] = 'article';
-			
+
 		      $desc = str_replace('"', '\'', get_the_excerpt());
           $tags['og:description'] = wp_trim_words( $desc, 25, ' ...' );
-			
+
         } elseif ( ! empty(get_field('wpdevhelperWPHead-meta_description', 'option')) ) {
           $tags['og:description'] = get_field('wpdevhelperWPHead-meta_description', 'option');
         }
@@ -287,26 +287,26 @@ class Developers
         // Usuário
         if ( is_author() ) {
           $curauth = get_userdata(get_the_author_meta('ID'));
-                
+
           if ( ! empty($curauth->first_name) ) {
             $tags['profile:first_name'] = $curauth->first_name;
             $tags['profile:last_name'] = $curauth->last_name;
           } else {
             $tags['profile:first_name'] = $curauth->display_name;
           }
-			
+
           $tags['og:type'] = 'profile';
         }
-  
+
         // Taxonomia
         if (is_tax()) {
           $tags['og:url'] = get_term_link(get_queried_object(), get_queried_object()->taxonomy);
         }
-        
+
         // Imagens
         if (has_post_thumbnail()) {
-          $tags['og:image'] = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), "full")[0];   
-          
+          $tags['og:image'] = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), "full")[0];
+
         } elseif( is_author() ) {
 
           $id = get_the_author_meta('ID');
@@ -318,10 +318,10 @@ class Developers
             $tags['og:image'] = esc_url(wp_get_attachment_image_src(get_field('head-opengraph-image', 'option'), 'full', false)[0]);
             $tags['og:image:width'] = '1200';
             $tags['og:image:height'] = '630';
-  
+
           } elseif ( ! empty(get_site_icon_url()) ) {
           	$tags['og:image'] = get_site_icon_url();
-			  
+
 	        } elseif (trim(get_field('head-icon-192x192', 'option')) != '') {
             $tags['og:image'] = esc_url(get_field('head-icon-192x192', 'option'));
           }
@@ -330,35 +330,35 @@ class Developers
         // Para Woocommerce
         if ( class_exists( 'WooCommerce' ) ) {
           $product = wc_get_product( get_the_ID() );
-          
+
           if (is_product()) {
             $tags['og:type'] = 'product';
             $tags['product:plural_title'] = get_the_title();
             $tags['product:price.amount'] = $product->get_price();
             $tags['product:price.currency'] = get_woocommerce_currency();
           }
-          
+
           if (is_account_page()) {
             $tags['og:type'] = 'profile';
           }
         }
-        
+
         // Valores padrão
         $tags = wp_parse_args(
-          $tags, 
+          $tags,
           [
-            'og:description' => get_bloginfo('description'), 
+            'og:description' => get_bloginfo('description'),
             'og:image'       => '',
             'og:locale'      => get_bloginfo( 'language' ),
             'og:site_name'   => get_bloginfo( 'name' ),
-            'og:title'       => trim(wp_title('', false)), 
-            'og:type'        => 'website', 
-            'og:url'         => get_permalink(), 
+            'og:title'       => trim(wp_title('', false)),
+            'og:type'        => 'website',
+            'og:url'         => get_permalink(),
           ]
         );
         $tags = array_filter($tags);
         $tags = apply_filters('opengraph_tags', $tags);
-  
+
         foreach ($tags as $property => $content) {
           printf('<meta property="%s" content="%s">', esc_attr($property), esc_attr($content));
         }
@@ -367,7 +367,7 @@ class Developers
   }
 
   /*----------  Progressive web app  ----------*/
-  public function developersWPHeadManifest() 
+  public function developersWPHeadManifest()
   {
     if (function_exists('acf_add_options_page')) {
       acf_add_options_page(array(
@@ -395,7 +395,7 @@ class Developers
 
         // Make the app title different than the page title - Windows
         echo '<meta name="application-name" content="'.get_field('aplication_name', 'option').'">';
-        
+
         // Allow web app to be run in full-screen mode - Android.
         echo '<meta name="mobile-web-app-capable" content="yes">';
 
@@ -412,7 +412,7 @@ class Developers
 
         // Corrige o espaço de status do dispositivo, mantendo o site 100% na tela do iOS.
         if ($is_ios && (get_field('ios_status_bar', 'option') == 'default' || get_field('ios_status_bar', 'option') == 'black-translucent')) {
-          
+
           $style = '<style id="wpdw-ios-app">';
           $enable = false;
 
@@ -422,7 +422,7 @@ class Developers
 
             $style .= 'html{min-height: calc(100% + env(safe-area-inset-top));padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left) !important;}';
             $enable = true;
-          }          
+          }
           if (!empty(get_field('stretch_fixed_elements_up', 'option'))) {
             $style .= get_field('stretch_fixed_elements_up', 'option') . '{padding-top: env(safe-area-inset-top) !important;}';
             $enable = true;
@@ -447,14 +447,16 @@ class Developers
 
     if (get_field('wpdevhelperTemplateSettings-form_generator', 'option') == 'yes') {
 
-      if ($theme_name == 'WP Simple Theme' && $v < '2.1' || $theme_name !== 'WP Simple Theme') {
+      if (
+        $theme_name == 'WP Premium Theme' && $v < '3.0' ||
+        $theme_name == 'WP Starter Theme' && $v < '3.5.4' ||
+        $theme_name == 'WP Starter Theme Child' && $v < '1.2') {
 
         add_action( 'admin_notices', function () {
-          $minimum_version = '2.1';
           echo '<div class="notice notice-warning is-dismissible">';
           echo '<h3>WP Dev Helper v'.WPDEVHELPER_VERSION.'</h3>';
           echo '<p>';
-          printf(__('Your current theme needs to be updated to display the <b>Form Generator</b> module. Minimum requested %s version is %s', 'wpdevhelper'), wp_get_theme()->get( 'Name' ), $minimum_version);
+          echo __('Your current theme needs to be updated to display the <b>Form Generator</b> module.', 'wpdevhelper');
           echo '</p></div>';
         } );
 
@@ -488,11 +490,11 @@ class Developers
       function wpdh_remove_comment_support() {
         remove_post_type_support( 'post', 'comments' );
         remove_post_type_support( 'page', 'comments' );
-        
+
         $postTypes = get_posts('post_type=new_post_type&posts_per_page=-1');
         if (count($postTypes) >= 1) {
-          foreach ($postTypes as $postType) { 
-            remove_post_type_support( get_field('wpdevhelper-posttype-post_type_key', $postType->ID), 'comments' );            
+          foreach ($postTypes as $postType) {
+            remove_post_type_support( get_field('wpdevhelper-posttype-post_type_key', $postType->ID), 'comments' );
           }
         }
       }
@@ -549,10 +551,10 @@ class Developers
       if (in_array('xmlrpc', get_field('wpdevhelperAdvanced-wp_head', 'option'))) {
         add_filter('xmlrpc_enabled', function (): bool {
           return false;
-        }); 
+        });
         remove_action('wp_head', 'rsd_link');
       }
-      # Gutenberg 
+      # Gutenberg
       if (in_array('gutenberg', get_field('wpdevhelperAdvanced-wp_head', 'option'))) {
         add_action('wp_print_styles', function (): void {
           wp_dequeue_style('wp-block-library');

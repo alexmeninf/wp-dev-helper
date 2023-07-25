@@ -1,6 +1,6 @@
 <?php
 
-if ( ! defined( 'ABSPATH' ) )
+if (!defined('ABSPATH'))
   exit; // Exit if accessed directly.
 
 /*====================================================
@@ -249,13 +249,13 @@ if (count($postTypes) >= 1) {
  *
  */
 
-add_filter('manage_new_post_type_posts_columns', function($columns) {
+add_filter('manage_new_post_type_posts_columns', function ($columns) {
   $columns['code'] = __('Code', 'wpdevhelper');
 
   return $columns;
 });
 
-add_action('manage_new_post_type_posts_custom_column', function($column, $post_id) {
+add_action('manage_new_post_type_posts_custom_column', function ($column, $post_id) {
   $post_type_key = get_field('wpdevhelper-posttype-post_type_key', $post_id);
 
   /**
@@ -266,14 +266,14 @@ add_action('manage_new_post_type_posts_custom_column', function($column, $post_i
    *  &#x24; = $
    * */
   $code = "&#60;?php
-  &#x24;posts_total    = new WP_Query(array('post_type' => '".$post_type_key."', 'posts_per_page' => -1));
+  &#x24;posts_total    = new WP_Query(array('post_type' => '" . $post_type_key . "', 'posts_per_page' => -1));
   &#x24;posts_count    = &#x24;posts_total->post_count;
   &#x24;posts_per_page = 12;
   &#x24;pages_count    = ceil(&#x24;posts_count / &#x24;posts_per_page);
   &#x24;current_page   = (isset(&#x24;_GET['pg']) && (int)&#x24;_GET['pg'] > 1 && (int)&#x24;_GET['pg'] <= &#x24;pages_count) ? (int)&#x24;_GET['pg'] : 1;
 
   &#x24;args = array(
-    'post_type'      => '".$post_type_key."',
+    'post_type'      => '" . $post_type_key . "',
     'order'          => 'desc',
     'posts_per_page' => &#x24;posts_per_page,
     'paged' => &#x24;current_page,
@@ -281,7 +281,9 @@ add_action('manage_new_post_type_posts_custom_column', function($column, $post_i
 
   &#x24;query = new WP_Query(&#x24;args);
 
-  if (&#x24;query->have_posts()) : while (&#x24;query->have_posts()) : &#x24;query->the_post(); ?&#62;
+  if (&#x24;query->have_posts()) : ?&#62;
+
+    &#60;?php while (&#x24;query->have_posts()) : &#x24;query->the_post(); ?&#62;
 
     <div class=\"\">
       &#60;?php if (has_post_thumbnail()) : ?&#62;
@@ -306,11 +308,19 @@ add_action('manage_new_post_type_posts_custom_column', function($column, $post_i
       &#60;?php // the_field() ?&#62
     </div>
 
-  &#60;?php endwhile; endif; wp_reset_query(); ?&#62;";
+    &#60;?php endwhile; ?&#62;
+
+  &#60;?php else:
+    echo \"<div>" . __('There are no records to display here yet. Coming soon.', 'wpdevhelper') . "</div>\";
+  endif;
+
+  wp_reset_query(); ?&#62;
+
+  &#60;?php get_pagination(&#x24;current_page, &#x24;pages_count) ?&#62;";
 
   switch ($column) {
     case 'code':
-      echo '<textarea onfocus="this.select();" readonly="readonly" class="code-input-post" title="'.__('Copy the query code from this post type and paste it into your theme file.', 'wpdevhelper').'">' . $code . '</textarea>';
+      echo '<textarea onfocus="this.select();" readonly="readonly" class="code-input-post" title="' . __('Copy the query code from this post type and paste it into your theme file.', 'wpdevhelper') . '">' . $code . '</textarea>';
       break;
   }
 }, 10, 2);
@@ -319,7 +329,7 @@ add_action('manage_new_post_type_posts_custom_column', function($column, $post_i
 /**
  * Botão de retorno
  */
-add_action('edit_form_top','addCustomImportButton');
+add_action('edit_form_top', 'addCustomImportButton');
 
 function addCustomImportButton()
 {
@@ -331,12 +341,11 @@ function addCustomImportButton()
     return;
   }
 
-  ?>
+?>
   <script type="text/javascript">
-    jQuery(document).ready( function($)
-    {
+    jQuery(document).ready(function($) {
       jQuery(jQuery(".wrap .page-title-action")[0]).after('<a href="edit.php?post_type=new_post_type" class="page-title-action" style="border: navajowhite;background: transparent;text-decoration: underline;">Voltar para todos</a>');
     });
   </script>
-  <?php
+<?php
 }
