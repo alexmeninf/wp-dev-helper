@@ -64,6 +64,13 @@ function wpdh_get_form_code()
       if (get_sub_field('input_type') == 'file') $has_file = true;
     endwhile;
 
+    if (is_user_logged_in() && current_user_can('edit_posts')) :
+      $html .= '<a href="'. get_edit_post_link() .'" class="btn-theme btn-small mb-3" target="_blank">
+        <i class="fa-light fa-pen-to-square me-2"></i>
+         '. __("Edit Form", "wpdevhelper") .'
+      </a>';
+    endif;
+
     $html .= '<form ';
     $html .= 'class="' . esc_attr($form_class) . ' ' . esc_attr(get_field('form_style')) . '" ';
     $html .= 'id="form-theme-' . get_the_ID() . '" ';
@@ -346,6 +353,11 @@ function wpdh_get_form_code()
         html: `\${response.message}`,
         type: 'error',
         confirmButtonText: 'Ok'
+      });
+
+      alerts.alert({
+        type: 'danger',
+        title: i18n('fail_send_email'),
       });
 
     }).always(function() {

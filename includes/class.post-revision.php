@@ -46,14 +46,14 @@ if (!class_exists('WPDH_Disable_Post_Revision')) :
 						echo json_encode(
 							array(
 								'success' => 1,
-								'message' => sprintf(__('Todas as revisões foram excluídas! Total de %s linhas encontradas.', 'wpdevhelper'), $r),
+								'message' => sprintf(__('All reviews have been deleted! Total %s lines found.', 'wpdevhelper'), $r),
 							)
 						);
 					} else {
 						echo json_encode(
 							array(
 								'success' => 1,
-								'message' => __('Não existe revisões nas suas tabelas. Nenhuma linha foi afetada.', 'wpdevhelper'),
+								'message' => __('There are no revisions in your tables. No rows are affected.', 'wpdevhelper'),
 							)
 						);
 					}

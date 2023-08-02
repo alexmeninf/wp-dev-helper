@@ -27,6 +27,9 @@ From your WordPress dashboard
 
 == Changelog ==
 
+= 2.5.0 = 02/08/2023
+* Feat: Suporte para color scheme dark mode
+
 = 2.4.1 = 25/07/2023
 * Feat: Suporte para a nova nova versão 3.0 de WP Premium Theme.
 

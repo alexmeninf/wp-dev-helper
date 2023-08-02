@@ -149,7 +149,7 @@ class Developers
     add_action('wp_head', function () {
       // Number detection
       if (get_field('phone_number_detection', 'option') != 'default') {
-        echo ' <meta name="format-detection" content="telephone='.get_field('phone_number_detection', 'option').'">';
+        echo ' <meta name="format-detection" content="telephone=' . get_field('phone_number_detection', 'option') . '">';
       }
 
       // Meta description
@@ -166,10 +166,14 @@ class Developers
   {
     if (trim(get_field('wpdevhelperWPHead-theme_color', 'option')) != '') {
       add_action('wp_head', function () {
-        # Theme Color
-        echo '<meta name="theme-color" content="' . get_field('wpdevhelperWPHead-theme_color', 'option') . '">' . "\n";
-        echo '<meta name="msapplication-TileColor" content="' . get_field('wpdevhelperWPHead-theme_color', 'option') . '">';
-        echo '<meta name="msapplication-navbutton-color" content="' . get_field('wpdevhelperWPHead-theme_color', 'option') . '">' . "\n\n";
+        $color_theme = get_field('wpdevhelperWPHead-theme_color', 'option');
+        $dark_theme = get_field('wpdevhelperWPHead-theme_color_darkmode', 'option') ?: $color_theme;
+
+        echo '<meta name="theme-color" content="' . $color_theme . '" media="(prefers-color-scheme: light)">' . "\n";
+        echo '<meta name="theme-color" content="' . $dark_theme . '" media="(prefers-color-scheme: dark)">' . "\n";
+
+        echo '<meta name="msapplication-TileColor" content="' . $color_theme . '">';
+        echo '<meta name="msapplication-navbutton-color" content="' . $color_theme . '">' . "\n\n";
       }, 0);
     }
   }
@@ -178,7 +182,7 @@ class Developers
   public function developersWPHeadFavicon()
   {
     // Verifica se o tema não possui um favicon definido
-    if ( empty( get_site_icon_url() ) ) {
+    if (empty(get_site_icon_url())) {
       add_action('wp_head', function () {
         // Favicon 16x16
         if (trim(get_field('head-icon-16x16', 'option')) != '') {
@@ -203,7 +207,7 @@ class Developers
         // Adding a Pinned Tab icon for Safari
         if (!empty(get_field('head-maskable_icon_safari_tabs', 'option'))) {
           $color = get_field('wpdevhelperWPHead-theme_color', 'option') ? get_field('wpdevhelperWPHead-theme_color', 'option') : '#46444c';
-          echo '<link rel="mask-icon" href="'.get_field('head-maskable_icon_safari_tabs', 'option').'" color="'.$color.'">';
+          echo '<link rel="mask-icon" href="' . get_field('head-maskable_icon_safari_tabs', 'option') . '" color="' . $color . '">';
         }
 
         // Outros tamanhos de favicons, tamanhos não recomendados mais a utilizar em navegadores novos.
@@ -251,11 +255,12 @@ class Developers
   }
 
   /*----------  WP HEAD -> Open Graph  ----------*/
-  public function developersWPHeadOpenGraph() {
+  public function developersWPHeadOpenGraph()
+  {
 
     // Verifica se alguns plugins populares de SEO não estão ativos, para exibir o Open Graph padrão.
     $has_seo_plugin = false;
-    if (is_plugin_active( 'wordpress-seo/wp-seo.php' )) {
+    if (is_plugin_active('wordpress-seo/wp-seo.php')) {
       $has_seo_plugin = true;
     }
 
@@ -263,32 +268,31 @@ class Developers
       $has_seo_plugin = true;
     }
 
-    if ( ! $has_seo_plugin ) {
+    if (!$has_seo_plugin) {
       add_action('wp_head', function () {
         # Og Graph
         $tags = [];
 
         // Single pages
         if (is_single()) {
-		      $tags['og:type'] = 'article';
+          $tags['og:type'] = 'article';
 
-		      $desc = str_replace('"', '\'', get_the_excerpt());
-          $tags['og:description'] = wp_trim_words( $desc, 25, ' ...' );
-
-        } elseif ( ! empty(get_field('wpdevhelperWPHead-meta_description', 'option')) ) {
+          $desc = str_replace('"', '\'', get_the_excerpt());
+          $tags['og:description'] = wp_trim_words($desc, 25, ' ...');
+        } elseif (!empty(get_field('wpdevhelperWPHead-meta_description', 'option'))) {
           $tags['og:description'] = get_field('wpdevhelperWPHead-meta_description', 'option');
         }
 
         // Página inicial
-        if ( is_front_page() ) {
+        if (is_front_page()) {
           $tags['og:title'] = get_bloginfo('name');
         }
 
         // Usuário
-        if ( is_author() ) {
+        if (is_author()) {
           $curauth = get_userdata(get_the_author_meta('ID'));
 
-          if ( ! empty($curauth->first_name) ) {
+          if (!empty($curauth->first_name)) {
             $tags['profile:first_name'] = $curauth->first_name;
             $tags['profile:last_name'] = $curauth->last_name;
           } else {
@@ -306,30 +310,26 @@ class Developers
         // Imagens
         if (has_post_thumbnail()) {
           $tags['og:image'] = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), "full")[0];
-
-        } elseif( is_author() ) {
+        } elseif (is_author()) {
 
           $id = get_the_author_meta('ID');
-          $tags['og:image'] = get_avatar_url( $id, ['size' => 350] );
-
+          $tags['og:image'] = get_avatar_url($id, ['size' => 350]);
         } elseif (function_exists('get_field')) {
 
           if (trim(get_field('head-opengraph-image', 'option')) != '') {
             $tags['og:image'] = esc_url(wp_get_attachment_image_src(get_field('head-opengraph-image', 'option'), 'full', false)[0]);
             $tags['og:image:width'] = '1200';
             $tags['og:image:height'] = '630';
-
-          } elseif ( ! empty(get_site_icon_url()) ) {
-          	$tags['og:image'] = get_site_icon_url();
-
-	        } elseif (trim(get_field('head-icon-192x192', 'option')) != '') {
+          } elseif (!empty(get_site_icon_url())) {
+            $tags['og:image'] = get_site_icon_url();
+          } elseif (trim(get_field('head-icon-192x192', 'option')) != '') {
             $tags['og:image'] = esc_url(get_field('head-icon-192x192', 'option'));
           }
         }
 
         // Para Woocommerce
-        if ( class_exists( 'WooCommerce' ) ) {
-          $product = wc_get_product( get_the_ID() );
+        if (class_exists('WooCommerce')) {
+          $product = wc_get_product(get_the_ID());
 
           if (is_product()) {
             $tags['og:type'] = 'product';
@@ -349,8 +349,8 @@ class Developers
           [
             'og:description' => get_bloginfo('description'),
             'og:image'       => '',
-            'og:locale'      => get_bloginfo( 'language' ),
-            'og:site_name'   => get_bloginfo( 'name' ),
+            'og:locale'      => get_bloginfo('language'),
+            'og:site_name'   => get_bloginfo('name'),
             'og:title'       => trim(wp_title('', false)),
             'og:type'        => 'website',
             'og:url'         => get_permalink(),
@@ -385,29 +385,29 @@ class Developers
     }
 
     add_action('wp_head', function () {
-      $version_ios = preg_replace("/(.*) OS ([0-9]*)_(.*)/","$2", $_SERVER['HTTP_USER_AGENT']);
+      $version_ios = preg_replace("/(.*) OS ([0-9]*)_(.*)/", "$2", $_SERVER['HTTP_USER_AGENT']);
       $is_ios      = preg_match("/iPhone|iPod|iPad/", $_SERVER['HTTP_USER_AGENT']);
 
       if (get_field('pwa_enable', 'option') == true) {
 
         // Make the app title different than the page title - iOS
-        echo '<meta name="apple-mobile-web-app-title" content="'.get_field('aplication_name', 'option').'">';
+        echo '<meta name="apple-mobile-web-app-title" content="' . get_field('aplication_name', 'option') . '">';
 
         // Make the app title different than the page title - Windows
-        echo '<meta name="application-name" content="'.get_field('aplication_name', 'option').'">';
+        echo '<meta name="application-name" content="' . get_field('aplication_name', 'option') . '">';
 
         // Allow web app to be run in full-screen mode - Android.
         echo '<meta name="mobile-web-app-capable" content="yes">';
 
         // Make the app title different than the page title and configure icons
-        echo '<link rel="manifest" href="'.get_field('web_app_manifest', 'option').'">';
+        echo '<link rel="manifest" href="' . get_field('web_app_manifest', 'option') . '">';
 
         // Configure the status bar - iOS
-        echo '<meta name="apple-mobile-web-app-status-bar-style" content="'.get_field('ios_status_bar', 'option').'">';
+        echo '<meta name="apple-mobile-web-app-status-bar-style" content="' . get_field('ios_status_bar', 'option') . '">';
 
         // Windows 8.1 + IE11 and above
         if (!empty(get_field('browserconfig', 'option'))) {
-          echo '<meta name="msapplication-config" content="'.get_field('browserconfig', 'option').'" />';
+          echo '<meta name="msapplication-config" content="' . get_field('browserconfig', 'option') . '" />';
         }
 
         // Corrige o espaço de status do dispositivo, mantendo o site 100% na tela do iOS.
@@ -442,24 +442,24 @@ class Developers
   /*----------  TEMPLATE SETTINGS -> FORM GENERATOR ----------*/
   public function developersTemplateSettingsFormGenerator()
   {
-    $theme_name = wp_get_theme()->get( 'Name' );
-    $v          = wp_get_theme()->get( 'Version' );
+    $theme_name = wp_get_theme()->get('Name');
+    $v          = wp_get_theme()->get('Version');
 
     if (get_field('wpdevhelperTemplateSettings-form_generator', 'option') == 'yes') {
 
       if (
         $theme_name == 'WP Premium Theme' && $v < '3.0' ||
         $theme_name == 'WP Starter Theme' && $v < '3.5.4' ||
-        $theme_name == 'WP Starter Theme Child' && $v < '1.2') {
+        $theme_name == 'WP Starter Theme Child' && $v < '1.2'
+      ) {
 
-        add_action( 'admin_notices', function () {
+        add_action('admin_notices', function () {
           echo '<div class="notice notice-warning is-dismissible">';
-          echo '<h3>WP Dev Helper v'.WPDEVHELPER_VERSION.'</h3>';
+          echo '<h3>WP Dev Helper v' . WPDEVHELPER_VERSION . '</h3>';
           echo '<p>';
           echo __('Your current theme needs to be updated to display the <b>Form Generator</b> module.', 'wpdevhelper');
           echo '</p></div>';
-        } );
-
+        });
       } else {
         require_once(PLUGINPATH . 'includes/form-generator/form.php');
       }
@@ -482,32 +482,35 @@ class Developers
   {
     if (get_field('wpdevhelperOthers-remove-comment', 'option') == 'yes') {
       // Removes from admin menu
-      function wdh_remove_admin_menus() {
-        remove_menu_page( 'edit-comments.php' );
+      function wdh_remove_admin_menus()
+      {
+        remove_menu_page('edit-comments.php');
       }
 
       // Removes from post and pages
-      function wpdh_remove_comment_support() {
-        remove_post_type_support( 'post', 'comments' );
-        remove_post_type_support( 'page', 'comments' );
+      function wpdh_remove_comment_support()
+      {
+        remove_post_type_support('post', 'comments');
+        remove_post_type_support('page', 'comments');
 
         $postTypes = get_posts('post_type=new_post_type&posts_per_page=-1');
         if (count($postTypes) >= 1) {
           foreach ($postTypes as $postType) {
-            remove_post_type_support( get_field('wpdevhelper-posttype-post_type_key', $postType->ID), 'comments' );
+            remove_post_type_support(get_field('wpdevhelper-posttype-post_type_key', $postType->ID), 'comments');
           }
         }
       }
 
       // Removes from admin bar
-      function wpdh_admin_bar_render() {
+      function wpdh_admin_bar_render()
+      {
         global $wp_admin_bar;
         $wp_admin_bar->remove_menu('comments');
       }
 
-      add_action( 'admin_menu', 'wdh_remove_admin_menus' );
+      add_action('admin_menu', 'wdh_remove_admin_menus');
       add_action('init', 'wpdh_remove_comment_support', 100);
-      add_action( 'wp_before_admin_bar_render', 'wpdh_admin_bar_render' );
+      add_action('wp_before_admin_bar_render', 'wpdh_admin_bar_render');
     }
   }
 
