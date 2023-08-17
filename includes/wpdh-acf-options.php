@@ -869,6 +869,7 @@ function my_acf_add_local_field_groups()
           'layout' => 'horizontal',
           'choices' => array(
             'date_post' => __('Publication date', 'wpdevhelper'),
+            'reading_time' => __('Reading time', 'wpdevhel'),
             'categories' => __('Categories', 'wpdevhelper'),
             'tags' => __('Tags', 'wpdevhelper'),
             'excerpt' => __('Excerpt', 'wpdevhelper'),
