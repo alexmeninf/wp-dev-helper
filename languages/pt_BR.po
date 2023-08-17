@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WP Dev Helper 1.7\n"
-"POT-Creation-Date: 2023-08-02 12:04-0300\n"
-"PO-Revision-Date: 2023-08-02 12:04-0300\n"
+"POT-Creation-Date: 2023-08-17 12:15-0300\n"
+"PO-Revision-Date: 2023-08-17 12:15-0300\n"
 "Last-Translator: \n"
 "Language-Team: Alexandre Menin <menin.alex11@gmail.com>\n"
 "Language: pt_BR\n"
@@ -261,7 +261,7 @@ msgstr "Domínio de texto"
 msgid "Translation file"
 msgstr "Tradução"
 
-#: includes/wpdh-acf-options.php:43 includes/wpdh-acf-options.php:2101
+#: includes/wpdh-acf-options.php:43 includes/wpdh-acf-options.php:2102
 msgid "Optional"
 msgstr "Opcional"
 
@@ -319,7 +319,7 @@ msgstr "Link para taxonomias"
 msgid "Comma separated list of "
 msgstr "Lista separada por vírgula "
 
-#: includes/wpdh-acf-options.php:154 includes/wpdh-acf-options.php:1912
+#: includes/wpdh-acf-options.php:154 includes/wpdh-acf-options.php:1913
 msgid "Taxonomies"
 msgstr "Taxonomias"
 
@@ -453,7 +453,7 @@ msgid "Not Found in Trash"
 msgstr "Nada Encontrado na Lixeira"
 
 #: includes/wpdh-acf-options.php:524 includes/wpdh-acf-options.php:528
-#: includes/wpdh-acf-options.php:715 includes/wpdh-acf-options.php:876
+#: includes/wpdh-acf-options.php:715 includes/wpdh-acf-options.php:877
 #: includes/wpdh-register-post_type.php:30
 #: includes/wpdh-register-post_type.php:88
 msgid "Featured Image"
@@ -519,7 +519,7 @@ msgstr "Título"
 msgid "Content (editor)"
 msgstr "Content (Editor de conteúdo)"
 
-#: includes/wpdh-acf-options.php:713 includes/wpdh-acf-options.php:874
+#: includes/wpdh-acf-options.php:713 includes/wpdh-acf-options.php:875
 msgid "Excerpt"
 msgstr "Excerto"
 
@@ -527,7 +527,7 @@ msgstr "Excerto"
 msgid "Author"
 msgstr "Autor"
 
-#: includes/wpdh-acf-options.php:716 includes/wpdh-acf-options.php:880
+#: includes/wpdh-acf-options.php:716 includes/wpdh-acf-options.php:881
 msgid "Comments"
 msgstr "Comentários"
 
@@ -563,25 +563,25 @@ msgstr "Excluir da pesquisa"
 msgid "Posts of this type should be excluded from search results."
 msgstr "Postagens desse tipo devem ser excluídas dos resultados da pesquisa."
 
-#: includes/wpdh-acf-options.php:774 includes/wpdh-acf-options.php:920
-#: includes/wpdh-acf-options.php:947 includes/wpdh-acf-options.php:1055
-#: includes/wpdh-acf-options.php:1152 includes/wpdh-acf-options.php:1273
-#: includes/wpdh-acf-options.php:1308 includes/wpdh-acf-options.php:1343
-#: includes/wpdh-acf-options.php:1394 includes/wpdh-acf-options.php:1975
-#: includes/wpdh-acf-options.php:2737 includes/wpdh-acf-options.php:2776
-#: includes/wpdh-acf-options.php:2800 includes/wpdh-acf-options.php:2824
+#: includes/wpdh-acf-options.php:774 includes/wpdh-acf-options.php:921
+#: includes/wpdh-acf-options.php:948 includes/wpdh-acf-options.php:1056
+#: includes/wpdh-acf-options.php:1153 includes/wpdh-acf-options.php:1274
+#: includes/wpdh-acf-options.php:1309 includes/wpdh-acf-options.php:1344
+#: includes/wpdh-acf-options.php:1395 includes/wpdh-acf-options.php:1976
+#: includes/wpdh-acf-options.php:2738 includes/wpdh-acf-options.php:2777
+#: includes/wpdh-acf-options.php:2801 includes/wpdh-acf-options.php:2825
 #: includes/wpdh-code-in-page.php:215 includes/wpdh-code-in-page.php:337
 #: includes/wpdh-code-in-page.php:459
 msgid "Yes"
 msgstr "Sim"
 
-#: includes/wpdh-acf-options.php:775 includes/wpdh-acf-options.php:921
-#: includes/wpdh-acf-options.php:948 includes/wpdh-acf-options.php:1056
-#: includes/wpdh-acf-options.php:1153 includes/wpdh-acf-options.php:1274
-#: includes/wpdh-acf-options.php:1309 includes/wpdh-acf-options.php:1395
-#: includes/wpdh-acf-options.php:1976 includes/wpdh-acf-options.php:2736
-#: includes/wpdh-acf-options.php:2777 includes/wpdh-acf-options.php:2801
-#: includes/wpdh-acf-options.php:2825 includes/wpdh-code-in-page.php:216
+#: includes/wpdh-acf-options.php:775 includes/wpdh-acf-options.php:922
+#: includes/wpdh-acf-options.php:949 includes/wpdh-acf-options.php:1057
+#: includes/wpdh-acf-options.php:1154 includes/wpdh-acf-options.php:1275
+#: includes/wpdh-acf-options.php:1310 includes/wpdh-acf-options.php:1396
+#: includes/wpdh-acf-options.php:1977 includes/wpdh-acf-options.php:2737
+#: includes/wpdh-acf-options.php:2778 includes/wpdh-acf-options.php:2802
+#: includes/wpdh-acf-options.php:2826 includes/wpdh-code-in-page.php:216
 #: includes/wpdh-code-in-page.php:338 includes/wpdh-code-in-page.php:460
 msgid "No"
 msgstr "Não"
@@ -629,7 +629,7 @@ msgstr "Definir slug de arquivo personalizado."
 msgid "Page of post"
 msgstr "Página do post"
 
-#: includes/wpdh-acf-options.php:856 includes/wpdh-acf-options.php:2223
+#: includes/wpdh-acf-options.php:856 includes/wpdh-acf-options.php:2224
 msgid "New"
 msgstr "Novo"
 
@@ -638,34 +638,38 @@ msgid "Publication date"
 msgstr "Data de publicação"
 
 #: includes/wpdh-acf-options.php:872
+msgid "Reading time"
+msgstr "Tempo de leitura"
+
+#: includes/wpdh-acf-options.php:873
 msgid "Categories"
 msgstr "Categorias"
 
-#: includes/wpdh-acf-options.php:873
+#: includes/wpdh-acf-options.php:874
 msgid "Tags"
 msgstr "Tags"
 
-#: includes/wpdh-acf-options.php:875
+#: includes/wpdh-acf-options.php:876
 msgid "Social media"
 msgstr "Redes sociais"
 
-#: includes/wpdh-acf-options.php:877
+#: includes/wpdh-acf-options.php:878
 msgid "Accessibility options"
 msgstr "Opções de acessibilidade"
 
-#: includes/wpdh-acf-options.php:878
+#: includes/wpdh-acf-options.php:879
 msgid "Author information"
 msgstr "Informações do autor"
 
-#: includes/wpdh-acf-options.php:879
+#: includes/wpdh-acf-options.php:880
 msgid "Navigation between contents"
 msgstr "Navegação entre conteúdos"
 
-#: includes/wpdh-acf-options.php:888
+#: includes/wpdh-acf-options.php:889
 msgid "Remove from content page"
 msgstr "Remover da página de conteúdo"
 
-#: includes/wpdh-acf-options.php:891
+#: includes/wpdh-acf-options.php:892
 msgid ""
 "Remove from the content page of this post type information on the screen for "
 "the user."
@@ -673,167 +677,167 @@ msgstr ""
 "Remova da página de conteúdo deste post type customizado as informações na "
 "tela para o usuário."
 
-#: includes/wpdh-acf-options.php:931
+#: includes/wpdh-acf-options.php:932
 msgid "Public"
 msgstr "Público"
 
-#: includes/wpdh-acf-options.php:934
+#: includes/wpdh-acf-options.php:935
 msgid "Show post type in the admin UI."
 msgstr "Mostrar o tipo de postagem na interface do usuário do administrador."
 
-#: includes/wpdh-acf-options.php:958
+#: includes/wpdh-acf-options.php:959
 msgid "Show UI"
 msgstr "Mostrar interface do usuário"
 
-#: includes/wpdh-acf-options.php:961
+#: includes/wpdh-acf-options.php:962
 msgid "Show post type UI in the admin."
 msgstr "Mostrar o tipo de mensagem do post no admin."
 
-#: includes/wpdh-acf-options.php:985
+#: includes/wpdh-acf-options.php:986
 msgid "Show in Admin Sidebar"
 msgstr "Mostrar na Barra Lateral do Administrador"
 
-#: includes/wpdh-acf-options.php:988
+#: includes/wpdh-acf-options.php:989
 msgid "Show post type in admin sidebar."
 msgstr "Mostrar na Barra Lateral do Administrador."
 
-#: includes/wpdh-acf-options.php:1001
+#: includes/wpdh-acf-options.php:1002
 msgid "5 below Posts"
 msgstr "5 abaixo dos posts"
 
-#: includes/wpdh-acf-options.php:1002
+#: includes/wpdh-acf-options.php:1003
 msgid "10 below Posts"
 msgstr "10 abaixo dos posts"
 
-#: includes/wpdh-acf-options.php:1003
+#: includes/wpdh-acf-options.php:1004
 msgid "15 below Links"
 msgstr "15 abaixo Links"
 
-#: includes/wpdh-acf-options.php:1004
+#: includes/wpdh-acf-options.php:1005
 msgid "20 below Pages"
 msgstr "20 páginas abaixo"
 
-#: includes/wpdh-acf-options.php:1005
+#: includes/wpdh-acf-options.php:1006
 msgid "25 below Comments"
 msgstr "25 abaixo dos comentários"
 
-#: includes/wpdh-acf-options.php:1006
+#: includes/wpdh-acf-options.php:1007
 msgid "60 below first separator"
 msgstr "60 abaixo do primeiro separador"
 
-#: includes/wpdh-acf-options.php:1007
+#: includes/wpdh-acf-options.php:1008
 msgid "65 below Plugins"
 msgstr "65 abaixo de Plugins"
 
-#: includes/wpdh-acf-options.php:1008
+#: includes/wpdh-acf-options.php:1009
 msgid "70 below Users"
 msgstr "70 abaixo de usuários"
 
-#: includes/wpdh-acf-options.php:1009
+#: includes/wpdh-acf-options.php:1010
 msgid "75 below Tools"
 msgstr "75 abaixo de Ferramentas"
 
-#: includes/wpdh-acf-options.php:1010
+#: includes/wpdh-acf-options.php:1011
 msgid "80 below Settings"
 msgstr "80 abaixo de Configurações"
 
-#: includes/wpdh-acf-options.php:1011
+#: includes/wpdh-acf-options.php:1012
 msgid "100 below second separator"
 msgstr "100 abaixo do segundo separador"
 
-#: includes/wpdh-acf-options.php:1019
+#: includes/wpdh-acf-options.php:1020
 msgid "Admin Sidebar Location"
 msgstr "Localização da Sidebar Administrativa"
 
-#: includes/wpdh-acf-options.php:1038
+#: includes/wpdh-acf-options.php:1039
 msgid "Sidebar Icon"
 msgstr "Ícone da Sidebar"
 
-#: includes/wpdh-acf-options.php:1041
+#: includes/wpdh-acf-options.php:1042
 msgid "Post type icon."
 msgstr "Descrição."
 
-#: includes/wpdh-acf-options.php:1041
+#: includes/wpdh-acf-options.php:1042
 msgid "Use"
 msgstr "Usar"
 
-#: includes/wpdh-acf-options.php:1042
+#: includes/wpdh-acf-options.php:1043
 msgid "name or full icon URL"
 msgstr "nome ou URL completo do ícone"
 
-#: includes/wpdh-acf-options.php:1066
+#: includes/wpdh-acf-options.php:1067
 msgid "Show in Admin Bar"
 msgstr "Mostrar na barra de administração"
 
-#: includes/wpdh-acf-options.php:1069 includes/wpdh-acf-options.php:1096
+#: includes/wpdh-acf-options.php:1070 includes/wpdh-acf-options.php:1097
 msgid "Show post type in"
 msgstr "Mostrar o tipo de postagem"
 
-#: includes/wpdh-acf-options.php:1069
+#: includes/wpdh-acf-options.php:1070
 msgid "admin bar"
 msgstr "barra de administração"
 
-#: includes/wpdh-acf-options.php:1093
+#: includes/wpdh-acf-options.php:1094
 msgid "Show in Navigation Menus"
 msgstr "Mostrar nos Menus de Navegação"
 
-#: includes/wpdh-acf-options.php:1096
+#: includes/wpdh-acf-options.php:1097
 msgid "Navigation Menus"
 msgstr "Menus de Navegação"
 
-#: includes/wpdh-acf-options.php:1109 includes/wpdh-acf-options.php:1136
+#: includes/wpdh-acf-options.php:1110 includes/wpdh-acf-options.php:1137
 msgid "Query"
 msgstr "Query"
 
-#: includes/wpdh-acf-options.php:1125
+#: includes/wpdh-acf-options.php:1126
 msgid "Default (post type key)"
 msgstr "Padrão (chave do tipo de postagem)"
 
-#: includes/wpdh-acf-options.php:1126
+#: includes/wpdh-acf-options.php:1127
 msgid "Custom query variable"
 msgstr "Variável de consulta personalizada"
 
-#: includes/wpdh-acf-options.php:1139
+#: includes/wpdh-acf-options.php:1140
 msgid "Direct query variable used in"
 msgstr "Variável de consulta direta usada em"
 
-#: includes/wpdh-acf-options.php:1161
+#: includes/wpdh-acf-options.php:1162
 msgid "Publicly Queryable"
 msgstr "Publicamente Queryable"
 
-#: includes/wpdh-acf-options.php:1164
+#: includes/wpdh-acf-options.php:1165
 msgid "Enable front end queries as part of parse_request()."
 msgstr "Ative consultas front-end como parte de parse_request ()."
 
-#: includes/wpdh-acf-options.php:1180
+#: includes/wpdh-acf-options.php:1181
 msgid "Custom Query"
 msgstr "Consulta personalizada"
 
-#: includes/wpdh-acf-options.php:1183
+#: includes/wpdh-acf-options.php:1184
 msgid "Custom query variable."
 msgstr "Variável de consulta personalizada."
 
-#: includes/wpdh-acf-options.php:1204
+#: includes/wpdh-acf-options.php:1205
 msgid "Permalink"
 msgstr "Permalink"
 
-#: includes/wpdh-acf-options.php:1220
+#: includes/wpdh-acf-options.php:1221
 msgid "No permalink (prevent URL rewriting)"
 msgstr "Sem permalink (evitar regravação de URL)"
 
-#: includes/wpdh-acf-options.php:1221
+#: includes/wpdh-acf-options.php:1222
 msgid "Default permalink (post type key)"
 msgstr "Permalink padrão (chave do tipo de postagem)"
 
-#: includes/wpdh-acf-options.php:1222
+#: includes/wpdh-acf-options.php:1223
 msgid "Custom permalink"
 msgstr "Link personalizado"
 
-#: includes/wpdh-acf-options.php:1230
+#: includes/wpdh-acf-options.php:1231
 msgid "Permalink Rewrite"
 msgstr "Reescrever permalink"
 
-#: includes/wpdh-acf-options.php:1233
+#: includes/wpdh-acf-options.php:1234
 msgid ""
 "Use Default Permalinks (using post type key), prevent automatic URL "
 "rewriting (no pretty permalinks), or set custom permalinks."
@@ -842,55 +846,55 @@ msgstr ""
 "regravação automática de URL (sem permalinks) ou defina permalinks "
 "personalizados."
 
-#: includes/wpdh-acf-options.php:1249
+#: includes/wpdh-acf-options.php:1250
 msgid "URL Slug"
 msgstr "Slug da URL"
 
-#: includes/wpdh-acf-options.php:1252
+#: includes/wpdh-acf-options.php:1253
 msgid "Pretty permalink base text."
 msgstr "Texto base do permalink."
 
-#: includes/wpdh-acf-options.php:1284
+#: includes/wpdh-acf-options.php:1285
 msgid "Use URL Slug"
 msgstr "Use o Slug da URL"
 
-#: includes/wpdh-acf-options.php:1287
+#: includes/wpdh-acf-options.php:1288
 msgid "Use Post Type slug as URL base. Default: Yes."
 msgstr "Use o slug Post Type como base de URL. Padrão: sim."
 
-#: includes/wpdh-acf-options.php:1319
+#: includes/wpdh-acf-options.php:1320
 msgid "Pagination"
 msgstr "Paginação"
 
-#: includes/wpdh-acf-options.php:1322
+#: includes/wpdh-acf-options.php:1323
 msgid "Allow post-type pagination. Default: Yes."
 msgstr "Permitir paginação de tipo de postagem. Padrão: sim."
 
-#: includes/wpdh-acf-options.php:1344
+#: includes/wpdh-acf-options.php:1345
 msgid "False"
 msgstr "Falso"
 
-#: includes/wpdh-acf-options.php:1354
+#: includes/wpdh-acf-options.php:1355
 msgid "Feeds"
 msgstr "Feeds"
 
-#: includes/wpdh-acf-options.php:1357
+#: includes/wpdh-acf-options.php:1358
 msgid "Build feed permastruct. Default: Yes."
 msgstr "Construa o feed permastruct. Padrão: sim."
 
-#: includes/wpdh-acf-options.php:1378 includes/wpdh-acf-options.php:1486
+#: includes/wpdh-acf-options.php:1379 includes/wpdh-acf-options.php:1487
 msgid "Capabilities"
 msgstr "Capacidades"
 
-#: includes/wpdh-acf-options.php:1408
+#: includes/wpdh-acf-options.php:1409
 msgid "Whether to add the post type in the REST API."
 msgstr "Se o tipo de postagem deve ser adicionado à API REST."
 
-#: includes/wpdh-acf-options.php:1424
+#: includes/wpdh-acf-options.php:1425
 msgid "Rest Base"
 msgstr "Base da Rest"
 
-#: includes/wpdh-acf-options.php:1427
+#: includes/wpdh-acf-options.php:1428
 msgid ""
 "The base slug that this post type will use when accessed using the REST API. "
 "Default: $post_type"
@@ -898,11 +902,11 @@ msgstr ""
 "O slug base que esse tipo de postagem usará quando acessado usando a API "
 "REST. Padrão: $post_type"
 
-#: includes/wpdh-acf-options.php:1451
+#: includes/wpdh-acf-options.php:1452
 msgid "Rest Controller Class"
 msgstr "Rest Controller Class"
 
-#: includes/wpdh-acf-options.php:1454
+#: includes/wpdh-acf-options.php:1455
 msgid ""
 "An optional custom controller to use instead of WP_REST_Posts_Controller. "
 "Must be a subclass of WP_REST_Controller. Default: WP_REST_Posts_Controller"
@@ -911,15 +915,15 @@ msgstr ""
 "WP_REST_Posts_Controller. Deve ser uma subclasse de WP_REST_Controller. "
 "Padrão: WP_REST_Posts_Controller"
 
-#: includes/wpdh-acf-options.php:1475
+#: includes/wpdh-acf-options.php:1476
 msgid "Base capabilities"
 msgstr "Capacidades base"
 
-#: includes/wpdh-acf-options.php:1476
+#: includes/wpdh-acf-options.php:1477
 msgid "Custom capabilities"
 msgstr "Recursos personalizados"
 
-#: includes/wpdh-acf-options.php:1489
+#: includes/wpdh-acf-options.php:1490
 msgid ""
 "Set <a href=\"https://wordpress.org/support/article/roles-and-capabilities/"
 "\" target=\"_blank\">user capabilities</a> to manage post type."
@@ -928,91 +932,91 @@ msgstr ""
 "capabilities/\" target=\"_blank\">Recursos do Usuário</a> para gerenciar o "
 "tipo de postagem."
 
-#: includes/wpdh-acf-options.php:1505
+#: includes/wpdh-acf-options.php:1506
 msgid "Read Post"
 msgstr "Ler postagem"
 
-#: includes/wpdh-acf-options.php:1532
+#: includes/wpdh-acf-options.php:1533
 msgid "Read Private Posts"
 msgstr "Ler mensagens privadas"
 
-#: includes/wpdh-acf-options.php:1559
+#: includes/wpdh-acf-options.php:1560
 msgid "Publish Posts"
 msgstr "Publicar postagens"
 
-#: includes/wpdh-acf-options.php:1586
+#: includes/wpdh-acf-options.php:1587
 msgid "Delete Post"
 msgstr "Deletar postagem"
 
-#: includes/wpdh-acf-options.php:1613
+#: includes/wpdh-acf-options.php:1614
 msgid "Edit Post"
 msgstr "Editar postagem"
 
-#: includes/wpdh-acf-options.php:1640
+#: includes/wpdh-acf-options.php:1641
 msgid "Edit Posts"
 msgstr "Editar postagens"
 
-#: includes/wpdh-acf-options.php:1667
+#: includes/wpdh-acf-options.php:1668
 msgid "Edit Others Posts"
 msgstr "Editar outras postagens"
 
-#: includes/wpdh-acf-options.php:1702
+#: includes/wpdh-acf-options.php:1703
 msgid "Base Capability Type"
 msgstr "Tipo de capacidade de base"
 
-#: includes/wpdh-acf-options.php:1705
+#: includes/wpdh-acf-options.php:1706
 msgid "Used as a base to construct capabilities."
 msgstr "Usado como base para construir recursos."
 
-#: includes/wpdh-acf-options.php:1814
+#: includes/wpdh-acf-options.php:1815
 msgid "Developers Options"
 msgstr "Opções para Desenvolvedores"
 
-#: includes/wpdh-acf-options.php:1820
+#: includes/wpdh-acf-options.php:1821
 msgid "Dashboard"
 msgstr "Painel"
 
-#: includes/wpdh-acf-options.php:1834
+#: includes/wpdh-acf-options.php:1835
 msgid "Remove Widgets"
 msgstr "Remover Widgets"
 
-#: includes/wpdh-acf-options.php:1837
+#: includes/wpdh-acf-options.php:1838
 msgid "Hide defaults dashboard widgets."
 msgstr "Esconder widgets padrões do painel."
 
-#: includes/wpdh-acf-options.php:1847
+#: includes/wpdh-acf-options.php:1848
 msgid "At a Glance"
 msgstr "Agora"
 
-#: includes/wpdh-acf-options.php:1848
+#: includes/wpdh-acf-options.php:1849
 msgid "Quick Draft"
 msgstr "Rascunho Rápido"
 
-#: includes/wpdh-acf-options.php:1849
+#: includes/wpdh-acf-options.php:1850
 msgid "WordPress News"
 msgstr "Novidades do WordPress"
 
-#: includes/wpdh-acf-options.php:1850
+#: includes/wpdh-acf-options.php:1851
 msgid "Activity"
 msgstr "Atividade"
 
-#: includes/wpdh-acf-options.php:1859
+#: includes/wpdh-acf-options.php:1860
 msgid "Click here"
 msgstr "Clique aqui"
 
-#: includes/wpdh-acf-options.php:1859
+#: includes/wpdh-acf-options.php:1860
 msgid "to view, edit or remove your Dashboard widgets boxes."
 msgstr "para ver, editar ou remover widgets to Painel."
 
-#: includes/wpdh-acf-options.php:1863
+#: includes/wpdh-acf-options.php:1864
 msgid "Manage Widgets Boxes"
 msgstr "Gerenciar caixas de widgets"
 
-#: includes/wpdh-acf-options.php:1879 includes/wpdh-acf-options.php:1896
+#: includes/wpdh-acf-options.php:1880 includes/wpdh-acf-options.php:1897
 msgid "Custom Post Types"
 msgstr "Post Types Personalizados"
 
-#: includes/wpdh-acf-options.php:1892
+#: includes/wpdh-acf-options.php:1893
 msgid ""
 "Instead of creating your custom post types including many codes in your "
 "functions.php file you can create they easily here. <br><a class=\"button "
@@ -1030,11 +1034,11 @@ msgstr ""
 "\"edit.php?post_type=new_post_type\" style=\"margin-top:10px\">Ver lista de "
 "tipos de postagem</a>"
 
-#: includes/wpdh-acf-options.php:1926
+#: includes/wpdh-acf-options.php:1927
 msgid "Hierarchical Order"
 msgstr "Ordem hierárquica"
 
-#: includes/wpdh-acf-options.php:1929
+#: includes/wpdh-acf-options.php:1930
 msgid ""
 "Insert which taxonomies (slug separated by comma) do you want to maintain in "
 "hierarchical order when editing the post/page."
@@ -1042,95 +1046,95 @@ msgstr ""
 "Inserir quais taxonomias (slug separados por vírgula) você deseja manter em "
 "ordem hierárquica ao editar o post / página."
 
-#: includes/wpdh-acf-options.php:1939
+#: includes/wpdh-acf-options.php:1940
 msgid "Example"
 msgstr "Exemplo"
 
-#: includes/wpdh-acf-options.php:1947
+#: includes/wpdh-acf-options.php:1948
 msgid "Login Screen"
 msgstr "Tela de Login"
 
-#: includes/wpdh-acf-options.php:1961
+#: includes/wpdh-acf-options.php:1962
 msgid "Enable Custom Login Screen?"
 msgstr "Habilitar Tela de Login Personalizada?"
 
-#: includes/wpdh-acf-options.php:1964
+#: includes/wpdh-acf-options.php:1965
 msgid "Select Yes if you want to customize the WordPress login default screen."
 msgstr ""
 "Selecione Sim se desejar personalizar a tela padrão de login do WordPress."
 
-#: includes/wpdh-acf-options.php:1988
+#: includes/wpdh-acf-options.php:1989
 msgid "Logo Image"
 msgstr "Imagem da Logo"
 
-#: includes/wpdh-acf-options.php:1991
+#: includes/wpdh-acf-options.php:1992
 msgid "Send an image with 100px wide per 100px height."
 msgstr "Envie uma imagem de 100px de largura por 100px de altura."
 
-#: includes/wpdh-acf-options.php:2020
+#: includes/wpdh-acf-options.php:2021
 msgid "Logo URL"
 msgstr "URL da Logo"
 
-#: includes/wpdh-acf-options.php:2023
+#: includes/wpdh-acf-options.php:2024
 msgid "Select the URL that will be placed in the login screen logo."
 msgstr "Selecione o URL que será colocado no logotipo da tela de login."
 
-#: includes/wpdh-acf-options.php:2044
+#: includes/wpdh-acf-options.php:2045
 msgid "Logo Title"
 msgstr "Título da Logo"
 
-#: includes/wpdh-acf-options.php:2047
+#: includes/wpdh-acf-options.php:2048
 msgid "Enter the link title attribute."
 msgstr "Digite o atributo do título do link."
 
-#: includes/wpdh-acf-options.php:2071
+#: includes/wpdh-acf-options.php:2072
 msgid "Login Text Color Style"
 msgstr "Cor de Texto no Login"
 
-#: includes/wpdh-acf-options.php:2074
+#: includes/wpdh-acf-options.php:2075
 msgid "Default is Light."
 msgstr "Padrão: Claro."
 
-#: includes/wpdh-acf-options.php:2085
+#: includes/wpdh-acf-options.php:2086
 msgid "Light"
 msgstr "Claro"
 
-#: includes/wpdh-acf-options.php:2086
+#: includes/wpdh-acf-options.php:2087
 msgid "Dark"
 msgstr "Escuro"
 
-#: includes/wpdh-acf-options.php:2098
+#: includes/wpdh-acf-options.php:2099
 msgid "Body Background Color"
 msgstr "Cor de Fundo"
 
-#: includes/wpdh-acf-options.php:2113
+#: includes/wpdh-acf-options.php:2114
 msgid "Add Footer Content"
 msgstr "Conteúdo no Rodapé"
 
-#: includes/wpdh-acf-options.php:2116
+#: includes/wpdh-acf-options.php:2117
 msgid ""
 "Type something if you want to add a content below the login form. Optional."
 msgstr ""
 "Escreva algo se você deseja adicionar algum conteúdo abaixo do formulário de "
 "login. Opcional."
 
-#: includes/wpdh-acf-options.php:2134
+#: includes/wpdh-acf-options.php:2135
 msgid "Head configuration "
 msgstr "Configuração do head"
 
-#: includes/wpdh-acf-options.php:2148
+#: includes/wpdh-acf-options.php:2149
 msgid "Meta Tags"
 msgstr "Meta Tags"
 
-#: includes/wpdh-acf-options.php:2151
+#: includes/wpdh-acf-options.php:2152
 msgid "Remove tags created by <b>wp_head()</b> function."
 msgstr "Remova as tags criadas pela função <b>wp_head()</b>."
 
-#: includes/wpdh-acf-options.php:2182
+#: includes/wpdh-acf-options.php:2183
 msgid "Automatic phone number detection?"
 msgstr "Detecção automática de número de telefone?"
 
-#: includes/wpdh-acf-options.php:2185
+#: includes/wpdh-acf-options.php:2186
 msgid ""
 "Determines whether or not telephone numbers in the HTML content will appear "
 "as links. Default on Safari in iOS is yes."
@@ -1138,29 +1142,29 @@ msgstr ""
 "Determina se os números de telefone no conteúdo HTML aparecerão como links. "
 "O padrão no Safari no iOS é sim."
 
-#: includes/wpdh-acf-options.php:2195
+#: includes/wpdh-acf-options.php:2196
 msgid "Disable"
 msgstr "Desabilitar"
 
-#: includes/wpdh-acf-options.php:2196
+#: includes/wpdh-acf-options.php:2197
 msgid "Enable"
 msgstr "Habilitar"
 
-#: includes/wpdh-acf-options.php:2208
+#: includes/wpdh-acf-options.php:2209
 msgid "Theme Color"
 msgstr "Cor do tema"
 
-#: includes/wpdh-acf-options.php:2211
+#: includes/wpdh-acf-options.php:2212
 msgid "Change the color of header bar and address bar in mobile browsers."
 msgstr ""
 "Altere a cor da barra de cabeçalho e da barra de endereço nos navegadores "
 "móveis."
 
-#: includes/wpdh-acf-options.php:2223
+#: includes/wpdh-acf-options.php:2224
 msgid "Theme Color (Dark mode)"
 msgstr "Cor do tema (modo escuro)"
 
-#: includes/wpdh-acf-options.php:2226
+#: includes/wpdh-acf-options.php:2227
 msgid ""
 "Now choose how the header will look for the dark version of your theme. If "
 "not, the top color will be the default for both."
@@ -1168,11 +1172,11 @@ msgstr ""
 "Agora escolha como o cabeçalho ficará para a versão escura do seu tema. Caso "
 "contrário, a cor superior será o padrão para ambos."
 
-#: includes/wpdh-acf-options.php:2242
+#: includes/wpdh-acf-options.php:2243
 msgid "Meta Description"
 msgstr "Meta Descrição"
 
-#: includes/wpdh-acf-options.php:2245
+#: includes/wpdh-acf-options.php:2246
 msgid ""
 "Put a description of your site to show in browser searches. <b>Note:</b> "
 "Maximum 150 characters."
@@ -1180,11 +1184,11 @@ msgstr ""
 "Coloque uma descrição do seu site para mostrar nas pesquisas do navegador. "
 "<b> Nota: </b> Máximo de 150 caracteres."
 
-#: includes/wpdh-acf-options.php:2266
+#: includes/wpdh-acf-options.php:2267
 msgid "Default image for social media"
 msgstr "Imagem padrão para mídia social"
 
-#: includes/wpdh-acf-options.php:2269
+#: includes/wpdh-acf-options.php:2270
 msgid ""
 "Resolution 1200x630 pixels. <br> Keep a default image in the links, and "
 "display a social media post."
@@ -1192,43 +1196,43 @@ msgstr ""
 "Resolução 1200x630 pixels. <br> Mantenha uma imagem padrão nos links e exiba "
 "uma postagem de mídia social."
 
-#: includes/wpdh-acf-options.php:2290
+#: includes/wpdh-acf-options.php:2291
 msgid "Favicon small"
 msgstr "Favicon pequeno"
 
-#: includes/wpdh-acf-options.php:2293
+#: includes/wpdh-acf-options.php:2294
 msgid "Resolution 16x16 pixels."
 msgstr "Resolução 16x16 pixels."
 
-#: includes/wpdh-acf-options.php:2314
+#: includes/wpdh-acf-options.php:2315
 msgid "Favicon normal"
 msgstr "Favicon normal"
 
-#: includes/wpdh-acf-options.php:2317
+#: includes/wpdh-acf-options.php:2318
 msgid "Resolution 32x32 pixels."
 msgstr "Resolução 32x32 pixels."
 
-#: includes/wpdh-acf-options.php:2341
+#: includes/wpdh-acf-options.php:2342
 msgid "Resolution 180x180 pixels."
 msgstr "Resolução 180x180 pixels."
 
-#: includes/wpdh-acf-options.php:2365
+#: includes/wpdh-acf-options.php:2366
 msgid "Resolution 192x192 pixels."
 msgstr "Resolução 192x192 pixels."
 
-#: includes/wpdh-acf-options.php:2386
+#: includes/wpdh-acf-options.php:2387
 msgid "Mask icon for Safari pinned tabs"
 msgstr "Ícone de máscara para guias fixadas no Safari"
 
-#: includes/wpdh-acf-options.php:2389
+#: includes/wpdh-acf-options.php:2390
 msgid "Upload the full color .svg icon in black."
 msgstr "Carregue o ícone .svg completamente em cor preta."
 
-#: includes/wpdh-acf-options.php:2400
+#: includes/wpdh-acf-options.php:2401
 msgid "Show all favicon sizes"
 msgstr "Mostrar todos os tamanhos de favicon"
 
-#: includes/wpdh-acf-options.php:2403
+#: includes/wpdh-acf-options.php:2404
 msgid ""
 "Put the sizes of older versions of Chrome and iOS. Otherwise, we will "
 "display at the highest resolution. Only use this in specific cases."
@@ -1237,91 +1241,91 @@ msgstr ""
 "contrário, será apresentado na resolução mais elevada. Utilize esta opção "
 "apenas em casos específicos."
 
-#: includes/wpdh-acf-options.php:2432
+#: includes/wpdh-acf-options.php:2433
 msgid "Resolution 57x57 pixels."
 msgstr "Resolução 57x57 pixels."
 
-#: includes/wpdh-acf-options.php:2464
+#: includes/wpdh-acf-options.php:2465
 msgid "Resolution 60x60 pixels."
 msgstr "Resolução 60x60 pixels."
 
-#: includes/wpdh-acf-options.php:2496
+#: includes/wpdh-acf-options.php:2497
 msgid "Resolution 72x72 pixels."
 msgstr "Resolução 72x72 pixels."
 
-#: includes/wpdh-acf-options.php:2528
+#: includes/wpdh-acf-options.php:2529
 msgid "Resolution 76x76 pixels."
 msgstr "Resolução 76x76 pixels."
 
-#: includes/wpdh-acf-options.php:2560
+#: includes/wpdh-acf-options.php:2561
 msgid "Resolution 114x114 pixels."
 msgstr "Resolução 114x114 pixels."
 
-#: includes/wpdh-acf-options.php:2592
+#: includes/wpdh-acf-options.php:2593
 msgid "Resolution 120x120 pixels."
 msgstr "Resolução 120x120 pixels."
 
-#: includes/wpdh-acf-options.php:2624
+#: includes/wpdh-acf-options.php:2625
 msgid "Resolution 144x144 pixels."
 msgstr "Resolução 144x144 pixels."
 
-#: includes/wpdh-acf-options.php:2656
+#: includes/wpdh-acf-options.php:2657
 msgid "Resolution 152x152 pixels."
 msgstr "Resolução 152x152 pixels."
 
-#: includes/wpdh-acf-options.php:2688
+#: includes/wpdh-acf-options.php:2689
 msgid "Resolution 96x96 pixels."
 msgstr "Resolução 96x96 pixels."
 
-#: includes/wpdh-acf-options.php:2709
+#: includes/wpdh-acf-options.php:2710
 msgid "Template Settings"
 msgstr "Configurações do template"
 
-#: includes/wpdh-acf-options.php:2723
+#: includes/wpdh-acf-options.php:2724
 msgid "Form generator"
 msgstr "Gerador de formulários"
 
-#: includes/wpdh-acf-options.php:2726
+#: includes/wpdh-acf-options.php:2727
 msgid "Quickly create forms to place in your template."
 msgstr "Crie rapidamente formulários para colocar em seu template."
 
-#: includes/wpdh-acf-options.php:2749
+#: includes/wpdh-acf-options.php:2750
 msgid "Admin panel"
 msgstr "Painel do administrador"
 
-#: includes/wpdh-acf-options.php:2763
+#: includes/wpdh-acf-options.php:2764
 msgid "Duplicate Post"
 msgstr "Duplicar Post"
 
-#: includes/wpdh-acf-options.php:2766
+#: includes/wpdh-acf-options.php:2767
 msgid "Enable duplicate post option?"
 msgstr "Habilitar opção de duplicar Post?"
 
-#: includes/wpdh-acf-options.php:2787
+#: includes/wpdh-acf-options.php:2788
 msgid "Duplicate Page"
 msgstr "Duplicar Página"
 
-#: includes/wpdh-acf-options.php:2790
+#: includes/wpdh-acf-options.php:2791
 msgid "Enable duplicate page option?"
 msgstr "Habilitar opção de duplicar Página?"
 
-#: includes/wpdh-acf-options.php:2811
+#: includes/wpdh-acf-options.php:2812
 msgid "Remove comment support"
 msgstr "Remover suporte para comentário"
 
-#: includes/wpdh-acf-options.php:2814
+#: includes/wpdh-acf-options.php:2815
 msgid "Disable comments page in dashboard and for posts and pages."
 msgstr "Desabilitar comentários no painel e para páginas e posts."
 
-#: includes/wpdh-acf-options.php:2837
+#: includes/wpdh-acf-options.php:2838
 msgid "Advanced"
 msgstr "Avançado"
 
-#: includes/wpdh-acf-options.php:2851
+#: includes/wpdh-acf-options.php:2852
 msgid "Delete revisions"
 msgstr "Excluir revisões"
 
-#: includes/wpdh-acf-options.php:2855
+#: includes/wpdh-acf-options.php:2856
 msgid ""
 "Clear all revisions generated by posts and pages from your database. Only "
 "run this if you know what you are doing."
@@ -1329,11 +1333,11 @@ msgstr ""
 "Limpe todas as revisões geradas por posts e páginas do seu banco de dados. "
 "Só execute isso se você souber o que está fazendo."
 
-#: includes/wpdh-acf-options.php:2866
+#: includes/wpdh-acf-options.php:2867
 msgid "Custom CSS"
 msgstr "CSS Customizado"
 
-#: includes/wpdh-acf-options.php:2871
+#: includes/wpdh-acf-options.php:2872
 msgid "Add your css to the head. The &#60;style&#62 tags will be ignored."
 msgstr "Adicione seu css no Head. As tags &#60;style&#62 serão ignoradas."
 
